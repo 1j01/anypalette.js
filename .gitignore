@@ -1,0 +1,10 @@
+
+# Installed with npm, not included
+node_modules/
+
+# The concatenated, compiled code
+build/
+
+# I'm not sure about the legalities about including some of these palettes.
+# Can you even copywrite palettes? Or can you copywrite the palette files?
+palettes/

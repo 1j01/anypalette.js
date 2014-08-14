@@ -1,0 +1,254 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Let's load some palettes</title>
+		<style>
+			body {
+				font-family: Helvetica, Arial, sans-serif;
+				padding-bottom: 150px;
+			}
+			.color {
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				margin: 2px;
+				outline: 1px solid black;
+				border: 1px solid white;
+			}
+			h2 > *:not(.header-text) {
+				font-size: 0.5em;
+				padding: 10px;
+			}
+			a {
+				color: blue;
+				cursor: pointer;
+			}
+			a.header-text {
+				text-decoration: none;
+				color: black;
+			}
+			a:hover {
+				text-decoration: underline;
+			}
+			.lesser-importance {
+				color: gray !important;
+			}
+			* {
+				transition: all 1s ease-in-out;
+			}
+			body > h2 {
+				font-size: 1.7em;
+				padding-top: 1em;
+				border-top: 0.1em solid black;
+				margin-top: 1em;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Let's load some palettes</h1>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script src="build/palette.js"></script>
+		<script>
+			jQuery.ajaxSetup({
+				beforeSend: function(xhr){
+					// make binary data work
+					xhr.overrideMimeType('text/plain; charset=x-user-defined');
+				}
+			});
+			
+			function PaletteView(palette_name, url){
+				
+				var $section = $("<div>");
+				var $header = $("<h2>").appendTo($section);
+				var $output = $("<div>").appendTo($section);
+				
+				var $loaded_as = $("<span>").appendTo($header);
+				var $toggle_dupes = $("<a>").appendTo($header).hide();
+				
+				var $header_inner;
+				if(url){
+					$header_inner = $("<a>")
+						.attr("href", url)
+						.appendTo($header);
+				}else{
+					$header_inner = $("<span>");
+				}
+				$header_inner
+					.prependTo($header)
+					.addClass("header-text")
+					.text(palette_name);
+				
+				this.appendTo = function(e){
+					$section.appendTo(e);
+				};
+				
+				this.status = function(text){
+					$output.text(text);
+				};
+				
+				this.update = function(palette){
+					
+					$loaded_as.html(
+						"<span class='lesser-importance'>loaded as </span>"
+						+"<span>"+palette.loaded_as+"</span>"
+						+"<span class='lesser-importance'> "+(palette.loaded_as_clause)+"</span>"
+					);
+					
+					var show_colors = function(palette){
+						$output.empty();
+						var $row = $("<div>").appendTo($output);
+						var col = 0;
+						$.each(palette, function(i, color){
+							$("<div class='color'>")
+								.appendTo($row)
+								.css("background-color", color)
+								.attr("title", color.name ? (color.name + "\n" + color) : color)
+							
+							col += 1;
+							if(col > palette.n_columns){
+								col = 0;
+								$row = $("<div>").appendTo($output);
+							}
+						});
+					};
+					show_colors(palette);
+					
+					var n_dupes = palette.with_duplicates.length - palette.length;
+					var s = (n_dupes > 1) ? "s" : "";
+					var toggle = 0;
+					$toggle_dupes.on("click", function(){
+						if(toggle = !toggle){
+							show_colors(palette.with_duplicates);
+							$toggle_dupes.text("hide duplicate"+s);
+						}else{
+							show_colors(palette);
+							$toggle_dupes.text("show duplicate"+s);
+						}
+					}).text("show duplicate"+s);
+					
+					if(n_dupes > 0){
+						$toggle_dupes.show();
+						if(palette.has_dimensions){
+							$toggle_dupes.click();
+						}
+					}
+				};
+			}
+			
+			$.each([{
+				name: "",
+				description: "",
+				dir: "",
+				fnames: [
+					"CortexCommand.pal",
+					"test.act",
+					"mini.spl",
+					"Pumpkin.cs",
+					"s2green.pal",
+					"spacewar.pal",
+					//"test32.gif",
+					"drf.color.styl.txt"
+				]
+			},{
+				name: "DawnBringer's palettes",
+				description: "<a href='http://www.pixeljoint.com/p/23821.htm'>DawnBringer</a>'s 16 and 32 color palettes in various formats. <a href='http://www.pixeljoint.com/forum/forum_posts.asp?TID=12795'>DB16</a> and <a href='http://www.pixeljoint.com/forum/forum_posts.asp?TID=16247'>DB32</a>",
+				dir: "",
+				fnames: [
+					"DawnBringers-32-color-palette-pdn.txt",
+					"db32.pal",
+					"db32.act",
+					"db32.gpl",
+					"db16.gpl",
+					//"db32_v1_pal64x32.png",
+				]
+			},{
+				name: "Visibone",
+				description: "<a href='http://www.visibone.com/swatches/'>Visibone</a> color swatches in various formats",
+				dir: "",
+				fnames: [
+					"VisiBone2.aco",
+					"VisiBone2.gimp",
+					"VisiBone2_ap.hpl",
+					"VisiBone2_km.psppalette"
+				]
+			},{
+				disabled: true,
+				name: "Adobe Color Book files",
+				description: "",
+				
+				dir: "AdobeColorBook/",
+				fnames: [
+				"HKS Z.acb","PANTONE metallic coated.acb","PANTONE pastel coated.acb","PANTONE pastel uncoated.acb","PANTONE process coated.acb","PANTONE process uncoated.acb","PANTONE solid coated.acb","PANTONE solid matte.acb","PANTONE solid to process EURO.acb","PANTONE solid to process.acb","PANTONE solid uncoated.acb","Resene-TCS-Diwali.acb","TOYO Color Finder.acb","TOYO Process Color Finder.acb","TRUMATCH.acb","ANPA Color.acb","DIC Color Guide.acb","FOCOLTONE.acb","HKS E Process.acb","HKS E.acb","HKS K Process.acb","HKS K.acb","HKS N Process.acb","HKS N.acb","HKS Z Process.acb"
+				] 
+			},{
+				name: "StarCraft palettes",
+				description: "",//"Load even StarCraft's palette formats!",
+				
+				dir: "StarCraft/",
+				fnames: [
+					"bfire.pal",
+					"gfire.pal",
+					"ofire.pal",
+					"Icons.pal",
+					"Terrain.pal",
+					"Units.pal",
+					"Wireframe.pal"
+				]
+			},{
+				name: "Drag and Drop",
+				description: "If you happen to have some palettes handy, you know what to do",
+				fnames: []
+			}], function(i, group){
+				if(group.disabled) return;
+				
+				//var $section = $("<section>").appendTo("body");
+				var $h2 = $("<h2>").appendTo("body").text(group.name);
+				var $p = $("<p>").appendTo("body").html(group.description);
+				
+				$.each(group.fnames, function(i, fname){
+					
+					var url = "palettes/" + group.dir + fname;
+					var palette_view = new PaletteView(fname, url);
+					palette_view.appendTo("body");
+					
+					palette_view.status("Waiting...");
+					setTimeout(function(){
+						palette_view.status("Loading file...");
+						$.get(url, function(data){
+							palette_view.status("Loading palette from file...");
+							Palette.load({
+								data: data,
+								file_name: fname
+							}, function(err, palette){
+								palette_view.update(palette);
+							});
+						});
+					}, i * 100); //stagger loading
+				});
+			});
+			$(window).on("dragover dragenter", function(e){
+				e.preventDefault();
+				e.stopPropagation();
+			}).on("drop", function(e){
+				e.preventDefault();
+				e.stopPropagation();
+				
+				var dt = e.originalEvent.dataTransfer;
+				if(dt && dt.files){
+					$.each(dt.files, function(i, file){
+						var palette_view = new PaletteView("➢ "+file.name);
+						palette_view.appendTo("body");
+						palette_view.status("Loading palette from file...");
+						
+						setTimeout(function(){
+							Palette.load(file, function(err, palette){
+								palette_view.update(palette);
+							});
+						}, i * 100); //stagger loading
+					});
+				}
+			});
+		</script>
+	</body>
+</html>

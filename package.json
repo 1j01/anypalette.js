@@ -1,0 +1,31 @@
+{
+	"name": "palette",
+	"version": "0.0.1",
+	"author": "Isaiah Odhner",
+	"description": "one library to rule over all palettes mwahahahaha",
+	"scripts": {
+		"start": "index.html",
+		"build": "gulp build",
+		"bundle": "gulp bundle",
+		"watch": "gulp watch-bundle",
+		"watch-bundle": "gulp watch-bundle"
+	},
+	"main": "index.html",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/1j01/palette.git"
+	},
+	"keywords": [
+		"palette",
+		"colors",
+		"PAL",
+		"loader"
+	],
+	"dependencies": {},
+	"devDependencies": {
+		"gulp": "~3.6.0",
+		"gulp-coffee": "~1.4.1",
+		"gulp-uglify": "~0.2.1",
+		"gulp-concat": "~2.2.0"
+	}
+}

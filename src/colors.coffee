@@ -82,9 +82,6 @@ class Color
 			else
 				throw new Error "Color constructor must be called with {r,g,b} or {h,s,v} or {h,s,l} or {c,m,y,k} or {x,y,z} or {l,a,b}"
 		
-		@[0] = @r
-		@[1] = @g
-		@[2] = @b
 	
 	toString: ->
 		if @r?
@@ -160,7 +157,7 @@ class Palette extends Array
 		candidate_dimensions = []
 		for n_columns in [0..len]
 			n_rows = len / n_columns
-			if n_rows is ~~n_rows
+			if n_rows is Math.round n_rows
 				candidate_dimensions.push [n_rows, n_columns]
 		
 		squarest = [0, 3495093]

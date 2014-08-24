@@ -2,7 +2,7 @@
 	"name": "palette",
 	"version": "0.0.1",
 	"author": "Isaiah Odhner",
-	"description": "one library to rule over all palettes mwahahahaha",
+	"description": "Load palette files of all sorts",
 	"scripts": {
 		"start": "index.html",
 		"build": "gulp build",

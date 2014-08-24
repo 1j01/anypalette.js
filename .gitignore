@@ -2,7 +2,7 @@
 # Installed with npm, not included
 node_modules/
 
-# The concatenated, compiled code
+# The concatenated (soon to be bundled), compiled code
 build/
 
 # I'm not sure about the legalities about including some of these palettes.

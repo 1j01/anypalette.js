@@ -1,5 +1,9 @@
 
-load_jasc_pal = ({data})->
+# Load a JASC PAL file (Paint Shop Pro palette file)
+
+BinaryReader = require "../BinaryReader"
+
+module.exports = ({data})->
 	lines = data.split(/[\n\r]+/m)
 	if lines[0] isnt "JASC-PAL"
 		throw new Error "Not a JASC-PAL"

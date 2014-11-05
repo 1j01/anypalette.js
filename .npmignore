@@ -1,5 +1,6 @@
 
 .gitignore
+.gitattributes
 .npmignore
 
 README.md
@@ -7,8 +8,6 @@ index.html
 test.html
 palettes/
 
-
 Gulpfile.coffee
-Gulpfile.js
 
 src/

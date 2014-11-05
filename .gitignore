@@ -2,9 +2,11 @@
 # Installed with npm, not included
 node_modules/
 
-# The concatenated (soon to be bundled), compiled code
+npm-debug.log
+
+# The compiled, bundled code
 build/
 
-# I'm not sure about the legalities about including some of these palettes.
-# Can you even copywrite palettes? Or can you copywrite the palette files?
+# I'm not sure about the legalities of including all of these palettes.
+# Can you even copyright palettes? Can you copyright the palette files?
 palettes/

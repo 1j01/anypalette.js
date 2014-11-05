@@ -1,5 +1,5 @@
 
-# Load a ColorSchemer palette
+# WPE (StarCraft padded raw palette)
 
 BinaryReader = require "../BinaryReader"
 
@@ -8,16 +8,12 @@ module.exports = ({data})->
 	palette = new Palette()
 	br = new BinaryReader(data)
 	
-	version = br.readUInt16() # or something
-	length = br.readUInt16()
-	i = 0
-	while i < length
-		br.seek(8 + i * 26)
+	for i in [0...255]
 		palette.add
 			r: br.readByte()
 			g: br.readByte()
 			b: br.readByte()
-		i += 1
-
+			_: br.readByte() # padding
+	
+	palette.n_columns = 16
 	palette
-

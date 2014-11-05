@@ -1,32 +1,43 @@
+
 gulp = require 'gulp'
 
-coffee = require 'gulp-coffee'
-concat = require 'gulp-concat'
-uglify = require 'gulp-uglify'
-
-scripts = ['src/**/*.coffee']
+browserify = require 'browserify'
+source = require 'vinyl-source-stream'
 
 gulp.task 'build', ->
-	gulp.src(scripts)
-		.pipe(concat('palette.coffee'))
-		.pipe(gulp.dest('build'))
-		.pipe(coffee())
-		.pipe(concat('palette.js'))
-		.pipe(gulp.dest('build'))
-		.pipe(uglify())
-		.pipe(concat('palette.min.js'))
-		.pipe(gulp.dest('build'))
+	# Make a browerify bundler
+	browserify
+		# Define the module entry point
+		entries: ['./src/load_palette']
+		# Allow .coffee files
+		extensions: ['.coffee']
+		# Enable source maps
+		debug: yes
+		# Export with UMD
+		standalone: 'Palette'
+	# Allow acess to Node's fs module in the bundle (doesn't work yet)
+	.external('fs')
+	# Compile the .coffee files
+	.transform('coffeeify')
+	
+	# From Browserify
+	.bundle()
+	# To Gulp
+	.pipe(source('palette.js'))
+	
+	# Output the file
+	.pipe(gulp.dest('./build'))
 
+# Rebuild when source files change
+gulp.task 'watch', ->
+	gulp.watch './src/**/*', ['build']
 
-gulp.task 'bundle', ->
-	gulp.src(scripts)
-		.pipe(concat('palette.coffee'))
-		.pipe(coffee())
-		.pipe(gulp.dest('build'))
+# Build once, and then rebuild when source files change
+gulp.task 'default', ['watch', 'build']
 
-
-gulp.task 'watch-bundle', ->
-	gulp.watch scripts, ['bundle']
-
-
-gulp.task 'default', ['watch-bundle']
+# Testing, testing, 123
+gulp.task 'test', ->
+	Palette = require './build/palette.js'
+	Palette.load './palettes/drf.color.styl.txt', (err, palette)->
+		if err then return console.error err
+		console.log palette

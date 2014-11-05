@@ -14,7 +14,7 @@
 		<p>ONE LIBRARY SHALL RULE THEM ALL</p>
 		<p>Okay let's <a href="test">load some palettes.</a></p>
 		<script>
-			if(location.origin !== "file://"){
+			if(location.origin === "file://"){
 				document.getElementsByTagName("a")[0].href += ".html";
 			}
 		</script>

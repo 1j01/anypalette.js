@@ -1,5 +1,7 @@
 
-load_gimp_palette = ({data})->
+# Load a GIMP palette
+
+module.exports = ({data})->
 	lines = data.split(/[\n\r]+/m)
 	if lines[0] isnt "GIMP Palette"
 		throw new Error "Not a GIMP Palette"

@@ -3,29 +3,32 @@
 	"version": "0.0.1",
 	"author": "Isaiah Odhner",
 	"description": "Load palette files of all sorts",
-	"scripts": {
-		"start": "index.html",
-		"build": "gulp build",
-		"bundle": "gulp bundle",
-		"watch": "gulp watch-bundle",
-		"watch-bundle": "gulp watch-bundle"
-	},
-	"main": "index.html",
+	"keywords": [
+		"palette",
+		"colors",
+		"color",
+		"PAL",
+		"loader",
+        "load"
+	],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/1j01/palette.git"
 	},
-	"keywords": [
-		"palette",
-		"colors",
-		"PAL",
-		"loader"
-	],
+	"main": "build/palette.js",
+	"scripts": {
+		"start": "index.html",
+		"test": "test.html",
+		"tests": "gulp --require coffee-script/register test",
+		"build": "gulp --require coffee-script/register build",
+		"watch": "gulp --require coffee-script/register"
+	},
 	"dependencies": {},
 	"devDependencies": {
-		"gulp": "~3.6.0",
-		"gulp-coffee": "~1.4.1",
-		"gulp-uglify": "~0.2.1",
-		"gulp-concat": "~2.2.0"
+		"gulp": "^3.8.10",
+		"browserify": "^6.2.0",
+		"coffeeify": "^0.7.0",
+		"coffee-script": "^1.8.0",
+		"vinyl-source-stream": "^1.0.0"
 	}
 }

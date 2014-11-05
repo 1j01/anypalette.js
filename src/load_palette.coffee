@@ -1,4 +1,6 @@
 
+Palette = require './colors'
+
 class RandomPalette extends Palette
 	constructor: ->
 		super()
@@ -18,46 +20,106 @@ class LoadingErrors extends Error
 load_palette = (o, callback)->
 	
 	palette_loaders = [
-		[load_jasc_pal, exts:["pal", "psppalette"], name:"Paint Shop Pro palette"]
-		[load_riff_pal, exts:["pal"], name:"RIFF PAL"]
-		#[load_corel_pal, exts:["pal", "cpl"], name:"CorelDRAW palette"] (same as above, right?)
-		[load_color_scheme, exts:["cs"], name:"ColorSchemer palette"]
-		[load_pdn_palette, exts:["txt", "pdn"], name:"Paint.NET palette"]
-		[load_gimp_palette, exts:["gpl", "gimp", "colors"], name:"GIMP palette"]
+		{
+			name: "Paint Shop Pro palette"
+			exts: ["pal", "psppalette"]
+			load: require "./loaders/PaintShopPro"
+		}
+		{
+			name: "RIFF PAL"
+			exts: ["pal"]
+			load: require "./loaders/RIFF"
+		}
+		{
+			name: "ColorSchemer palette"
+			exts: ["cs"]
+			load: require "./loaders/ColorSchemer"
+		}
+		{
+			name: "Paint.NET palette"
+			exts: ["txt", "pdn"]
+			load: require "./loaders/Paint.NET"
+		}
+		{
+			name: "GIMP palette"
+			exts: ["gpl", "gimp", "colors"]
+			load: require "./loaders/GIMP"
+		}
+		{
+			name: "hey look some colors"
+			exts: ["txt", "html", "css", "xml", "svg", "etc"]
+			# @TODO: rename this to "CSS" (it's not very "generic")
+			load: require "./loaders/Generic"
+		}
+		# {
+		# 	name: "Adobe Color Swatch"
+		# 	exts: ["aco"]
+		# 	load: require "./loaders/AdobeColorSwatch"
+		# }
+		# {
+		# 	name: "Adobe Color Table"
+		# 	exts: ["act"]
+		# 	load: require "./loaders/AdobeColorTable"
+		# }
+		# {
+		# 	name: "Adobe Swatch Exchange"
+		# 	exts: ["ase"]
+		# 	load: require "./loaders/AdobeSwatchExchange"
+		# }
+		# {
+		# 	name: "Adobe Color Book"
+		# 	exts: ["acb"]
+		# 	load: require "./loaders/AdobeColorBook"
+		# }
+		{
+			name: "Houndstooth Palette Locellate"
+			exts: ["hpl"]
+			load: require "./loaders/HPL"
+		}
+		{
+			name: "StarCraft palette"
+			exts: ["pal"]
+			load: require "./loaders/StarCraft"
+		}
+		{
+			name: "StarCraft terrain palette"
+			exts: ["wpe"]
+			load: require "./loaders/StarCraftPadded"
+		}
 		
-		[load_colors_generically, exts:["txt", "html", "css", "xml", "svg", "etc"], name:"hey look some colors"]
+		# {
+		# 	name: "AutoCAD Color Book"
+		# 	exts: ["acb"]
+		# 	load: require "./loaders/AutoCADColorBook"
+		# }
 		
-		[load_adobe_color_swatch, exts:["aco"], name:"Adobe Color Swatch"]
-		[load_adobe_color_table, exts:["act"], name:"Adobe Color Table"]
-		[load_adobe_swatch_exchange, exts:["ase"], name:"Adobe Swatch Exchange"]
-		[load_adobe_color_book, exts:["acb"], name:"Adobe Color Book"]
-		#[load_autocad_color_book, exts:["acb"], name:"AutoCAD Color Book"]
-		[load_hpl, exts:["hpl"], name:"Houndstooth Palette Locellate"]
-		[load_starcraft_pal, exts:["pal"], name:"StarCraft palette"] # Perpetual Allocation Location
-		[load_starcraft_wpe, exts:["wpe"], name:"StarCraft terrain palette"] # Weirdly Padded Endianness
+		# {
+		# 	# (same as Paint Shop Pro palette?)
+		# 	name: "CorelDRAW palette"
+		# 	exts: ["pal", "cpl"]
+		# 	load: require "./loaders/CorelDRAW"
+		# }
 	]
 	
+	# find palette loaders that use this file extension
 	for pl in palette_loaders
-		pl.matches_ext = pl[1].exts.indexOf(o.file_ext) isnt -1
+		pl.matches_ext = pl.exts.indexOf(o.file_ext) isnt -1
 	
 	# move palette loaders to the beginning that use this file extension
 	palette_loaders.sort (pl1, pl2)->
 		pl2.matches_ext - pl1.matches_ext
-	
-	#if o.file_ext is "colors"
-	#	console?.debug? palette_loaders
 	
 	# try loading stuff
 	errors = []
 	for pl in palette_loaders
 		
 		try
-			palette = pl[0](o)
+			palette = pl.load(o)
 			if palette.length is 0
 				palette = null
 				throw new Error "no colors returned"
 		catch e
-			msg = "failed to load #{o.file_name} as #{pl[1].name}: #{e.message}"
+			msg = "failed to load #{o.file_name} as #{pl.name}: #{e.message}"
 			if pl.matches_ext and not e.message.match(/not a/i)
 				console?.error? msg
 			else
@@ -68,10 +130,10 @@ load_palette = (o, callback)->
 			errors.push err
 		
 		if palette
-			console?.info? "loaded #{o.file_name} as #{pl[1].name}"
+			console?.info? "loaded #{o.file_name} as #{pl.name}"
 			palette.confidence = if pl.matches_ext then 0.9 else 0.01
-			palette.loaded_as = pl[1].name
-			exts_pretty = "(." + pl[1].exts.join(", .") + ")"
+			palette.loaded_as = pl.name
+			exts_pretty = "(." + pl.exts.join(", .") + ")"
 			
 			if pl.matches_ext
 				palette.loaded_as_clause = exts_pretty
@@ -84,20 +146,26 @@ load_palette = (o, callback)->
 	return callback(new LoadingErrors(errors))
 
 options = (o = {})->
+	if typeof o is "string" or o instanceof String
+		o = file_name: o
 	if File? and o instanceof File
-		console.log file: o
 		o = file: o
 	
 	o.min_colors ?= o.minColors ? 2
 	o.max_colors ?= o.maxColors ? 256
-	o.file_name ?= o.fileName ? o.fname ? o.file?.name ? "an.unknown file"
-	o.file_ext ?= o.file_name.split(".").pop()
-	o.file_ext = (o.file_ext+"").toLowerCase()
+	o.file_name ?= o.fileName ? o.fname ? o.file?.name
+	o.file_ext ?= o.fileExt ? "#{o.file_name}".split(".").pop()
+	o.file_ext = ("#{o.file_ext}").toLowerCase()
 	o
 	
 
 # Get palette from a file
 Palette.load = (o, callback)->
+	if not o
+		throw new Error "Parameters required: Palette.load(options, function callback(err, palette){})"
+	if not callback
+		throw new Error "Callback required: Palette.load(options, function callback(err, palette){})"
+	
 	o = options o
 	
 	if o.data
@@ -108,23 +176,24 @@ Palette.load = (o, callback)->
 			o.data = fr.result
 			load_palette(o, callback)
 		fr.readAsBinaryString o.file
-	else if require? and o.file_name and o.file_name isnt "an.unknown file"
+	else if global? and o.file_name
 		fs = require "fs"
 		fs.readFile o.file_name, (err, data)->
-			o.data = data
+			o.data = data.toString()
 			load_palette(o, callback)
 	else
 		callback(new Error("Could not load. The File API may not be supported."))
 
 
-# Get palette from a file any means nessesary (as in from completely random data)
+# Get a palette from a file or by any means nessesary
+# (as in fall back to completely random data)
 Palette.gimme = (o, callback)->
 	o = options o
 	
 	Palette.load o, (err, palette)->
 		callback(null, palette ? new RandomPalette)
 
-if module?
-	module.exports = Palette
-else
-	window.Palette = Palette
+
+module.exports = Palette
+#window?.Palette = Palette
+

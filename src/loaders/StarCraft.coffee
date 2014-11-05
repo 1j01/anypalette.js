@@ -1,35 +1,19 @@
 
-load_starcraft_pal = ({data})->
-	# PAL (StarCraft raw palette)
-	
-	palette = new Palette()
-	br = new BinaryReader(data)
-	
-	i = 0
-	while i < 255
-		palette.add
-			r: br.readByte()
-			g: br.readByte()
-			b: br.readByte()
-		i += 1
-	
-	palette
+# PAL (StarCraft raw palette)
 
-load_starcraft_wpe = ({data})->
-	# WPE (StarCraft padded raw palette)
+BinaryReader = require "../BinaryReader"
+
+module.exports = ({data})->
 	
 	palette = new Palette()
 	br = new BinaryReader(data)
 	
-	i = 0
-	while i < 255
+	for i in [0...255]
 		palette.add
 			r: br.readByte()
 			g: br.readByte()
 			b: br.readByte()
-			_: br.readByte()
-		i += 1
+			#: no padding
 	
-	palette.n_columns = 16
-	
+	#? palette.n_columns = 16
 	palette

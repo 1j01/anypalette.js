@@ -1,9 +1,9 @@
 
 ###
 BinaryReader
-Todo: use jDataView + jBinary instead
 
 Modified by Isaiah Odhner
+@TODO: use jDataView + jBinary instead
 
 Refactored by Vjeux <vjeuxx@gmail.com>
 http://blog.vjeux.com/2010/javascript/javascript-binary-reader.html
@@ -13,6 +13,7 @@ Original
 @ http://jsfromhell.com/classes/binary-parser [rev. #1]
 ###
 
+module.exports =
 class BinaryReader
 	constructor: (data)->
 		@_buffer = data

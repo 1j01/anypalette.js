@@ -1,7 +1,11 @@
 
+# Load a Resource Interchange File Format PAL file
+
 # ported from C# code at http://worms2d.info/Palette_file
 
-load_riff_pal = ({data})->
+BinaryReader = require "../BinaryReader"
+
+module.exports = ({data})->
 	br = new BinaryReader(data)
 	
 	# RIFF header

@@ -1,4 +1,6 @@
 
+BinaryReader = require "../BinaryReader"
+
 load_adobe_color_table = ({data, file_ext})->
 	# ACT (Adobe Color Table)
 	

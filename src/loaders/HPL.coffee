@@ -1,5 +1,8 @@
 
-load_hpl = ({data})->
+# What does HPL stand for?
+# Howdy, Palette Lovers!
+
+module.exports = ({data})->
 	lines = data.split(/[\n\r]+/m)
 	if lines[0] isnt "Palette"
 		throw new Error "Not an HPL palette"

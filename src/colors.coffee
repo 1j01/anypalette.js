@@ -1,6 +1,7 @@
 
 class Color
-	
+	# @TODO: don't assign {@r, @g, @b, @h, @s, @v, @l} right away
+	# (more of a to-don't, really)
 	constructor: ({
 		@r, @g, @b,
 		@h, @s, @v, @l,
@@ -99,15 +100,7 @@ class Color
 				"hsl(#{@h}, #{@s}%, #{@l}%)"
 	
 	is: (color)->
-		###
-		@r is color.r and
-		@g is color.g and
-		@b is color.b and
-		@h is color.h and
-		@s is color.s and
-		@l is color.l
-		###
-		@toString() is color.toString()
+		"#{@}" is "#{color}"
 
 
 class RandomColor
@@ -166,3 +159,9 @@ class Palette extends Array
 				squarest = cd
 		
 		#@n_columns = squarest[1]
+
+
+# @TODO: reorganize (move this into main; seperate classes into files)
+module.exports = Palette
+module.exports.Palette = Palette
+module.exports.Color = Color

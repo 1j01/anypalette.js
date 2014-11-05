@@ -1,7 +1,7 @@
 
-# TODO: detect all css colors (except named colors)
+# Detect CSS colors (except named colors)
 
-load_colors_generically = ({data})->
+module.exports = ({data})->
 	
 	palettes = [
 		palette_xRRGGBB = new Palette()

@@ -1,10 +1,13 @@
 
-load_pdn_palette = ({data})->
+# Load a Paint.NET palette file
+
+BinaryReader = require "../BinaryReader"
+
+module.exports = ({data})->
 	
 	palette = new Palette()
 	
-	hex = (two_hex_digits)->
-		parseInt(two_hex_digits, 16)
+	hex = (x)-> parseInt(x, 16)
 	
 	for line in data.split(/[\n\r]+/m)
 		m = line.match(/^([0-9A-F]{2})([0-9A-F]{2})([0-9A-F]{2})([0-9A-F]{2})$/i)

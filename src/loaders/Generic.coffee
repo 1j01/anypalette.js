@@ -1,6 +1,8 @@
 
 # Detect CSS colors (except named colors)
 
+Palette = require "../Palette"
+
 module.exports = ({data})->
 	
 	palettes = [

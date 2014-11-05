@@ -2,6 +2,7 @@
 # Load a JASC PAL file (Paint Shop Pro palette file)
 
 BinaryReader = require "../BinaryReader"
+Palette = require "../Palette"
 
 module.exports = ({data})->
 	lines = data.split(/[\n\r]+/m)

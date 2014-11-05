@@ -2,6 +2,7 @@
 # WPE (StarCraft padded raw palette)
 
 BinaryReader = require "../BinaryReader"
+Palette = require "../Palette"
 
 module.exports = ({data})->
 	

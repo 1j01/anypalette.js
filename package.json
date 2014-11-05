@@ -7,9 +7,9 @@
 		"palette",
 		"colors",
 		"color",
-		"PAL",
+		"pal",
 		"loader",
-        "load"
+		"load"
 	],
 	"repository": {
 		"type": "git",

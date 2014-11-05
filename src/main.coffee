@@ -1,5 +1,21 @@
 
-Palette = require './colors'
+Palette = require "./Palette"
+Color = require "./Color"
+
+class RandomColor extends Color
+	constructor: ->
+		@randomize()
+	
+	randomize: ->
+		@h = Math.random() * 360
+		@s = Math.random() * 100
+		@l = Math.random() * 100
+	
+	toString: ->
+		@randomize()
+		"hsl(#{@h}, #{@s}%, #{@l}%)"
+	
+	is: -> no
 
 class RandomPalette extends Palette
 	constructor: ->
@@ -179,7 +195,7 @@ Palette.load = (o, callback)->
 	else if global? and o.file_name
 		fs = require "fs"
 		fs.readFile o.file_name, (err, data)->
-			o.data = data.toString()
+			o.data = data.toString("binary")
 			load_palette(o, callback)
 	else
 		callback(new Error("Could not load. The File API may not be supported."))
@@ -193,7 +209,10 @@ Palette.gimme = (o, callback)->
 	Palette.load o, (err, palette)->
 		callback(null, palette ? new RandomPalette)
 
-
-module.exports = Palette
-#window?.Palette = Palette
-
+# Exports
+P = module.exports = Palette
+P.Color = Color
+P.Palette = Palette
+P.RandomColor = RandomColor
+P.RandomPalette = RandomPalette
+# P.LoadingErrors = LoadingErrors

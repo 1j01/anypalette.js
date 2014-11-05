@@ -1,6 +1,8 @@
 
 # Load a GIMP palette
 
+Palette = require "../Palette"
+
 module.exports = ({data})->
 	lines = data.split(/[\n\r]+/m)
 	if lines[0] isnt "GIMP Palette"

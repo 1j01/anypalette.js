@@ -4,6 +4,7 @@
 # ported from C# code at http://worms2d.info/Palette_file
 
 BinaryReader = require "../BinaryReader"
+Palette = require "../Palette"
 
 module.exports = ({data})->
 	br = new BinaryReader(data)

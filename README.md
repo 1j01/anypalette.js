@@ -51,7 +51,7 @@ div.style.background = color;
 # Todo
 
 
-* Test palette loading against previous data. That way I can change the "backend" without worrying too much.
+* Test palette loading for regression
 
 * use [jDataView](https://github.com/jDataView/jDataView)
 	
@@ -64,8 +64,9 @@ div.style.background = color;
 				* heheh
 
 
-* Load all the palettes!
+* Load *all the palettes!*
 	* ...
+
 
 * Less false positives (pretty much anything can be loaded as raw color data)
 

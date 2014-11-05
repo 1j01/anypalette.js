@@ -2,6 +2,8 @@
 # What does HPL stand for?
 # Howdy, Palette Lovers!
 
+Palette = require "../Palette"
+
 module.exports = ({data})->
 	lines = data.split(/[\n\r]+/m)
 	if lines[0] isnt "Palette"

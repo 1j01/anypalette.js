@@ -149,7 +149,7 @@ load_palette = (o, callback)->
 			console?.info? "loaded #{o.file_name} as #{pl.name}"
 			palette.confidence = if pl.matches_ext then 0.9 else 0.01
 			palette.loaded_as = pl.name
-			exts_pretty = "(." + pl.exts.join(", .") + ")"
+			exts_pretty = "(.#{pl.exts.join(", .")})"
 			
 			if pl.matches_ext
 				palette.loaded_as_clause = exts_pretty
@@ -157,9 +157,11 @@ load_palette = (o, callback)->
 				palette.loaded_as_clause = " for some reason"
 			
 			palette.finalize()
-			return callback(null, palette)
+			callback(null, palette)
+			return
 	
-	return callback(new LoadingErrors(errors))
+	callback(new LoadingErrors(errors))
+	return
 
 options = (o = {})->
 	if typeof o is "string" or o instanceof String
@@ -192,11 +194,15 @@ Palette.load = (o, callback)->
 			o.data = fr.result
 			load_palette(o, callback)
 		fr.readAsBinaryString o.file
-	else if global? and o.file_name
+	else if global?
+		
 		fs = require "fs"
 		fs.readFile o.file_name, (err, data)->
-			o.data = data.toString("binary")
-			load_palette(o, callback)
+			if err
+				callback(err)
+			else
+				o.data = data.toString("binary")
+				load_palette(o, callback)
 	else
 		callback(new Error("Could not load. The File API may not be supported."))
 

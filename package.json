@@ -1,25 +1,31 @@
 {
-	"name": "palette",
+	"name": "palette.js",
 	"version": "0.0.1",
 	"author": "Isaiah Odhner",
-	"description": "Load palette files of all sorts",
+	"description": "Load all the palettes!",
 	"keywords": [
 		"palette",
 		"colors",
 		"color",
 		"pal",
+		"psppalette",
+		"gpl",
+		"reader",
 		"loader",
 		"load"
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/1j01/palette.git"
+		"url": "https://github.com/1j01/palette.js.git"
+	},
+	"bugs": {
+		"url": "https://github.com/1j01/palette.js/issues"
 	},
 	"main": "build/palette.js",
 	"scripts": {
 		"start": "index.html",
 		"test": "test.html",
-		"tests": "gulp --require coffee-script/register test",
+		"test-node": "gulp --require coffee-script/register test",
 		"build": "gulp --require coffee-script/register build",
 		"watch": "gulp --require coffee-script/register"
 	},

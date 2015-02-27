@@ -48,6 +48,9 @@
 			.errors {
 				padding-bottom: 25px;
 			}
+			.status-error {
+				color: red;
+			}
 			* {
 				transition: all 1s ease-in-out;
 			}
@@ -112,6 +115,10 @@
 				
 				this.status = function(text){
 					$output.text(text);
+				};
+				
+				this.error = function(text){
+					$output.text(text).addClass("status-error");
 				};
 				
 				this.update = function(err, palette){
@@ -255,15 +262,19 @@
 					palette_view.status("Waiting...");
 					setTimeout(function(){
 						palette_view.status("Loading file...");
-						$.get(url, function(data){
-							palette_view.status("Loading palette from file...");
-							Palette.load({
-								data: data,
-								file_name: fname
-							}, function(err, palette){
-								palette_view.update(err, palette);
+						$.get(url)
+							.done(function(data){
+								palette_view.status("Loading palette from file...");
+								Palette.load({
+									data: data,
+									file_name: fname
+								}, function(err, palette){
+									palette_view.update(err, palette);
+								});
+							})
+							.fail(function(){
+								palette_view.error("Failed to load file!");
 							});
-						});
 					}, i * 100); //stagger loading
 				});
 			});

@@ -255,7 +255,7 @@
 				
 				$.each(group.fnames, function(i, fname){
 					
-					var url = "/palettes/" + group.dir + fname;
+					var url = "palettes/" + group.dir + fname;
 					var palette_view = new PaletteView(fname, url);
 					palette_view.appendTo("body");
 					

@@ -1,12 +1,4 @@
 
-# Installed with npm, not included
+# npm
 node_modules/
-
-npm-debug.log
-
-# The compiled, bundled code
-build/
-
-# I'm not sure about the legalities of including all of these palettes.
-# Can you even copyright palettes? Can you copyright the palette files?
-palettes/
+*.log

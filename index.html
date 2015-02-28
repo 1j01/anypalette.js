@@ -12,10 +12,13 @@
 		<h1>Palette.js</h1>
 		<p>There are many, <em>many</em> different types of palette files...</p>
 		<p>ONE LIBRARY SHALL RULE THEM ALL</p>
-		<p>Okay let's <a href="test">load some palettes.</a></p>
+		<p>Okay let's <a href="test.html">load some palettes.</a></p>
 		<script>
-			if(location.origin === "file://"){
-				document.getElementsByTagName("a")[0].href += ".html";
+			//if(location.protocol.match(/http/)){
+			if(location.protocol.match(/\.(ml|io)/)){
+				for(var as=document.getElementsByTagName("a"), i=0; i<as.length; i++){
+					as[i].href = as[i].href.replace(".html", "");
+				}
 			}
 		</script>
 	</body>

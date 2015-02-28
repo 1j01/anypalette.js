@@ -5,50 +5,71 @@ There are many, *many* different types of palette files.
 
 ONE LIBRARY SHALL RULE THEM ALL
 
-# Use cases
+## Use cases
 
-* Image editor ([example]())
+* Image editor ([example (TODO)](#todo))
 	* On file drop or file selection...
 		* Load palette if it's a palette file
 		* Load image into editor (don't generate palette from image (unless you're specifically loading a palette))
 	* Display any error messages
-* Palette Editor ([example]())
+* Palette Editor ([example (TODO)](#todo))
 	* Load palette from palette file
 	* Pick colors from image file
 	* Display any error messages
 	* Save palettes (**not implemented**; to do this, the whole project should probably use [jBinary](https://github.com/jDataView/jBinary))
-* From Node.js ([example]())
+* From Node.js ([example (TODO)](#todo))
 	* Load palette from Buffer or file_name
 	* OPTIONALLY Pick colors from image file
 	* **OPTIONALLY** fall back to generating Completely Random Colors™ (which you *probably don't want*)
 	* Use Node style callbacks `(err, result)->`
-* [Demo](1j01.github.io/palette.js/) (Not a "real" use case, but the only thing in use right now)
+* [Demo](1j01.github.io/palette.js/test)
+  (Not really a "use case", but the only thing using palette.js right now)
 	* Load palette from palette file or pick colors from image
 	* Fall back to generating Completely Random Colors™
 	* Display extra information (see demo source)
 
-# Documentation
 
-The Color class is accessible as `Palette.Color`
 
-The Palette class is accessible as `require("palette")` in node, or `Palette` in browser, or `Palette.Palette` for consistency, or `Palette.Palette.Palette` for redundancy.
+## Documentation
 
-### class `Palette`
+
+### class `Palette` extends `Array`
+
+Accessible as
+`require("palette.js")` in node,
+or `Palette` in browser,
+or `Palette.Palette` for consistency,
+or `Palette.Palette.Palette` for redundancy.
+
+
 Stores a list of Colors and additional data
 
-Also used as the namespace
+Some palette formats do not support or are not commonly made variable size.
+By default, duplicates are removed.
+You can get all duplucates with `palette.with_duplicates`
 
-`Palette`
+The `Palette` class used as the namespace object.
+
+
 
 ### class `Color`
-The Color class is meant to be stringified. It should be able to be passed directly to an element's style or a canvas's context.
+
+Accessible as `Palette.Color`
+
+
+The Color class, when stringified, gives a CSS color.
+You can pass a Color object directly to an element's style or a canvas's context.
+
 ```javascript
-var color = palette[0] || new Color({r: 255, g: 0, b: 255});
+var color = palette[0];
 ctx.fillStyle = color;
 div.style.background = color;
 ```
 
-# Todo
+
+
+
+## Todo
 
 
 * Test palette loading for regression
@@ -84,4 +105,18 @@ div.style.background = color;
 
 
 * Maybe make a bower package even though I don't use bower
+
+
+## Development
+
+For the demo ([test.html](test.html)) to work,
+the separate [Palettes](https://github.com/1j01/palettes) repository
+must be available at `/palettes/`
+on the server
+
+`npm install`
+
+`npm run watch`
+
+
 

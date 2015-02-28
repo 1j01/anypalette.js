@@ -186,7 +186,7 @@
 			$.each([{
 				name: "",
 				description: "",
-				dir: "",
+				dir: "Other/",
 				fnames: [
 					"CortexCommand.pal",
 					"test.act",
@@ -200,7 +200,7 @@
 			},{
 				name: "DawnBringer's palettes",
 				description: "<a href='http://www.pixeljoint.com/p/23821.htm'>DawnBringer</a>'s 16 and 32 color palettes in various formats. <a href='http://www.pixeljoint.com/forum/forum_posts.asp?TID=12795'>DB16</a> and <a href='http://www.pixeljoint.com/forum/forum_posts.asp?TID=16247'>DB32</a>",
-				dir: "",
+				dir: "DawnBringer/",
 				fnames: [
 					"DawnBringers-32-color-palette-pdn.txt",
 					"db32.pal",
@@ -212,7 +212,7 @@
 			},{
 				name: "Visibone",
 				description: "<a href='http://www.visibone.com/swatches/'>Visibone</a> color swatches in various formats",
-				dir: "",
+				dir: "Other/",
 				fnames: [
 					"VisiBone2.aco",
 					"VisiBone2.gimp",
@@ -255,7 +255,7 @@
 				
 				$.each(group.fnames, function(i, fname){
 					
-					var url = "palettes/" + group.dir + fname;
+					var url = "/palettes/" + group.dir + fname;
 					var palette_view = new PaletteView(fname, url);
 					palette_view.appendTo("body");
 					

@@ -1,0 +1,3 @@
+[submodule "palettes"]
+	path = palettes
+	url = https://github.com/1j01/palettes.git

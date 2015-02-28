@@ -31,20 +31,8 @@ gulp.task 'build', ->
 	.pipe(gulp.dest('./build'))
 
 # Rebuild when source files change
-gulp.task 'watch', ['serve'], ->
+gulp.task 'watch', ->
 	gulp.watch './src/**/*', ['build']
-
-# Serve the static files
-gulp.task 'serve', ->
-	host = "localhost"
-	port = process.env.PORT ? 3000
-	express = require 'express'
-	app = express()
-	app.use express.static "#{__dirname}"
-	app.listen port
-	console.log "[|| || ||] Listening on http://#{host}:#{port}"
-
-
 
 # Build once, and then rebuild when source files change
 gulp.task 'default', ['watch', 'build']

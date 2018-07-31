@@ -5,7 +5,7 @@ There are many, *many* different types of palette files.
 
 ONE LIBRARY SHALL RULE THEM ALL
 
-[Let's load some palettes](http://1j01.github.io/palette.js/test)
+[Let's load some palettes](https://1j01.github.io/palette.js/test)
 
 
 
@@ -29,7 +29,7 @@ ONE LIBRARY SHALL RULE THEM ALL
 	* OPTIONALLY Pick colors from image file
 	* **OPTIONALLY** fall back to generating Completely Random Colors™ (which you *probably don't want*)
 	* Use Node style callbacks `(err, result)->`
-* [Demo](http://1j01.github.io/palette.js/test)
+* [Demo](https://1j01.github.io/palette.js/test)
   (Not really a "use case", but the only thing using palette.js right now)
 	* Load palette from palette file or pick colors from image
 	* Fall back to generating Completely Random Colors™

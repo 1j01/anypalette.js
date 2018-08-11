@@ -1,7 +1,7 @@
 
 # Palette.js
 
-There are many, *many* different types of palette files.
+There are a LOT of different types of palette files.
 
 ONE LIBRARY SHALL RULE THEM ALL
 
@@ -30,7 +30,7 @@ ONE LIBRARY SHALL RULE THEM ALL
 	* **OPTIONALLY** fall back to generating Completely Random Colors™ (which you *probably don't want*)
 	* Use Node style callbacks `(err, result)->`
 * [Demo](https://1j01.github.io/palette.js/test)
-  (Not really a "use case", but the only thing using palette.js right now)
+  (a niche "use case")
 	* Load palette from palette file or pick colors from image
 	* Fall back to generating Completely Random Colors™
 	* Display extra information (see demo source)
@@ -105,6 +105,8 @@ div.style.background = color;
 
 * Load *all the palettes!*
 	* ...
+	* `.sketchpalette` - see [sketch-palettes](https://github.com/andrewfiorillo/sketch-palettes)
+	* `.ase` - see [ase-to-sketchpalette](https://github.com/andrewfiorillo/ase-to-sketchpalette/), [adobe-swatch-exchange](https://github.com/hughsk/adobe-swatch-exchange)
 
 
 * Less false positives
@@ -121,9 +123,6 @@ div.style.background = color;
 
 
 * Node module
-
-
-* Maybe make a bower package even though I don't use bower
 
 
 ## Development

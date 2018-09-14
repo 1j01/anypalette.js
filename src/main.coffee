@@ -4,6 +4,7 @@ Color = require "./Color"
 
 class RandomColor extends Color
 	constructor: ->
+		super()
 		@randomize()
 	
 	randomize: ->
@@ -29,6 +30,7 @@ class RandomPalette extends Palette
 
 class LoadingErrors extends Error
 	constructor: (@errors)->
+		super()
 		@message = "Some errors were encountered when loading:" +
 			for error in @errors
 				"\n\t" + error.message

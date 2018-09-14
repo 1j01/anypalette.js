@@ -29,16 +29,16 @@
 	"scripts": {
 		"start": "index.html",
 		"test": "test.html",
-		"test-node": "gulp --require coffee-script/register test",
-		"build": "gulp --require coffee-script/register build",
-		"watch": "gulp --require coffee-script/register"
+		"test-node": "gulp --require coffeescript/register test",
+		"build": "gulp --require coffeescript/register build",
+		"watch": "gulp --require coffeescript/register"
 	},
 	"devDependencies": {
-		"gulp": "^3.8.10",
-		"browserify": "^6.2.0",
-		"coffeeify": "^0.7.0",
-		"coffee-script": "^1.8.0",
+		"browserify": "^16.2.2",
+		"coffeeify": "^3.0.1",
+		"coffeescript": "^2.3.1",
 		"express": "^4.12.0",
+		"gulp": "^3.9.1",
 		"vinyl-source-stream": "^1.0.0"
 	}
 }

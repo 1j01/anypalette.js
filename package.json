@@ -26,6 +26,9 @@
 		"url": "https://github.com/1j01/palette.js/issues"
 	},
 	"main": "build/palette.js",
+	"files": [
+		"build/palette.js"
+	],
 	"scripts": {
 		"start": "index.html",
 		"test": "test.html",

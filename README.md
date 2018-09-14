@@ -36,7 +36,9 @@ ONE LIBRARY SHALL RULE THEM ALL
 	* Display extra information (see demo source)
 
 
+## License
 
+MIT-licensed, see [LICENSE](LICENSE)
 
 
 ## Documentation

@@ -7,13 +7,17 @@
 		"palette",
 		"colors",
 		"color",
+		"swatch",
+		"swatches",
 		"pal",
 		"psppalette",
 		"gpl",
 		"reader",
 		"loader",
-		"load"
+		"load",
+		"parser"
 	],
+	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/1j01/palette.js.git"

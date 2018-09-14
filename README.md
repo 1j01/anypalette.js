@@ -51,7 +51,7 @@ MIT-licensed, see [LICENSE](LICENSE)
 ### class `Palette` extends `Array`
 
 Accessible as
-* `require("palette.js")` in node, or
+* ~~`require("palette.js")` in node, or~~ (COMING SOON maybe: an npm module, altho under a different name; I'm gonna rename the project to be a little less generic)
 * `Palette` in browser, or
 * `Palette.Palette` for consistency, or
 * `Palette.Palette.Palette` for redundancy.
@@ -134,13 +134,9 @@ div.style.background = color;
 	npm install
 	npm run watch
 
-And then either configure your browser so XHR works over the file: protocol, e.g.
-
-	chrome.exe --allow-file-access-from-files index.html
-
-or start up a webserver, e.g.
+And then start up a webserver, e.g.
 
 	python -m SimpleHTTPServer
 
-
+or better yet [Live Server](https://www.npmjs.com/package/live-server)
 

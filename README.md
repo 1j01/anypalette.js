@@ -8,32 +8,41 @@ ONE LIBRARY SHALL RULE THEM ALL
 [Let's load some palettes](https://1j01.github.io/palette.js/test)
 
 
+## Supported Palette Formats
+
+* [RIFF](https://en.wikipedia.org/wiki/Resource_Interchange_File_Format) PAL (.pal)
+* [Paint.NET](https://www.getpaint.net/) palette (.txt)
+* [GIMP](https://www.gimp.org/) palette (.gpl), also used in [Inkscape](https://inkscape.org/en/), [CinePaint](http://www.cinepaint.org/), and [Krita](https://krita.org/en/homepage/)
+* [Paint Shop Pro](https://www.paintshoppro.com/en/) palette (.pal, .psppalette) (JASC / Corel)
+* Whatever HPL stands for (.hpl) (H-something PaLette?)
+* [Starcraft](https://en.wikipedia.org/wiki/StarCraft) palette files, because why not? Well, maybe because it can give false positives and thereby return garbage data for a file instead of an error saying it couldn't be parsed
+* Loads from files that aren't intended specifically as palettes, but that have CSS-style color values in them (.css, .html, .svg, .js, etc.)
+
 
 ## Use cases
 
 * Image editor
 	* On file drop or file selection...
 		* Load palette if it's a palette file
-		* Load image into editor (don't generate palette from image (unless you're specifically loading a palette))
-	* Display any error messages
+		* Load image into editor (don't generate palette from image (unless you're specifically loading a palette, like by dropping a file onto a palette widget))
+	* Display any error messages (in a friendly way)
 * Palette Editor
 	* Load palette from palette file
-	* Pick colors from image file
-	* Display any error messages
+	* Pick colors from image file (there are modules for this)
+	* Display any error messages (perhaps more detailed? or, it could be the same and just have an expandable view for details, which might be more "friendly" when you need it!)
 	* Save palettes
 	  (**not implemented**;
 	  to do this, the whole project should probably move to
 	  [jBinary](https://github.com/jDataView/jBinary))
 * From Node.js
 	* Load palette from Buffer or file
-	* OPTIONALLY Pick colors from image file
-	* **OPTIONALLY** fall back to generating Completely Random Colors™ (which you *probably don't want*)
+	* OPTIONALLY pick colors from image file (there are modules for this)
 	* Use Node style callbacks `(err, result)->`
 * [Demo](https://1j01.github.io/palette.js/test)
   (a niche "use case")
-	* Load palette from palette file or pick colors from image
-	* Fall back to generating Completely Random Colors™
-	* Display extra information (see demo source)
+	* Load palettes from lots of palette files
+	* Maybe pick colors from an image (there are modules for this)
+	* Display extra information like what palette loader was used
 
 
 ## License
@@ -68,8 +77,9 @@ You can get all duplicates with `palette.with_duplicates`
 
 The `Palette` class is also used as the namespace object.
 
-### `Palette.load`
+### `Palette.load(options, callback)`
 
+TODO: documentation!
 
 
 ### class `Color`
@@ -106,9 +116,21 @@ div.style.background = color;
 
 
 * Load *all the palettes!*
-	* ...
-	* `.sketchpalette` - see [sketch-palettes](https://github.com/andrewfiorillo/sketch-palettes)
-	* `.ase` - see [ase-to-sketchpalette](https://github.com/andrewfiorillo/ase-to-sketchpalette/), [adobe-swatch-exchange](https://github.com/hughsk/adobe-swatch-exchange)
+	* Adobe Color files (`.aco`) used in Photoshop
+	* Adobe Swatch Exchange (`.ase`) (Illustrator and InDesign) - see [ase-to-sketchpalette](https://github.com/andrewfiorillo/ase-to-sketchpalette/), [adobe-swatch-exchange](https://github.com/hughsk/adobe-swatch-exchange)
+	* Sketch (`.sketchpalette`) - see [sketch-palettes](https://github.com/andrewfiorillo/sketch-palettes)
+	* Skencil (`.spl`) - examples: https://wald.intevation.org/scm/viewvc.php/skencil/trunk/Resources/Misc/?root=skencil
+	* Magica Voxel PNG (single pixel color strip)
+	* maayyybe
+		* KDE (`.colors`)
+		* ASCII Color Format (`.acf`)
+		* XML-based:
+			* Adobe Color Book Legacy (`.acbl`)
+			* AutoCAD Color Book (`.acb`)
+			* QuarkXPress Color Library (`.qcl`)
+			* Scribus (`.xml`)
+			* sK1 (`.skp`)
+			* StarOffice / OpenOffice.org / LibreOffice (`.soc`)
 
 
 * Less false positives

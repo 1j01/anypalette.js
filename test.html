@@ -81,13 +81,6 @@
 		<script>window.jQuery || document.write('<script src="lib/jquery-3.3.1.js">\x3C/script>')</script>
 		<script src="build/palette.js"></script>
 		<script>
-			jQuery.ajaxSetup({
-				beforeSend: function(xhr){
-					// make binary data work
-					xhr.overrideMimeType('text/plain; charset=x-user-defined');
-				}
-			});
-			
 			function PaletteView(palette_name, url){
 				
 				var $section = $("<div>");
@@ -263,7 +256,13 @@
 					palette_view.status("Waiting...");
 					setTimeout(function(){
 						palette_view.status("Loading file...");
-						$.get(url)
+						$.ajax({
+							url: url,
+							beforeSend: function(xhr){
+								// make binary data work (for binary string result)
+								xhr.overrideMimeType('text/plain; charset=x-user-defined');
+							}
+						})
 							.done(function(data){
 								palette_view.status("Loading palette from file...");
 								Palette.load({

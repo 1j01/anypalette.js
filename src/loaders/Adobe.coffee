@@ -165,7 +165,7 @@ load_adobe_swatch_exchange = ({data})->
 
 load_adobe_color_book = ({data})->
 	# ACB (Adobe Color Book)
-	# http://magnetiq.com/pages/acb-spec/
+	# https://magnetiq.ca/pages/acb-spec/
 	
 	palette = new Palette()
 	br = new BinaryReader(data)

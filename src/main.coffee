@@ -64,9 +64,8 @@ load_palette = (o, callback)->
 			load: require "./loaders/GIMP"
 		}
 		{
-			name: "hey look some colors"
-			exts: ["txt", "html", "css", "xml", "svg", "etc"]
-			# @TODO: rename this to "CSS" (it's not very "generic")
+			name: "CSS-style colors"
+			exts: ["txt", "html", "css", "xml", "svg", "js"]
 			load: require "./loaders/Generic"
 		}
 		# {
@@ -90,7 +89,7 @@ load_palette = (o, callback)->
 		# 	load: require "./loaders/AdobeColorBook"
 		# }
 		{
-			name: "Houndstooth Palette Locellate"
+			name: "HPL palette"
 			exts: ["hpl"]
 			load: require "./loaders/HPL"
 		}
@@ -209,7 +208,7 @@ Palette.load = (o, callback)->
 		callback(new Error("Could not load. The File API may not be supported."))
 
 
-# Get a palette from a file or by any means nessesary
+# Get a palette from a file or by any means necessary
 # (as in fall back to completely random data)
 Palette.gimme = (o, callback)->
 	o = options o

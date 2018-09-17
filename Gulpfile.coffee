@@ -36,11 +36,3 @@ gulp.task 'watch', ->
 
 # Build once, and then rebuild when source files change
 gulp.task 'default', ['watch', 'build']
-
-# Testing, testing, 123
-gulp.task 'test', ->
-	Palette = require './build/palette.js'
-	Palette.load './palettes/db32.act', (err, palette)->
-		if err then return console.error err
-		console.log palette.join('\n')
-		#console.log palette.toJSON()

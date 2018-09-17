@@ -34,7 +34,7 @@ module.exports = ({data})->
 		throw new Error "Data chunk not found (...'#{chunkType}'?)"
 	
 	if palVersion isnt 0x0300
-		throw new Error "Unsupported PAL file version: 0x#{palVersion.toString(16)}"
+		throw new Error "Unsupported PAL file format version: 0x#{palVersion.toString(16)}"
 	
 	# Colors
 	

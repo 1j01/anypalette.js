@@ -55,7 +55,7 @@ load_palette = (o, callback)->
 		}
 		{
 			name: "Paint.NET palette"
-			exts: ["txt", "pdn"]
+			exts: ["txt"]
 			load: require "./loaders/Paint.NET"
 		}
 		{
@@ -65,7 +65,7 @@ load_palette = (o, callback)->
 		}
 		{
 			name: "CSS-style colors"
-			exts: ["txt", "html", "css", "xml", "svg", "js"]
+			exts: ["css", "scss", "sass", "less", "html", "svg", "js", "ts", "xml", "txt"]
 			load: require "./loaders/Generic"
 		}
 		# {
@@ -142,6 +142,8 @@ load_palette = (o, callback)->
 			else
 				console?.warn? msg
 			
+			# TODO: maybe this shouldn't be an Error object, just a {message, error} object
+			# or {friendlyMessage, error}
 			err = new Error msg
 			err.error = e
 			errors.push err
@@ -164,19 +166,19 @@ load_palette = (o, callback)->
 	callback(new LoadingErrors(errors))
 	return
 
-options = (o = {})->
+normalize_options = (o = {})->
 	if typeof o is "string" or o instanceof String
-		o = file_name: o
+		o = file_path: o
 	if File? and o instanceof File
 		o = file: o
 	
 	o.min_colors ?= o.minColors ? 2
 	o.max_colors ?= o.maxColors ? 256
-	o.file_name ?= o.fileName ? o.fname ? o.file?.name
+	o.file_path ?= o.filePath
+	o.file_name ?= o.fileName ? o.fname ? o.file?.name ? (if o.file_path then require("path").basename(o.file_path))
 	o.file_ext ?= o.fileExt ? "#{o.file_name}".split(".").pop()
 	o.file_ext = ("#{o.file_ext}").toLowerCase()
 	o
-	
 
 # Get palette from a file
 Palette.load = (o, callback)->
@@ -185,7 +187,7 @@ Palette.load = (o, callback)->
 	if not callback
 		throw new Error "Callback required: Palette.load(options, function callback(err, palette){})"
 	
-	o = options o
+	o = normalize_options o
 	
 	if o.data
 		load_palette(o, callback)
@@ -195,23 +197,24 @@ Palette.load = (o, callback)->
 			o.data = fr.result
 			load_palette(o, callback)
 		fr.readAsBinaryString o.file
-	else if global?
-		
+	else if o.file_path?
 		fs = require "fs"
-		fs.readFile o.file_name, (err, data)->
+		fs.readFile o.file_path, (err, data)->
 			if err
 				callback(err)
 			else
 				o.data = data.toString("binary")
 				load_palette(o, callback)
 	else
-		callback(new Error("Could not load. The File API may not be supported."))
+		callback(new Error("Could not load. The File API may not be supported.")) # um...
+		# the File API would be supported if you've passed a File
+		# TODO: a better error message, about options (not) passed
 
 
 # Get a palette from a file or by any means necessary
 # (as in fall back to completely random data)
 Palette.gimme = (o, callback)->
-	o = options o
+	o = normalize_options o
 	
 	Palette.load o, (err, palette)->
 		callback(null, palette ? new RandomPalette)

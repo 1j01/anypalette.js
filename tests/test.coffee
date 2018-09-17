@@ -13,7 +13,7 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 		fs.unlinkSync(file_path)
 	console.log "Cleared regression-data folder of all .out.txt files"
 	# only match within at least one directory level deeper than palettes/
-	glob "#{__dirname.replace(/\\/g, "/")}/../palettes/*/**", ignore: "**/node_modules/**", nodir: true, (err, file_paths)->
+	glob "#{__dirname.replace(/\\/g, "/")}/../palettes/*/**/*", ignore: "**/node_modules/**", nodir: true, (err, file_paths)->
 		if err
 			throw err
 		for file_path in file_paths

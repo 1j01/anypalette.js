@@ -66,7 +66,7 @@ Knowing the file extension means Palette.js can often pick the correct palette l
 - `options.data` - the palette file data to load, as a binary string (**not** an ArrayBuffer/TypedArray/DataView)
 - `options.filePath` - a path to a palette file, for Node.js usage
 - `options.fileName` (optional) - the file name, if you have it, including the file extension - can be obtained from `options.file` or `options.filePath`
-- `options.fileExt` (optional) - the file extension, if you have it, including the dot, e.g. `.pal` - can be obtained from `options.fileName` or `options.file` or `options.filePath`
+- `options.fileExt` (optional) - the file extension, if you have it, *excluding* the dot, e.g. `"pal"` - can be obtained from `options.fileName` or `options.file` or `options.filePath`
 - `callback(error, palette)` (required) - called when palette loading is finished, either with an error (in the first argument) or a `Palette` (in the second argument)
 
 ### `Palette.load(file, callback)`

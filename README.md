@@ -52,15 +52,35 @@ MIT-licensed, see [LICENSE](LICENSE)
 
 ## Documentation
 
-`Palette` is the namespace: it holds methods for loading palettes.
+`Palette` is both a namespace containing functions for loading palettes and classes for reading the results, and the class that holds color swatches.
 
-`Palette` is also the class that holds colors.
+Accessible as
+* ~~`require("palette.js")` in node~~ (COMING (maybe) SOON: an npm module, altho under a different name; I'm planning on renaming the project to something a little less generic) or
+* `Palette` in browser
 
+### `Palette.load(options, callback)`
+
+Knowing the file extension means Palette.js can often pick the correct palette loader right away, which can give speed improvements, and also some loaders won't load except via their specific file extension because they can't determine if the file is actually in that format or not (for raw data formats without headers).
+
+- `options.file` - the palette file to load, as a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File)
+- `options.data` - the palette file data to load, as a binary string (**not** an ArrayBuffer/TypedArray/DataView)
+- `options.filePath` - a path to a palette file, for Node.js usage
+- `options.fileName` (optional) - the file name, if you have it, including the file extension - can be obtained from `options.file` or `options.filePath`
+- `options.fileExt` (optional) - the file extension, if you have it, including the dot, e.g. `.pal` - can be obtained from `options.fileName` or `options.file` or `options.filePath`
+- `callback(error, palette)` (required) - called when palette loading is finished, either with an error (in the first argument) or a `Palette` (in the second argument)
+
+### `Palette.load(file, callback)`
+
+Shortcut to load from a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) - equivalent to passing `{file: file}` as options.
+
+### `Palette.load(filePath, callback)`
+
+Shortcut to load from a file path in Node.js - equivalent to passing `{filePath: filePath}` as options.
 
 ### class `Palette` extends `Array`
 
 Accessible as
-* ~~`require("palette.js")` in node, or~~ (COMING SOON maybe: an npm module, altho under a different name; I'm gonna rename the project to be a little less generic)
+* ~~`require("palette.js")` in node,~~ (COMING SOON maybe: an npm module, altho under a different name; I'm gonna rename the project to be a little less generic) or
 * `Palette` in browser, or
 * `Palette.Palette` for consistency, or
 * `Palette.Palette.Palette` for redundancy.
@@ -72,14 +92,6 @@ Some palette formats are commonly made variable size by just leaving unused slot
 such as `#000` or `#00F`.
 By default, duplicates are removed.
 You can get all duplicates with `palette.with_duplicates`
-
-
-
-The `Palette` class is also used as the namespace object.
-
-### `Palette.load(options, callback)`
-
-TODO: documentation!
 
 
 ### class `Color`

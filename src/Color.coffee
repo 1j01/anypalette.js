@@ -1,16 +1,19 @@
 
 module.exports =
 class Color
-	# @TODO: don't assign {@r, @g, @b, @h, @s, @v, @l} right away
-	# (more of a to-don't, really)
-	constructor: ({
-		@r, @g, @b,
-		@h, @s, @v, @l,
-		c, m, y, k,
-		@name
-	})->
+	constructor: (options)->
+		# @TODO: don't assign {@r, @g, @b, @h, @s, @v, @l} right away
+		# (more of a to-don't, really)
+		{
+			@r, @g, @b,
+			@h, @s, @v, @l,
+			c, m, y, k,
+			@name
+		} = options
+
 		if @r? and @g? and @b?
 			# Red Green Blue
+			# (no conversions needed here)
 		else if @h? and @s?
 			# Cylindrical Color Space
 			if @v?
@@ -20,6 +23,7 @@ class Color
 				@s = 0 if isNaN @s
 			else if @l?
 				# Hue Saturation Lightness
+				# (no conversions needed here)
 			else
 				throw new Error "Hue, saturation, and...? (either lightness or value)"
 		else if c? and m? and y? and k?
@@ -82,7 +86,14 @@ class Color
 					
 					#rgb[_] = Math.round(rgb[_] * 255)
 			else
-				throw new Error "Color constructor must be called with {r,g,b} or {h,s,v} or {h,s,l} or {c,m,y,k} or {x,y,z} or {l,a,b}"
+				throw new Error "Color constructor must be called with {r,g,b} or {h,s,v} or {h,s,l} or {c,m,y,k} or {x,y,z} or {l,a,b},
+					#{
+						try
+							"got #{JSON.stringify(options)}"
+						catch e
+							"got something that couldn't be displayed with JSON.stringify for this error message"
+					}
+				"
 		
 	
 	toString: ->
@@ -101,4 +112,5 @@ class Color
 				"hsl(#{@h}, #{@s}%, #{@l}%)"
 	
 	is: (color)->
+		# compare as strings
 		"#{@}" is "#{color}"

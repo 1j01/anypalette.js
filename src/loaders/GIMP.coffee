@@ -27,7 +27,7 @@ module.exports = ({data})->
 		
 		r_g_b_name = line.match(/^\s*([0-9]+)\s+([0-9]+)\s+([0-9]+)(?:\s+(.*))?$/)
 		if not r_g_b_name
-			throw new Error "Line #{i} doesn't match pattern r_g_b_name"
+			throw new Error "Line #{i} doesn't match pattern r_g_b_name" # TODO: better message
 		
 		palette.add
 			r: r_g_b_name[1]

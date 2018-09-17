@@ -192,9 +192,9 @@ load_adobe_color_book = ({data})->
 	book_title = br.readUnicodeString()
 	cn_prefix = br.readUnicodeString()
 	cn_suffix = br.readUnicodeString()
-	console.log("BD?>")
+	# console.log("BD?>")
 	book_description = br.readUnicodeString().replace("^C", "©").replace("^R", "®")
-	console.log("BD.")
+	# console.log("BD.")
 	
 	color_count = br.readUInt16()
 	page_size = br.readUInt16()

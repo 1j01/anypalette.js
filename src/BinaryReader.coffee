@@ -29,7 +29,7 @@ class BinaryReader
 	
 	readUnicodeString: ->
 		length = @readUInt16()
-		console.log {length}
+		# console.log {length}
 		@_checkSize(length * 16)
 		str = ""
 		for i in [0..length]

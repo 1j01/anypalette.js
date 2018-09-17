@@ -137,10 +137,10 @@ load_palette = (o, callback)->
 				throw new Error "no colors returned"
 		catch e
 			msg = "failed to load #{o.file_name} as #{pl.name}: #{e.message}"
-			if pl.matches_ext and not e.message.match(/not a/i)
-				console?.error? msg
-			else
-				console?.warn? msg
+			# if pl.matches_ext and not e.message.match(/not a/i)
+			# 	console?.error? msg
+			# else
+			# 	console?.warn? msg
 			
 			# TODO: maybe this shouldn't be an Error object, just a {message, error} object
 			# or {friendlyMessage, error}
@@ -149,7 +149,7 @@ load_palette = (o, callback)->
 			errors.push err
 		
 		if palette
-			console?.info? "loaded #{o.file_name} as #{pl.name}"
+			# console?.info? "loaded #{o.file_name} as #{pl.name}"
 			palette.confidence = if pl.matches_ext then 0.9 else 0.01
 			palette.loaded_as = pl.name
 			exts_pretty = "(.#{pl.exts.join(", .")})"

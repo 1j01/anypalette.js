@@ -152,13 +152,10 @@ div.style.background = color;
 * Improve support for palette geometries
 
 
-* Nice API + documentation
+* Improve API and documentation
 
 
-* Don't use the console
-
-
-* Node module
+* Publish to npm
 
 
 ## Development

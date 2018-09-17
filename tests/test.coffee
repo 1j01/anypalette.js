@@ -20,7 +20,6 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 			do (file_path)->
 				file_name = require("path").basename(file_path)
 				Palette.load file_path, (err, palette)->
-					# if err then return console.error err
 					result = (if err then err.message else palette.join('\n')) + "\n"
 					output_file_path = "#{__dirname}/regression-data/#{file_name}.out.txt"
 					fs.writeFileSync output_file_path, result, "utf8"

@@ -4,29 +4,16 @@ Color = require "./Color"
 module.exports =
 class Palette extends Array
 	
-	constructor: (colors...)->
-		# colors = colors.map((value)-> if value instanceof Color then value else new Color(value))
-		super(colors...)
+	constructor: (args...)->
+		super(args...)
 	
 	add: (o)->
 		new_color = new Color(o)
-		
-		# for color in @
-		# 	if color.is new_color
-		# 		new_color.is_duplicate = true
-		# 		return
-		
 		@push new_color
 	
-	# push: (o)->
-	# 	new_color = new Color(o)
-	# 	super.push new_color
-	
 	finalize: ->
-		if not @n_columns
-			@guess_dimensions()
-		# if @with_duplicates isnt @
-		# 	@with_duplicates.finalize()
+		# if not @n_columns
+		# 	@guess_dimensions()
 		unless @parent_palette_without_duplicates
 			@with_duplicates = new Palette
 			@with_duplicates.parent_palette_without_duplicates = @
@@ -47,10 +34,10 @@ class Palette extends Array
 						j -= 1
 					j += 1
 				i += 1
-		# else
-			# @with_duplicates = @
 
 	guess_dimensions: ->
+		# TODO: get this working properly and enable
+
 		len = @length
 		candidate_dimensions = []
 		for n_columns in [0..len]
@@ -63,4 +50,4 @@ class Palette extends Array
 			if Math.abs(cd[0] - cd[1]) < Math.abs(squarest[0] - squarest[1])
 				squarest = cd
 		
-		#@n_columns = squarest[1]
+		# @n_columns = squarest[1]

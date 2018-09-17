@@ -171,3 +171,6 @@ And then start up a webserver, e.g.
 
 or better yet [Live Server](https://www.npmjs.com/package/live-server)
 
+Run `npm test` to update a `regression-data` folder, and then view any changes with git.  
+If the changes are good/positive, that's good! Commit the changes along with the source code.  
+If the changes are bad/negative, try to fix the regression.  

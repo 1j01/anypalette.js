@@ -1,5 +1,5 @@
 {
-	"name": "any-palette",
+	"name": "anypalette",
 	"version": "0.0.1",
 	"author": "Isaiah Odhner",
 	"description": "Load all the palettes!",
@@ -20,14 +20,14 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/1j01/any-palette.js.git"
+		"url": "https://github.com/1j01/anypalette.js.git"
 	},
 	"bugs": {
-		"url": "https://github.com/1j01/any-palette.js/issues"
+		"url": "https://github.com/1j01/anypalette.js/issues"
 	},
-	"main": "build/any-palette.js",
+	"main": "build/anypalette.js",
 	"files": [
-		"build/any-palette.js"
+		"build/anypalette.js"
 	],
 	"scripts": {
 		"start": "live-server || python -m SimpleHTTPServer",

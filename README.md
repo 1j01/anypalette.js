@@ -5,7 +5,7 @@ There are a LOT of different types of palette files.
 
 ONE LIBRARY SHALL RULE THEM ALL
 
-[Let's load some palettes](https://1j01.github.io/any-palette.js/test)
+[Let's load some palettes](https://1j01.github.io/anypalette.js/test)
 
 
 ## Supported Palette Formats
@@ -38,7 +38,7 @@ ONE LIBRARY SHALL RULE THEM ALL
 	* Load palette from Buffer or file
 	* OPTIONALLY pick colors from image file (there are modules for this)
 	* Use Node style callbacks `(err, result)->`
-* [Demo](https://1j01.github.io/any-palette.js/test)
+* [Demo](https://1j01.github.io/anypalette.js/test)
   (a niche "use case")
 	* Load palettes from lots of palette files
 	* Maybe pick colors from an image (there are modules for this)
@@ -53,17 +53,17 @@ MIT-licensed, see [LICENSE](LICENSE)
 ## Install
 
 ```
-npm i any-palette --save
+npm i anypalette --save
 ```
 *(COMING SOON maybe)*
 
-or download `build/any-palette.js`
+or download `build/anypalette.js`
 
 
 ## Documentation
 
 `AnyPalette` is the library's namespace, accessible as
-* `require("any-palette")` *(COMING SOON maybe)* in Node.js / Webpack / Rollup / Browserify, or
+* `require("anypalette")` *(COMING SOON maybe)* in Node.js / Webpack / Rollup / Browserify, or
 * `AnyPalette` in browser
 
 ### `AnyPalette.load(options, callback)`
@@ -154,7 +154,7 @@ div.style.background = color;
 
 ## Development
 
-	git clone https://github.com/1j01/any-palette.js.git
+	git clone https://github.com/1j01/anypalette.js.git
 	git submodule update --init
 	npm install
 	npm run watch

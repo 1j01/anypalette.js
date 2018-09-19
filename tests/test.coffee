@@ -1,6 +1,6 @@
 fs = require 'fs'
 glob = require 'glob'
-AnyPalette = require '../build/any-palette.js'
+AnyPalette = require '../build/anypalette.js'
 
 # TODO: maybe return a non-zero exit code if there are changes between the output and what's in git
 # i.e. a git status "#{__dirname}/regression-data" with changes listed... other than FOLDER-README.md ideally

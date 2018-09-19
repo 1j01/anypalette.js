@@ -26,7 +26,7 @@ gulp.task 'build', ->
 	# From Browserify
 	.bundle()
 	# To Gulp
-	.pipe(source('any-palette.js'))
+	.pipe(source('anypalette.js'))
 	
 	# Output the file
 	.pipe(gulp.dest('./build'))

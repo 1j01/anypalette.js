@@ -52,38 +52,46 @@ MIT-licensed, see [LICENSE](LICENSE)
 
 ## Install
 
+For Node.js / Webpack / Rollup / Browserify:
 ```
 npm i anypalette --save
 ```
-*(COMING SOON maybe)*
 
-or download `build/anypalette.js`
+Then access the library with:
+```javascript
+const AnyPalette = require("anypalette");
+```
 
+Alternatively, download [`build/anypalette.js`](build/anypalette.js) and include it as a script:
+
+```html
+<script src="anypalette.js"></script>
+```
+
+This will create a global `AnyPalette`
 
 ## Documentation
 
-`AnyPalette` is the library's namespace, accessible as
-* `require("anypalette")` *(COMING SOON maybe)* in Node.js / Webpack / Rollup / Browserify, or
-* `AnyPalette` in browser
-
 ### `AnyPalette.load(options, callback)`
 
-Knowing the file extension means AnyPalette.js can often pick the correct palette loader right away, which can improve the speed, and also, some loaders won't load except via their specific file extension because they can't determine if the file is actually in that format or not (for raw data formats without headers).
+Knowing the file extension means AnyPalette.js can often pick the correct palette loader right away, which can improve the load speed, and also (TODO:) some loaders won't load except via their specific file extension because they can't determine if the file is actually in that format or not (for raw data formats without headers).
 
 - `options.file` - the palette file to load, as a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File)
 - `options.data` - the palette file data to load, as a binary string (**not** an ArrayBuffer/TypedArray/DataView)
 - `options.filePath` - a path to a palette file, for Node.js usage
 - `options.fileName` (optional) - the file name, if you have it, including the file extension - can be obtained from `options.file` or `options.filePath`
 - `options.fileExt` (optional) - the file extension, if you have it, *excluding* the dot, e.g. `"pal"` - can be obtained from `options.fileName` or `options.file` or `options.filePath`
-- `callback(error, palette)` (required) - called when palette loading is finished, either with an error (in the first argument) or a `Palette` (in the second argument)
+- `callback(error, palette)` (required) - called when palette loading is finished, either with an error (in the first argument) or a `Palette` (in the second)
+
+Note: the callback is asynchronous to allow for file loading, but all palette parsing is currently synchronous.
 
 ### `AnyPalette.load(file, callback)`
 
-Shortcut to load from a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) - equivalent to passing `{file: file}` as options.
+Shortcut to load from a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) - equivalent to passing `{file: file}` as `options`.
 
 ### `AnyPalette.load(filePath, callback)`
 
-Shortcut to load from a file path in Node.js - equivalent to passing `{filePath: filePath}` as options.
+Shortcut to load from a file path in Node.js - equivalent to passing `{filePath: filePath}` as `options`.
 
 ### class `Palette` extends `Array`
 
@@ -105,13 +113,13 @@ or access the colors via indexing e.g. `palette[0]` and loop over them using `pa
 (Accessible as `AnyPalette.Color`)
 
 
-The Color class, when stringified, gives a CSS color.  
-You can pass a Color object directly to an element's style or a canvas's context.
+`Color` has a `toString` method that returns a CSS color.  
+You can therefore pass a Color object directly to an element's style or a canvas's context.
 
 ```javascript
 var color = palette[0];
-ctx.fillStyle = color;
 div.style.background = color;
+ctx.fillStyle = color;
 ```
 
 
@@ -155,15 +163,19 @@ div.style.background = color;
 ## Development
 
 	git clone https://github.com/1j01/anypalette.js.git
+	cd anypalette.js
 	git submodule update --init
 	npm install
 	npm run watch
 
-And then start up a webserver, e.g.
+Then (concurrently, in a separate terminal) start up a webserver, e.g.
 
 	python -m SimpleHTTPServer
 
 or better yet [Live Server](https://www.npmjs.com/package/live-server)
+
+	npm i -g live-server
+	live-server
 
 Run `npm test` to update a `regression-data` folder, and then view any changes with git.  
 If the changes are good/positive, that's good! Commit the changes along with the source code.  

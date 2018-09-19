@@ -239,8 +239,11 @@
 					"Wireframe.pal"
 				]
 			},{
-				name: "Drag and Drop",
-				description: "If you happen to have some palettes handy, you know what to do. Also try dragging html, css, js, and other text files that have css-style colors in them.",
+				// TODO: make this not part of this silly palette sections definition object
+				name: "Try your own palettes",
+				description: "<button id='select-files'>Select Files</button> or drag and drop. If you don't have any palettes handy, you could try searching online for some palette files to load. Also try HTML, CSS, JS, SVG and other text files that have CSS-style colors in them.",
+				// TODO: use a native file input? Maybe say "Drag and drop or <input type="file" multiple>" on one line and the rest of the stuff in a separate <p>
+				// TODO: maybe add a Clear button
 				fnames: []
 			}], function(i, group){
 				if(group.disabled) return;
@@ -280,6 +283,33 @@
 					}, i * 100); //stagger loading
 				});
 			});
+
+			function addPaletteViewsFromFileList(files){
+				$.each(files, function(i, file){
+					var palette_view = new PaletteView("➢ "+file.name);
+					palette_view.appendTo("body");
+					palette_view.status("Loading palette from file...");
+					
+					setTimeout(function(){
+						AnyPalette.load(file, function(err, palette){
+							palette_view.update(err, palette);
+						});
+					}, i * 100); //stagger loading
+				});
+			}
+
+			var file_input = document.createElement("input");
+			file_input.type = "file";
+			file_input.multiple = "multiple";
+			$(file_input).on("change", function(e){
+				addPaletteViewsFromFileList(file_input.files);
+			});
+
+			document.getElementById("select-files").addEventListener("click", function(){
+				file_input.click();
+			});
+			
+			// TODO: drop indicator
 			$(window).on("dragover dragenter", function(e){
 				e.preventDefault();
 				e.stopPropagation();
@@ -289,17 +319,7 @@
 				
 				var dt = e.originalEvent.dataTransfer;
 				if(dt && dt.files){
-					$.each(dt.files, function(i, file){
-						var palette_view = new PaletteView("➢ "+file.name);
-						palette_view.appendTo("body");
-						palette_view.status("Loading palette from file...");
-						
-						setTimeout(function(){
-							AnyPalette.load(file, function(err, palette){
-								palette_view.update(err, palette);
-							});
-						}, i * 100); //stagger loading
-					});
+					addPaletteViewsFromFileList(dt.files);
 				}
 			});
 		</script>

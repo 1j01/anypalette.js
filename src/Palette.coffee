@@ -21,6 +21,7 @@ class Palette extends Array
 			@with_duplicates.n_columns = @n_columns
 			@with_duplicates.has_dimensions = @has_dimensions
 			@with_duplicates.finalize()
+			@withDuplicates = @with_duplicates # TODO: just use camelCase everywhere
 
 			# in-place uniquify
 			i = 0

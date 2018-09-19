@@ -6,7 +6,7 @@ browserify = require 'browserify'
 source = require 'vinyl-source-stream'
 
 gulp.task 'build', ->
-	# Make a browerify bundler
+	# Make a browserify bundler
 	browserify
 		# Define the module entry point
 		entries: ['./src/main']
@@ -15,9 +15,10 @@ gulp.task 'build', ->
 		# Enable source maps
 		debug: yes
 		# Export with UMD
-		standalone: 'Palette'
+		standalone: 'AnyPalette'
 	
-	# Allow acess to Node's fs module in the bundle (doesn't work yet)
+	# Allow access to Node's fs module in the bundle
+	# TODO: .external('path') as well
 	.external('fs')
 	# Compile the .coffee files
 	.transform('coffeeify')
@@ -25,7 +26,7 @@ gulp.task 'build', ->
 	# From Browserify
 	.bundle()
 	# To Gulp
-	.pipe(source('palette.js'))
+	.pipe(source('any-palette.js'))
 	
 	# Output the file
 	.pipe(gulp.dest('./build'))

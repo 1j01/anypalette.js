@@ -180,12 +180,20 @@ normalize_options = (o = {})->
 	o.file_ext = ("#{o.file_ext}").toLowerCase()
 	o
 
+AnyPalette = {
+	Color
+	Palette
+	RandomColor
+	RandomPalette
+	# LoadingErrors
+}
+
 # Get palette from a file
-Palette.load = (o, callback)->
+AnyPalette.load = (o, callback)->
 	if not o
-		throw new Error "Parameters required: Palette.load(options, function callback(err, palette){})"
+		throw new Error "Parameters required: AnyPalette.load(options, function callback(err, palette){})"
 	if not callback
-		throw new Error "Callback required: Palette.load(options, function callback(err, palette){})"
+		throw new Error "Callback required: AnyPalette.load(options, function callback(err, palette){})"
 	
 	o = normalize_options o
 	
@@ -213,16 +221,11 @@ Palette.load = (o, callback)->
 
 # Get a palette from a file or by any means necessary
 # (as in fall back to completely random data)
-Palette.gimme = (o, callback)->
+AnyPalette.gimme = (o, callback)->
 	o = normalize_options o
 	
-	Palette.load o, (err, palette)->
+	AnyPalette.load o, (err, palette)->
 		callback(null, palette ? new RandomPalette)
 
 # Exports
-P = module.exports = Palette
-P.Color = Color
-P.Palette = Palette
-P.RandomColor = RandomColor
-P.RandomPalette = RandomPalette
-# P.LoadingErrors = LoadingErrors
+module.exports = AnyPalette

@@ -25,23 +25,25 @@ ONE LIBRARY SHALL RULE THEM ALL
 	* On file drop or file selection...
 		* Load palette if it's a palette file
 		* Load image into editor (don't generate palette from image (unless you're specifically loading a palette, like by dropping a file onto a palette widget))
-	* Display any error messages (in a friendly way)
+	* Display any error messages
 * Palette Editor
 	* Load palette from palette file
-	* Pick colors from image file (there are modules for this)
-	* Display any error messages (perhaps more detailed? or, it could be the same and just have an expandable view for details, which might be more "friendly" when you need it!)
+	* Pick colors from image file (not implemented; there are other libraries for this)
+	* Display any error messages
 	* Save palettes to different formats
-	  (**not implemented**;
+	  (not implemented;
 	  to do this, the whole project should probably move to
-	  [jBinary](https://github.com/jDataView/jBinary))
+	  [jBinary](https://github.com/jDataView/jBinary);
+	  but text based formats should be pretty easy!)
 * From Node.js
 	* Load palette from Buffer or file
-	* OPTIONALLY pick colors from image file (there are modules for this)
+	* Maybe pick colors from image file (not implemented; there are other libraries for this)
+	* Maybe save palettes
 	* Use Node style callbacks `(err, result)->`
 * [Demo](https://1j01.github.io/anypalette.js/test)
   (a niche "use case")
 	* Load palettes from lots of palette files
-	* Maybe pick colors from an image (there are modules for this)
+	* Maybe pick colors from an image (not implemented; there are other libraries for this)
 	* Display extra information like what palette loader was used
 
 
@@ -70,7 +72,10 @@ Alternatively, download [`build/anypalette.js`](build/anypalette.js) and include
 
 This will create a global `AnyPalette`
 
-## Documentation
+
+## API Documentation
+
+Only what's documented should be considered part of the API.
 
 ### `AnyPalette.load(options, callback)`
 
@@ -122,7 +127,9 @@ div.style.background = color;
 ctx.fillStyle = color;
 ```
 
+See [Using JavaScript's 'toString' Method](http://adripofjavascript.com/blog/drips/using-javascripts-tostring-method.html), which incidentally uses a `Color` class as an example.
 
+`Color` objects also have `r`, `g`, `b` properties, **OR** `h`, `s`, `l`, depending on how they were loaded
 
 
 ## Todo
@@ -167,6 +174,8 @@ ctx.fillStyle = color;
 	git submodule update --init
 	npm install
 	npm run watch
+
+Note: this watch task will actually just crash if there's a syntax error
 
 Then (concurrently, in a separate terminal) start up a webserver, e.g.
 

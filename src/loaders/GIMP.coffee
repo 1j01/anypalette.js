@@ -13,9 +13,8 @@ module.exports = ({data})->
 	while (i += 1) < lines.length
 		line = lines[i]
 		
-		# TODO: don't need regexp here
-		if line.match(/^#/) or line is "" then continue
-		# TODO: handle non-start-of-line comments?
+		if line[0] is "#" or line is "" then continue
+		# TODO: handle non-start-of-line comments? where's the spec?
 		
 		m = line.match(/Name:\s*(.*)/)
 		if m
@@ -24,7 +23,7 @@ module.exports = ({data})->
 		m = line.match(/Columns:\s*(.*)/)
 		if m
 			palette.n_columns = Number(m[1])
-			# TODO: handle 0 as not specified?
+			# TODO: handle 0 as not specified? where's the spec at, yo?
 			palette.has_dimensions = yes
 			continue
 		

@@ -13,7 +13,9 @@ module.exports = ({data})->
 	while (i += 1) < lines.length
 		line = lines[i]
 		
+		# TODO: don't need regexp here
 		if line.match(/^#/) or line is "" then continue
+		# TODO: handle non-start-of-line comments?
 		
 		m = line.match(/Name:\s*(.*)/)
 		if m
@@ -22,12 +24,30 @@ module.exports = ({data})->
 		m = line.match(/Columns:\s*(.*)/)
 		if m
 			palette.n_columns = Number(m[1])
+			# TODO: handle 0 as not specified?
 			palette.has_dimensions = yes
 			continue
 		
-		r_g_b_name = line.match(/^\s*([0-9]+)\s+([0-9]+)\s+([0-9]+)(?:\s+(.*))?$/)
+		# TODO: replace \s with [\ \t] (spaces or tabs)
+		# it can't match \n because it's already split on that, but still
+		# TODO: handle line with no name but space on the end
+		r_g_b_name = line.match(///
+			^ # "at the beginning of the line,"
+			\s* # "give or take some spaces,"
+			# match 3 groups of numbers separated by spaces
+			([0-9]+) # red
+			\s+
+			([0-9]+) # green
+			\s+
+			([0-9]+) # blue
+			(?:
+				\s+
+				(.*) # optionally a name
+			)?
+			$ # "and that should be the end of the line"
+		///)
 		if not r_g_b_name
-			throw new Error "Line #{i} doesn't match pattern r_g_b_name" # TODO: better message
+			throw new Error "Line #{i} doesn't match pattern #{r_g_b_name}" # TODO: better message?
 		
 		palette.add
 			r: r_g_b_name[1]

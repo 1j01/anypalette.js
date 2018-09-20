@@ -2,8 +2,10 @@
 module.exports =
 class Color
 	constructor: (options)->
-		# @TODO: don't assign {@r, @g, @b, @h, @s, @v, @l} right away
-		# (more of a to-don't, really)
+		# @TODO: don't assign all of {@r, @g, @b, @h, @s, @v, @l} right away
+		# only assign the properties that are used
+		# also maybe always have @r @g @b (or @red @green @blue) but still stringify to hsl() if hsl or hsv given
+		# TODO: expect numbers or convert to numbers
 		{
 			@r, @g, @b,
 			@h, @s, @v, @l,
@@ -25,7 +27,9 @@ class Color
 				# Hue Saturation Lightness
 				# (no conversions needed here)
 			else
+				# TODO: improve error message (especially if @b given)
 				throw new Error "Hue, saturation, and...? (either lightness or value)"
+			# TODO: maybe convert to @r @g @b here
 		else if c? and m? and y? and k?
 			# Cyan Magenta Yellow blacK
 			# UNTESTED

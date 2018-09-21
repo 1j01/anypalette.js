@@ -65,7 +65,7 @@ load_palette = (o, callback)->
 		}
 		{
 			name: "CSS-style colors"
-			exts: ["css", "scss", "sass", "less", "html", "svg", "js", "ts", "xml", "txt"]
+			exts: ["css", "scss", "sass", "less", "styl", "html", "htm", "svg", "js", "ts", "xml", "txt"]
 			load: require "./loaders/Generic"
 		}
 		# {

@@ -1,4 +1,5 @@
 fs = require 'fs'
+path = require 'path'
 glob = require 'glob'
 mkdirp = require 'mkdirp'
 AnyPalette = require '../build/anypalette.js'
@@ -14,6 +15,7 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 		fs.unlinkSync(file_path)
 	console.log "Cleared regression-data folder of all .out.txt files"
 
+	# forward slashes required for glob, but also using this to determine the subfolders for output
 	palettes_folder = "#{__dirname.replace(/\\/g, "/")}/../palettes"
 	# only match within at least one directory level inside the palettes folder
 	glob "#{palettes_folder}/*/**/*", ignore: "**/node_modules/**", nodir: true, (err, file_paths)->
@@ -21,7 +23,7 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 			throw err
 		for file_path in file_paths
 			do (file_path)->
-				relative_path = require("path").relative(palettes_folder, file_path)
+				relative_path = path.relative(palettes_folder, file_path)
 				AnyPalette.loadPalette file_path, (err, palette)->
 					result =
 						if err
@@ -42,7 +44,7 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 							#{palette.join('\n')}
 
 							"""
-					output_file_path = require("path").join(__dirname, "regression-data", relative_path + ".out.txt")
-					mkdirp.sync	require("path").dirname(output_file_path)
+					output_file_path = path.join(__dirname, "regression-data", relative_path + ".out.txt")
+					mkdirp.sync	path.dirname(output_file_path)
 					fs.writeFileSync output_file_path, result, "utf8"
 					console.log "Wrote", (if err then "failed" else "parsed"), output_file_path

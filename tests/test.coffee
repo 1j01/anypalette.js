@@ -1,5 +1,6 @@
 fs = require 'fs'
 glob = require 'glob'
+mkdirp = require 'mkdirp'
 AnyPalette = require '../build/anypalette.js'
 
 # TODO: maybe return a non-zero exit code if there are changes between the output and what's in git
@@ -12,13 +13,15 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 	for file_path in file_paths
 		fs.unlinkSync(file_path)
 	console.log "Cleared regression-data folder of all .out.txt files"
-	# only match within at least one directory level deeper than palettes/
-	glob "#{__dirname.replace(/\\/g, "/")}/../palettes/*/**/*", ignore: "**/node_modules/**", nodir: true, (err, file_paths)->
+
+	palettes_folder = "#{__dirname.replace(/\\/g, "/")}/../palettes"
+	# only match within at least one directory level inside the palettes folder
+	glob "#{palettes_folder}/*/**/*", ignore: "**/node_modules/**", nodir: true, (err, file_paths)->
 		if err
 			throw err
 		for file_path in file_paths
 			do (file_path)->
-				file_name = require("path").basename(file_path)
+				relative_path = require("path").relative(palettes_folder, file_path)
 				AnyPalette.loadPalette file_path, (err, palette)->
 					result =
 						if err
@@ -34,11 +37,12 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 							matchedLoaderFileExtensions:    #{palette.matchedLoaderFileExtensions}
 							geometrySpecifiedByFile:        #{palette.geometrySpecifiedByFile}
 							numberOfColumns:                #{palette.numberOfColumns}
-							
+
 							Colors:
 							#{palette.join('\n')}
 
 							"""
-					output_file_path = "#{__dirname}/regression-data/#{file_name}.out.txt"
+					output_file_path = require("path").join(__dirname, "regression-data", relative_path + ".out.txt")
+					mkdirp.sync	require("path").dirname(output_file_path)
 					fs.writeFileSync output_file_path, result, "utf8"
 					console.log "Wrote", (if err then "failed" else "parsed"), output_file_path

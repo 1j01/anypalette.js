@@ -24,10 +24,16 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 						if err
 							err.message
 						else
+							# TODO: display color names
+							# TODO: add a "Can Parse Without Knowing Ext:"
+							# - pass {fileExt: null} and make sure / make it so this is treated as explicitly ignoring file extensions
+							# - check that it parses exactly the same, including geometry, withDuplicates, just not matchedLoaderFileExtensions
 							"""
-							Loaded As:                #{palette.loaded_as} #{palette.loaded_as_clause.trim()}
-							geometrySpecifiedByFile:  #{palette.geometrySpecifiedByFile}
-							numberOfColumns:          #{palette.numberOfColumns}
+							Loaded As:                      #{palette.loader.name} (#{palette.loader.fileExtensionsPretty})
+
+							matchedLoaderFileExtensions:    #{palette.matchedLoaderFileExtensions}
+							geometrySpecifiedByFile:        #{palette.geometrySpecifiedByFile}
+							numberOfColumns:                #{palette.numberOfColumns}
 							
 							Colors:
 							#{palette.join('\n')}

@@ -21,8 +21,11 @@ class RandomColor extends Color
 class RandomPalette extends Palette
 	constructor: ->
 		super()
-		@loaded_as = "Completely Random Colors™"
-		@loaded_as_clause = "(.crc sjf(Df09sjdfksdlfmnm ';';"
+		@loader =
+			name: "Completely Random Colors™"
+			fileExtensions: []
+			fileExtensionsPretty: "(.crc sjf(Df09sjdfksdlfmnm ';';"
+		@matchedLoaderFileExtensions = no
 		@confidence = 0
 		@finalize()
 		for i in [0..Math.random()*15+5]
@@ -151,13 +154,15 @@ load_palette = (o, callback)->
 		if palette
 			# console?.info? "loaded #{o.fileName} as #{pl.name}"
 			palette.confidence = if pl.matches_ext then 0.9 else 0.01
-			palette.loaded_as = pl.name
-			exts_pretty = "(.#{pl.exts.join(", .")})"
+			exts_pretty = ".#{pl.exts.join(", .")}"
 			
-			if pl.matches_ext
-				palette.loaded_as_clause = exts_pretty
-			else
-				palette.loaded_as_clause = " for some reason"
+			# TODO: probably rename loader -> format when 2-way data flow (read/write) is supported
+			# TODO: maybe make this a 3rd (and fourth?) argument to the callback
+			palette.loader =
+				name: pl.name
+				fileExtensions: pl.exts
+				fileExtensionsPretty: exts_pretty
+			palette.matchedLoaderFileExtensions = pl.matches_ext
 			
 			palette.finalize()
 			callback(null, palette)

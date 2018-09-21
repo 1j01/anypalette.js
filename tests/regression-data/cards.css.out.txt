@@ -1,6 +1,8 @@
-Loaded As:                CSS-style colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
-geometrySpecifiedByFile:  undefined
-numberOfColumns:          undefined
+Loaded As:                      CSS-style colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
+
+matchedLoaderFileExtensions:    true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
 
 Colors:
 rgb(68, 68, 68)

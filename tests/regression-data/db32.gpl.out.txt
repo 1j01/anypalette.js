@@ -1,6 +1,8 @@
-Loaded As:                GIMP palette (.gpl, .gimp, .colors)
-geometrySpecifiedByFile:  true
-numberOfColumns:          8
+Loaded As:                      GIMP palette (.gpl, .gimp, .colors)
+
+matchedLoaderFileExtensions:    true
+geometrySpecifiedByFile:        true
+numberOfColumns:                8
 
 Colors:
 rgb(0, 0, 0)

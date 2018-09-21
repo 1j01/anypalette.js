@@ -1,6 +1,8 @@
-Loaded As:                Paint.NET palette (.txt)
-geometrySpecifiedByFile:  undefined
-numberOfColumns:          undefined
+Loaded As:                      Paint.NET palette (.txt)
+
+matchedLoaderFileExtensions:    true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
 
 Colors:
 rgb(0, 0, 0)

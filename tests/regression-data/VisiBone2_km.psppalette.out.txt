@@ -1,6 +1,8 @@
-Loaded As:                Paint Shop Pro palette (.pal, .psppalette)
-geometrySpecifiedByFile:  undefined
-numberOfColumns:          undefined
+Loaded As:                      Paint Shop Pro palette (.pal, .psppalette)
+
+matchedLoaderFileExtensions:    true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
 
 Colors:
 rgb(255, 255, 255)

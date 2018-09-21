@@ -1,6 +1,8 @@
-Loaded As:                RIFF PAL (.pal)
-geometrySpecifiedByFile:  undefined
-numberOfColumns:          undefined
+Loaded As:                      RIFF PAL (.pal)
+
+matchedLoaderFileExtensions:    true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
 
 Colors:
 rgb(255, 0, 255)

@@ -1,6 +1,8 @@
-Loaded As:                HPL palette for some reason
-geometrySpecifiedByFile:  undefined
-numberOfColumns:          undefined
+Loaded As:                      HPL palette (.hpl)
+
+matchedLoaderFileExtensions:    false
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
 
 Colors:
 rgb(0, 0, 0)

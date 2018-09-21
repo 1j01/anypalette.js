@@ -138,11 +138,9 @@
 					
 					$loaded_as.html(
 						"<span class='lesser-importance'>loaded as </span>"
-						+"<span>"+palette.loaded_as+"</span>"
-						+"<span class='lesser-importance'> "+(palette.loaded_as_clause)+"</span>"
+						+"<span>"+palette.loader.name+"</span>"
+						+"<span class='lesser-importance'> ("+(palette.loader.fileExtensionsPretty)+")"+(palette.matchedLoaderFileExtensions?"":" - file extension not matched")+"</span>"
 					);
-					// TODO: always list the file extensions of the loader, and instead of "for some reason"
-					// say "even tho the extension was .blah" or whatever
 					
 					var show_colors = function(palette){
 						$output.empty();

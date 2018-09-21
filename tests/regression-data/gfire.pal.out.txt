@@ -1,6 +1,8 @@
-Loaded As:                StarCraft palette (.pal)
-geometrySpecifiedByFile:  undefined
-numberOfColumns:          undefined
+Loaded As:                      StarCraft palette (.pal)
+
+matchedLoaderFileExtensions:    true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
 
 Colors:
 rgb(0, 0, 0)

@@ -102,7 +102,7 @@ This library uses UMD, so you can also load it with AMD or CommonJS (in which ca
 ## API
 
 See the [changelog](CHANGELOG.md) for upgrading.
-Undocumented properties and methods may break without notice.
+Properties and methods not documented here may break without notice.
 
 ### `AnyPalette.loadPalette(options, callback)`
 

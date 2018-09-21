@@ -1,6 +1,8 @@
-Loaded As:                ColorSchemer palette (.cs)
-geometrySpecifiedByFile:  undefined
-numberOfColumns:          undefined
+Loaded As:                      ColorSchemer palette (.cs)
+
+matchedLoaderFileExtensions:    true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
 
 Colors:
 rgb(51, 17, 0)

@@ -220,8 +220,6 @@ and from an ArrayBuffer in the browser
 	npm install
 	npm run watch
 
-Note: this watch task will actually just crash if there's a syntax error
-
 Then (concurrently, in a separate terminal) start up a webserver, e.g.
 
 	python -m SimpleHTTPServer

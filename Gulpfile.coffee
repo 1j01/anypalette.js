@@ -25,6 +25,10 @@ gulp.task 'build', ->
 	
 	# From Browserify
 	.bundle()
+	.on('error', (err)->
+		console.error(err)
+		@destroy() # required for browserify and thus the 'build' task to exit, and for watching to continue
+	)
 	# To Gulp
 	.pipe(source('anypalette.js'))
 	

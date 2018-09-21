@@ -13,6 +13,8 @@ ONE LIBRARY SHALL RULE THEM ALL
 AnyPalette.js has a single interface for all formats, so you can load any of the supported file types with one call,
 and it'll choose an appropriate parser to use automatically.
 
+Works in Node.js and in the browser.
+
 Supported palette formats:
 
 * [RIFF] PAL (.pal)
@@ -64,32 +66,10 @@ Supported palette formats:
 [Blender]: https://www.blender.org/
 
 
-## Use cases
+Picking colors from an image can be done by other libraries, like [vibrant.js]/[node-vibrant]
 
-* Image editor
-	* On file drop or file selection...
-		* Load palette if it's a palette file
-		* Load image into editor (don't generate palette from image (unless you're specifically loading a palette, like by dropping a file onto a palette widget))
-	* Display any error messages
-* Palette Editor
-	* Load palette from palette file
-	* Pick colors from image file (not implemented; there are other libraries for this)
-	* Display any error messages
-	* Save palettes to different formats
-	  (not implemented;
-	  to do this, the whole project should probably move to
-	  [jBinary](https://github.com/jDataView/jBinary);
-	  but text based formats should be pretty easy!)
-* From Node.js
-	* Load palette from Buffer or file
-	* Maybe pick colors from image file (not implemented; there are other libraries for this)
-	* Maybe save palettes
-	* Use Node style callbacks `(err, result)->`
-* [Demo](https://1j01.github.io/anypalette.js/test)
-  (a niche "use case")
-	* Load palettes from lots of palette files
-	* Maybe pick colors from an image (not implemented; there are other libraries for this)
-	* Display extra information like what palette loader was used
+[vibrant.js]: https://jariz.github.io/vibrant.js/
+[node-vibrant]: https://github.com/akfish/node-vibrant
 
 
 ## License
@@ -226,6 +206,10 @@ Also for GIMP palettes, a `Color` may have a `name` (string or undefined)
 
 
 * Guess palette geometries
+
+
+* Load from a Buffer in Node.js, maybe even a Stream (altho streaming would mostly involve collecting it into a buffer),
+and from an ArrayBuffer in the browser
 
 
 ## Development

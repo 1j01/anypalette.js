@@ -155,7 +155,7 @@
 								.attr("title", color.name ? (color.name + "\n" + color) : color)
 							
 							col += 1;
-							if(col > palette.n_columns){
+							if(col > palette.numberOfColumns){
 								col = 0;
 								$row = $("<div class='palette-row'>").appendTo($output);
 							}
@@ -182,7 +182,7 @@
 					
 					if(n_dupes > 0){
 						$toggle_dupes.show();
-						if(palette.withDuplicates.has_dimensions){
+						if(palette.withDuplicates.geometrySpecifiedByFile){
 							$toggle_dupes.click();
 						}
 					}

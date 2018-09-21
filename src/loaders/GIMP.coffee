@@ -22,9 +22,9 @@ module.exports = ({data})->
 			continue
 		m = line.match(/Columns:\s*(.*)/)
 		if m
-			palette.n_columns = Number(m[1])
+			palette.numberOfColumns = Number(m[1])
 			# TODO: handle 0 as not specified? where's the spec at, yo?
-			palette.has_dimensions = yes
+			palette.geometrySpecifiedByFile = yes
 			continue
 		
 		# TODO: replace \s with [\ \t] (spaces or tabs)

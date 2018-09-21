@@ -143,10 +143,10 @@ such as `#000` or `#00F`.
 So by default, duplicates are removed.
 You can get all duplicates with `palette.withDuplicates` (which is another `Palette`)
 
-#### `palette.n_columns`
+#### `palette.numberOfColumns`
 
-`palette.n_columns` may contain a number of columns for the palette to fit into (with the number of rows being implicit).  
-You should ignore an `n_columns` of zero, and may want to ignore this property entirely.
+`palette.numberOfColumns` may contain a number of columns for the palette to fit into (with the number of rows being implicit).  
+You should ignore an `numberOfColumns` of zero, and may want to ignore this property entirely.
 
 Currently only GIMP palettes will have this specified, but dimension guessing is planned.
 

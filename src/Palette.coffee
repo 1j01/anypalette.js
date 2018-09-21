@@ -12,16 +12,15 @@ class Palette extends Array
 		@push new_color
 	
 	finalize: ->
-		# if not @n_columns
+		# if not @numberOfColumns
 		# 	@guess_dimensions()
-		unless @parent_palette_without_duplicates
-			@with_duplicates = new Palette
-			@with_duplicates.parent_palette_without_duplicates = @
-			@with_duplicates[i] = @[i] for i in [0...@length]
-			@with_duplicates.n_columns = @n_columns
-			@with_duplicates.has_dimensions = @has_dimensions
-			@with_duplicates.finalize()
-			@withDuplicates = @with_duplicates # TODO: just use camelCase everywhere
+		unless @parentPaletteWithoutDuplicates
+			@withDuplicates = new Palette
+			@withDuplicates.parentPaletteWithoutDuplicates = @
+			@withDuplicates[i] = @[i] for i in [0...@length]
+			@withDuplicates.numberOfColumns = @numberOfColumns
+			@withDuplicates.geometrySpecifiedByFile = @geometrySpecifiedByFile
+			@withDuplicates.finalize()
 
 			# in-place uniquify
 			i = 0
@@ -41,14 +40,14 @@ class Palette extends Array
 
 		len = @length
 		candidate_dimensions = []
-		for n_columns in [0..len]
-			n_rows = len / n_columns
+		for numberOfColumns in [0..len]
+			n_rows = len / numberOfColumns
 			if n_rows is Math.round n_rows
-				candidate_dimensions.push [n_rows, n_columns]
+				candidate_dimensions.push [n_rows, numberOfColumns]
 		
 		squarest = [0, 3495093]
 		for cd in candidate_dimensions
 			if Math.abs(cd[0] - cd[1]) < Math.abs(squarest[0] - squarest[1])
 				squarest = cd
 		
-		# @n_columns = squarest[1]
+		# @numberOfColumns = squarest[1]

@@ -16,5 +16,5 @@ module.exports = ({data})->
 			b: br.readByte()
 			#: no padding
 	
-	#? palette.n_columns = 16
+	#? palette.numberOfColumns = 16
 	palette

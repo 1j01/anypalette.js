@@ -8,15 +8,60 @@ ONE LIBRARY SHALL RULE THEM ALL
 [Let's load some palettes](https://1j01.github.io/anypalette.js/test)
 
 
-## Supported Palette Formats
+## Features
 
-* [RIFF](https://en.wikipedia.org/wiki/Resource_Interchange_File_Format) PAL (.pal)
-* [Paint.NET](https://www.getpaint.net/) palette (.txt)
-* [GIMP](https://www.gimp.org/) palette (.gpl), also used in [Inkscape](https://inkscape.org/en/), [CinePaint](http://www.cinepaint.org/), and [Krita](https://krita.org/en/homepage/)
-* [Paint Shop Pro](https://www.paintshoppro.com/en/) palette (.pal, .psppalette) (JASC / Corel)
+AnyPalette.js has a single interface for all formats, so you can load any of the supported file types with one call,
+and it'll choose an appropriate parser to use automatically.
+
+Supported palette formats:
+
+* [RIFF] PAL (.pal)
+* [Paint.NET] palette (.txt)
+* [GIMP][Gimp] palette (.gpl), also used in [Inkscape], [CinePaint], and [Krita]
+* [Paint Shop Pro] palette (.pal, .psppalette) (JASC / Corel)
+* ColorSchemer palette (.cs)
 * Whatever HPL stands for (.hpl) (Homesite PaLette?), used by Allaire Homesite / Macromedia ColdFusion
-* [Starcraft](https://en.wikipedia.org/wiki/StarCraft) palette files, because why not? Well, maybe because it can give false positives and thereby return garbage data for a file instead of an error saying it couldn't be parsed
+* [Starcraft] palette files, because why not? Well, maybe because it can give false positives and thereby return garbage data for a file instead of an error saying it couldn't be parsed
 * Loads from files that aren't intended specifically as palettes, but that have CSS-style color values in them (.css, .html, .svg, .js, etc.)
+
+
+| File Extension    | Name                              | Programs                                                                          |   Read  |  Write  |
+|-------------------|-----------------------------------|-----------------------------------------------------------------------------------|:-------:|:-------:|
+| .pal              | [RIFF] Palette                    | [MS Paint] for Windows 95 and Windows NT 4.0                                      |   ✅   | Planned |
+| .gpl              | [GIMP][Gimp] Palette              | [Gimp], [Inkscape], [Krita], [KolourPaint], [Scribus], [CinePaint], [MyPaint]     |   ✅   | Planned |
+| .txt              | [Paint.NET] Palette               | [Paint.NET]                                                                       |   ✅   | Planned |
+| .pal, .psppalette | [Paint Shop Pro] Palette          | [Paint Shop Pro][] (Jasc Software / Corel)                                        |   ✅   | Planned |
+| .hpl              | [Homesite] Palette                | Allaire [Homesite] / Macromedia [ColdFusion]                                      |   ✅   |         |
+| .cs               | ColorSchemer Studio Color Scheme  | ColorSchemer Studio                                                               |   ✅   |         |
+| .aco              | Adobe Color file                  | Adobe [Photoshop]                                                                 | Planned | Planned |
+| .ase              | Adobe Swatch Exchange             | Adobe [Photoshop], [InDesign], and [Illustrator]                                  | Planned | Planned |
+| .acbl             | Adobe Color Book Library/Legacy   | Adobe [InDesign] and [Illustrator]                                                | Planned |         |
+| .soc              | StarOffice Colors                 | StarOffice, [OpenOffice], [LibreOffice]                                           | Planned | Planned |
+| .*                | And many more...                  | ...                                                                               | Planned | Planned |
+
+
+[RIFF]: https://en.wikipedia.org/wiki/Resource_Interchange_File_Format
+[MS Paint]: https://en.wikipedia.org/wiki/Microsoft_Paint
+[Paint.NET]: https://www.getpaint.net/
+[Paint Shop Pro]: https://www.paintshoppro.com/en/
+[Starcraft]: https://en.wikipedia.org/wiki/StarCraft
+[Homesite]: https://en.wikipedia.org/wiki/Macromedia_HomeSite
+[StarOffice]: https://en.wikipedia.org/wiki/StarOffice
+[OpenOffice]: https://www.openoffice.org/
+[LibreOffice]: https://www.libreoffice.org/
+[ColdFusion]: https://en.wikipedia.org/wiki/Adobe_ColdFusion
+[Photoshop]: https://www.adobe.com/products/photoshop.html
+[InDesign]: https://www.adobe.com/products/indesign.html
+[Illustrator]: https://www.adobe.com/products/illustrator.html
+
+[Gimp]: https://www.gimp.org/
+[Inkscape]: https://inkscape.org/en/
+[Krita]: https://www.calligra.org/krita/
+[KolourPaint]: http://kolourpaint.org/
+[Scribus]: https://www.scribus.net/
+[CinePaint]: http://www.cinepaint.org/
+[MyPaint]: http://mypaint.org/
+[Blender]: https://www.blender.org/
 
 
 ## Use cases
@@ -54,7 +99,7 @@ MIT-licensed, see [LICENSE](LICENSE)
 
 ## Install
 
-For Node.js / Webpack / Rollup / Browserify:
+For Node.js / Webpack / Parcel / Rollup / Browserify:
 ```
 npm i anypalette --save
 ```
@@ -72,10 +117,14 @@ Alternatively, download [`build/anypalette.js`](build/anypalette.js) and include
 
 This will create a global `AnyPalette`
 
+This file uses a Universal Module Definition, so you can also load it with AMD or CommonJS (in which case it won't create a global).
+
 
 ## API Documentation
 
 Only what's documented should be considered part of the API.
+
+Not following semver yet.
 
 ### `AnyPalette.load(options, callback)`
 
@@ -98,6 +147,7 @@ Shortcut to load from a [`File`](https://developer.mozilla.org/en-US/docs/Web/AP
 
 Shortcut to load from a file path in Node.js - equivalent to passing `{filePath: filePath}` as `options`.
 
+
 ### class `Palette` extends `Array`
 
 (Accessible as `AnyPalette.Palette`)
@@ -105,13 +155,23 @@ Shortcut to load from a file path in Node.js - equivalent to passing `{filePath:
 
 Stores a list of Colors, with some additional data.
 
+Because `Palette` is a subclass of `Array`, you can use `forEach`, `map`, `join` and other methods,
+or access the colors via indexing e.g. `palette[0]` and loop over them using `palette.length`
+
+#### `palette.withDuplicates`
+
 Some palette formats are commonly made variable size by just leaving unused slots a certain color
 such as `#000` or `#00F`.
 So by default, duplicates are removed.
 You can get all duplicates with `palette.withDuplicates` (which is another `Palette`)
 
-Because `Palette` is a subclass of `Array`, you can use `forEach`, `map`, `join` and other methods,
-or access the colors via indexing e.g. `palette[0]` and loop over them using `palette.length`
+#### `palette.nColumns`
+
+`palette.nColumns` may contain a number of columns for the palette to fit into (with the number of rows being implicit).  
+You should ignore an `nColumns` of zero, and may want to ignore this property entirely.
+
+Currently only GIMP palettes will have this specified, but dimension guessing is planned.
+
 
 ### class `Color`
 
@@ -131,13 +191,13 @@ See [Using JavaScript's 'toString' Method](http://adripofjavascript.com/blog/dri
 
 `Color` objects also have `r`, `g`, `b` properties, **OR** `h`, `s`, `l`, depending on how they were loaded
 
+Also for GIMP palettes, a `Color` may have a `name` (string or undefined)
+
 
 ## Todo
 
 
-* use [jDataView](https://github.com/jDataView/jDataView)
-	
-	* use [jBinary](https://github.com/jDataView/jBinary)
+* Save palettes to different formats. [jBinary](https://github.com/jDataView/jBinary) should be helpful.
 
 
 * Load *all the palettes!*
@@ -148,9 +208,10 @@ See [Using JavaScript's 'toString' Method](http://adripofjavascript.com/blog/dri
 	* Magica Voxel Palette (`.png`) (single pixel color strip) - see [MagicaVoxelPalettes](https://github.com/mattperrin/MagicaVoxelPalettes) for examples
 	* macOS Color Palette (`.clr`)
 	* [Gpick](http://www.gpick.org/) Palette (`.gpa`)
+	* KDE Colors (`.colors`)
 	* maayyybe
-		* KDE (`.colors`)
 		* ASCII Color Format (`.acf`)
+		* Binary Color Format (`.bcf`)
 		* Alias/WaveFront Material (`.mtl`)
 		* XML-based:
 			* Adobe Color Book Legacy (`.acbl`)

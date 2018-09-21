@@ -1,7 +1,8 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>AnyPalette.js Demo</title>
 		<style>
 			body {
@@ -15,6 +16,12 @@
 				margin: 2px;
 				outline: 1px solid black;
 				border: 1px solid white;
+			}
+			@media (max-width: 700px) {
+				.color {
+					width: 10px;
+					height: 10px;
+				}
 			}
 			h2 > *:not(.header-text) {
 				font-size: 0.5em;

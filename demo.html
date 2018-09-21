@@ -18,9 +18,15 @@
 				border: 1px solid white;
 			}
 			@media (max-width: 700px) {
+				.palette-row {
+					line-height: 0;
+				}
 				.color {
-					width: 10px;
-					height: 10px;
+					width: 15px;
+					height: 15px;
+					margin: 0;
+					outline: 0;
+					border: 0;
 				}
 			}
 			h2 > *:not(.header-text) {
@@ -143,7 +149,7 @@
 					
 					var show_colors = function(palette){
 						$output.empty();
-						var $row = $("<div>").appendTo($output);
+						var $row = $("<div class='palette-row'>").appendTo($output);
 						var col = 0;
 						$.each(palette, function(i, color){
 							$("<div class='color'>")
@@ -154,7 +160,7 @@
 							col += 1;
 							if(col > palette.n_columns){
 								col = 0;
-								$row = $("<div>").appendTo($output);
+								$row = $("<div class='palette-row'>").appendTo($output);
 							}
 						});
 					};

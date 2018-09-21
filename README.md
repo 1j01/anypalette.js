@@ -13,19 +13,11 @@ ONE LIBRARY SHALL RULE THEM ALL
 AnyPalette.js has a single interface for all formats, so you can load any of the supported file types with one call,
 and it'll choose an appropriate parser to use automatically.
 
+Loads from files that aren't intended specifically as palettes, but that have CSS-style color values in them (.css, .html, .svg, .js, etc.)
+
 Works in Node.js and in the browser.
 
-Supported palette formats:
-
-* [RIFF] PAL (.pal)
-* [Paint.NET] palette (.txt)
-* [GIMP][Gimp] palette (.gpl), also used in [Inkscape], [CinePaint], and [Krita]
-* [Paint Shop Pro] palette (.pal, .psppalette) (JASC / Corel)
-* ColorSchemer palette (.cs)
-* Whatever HPL stands for (.hpl) (Homesite PaLette?), used by Allaire Homesite / Macromedia ColdFusion
-* [Starcraft] palette files, because why not? Well, maybe because it can give false positives and thereby return garbage data for a file instead of an error saying it couldn't be parsed
-* Loads from files that aren't intended specifically as palettes, but that have CSS-style color values in them (.css, .html, .svg, .js, etc.)
-
+Supported (and unsupported) palette formats:
 
 | File Extension    | Name                              | Programs                                                                          |   Read  |  Write  |
 |-------------------|-----------------------------------|-----------------------------------------------------------------------------------|:-------:|:-------:|
@@ -33,12 +25,17 @@ Supported palette formats:
 | .gpl              | [GIMP][Gimp] Palette              | [Gimp], [Inkscape], [Krita], [KolourPaint], [Scribus], [CinePaint], [MyPaint]     |   ✅   | Planned |
 | .txt              | [Paint.NET] Palette               | [Paint.NET]                                                                       |   ✅   | Planned |
 | .pal, .psppalette | [Paint Shop Pro] Palette          | [Paint Shop Pro][] (Jasc Software / Corel)                                        |   ✅   | Planned |
-| .hpl              | [Homesite] Palette                | Allaire [Homesite] / Macromedia [ColdFusion]                                      |   ✅   |         |
-| .cs               | ColorSchemer Studio Color Scheme  | ColorSchemer Studio                                                               |   ✅   |         |
-| .aco              | Adobe Color file                  | Adobe [Photoshop]                                                                 | Planned | Planned |
+| .hpl              | [Homesite] Palette                | Allaire [Homesite] / Macromedia [ColdFusion]                                      |   ✅   | Planned |
+| .cs               | ColorSchemer                      | ColorSchemer Studio                                                               |   ✅   | Planned |
+| .pal              | [Starcraft] Palette               | [Starcraft]                                                                       |   ✅   | Planned |
+| .wpe              | [Starcraft] Terrain Palette       | [Starcraft]                                                                       |   ✅   | Planned |
+| .sketchpalette    | [Sketch] Palette                  | [Sketch]                                                                          | Planned | Planned |
+| .gpa              | [Gpick] Palette                   | [Gpick]                                                                           | Planned | Planned |
+| .aco              | Adobe Color Swatches              | Adobe [Photoshop]                                                                 | Planned | Planned |
+| .act              | Adobe Color Table                 | Adobe [Photoshop] and [Illustrator]                                               | Planned | Planned |
 | .ase              | Adobe Swatch Exchange             | Adobe [Photoshop], [InDesign], and [Illustrator]                                  | Planned | Planned |
-| .acbl             | Adobe Color Book Library/Legacy   | Adobe [InDesign] and [Illustrator]                                                | Planned |         |
-| .soc              | StarOffice Colors                 | StarOffice, [OpenOffice], [LibreOffice]                                           | Planned | Planned |
+| .acbl             | Adobe Color Book Library / Legacy | Adobe [InDesign] and [Illustrator]                                                | Planned | Planned |
+| .soc              | StarOffice Colors                 | [StarOffice], [OpenOffice], [LibreOffice]                                         | Planned | Planned |
 | .*                | And many more...                  | ...                                                                               | Planned | Planned |
 
 
@@ -48,10 +45,12 @@ Supported palette formats:
 [Paint Shop Pro]: https://www.paintshoppro.com/en/
 [Starcraft]: https://en.wikipedia.org/wiki/StarCraft
 [Homesite]: https://en.wikipedia.org/wiki/Macromedia_HomeSite
+[ColdFusion]: https://en.wikipedia.org/wiki/Adobe_ColdFusion
 [StarOffice]: https://en.wikipedia.org/wiki/StarOffice
 [OpenOffice]: https://www.openoffice.org/
 [LibreOffice]: https://www.libreoffice.org/
-[ColdFusion]: https://en.wikipedia.org/wiki/Adobe_ColdFusion
+[Sketch]: https://www.sketchapp.com/
+[Gpick]: http://www.gpick.org/
 [Photoshop]: https://www.adobe.com/products/photoshop.html
 [InDesign]: https://www.adobe.com/products/indesign.html
 [Illustrator]: https://www.adobe.com/products/illustrator.html
@@ -89,7 +88,7 @@ Then access the library with:
 const AnyPalette = require("anypalette");
 ```
 
-Alternatively, download [`build/anypalette.js`](build/anypalette.js) and include it as a script:
+**Alternatively**, download [`build/anypalette.js`](build/anypalette.js) and include it as a script:
 
 ```html
 <script src="anypalette.js"></script>
@@ -97,14 +96,14 @@ Alternatively, download [`build/anypalette.js`](build/anypalette.js) and include
 
 This will create a global `AnyPalette`
 
-This file uses a Universal Module Definition, so you can also load it with AMD or CommonJS (in which case it won't create a global).
+This library uses UMD, so you can also load it with AMD or CommonJS (in which case it won't create a global).
 
 
-## API Documentation
+## API
 
-Only what's documented should be considered part of the API.
+Undocumented properties and methods may break without notice, and this library isn't following [semver] until 1.0 is released.
 
-Not following semver yet.
+[semver]: https://semver.org/
 
 ### `AnyPalette.load(options, callback)`
 
@@ -117,15 +116,15 @@ Knowing the file extension means AnyPalette.js can often pick the correct palett
 - `options.fileExt` (optional) - the file extension, if you have it, *excluding* the dot, e.g. `"pal"` - can be obtained from `options.fileName` or `options.file` or `options.filePath`
 - `callback(error, palette)` (required) - called when palette loading is finished, either with an error (in the first argument) or a `Palette` (in the second)
 
-Note: the callback is asynchronous to allow for file loading, but all palette parsing is currently synchronous.
+Note: the callback is asynchronous to allow for file loading, but all the palette parsing is currently synchronous.
 
 ### `AnyPalette.load(file, callback)`
 
-Shortcut to load from a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) - equivalent to passing `{file: file}` as `options`.
+Shortcut to load from a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) - equivalent to passing `{file: file}` for `options`.
 
 ### `AnyPalette.load(filePath, callback)`
 
-Shortcut to load from a file path in Node.js - equivalent to passing `{filePath: filePath}` as `options`.
+Shortcut to load from a file path in Node.js - equivalent to passing `{filePath: filePath}` for `options`.
 
 
 ### class `Palette` extends `Array`
@@ -145,10 +144,10 @@ such as `#000` or `#00F`.
 So by default, duplicates are removed.
 You can get all duplicates with `palette.withDuplicates` (which is another `Palette`)
 
-#### `palette.nColumns`
+#### `palette.n_columns`
 
-`palette.nColumns` may contain a number of columns for the palette to fit into (with the number of rows being implicit).  
-You should ignore an `nColumns` of zero, and may want to ignore this property entirely.
+`palette.n_columns` may contain a number of columns for the palette to fit into (with the number of rows being implicit).  
+You should ignore an `n_columns` of zero, and may want to ignore this property entirely.
 
 Currently only GIMP palettes will have this specified, but dimension guessing is planned.
 
@@ -182,14 +181,14 @@ Also for GIMP palettes, a `Color` may have a `name` (string or undefined)
 
 * Load *all the palettes!*
 	* Adobe Color files (`.aco`) used in Photoshop
-	* Adobe Swatch Exchange (`.ase`) (Illustrator and InDesign) - see [ase-to-sketchpalette](https://github.com/andrewfiorillo/ase-to-sketchpalette/) (JS with jDataView), [adobe-swatch-exchange](https://github.com/hughsk/adobe-swatch-exchange) (Node.js), [color-palette](https://github.com/portnov/color-palette/blob/master/palette-editor/palette/storage/ase.py) (Python)
-	* Sketch Palette (`.sketchpalette`) - see [sketch-palettes](https://github.com/andrewfiorillo/sketch-palettes)
-	* Skencil Palette (`.spl`) - examples: https://wald.intevation.org/scm/viewvc.php/skencil/trunk/Resources/Misc/?root=skencil
-	* Magica Voxel Palette (`.png`) (single pixel color strip) - see [MagicaVoxelPalettes](https://github.com/mattperrin/MagicaVoxelPalettes) for examples
+	* Adobe Swatch Exchange (`.ase`) used in Photoshop, Illustrator and InDesign
+	* Sketch Palette (`.sketchpalette`)
+	* Skencil Palette (`.spl`)
+	* Magica Voxel Palette (`.png`) - see [MagicaVoxelPalettes](https://github.com/mattperrin/MagicaVoxelPalettes) for examples
 	* macOS Color Palette (`.clr`)
-	* [Gpick](http://www.gpick.org/) Palette (`.gpa`)
+	* Gpick Palette (`.gpa`)
 	* KDE Colors (`.colors`)
-	* maayyybe
+	* Low priority
 		* ASCII Color Format (`.acf`)
 		* Binary Color Format (`.bcf`)
 		* Alias/WaveFront Material (`.mtl`)

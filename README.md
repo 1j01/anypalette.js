@@ -5,7 +5,7 @@ There are a LOT of different types of palette files.
 
 ONE LIBRARY SHALL RULE THEM ALL
 
-[Let's load some palettes](https://1j01.github.io/anypalette.js/test)
+[Let's load some palettes](https://1j01.github.io/anypalette.js/demo)
 
 
 ## Features

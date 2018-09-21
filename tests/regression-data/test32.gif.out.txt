@@ -1,3 +1,8 @@
+Loaded As:                StarCraft palette for some reason
+geometrySpecifiedByFile:  undefined
+numberOfColumns:          undefined
+
+Colors:
 rgb(71, 73, 70)
 rgb(56, 57, 97)
 rgb(214, 0, 96)

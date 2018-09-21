@@ -1,3 +1,8 @@
+Loaded As:                RIFF PAL for some reason
+geometrySpecifiedByFile:  undefined
+numberOfColumns:          undefined
+
+Colors:
 rgb(255, 0, 255)
 rgb(62, 47, 47)
 rgb(79, 62, 62)

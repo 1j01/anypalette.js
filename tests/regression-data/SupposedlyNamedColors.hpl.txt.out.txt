@@ -1,3 +1,8 @@
+Loaded As:                HPL palette for some reason
+geometrySpecifiedByFile:  undefined
+numberOfColumns:          undefined
+
+Colors:
 rgb(240, 248, 255)
 rgb(250, 235, 215)
 rgb(0, 255, 255)

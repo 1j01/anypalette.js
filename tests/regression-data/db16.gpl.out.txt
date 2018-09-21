@@ -1,3 +1,8 @@
+Loaded As:                GIMP palette for some reason
+geometrySpecifiedByFile:  true
+numberOfColumns:          8
+
+Colors:
 rgb(20, 12, 28)
 rgb(68, 36, 52)
 rgb(48, 52, 109)

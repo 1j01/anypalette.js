@@ -1,3 +1,8 @@
+Loaded As:                CSS-style colors for some reason
+geometrySpecifiedByFile:  undefined
+numberOfColumns:          undefined
+
+Colors:
 rgb(34, 34, 69)
 rgb(29, 161, 205)
 rgb(83, 236, 236)

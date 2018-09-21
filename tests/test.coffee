@@ -20,7 +20,19 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 			do (file_path)->
 				file_name = require("path").basename(file_path)
 				AnyPalette.loadPalette file_path, (err, palette)->
-					result = (if err then err.message else palette.join('\n')) + "\n"
+					result =
+						if err
+							err.message
+						else
+							"""
+							Loaded As:                #{palette.loaded_as}#{palette.loaded_as_clause}
+							geometrySpecifiedByFile:  #{palette.geometrySpecifiedByFile}
+							numberOfColumns:          #{palette.numberOfColumns}
+							
+							Colors:
+							#{palette.join('\n')}
+
+							"""
 					output_file_path = "#{__dirname}/regression-data/#{file_name}.out.txt"
 					fs.writeFileSync output_file_path, result, "utf8"
 					console.log "Wrote", (if err then "failed" else "parsed"), output_file_path

@@ -1,1 +1,6 @@
+Loaded As:                CSS-style colors for some reason
+geometrySpecifiedByFile:  undefined
+numberOfColumns:          undefined
+
+Colors:
 rgb(NaN, NaN, NaN)

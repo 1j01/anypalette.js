@@ -1,3 +1,8 @@
+Loaded As:                Paint Shop Pro palette for some reason
+geometrySpecifiedByFile:  undefined
+numberOfColumns:          undefined
+
+Colors:
 rgb(0, 255, 0)
 rgb(246, 244, 239)
 rgb(235, 233, 229)

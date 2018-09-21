@@ -1,3 +1,8 @@
+Loaded As:                Paint.NET palette for some reason
+geometrySpecifiedByFile:  undefined
+numberOfColumns:          undefined
+
+Colors:
 rgb(0, 0, 0)
 rgb(34, 32, 52)
 rgb(69, 40, 60)

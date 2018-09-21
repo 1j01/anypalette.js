@@ -1,1 +1,6 @@
+Loaded As:                ColorSchemer palette for some reason
+geometrySpecifiedByFile:  undefined
+numberOfColumns:          undefined
+
+Colors:
 rgb(255, 255, 255)

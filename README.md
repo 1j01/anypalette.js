@@ -101,9 +101,8 @@ This library uses UMD, so you can also load it with AMD or CommonJS (in which ca
 
 ## API
 
-Undocumented properties and methods may break without notice, and this library isn't following [semver] until 1.0 is released.
-
-[semver]: https://semver.org/
+See the [changelog](CHANGELOG.md) for upgrading.
+Undocumented properties and methods may break without notice.
 
 ### `AnyPalette.load(options, callback)`
 

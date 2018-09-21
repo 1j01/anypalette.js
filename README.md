@@ -148,7 +148,9 @@ You can get all duplicates with `palette.withDuplicates` (which is another `Pale
 `palette.numberOfColumns` may contain a number of columns for the palette to fit into (with the number of rows being implicit).  
 You should ignore an `numberOfColumns` of zero, and may want to ignore this property entirely.
 
-Currently only GIMP palettes will have this specified, but dimension guessing is planned.
+Currently only GIMP palettes will have this specified, but geometry guessing is planned.
+
+You should use `palette.withDuplicates` (and `palette.withDuplicates.numberOfColumns`) to work with file-specified geometry.
 
 
 ### class `Color`

@@ -17,9 +17,9 @@ gulp.task 'build', ->
 		# Export with UMD
 		standalone: 'AnyPalette'
 	
-	# Allow access to Node's fs module in the bundle
-	# TODO: .external('path') as well
+	# Allow access to Node's fs and path modules without bundling them
 	.external('fs')
+	.external('path')
 	# Compile the .coffee files
 	.transform('coffeeify')
 	

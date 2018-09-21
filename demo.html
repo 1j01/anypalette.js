@@ -280,7 +280,7 @@
 						})
 							.done(function(data){
 								palette_view.status("Loading palette from file...");
-								AnyPalette.load({
+								AnyPalette.loadPalette({
 									data: data,
 									fileName: fname
 								}, function(err, palette){
@@ -301,7 +301,7 @@
 					palette_view.status("Loading palette from file...");
 					
 					setTimeout(function(){
-						AnyPalette.load(file, function(err, palette){
+						AnyPalette.loadPalette(file, function(err, palette){
 							palette_view.update(err, palette);
 						});
 					}, i * 100); //stagger loading

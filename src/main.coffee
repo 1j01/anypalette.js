@@ -188,11 +188,11 @@ AnyPalette = {
 }
 
 # Get palette from a file
-AnyPalette.load = (o, callback)->
+AnyPalette.loadPalette = (o, callback)->
 	if not o
-		throw new Error "Parameters required: AnyPalette.load(options, function callback(err, palette){})"
+		throw new Error "Parameters required: AnyPalette.loadPalette(options, function callback(err, palette){})"
 	if not callback
-		throw new Error "Callback required: AnyPalette.load(options, function callback(err, palette){})"
+		throw new Error "Callback required: AnyPalette.loadPalette(options, function callback(err, palette){})"
 	
 	o = normalize_options o
 	
@@ -220,10 +220,10 @@ AnyPalette.load = (o, callback)->
 
 # Get a palette from a file or by any means necessary
 # (as in fall back to completely random data)
-AnyPalette.gimme = (o, callback)->
+AnyPalette.gimmeAPalette = (o, callback)->
 	o = normalize_options o
 	
-	AnyPalette.load o, (err, palette)->
+	AnyPalette.loadPalette o, (err, palette)->
 		callback(null, palette ? new RandomPalette)
 
 # Exports

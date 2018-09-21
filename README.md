@@ -104,7 +104,7 @@ This library uses UMD, so you can also load it with AMD or CommonJS (in which ca
 See the [changelog](CHANGELOG.md) for upgrading.
 Undocumented properties and methods may break without notice.
 
-### `AnyPalette.load(options, callback)`
+### `AnyPalette.loadPalette(options, callback)`
 
 Knowing the file extension means AnyPalette.js can often pick the correct palette loader right away, which can improve the load speed, and also (TODO:) some loaders won't load except via their specific file extension because they can't determine if the file is actually in that format or not (for raw data formats without headers).
 
@@ -117,11 +117,11 @@ Knowing the file extension means AnyPalette.js can often pick the correct palett
 
 Note: the callback is asynchronous to allow for file loading, but all the palette parsing is currently synchronous.
 
-### `AnyPalette.load(file, callback)`
+### `AnyPalette.loadPalette(file, callback)`
 
 Shortcut to load from a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) - equivalent to passing `{file: file}` for `options`.
 
-### `AnyPalette.load(filePath, callback)`
+### `AnyPalette.loadPalette(filePath, callback)`
 
 Shortcut to load from a file path in Node.js - equivalent to passing `{filePath: filePath}` for `options`.
 

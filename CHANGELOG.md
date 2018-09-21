@@ -9,7 +9,7 @@ This project does not adhere to [Semantic Versioning](https://semver.org/spec/v2
 ## [Unreleased]
 - (Nothing yet)
 
-[0.1.0]: sdfsdf
+[0.1.0]: https://github.com/1j01/anypalette.js/compare/c74f0d93543c4f52ee7c1fd6e6c9201d47b0df33...v0.1.0
 ## [0.1.0] - 2018-09-21
 ### Added
 - Initial release.

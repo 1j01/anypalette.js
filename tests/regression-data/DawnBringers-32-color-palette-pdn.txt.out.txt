@@ -1,4 +1,4 @@
-Loaded As:                Paint.NET palette for some reason
+Loaded As:                Paint.NET palette (.txt)
 geometrySpecifiedByFile:  undefined
 numberOfColumns:          undefined
 

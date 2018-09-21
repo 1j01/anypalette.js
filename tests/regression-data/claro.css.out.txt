@@ -1,4 +1,4 @@
-Loaded As:                CSS-style colors for some reason
+Loaded As:                CSS-style colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
 geometrySpecifiedByFile:  undefined
 numberOfColumns:          undefined
 

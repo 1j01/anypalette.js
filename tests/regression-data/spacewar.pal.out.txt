@@ -1,4 +1,4 @@
-Loaded As:                Paint Shop Pro palette for some reason
+Loaded As:                Paint Shop Pro palette (.pal, .psppalette)
 geometrySpecifiedByFile:  undefined
 numberOfColumns:          undefined
 

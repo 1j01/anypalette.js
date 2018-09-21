@@ -1,4 +1,4 @@
-Loaded As:                ColorSchemer palette for some reason
+Loaded As:                ColorSchemer palette (.cs)
 geometrySpecifiedByFile:  undefined
 numberOfColumns:          undefined
 

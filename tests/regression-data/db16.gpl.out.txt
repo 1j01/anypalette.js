@@ -1,4 +1,4 @@
-Loaded As:                GIMP palette for some reason
+Loaded As:                GIMP palette (.gpl, .gimp, .colors)
 geometrySpecifiedByFile:  true
 numberOfColumns:          8
 

@@ -1,4 +1,4 @@
-Loaded As:                HPL palette for some reason
+Loaded As:                HPL palette (.hpl)
 geometrySpecifiedByFile:  undefined
 numberOfColumns:          undefined
 

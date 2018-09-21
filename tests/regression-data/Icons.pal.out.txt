@@ -1,4 +1,4 @@
-Loaded As:                StarCraft palette for some reason
+Loaded As:                StarCraft palette (.pal)
 geometrySpecifiedByFile:  undefined
 numberOfColumns:          undefined
 

@@ -2,7 +2,7 @@
 BinaryReader = require "../BinaryReader"
 Palette = require "../Palette"
 
-load_adobe_color_table = ({data, file_ext})->
+load_adobe_color_table = ({data, fileExt})->
 	# ACT (Adobe Color Table)
 	
 	# "There is no version number written in the file.
@@ -20,7 +20,7 @@ load_adobe_color_table = ({data, file_ext})->
 	
 	if br.getSize() is 768 or # "The file is exactly 76 [sic] long"
 	br.getSize() is 768+2*16 or # "CS2 added 2*int16 at the end of the file"
-	file_ext is "act" # "Fireworks can read ACT files bigger than 768 bytes"
+	fileExt is "act" # "Fireworks can read ACT files bigger than 768 bytes"
 		"okay"
 	else
 		throw new Error "Wrong file size" # TODO: more specific

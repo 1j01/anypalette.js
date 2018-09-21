@@ -25,7 +25,7 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 							err.message
 						else
 							"""
-							Loaded As:                #{palette.loaded_as}#{palette.loaded_as_clause}
+							Loaded As:                #{palette.loaded_as} #{palette.loaded_as_clause.trim()}
 							geometrySpecifiedByFile:  #{palette.geometrySpecifiedByFile}
 							numberOfColumns:          #{palette.numberOfColumns}
 							

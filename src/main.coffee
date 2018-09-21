@@ -120,7 +120,7 @@ load_palette = (o, callback)->
 	
 	# find palette loaders that use this file extension
 	for pl in palette_loaders
-		pl.matches_ext = pl.exts.indexOf(o.file_ext) isnt -1
+		pl.matches_ext = pl.exts.indexOf(o.fileExt) isnt -1
 	
 	# move palette loaders to the beginning that use this file extension
 	palette_loaders.sort (pl1, pl2)->

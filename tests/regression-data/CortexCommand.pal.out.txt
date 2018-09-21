@@ -1,4 +1,4 @@
-Loaded As:                RIFF PAL for some reason
+Loaded As:                RIFF PAL (.pal)
 geometrySpecifiedByFile:  undefined
 numberOfColumns:          undefined
 

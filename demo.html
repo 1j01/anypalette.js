@@ -282,7 +282,7 @@
 								palette_view.status("Loading palette from file...");
 								AnyPalette.load({
 									data: data,
-									file_name: fname
+									fileName: fname
 								}, function(err, palette){
 									palette_view.update(err, palette);
 								});

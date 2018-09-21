@@ -136,7 +136,7 @@ load_palette = (o, callback)->
 				palette = null
 				throw new Error "no colors returned"
 		catch e
-			msg = "failed to load #{o.file_name} as #{pl.name}: #{e.message}"
+			msg = "failed to load #{o.fileName} as #{pl.name}: #{e.message}"
 			# if pl.matches_ext and not e.message.match(/not a/i)
 			# 	console?.error? msg
 			# else
@@ -149,7 +149,7 @@ load_palette = (o, callback)->
 			errors.push err
 		
 		if palette
-			# console?.info? "loaded #{o.file_name} as #{pl.name}"
+			# console?.info? "loaded #{o.fileName} as #{pl.name}"
 			palette.confidence = if pl.matches_ext then 0.9 else 0.01
 			palette.loaded_as = pl.name
 			exts_pretty = "(.#{pl.exts.join(", .")})"
@@ -168,16 +168,15 @@ load_palette = (o, callback)->
 
 normalize_options = (o = {})->
 	if typeof o is "string" or o instanceof String
-		o = file_path: o
+		o = filePath: o
 	if File? and o instanceof File
 		o = file: o
 	
-	o.min_colors ?= o.minColors ? 2
-	o.max_colors ?= o.maxColors ? 256
-	o.file_path ?= o.filePath
-	o.file_name ?= o.fileName ? o.fname ? o.file?.name ? (if o.file_path then require("path").basename(o.file_path))
-	o.file_ext ?= o.fileExt ? "#{o.file_name}".split(".").pop()
-	o.file_ext = ("#{o.file_ext}").toLowerCase()
+	# o.minColors ?= 2
+	# o.maxColors ?= 256
+	o.fileName ?= o.file?.name ? (if o.filePath then require("path").basename(o.filePath))
+	o.fileExt ?= "#{o.fileName}".split(".").pop()
+	o.fileExt = "#{o.fileExt}".toLowerCase()
 	o
 
 AnyPalette = {
@@ -205,9 +204,9 @@ AnyPalette.load = (o, callback)->
 			o.data = fr.result
 			load_palette(o, callback)
 		fr.readAsBinaryString o.file
-	else if o.file_path?
+	else if o.filePath?
 		fs = require "fs"
-		fs.readFile o.file_path, (err, data)->
+		fs.readFile o.filePath, (err, data)->
 			if err
 				callback(err)
 			else

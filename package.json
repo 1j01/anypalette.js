@@ -56,7 +56,7 @@
 		"build/anypalette.js"
 	],
 	"scripts": {
-		"start": "live-server || python -m SimpleHTTPServer",
+		"start": "concurrently --kill-others --names live-server,watch \"live-server\" \"gulp --require coffeescript/register\"",
 		"test": "coffee tests/test.coffee",
 		"build": "gulp --require coffeescript/register build",
 		"watch": "gulp --require coffeescript/register"
@@ -65,8 +65,10 @@
 		"browserify": "^16.2.2",
 		"coffeeify": "^3.0.1",
 		"coffeescript": "^2.3.1",
+		"concurrently": "^4.0.1",
 		"glob": "^7.1.3",
 		"gulp": "^3.9.1",
+		"live-server": "^1.2.0",
 		"mkdirp": "^0.5.1",
 		"vinyl-source-stream": "^1.0.0"
 	}

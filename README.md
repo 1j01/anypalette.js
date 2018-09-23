@@ -212,23 +212,49 @@ Also for GIMP palettes, a `Color` may have a `name` (string or undefined)
 and from an ArrayBuffer in the browser
 
 
-## Development
+## Contributing
 
-	git clone https://github.com/1j01/anypalette.js.git
-	cd anypalette.js
-	git submodule update --init
-	npm install
-	npm run watch
+<!-- See CONTRIBUTING.md -->
 
-Then (concurrently, in a separate terminal) start up a webserver, e.g.
+### Development Setup
 
-	python -m SimpleHTTPServer
+* Install Node.js, if you don't already have it. (It comes with `npm`)
 
-or better yet [Live Server](https://www.npmjs.com/package/live-server)
+* [Fork and clone](https://help.github.com/articles/fork-a-repo/) the repository
 
-	npm i -g live-server
-	live-server
+* The repo has a git submodule, so in the repository folder run `git submodule update --init`
+
+* Install dependencies with `npm install`
+
+### Development Workflow
+
+`npm start` will start a server and open a page in your default browser;
+it'll rebuild the library when changes to the source files are detected, and it'll auto-reload the page
 
 Run `npm test` to update a `regression-data` folder, and then view any changes with git.  
 If the changes are good/positive, that's good! Commit the changes along with the source code.  
 If the changes are bad/negative, try to fix the regression.  
+
+Don't commit `build/anypalette.js` until cutting a release
+(to reduce noise and avoid conflicts when reverting and such).
+
+Update [CHANGELOG.md](CHANGELOG.md)'s [Unreleased] section with any notable changes,
+following the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format.
+(Include any information someone upgrading the library might need to know.)
+
+When pulling changes (e.g. syncing a fork) you may need to `npm install` again to update the dependencies.
+
+### To cut a release
+
+The process is currently something like this:
+
+In [CHANGELOG.md](CHANGELOG.md), replace the [Unreleased] section with the next version number
+(TODO: use [update-changelog](https://github.com/ukatama/update-changelog) (altho it doesn't support links to commit ranges; [this does, but it's for a different ecosystem](https://github.com/pajapro/fastlane-plugin-changelog)), and update the build within `npm version`)
+
+	npm run build
+	npm test
+	git diff tests/ # there shouldn't be changes to the test data at this point, that should ideally happen in earlier commits
+	git add -A && git commit -m "Update for release"
+	npm version minor # or major or patch
+	git push --follow-tags # better than --tags!
+	npm publish

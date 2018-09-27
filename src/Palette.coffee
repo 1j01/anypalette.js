@@ -12,6 +12,7 @@ class Palette extends Array
 		@push new_color
 	
 	finalize: ->
+		# TODO: get this working properly and enable
 		# if not @numberOfColumns
 		# 	@guess_dimensions()
 		unless @parentPaletteWithoutDuplicates
@@ -35,6 +36,7 @@ class Palette extends Array
 					j += 1
 				i += 1
 
+	###
 	guess_dimensions: ->
 		# TODO: get this working properly and enable
 
@@ -50,4 +52,5 @@ class Palette extends Array
 			if Math.abs(cd[0] - cd[1]) < Math.abs(squarest[0] - squarest[1])
 				squarest = cd
 		
-		# @numberOfColumns = squarest[1]
+		@numberOfColumns = squarest[1]
+	###

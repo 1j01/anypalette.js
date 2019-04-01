@@ -41,7 +41,11 @@
 		"format",
 		"formats",
 		"file-format",
-		"file-formats"
+		"file-formats",
+		"rgb",
+		"hsl",
+		"hex",
+		"css"
 	],
 	"license": "MIT",
 	"repository": {
@@ -56,10 +60,11 @@
 		"build/anypalette.js"
 	],
 	"scripts": {
-		"start": "concurrently --kill-others --names live-server,watch \"live-server\" \"gulp --require coffeescript/register\"",
+		"start": "concurrently --kill-others --names live-server,watch \"live-server --ignore='**/src/**/*'\" \"gulp --require coffeescript/register\"",
 		"test": "coffee tests/test.coffee",
 		"build": "gulp --require coffeescript/register build",
-		"watch": "gulp --require coffeescript/register"
+		"watch": "gulp --require coffeescript/register",
+		"version": "npm run build && git add build/ && update-changelog && git add CHANGELOG.md"
 	},
 	"devDependencies": {
 		"browserify": "^16.2.2",

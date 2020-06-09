@@ -9,14 +9,29 @@ Refer to the [latest version of the changelog](https://github.com/1j01/anypalett
 for potential future corrections.
 (The changelog can't be retroactively updated within an npm release, so if for instance a breaking change was accidentally omitted, it wouldn't be in the changelog in the release, but it could be added later to the changelog on GitHub.)
 
-[Unreleased]: https://github.com/1j01/anypalette.js/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/1j01/anypalette.js/compare/v0.2.0...HEAD
 ## [Unreleased]
+<details>
+	<summary>
+		Changes in master that are not yet released.
+		Click to see more.
+	</summary>
+
+Nothing here yet!
+
+</details>
+
+[0.2.0]: https://github.com/1j01/anypalette.js/compare/v0.1.0...v0.2.0
+## [0.2.0] - 2020-06-09
 ### Changed
-- `AnyPalette.load` is now `AnyPalette.loadPalette`; this is so destructuring can work nicely without the function name being so generic. (And also, it has the name of the class that it loads, which is a nice bit of self-documentation. It doesn't load an `AnyPalette` (that's the namespace), it loads a `Palette`)
+- `AnyPalette.load` is now `AnyPalette.loadPalette`; this is so with destructuring you get a clearly named function ("load" would be too generic). (Also, it has the name of the class that it loads, which is a nice bit of self-documentation. It doesn't load an `AnyPalette` (that's the namespace), it loads a `Palette`)
 - `n_columns` is now `numberOfColumns`
 - (The API is now fully camelCase.)
 - (Undocumented property `has_dimensions` is now `geometrySpecifiedByFile`)
 - (Undocumented properties `loaded_as` and `loaded_as_clause` are replaced with `loader: {name, fileExtensions, fileExtensionsPretty}` and `matchedLoaderFileExtensions`)
+
+### Added
+- More CSS color values can be parsed (functional rgb/rgba/hsl/hsla, including space-separated versions)
 
 [0.1.0]: https://github.com/1j01/anypalette.js/compare/c74f0d93543c4f52ee7c1fd6e6c9201d47b0df33...v0.1.0
 ## [0.1.0] - 2018-09-21

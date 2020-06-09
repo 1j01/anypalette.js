@@ -1,6 +1,6 @@
 {
 	"name": "anypalette",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"author": "Isaiah Odhner <isaiahodhner@gmail.com>",
 	"description": "Load many color palette formats",
 	"keywords": [

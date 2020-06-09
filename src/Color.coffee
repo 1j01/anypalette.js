@@ -1,4 +1,11 @@
 
+# color value ranges:
+# a: 0 to 1
+# r/g/b: 0 to 255
+# h: 0 to 360
+# s/l: 0 to 100
+# c/m/y/k: 0 to 100
+
 module.exports =
 class Color
 	constructor: (options)->

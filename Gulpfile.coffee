@@ -37,7 +37,7 @@ gulp.task 'build', ->
 
 # Rebuild when source files change
 gulp.task 'watch', ->
-	gulp.watch './src/**/*', ['build']
+	gulp.watch './src/**/*', gulp.series(['build'])
 
 # Build once, and then rebuild when source files change
-gulp.task 'default', ['watch', 'build']
+gulp.task 'default', gulp.parallel(['watch', 'build'])

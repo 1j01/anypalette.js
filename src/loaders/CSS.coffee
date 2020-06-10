@@ -3,11 +3,14 @@
 
 Palette = require "../Palette"
 
+# TODO: detect names via structures like CSS variables, JSON object keys/values, comments
+# TODO: use all colors regardless of format, within a detected structure, or maybe always
+
 module.exports = ({data})->
 	
 	palettes = [
-		palette_xRRGGBB = new Palette()
-		palette_xRGB = new Palette()
+		palette_hex_long = new Palette()
+		palette_hex_short = new Palette()
 		palette_rgb = new Palette()
 		palette_hsl = new Palette()
 		palette_hsla = new Palette()
@@ -16,9 +19,6 @@ module.exports = ({data})->
 	
 	hex = (x)-> parseInt(x, 16)
 	
-	# TODO: support 0xFFF style, but deprioritize it if CSS-style colors are present
-	# ...but what order of components should be assumed there? maybe just keep to CSS
-
 	data.replace ///
 		\# # hashtag # #/
 		(
@@ -33,13 +33,13 @@ module.exports = ({data})->
 		(?![0-9A-F]) # (and no more!)
 	///gim, (m, $1)->
 		if $1.length > 4
-			palette_xRRGGBB.add
+			palette_hex_long.add
 				r: hex $1[0] + $1[1]
 				g: hex $1[2] + $1[3]
 				b: hex $1[4] + $1[5]
 				a: if $1.length is 8 then hex $1[6] + $1[7] else 1
 		else
-			palette_xRGB.add
+			palette_hex_short.add
 				r: hex $1[0] + $1[0]
 				g: hex $1[1] + $1[1]
 				b: hex $1[2] + $1[2]

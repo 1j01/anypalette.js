@@ -67,9 +67,9 @@ load_palette = (o, callback)->
 			load: require "./loaders/GIMP"
 		}
 		{
-			name: "CSS-style colors"
+			name: "CSS colors"
 			exts: ["css", "scss", "sass", "less", "styl", "html", "htm", "svg", "js", "ts", "xml", "txt"]
-			load: require "./loaders/Generic"
+			load: require "./loaders/CSS"
 		}
 		# {
 		# 	name: "Adobe Color Swatch"

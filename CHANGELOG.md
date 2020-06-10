@@ -21,6 +21,20 @@ Nothing here yet!
 
 </details>
 
+[0.3.0]: https://github.com/1j01/anypalette.js/compare/v0.2.0...v0.3.0
+## [0.3.0] - 2020-06-10
+### Fixed
+- `.gpl` loader: The first line after the "GIMP Palette" line was accidentally skipped, which could lead to missing the first color, or missing the name of the palette, but it's now parsed correctly.
+
+### Changed
+- Renamed CSS colors loader "CSS-style colors" -> "CSS colors"
+- StarCraft palettes are only loaded if they have certain exact sizes, so that arbitrary files are not parsed as garbage StarCraft palettes
+
+### Added
+- `.spl` loader for [Skencil](https://skencil.org/) palettes ("Sketch RGBPalette" - Skencil was formerly called Sketch)
+- `.sketchpalette` loader for [Sketch](https://www.sketch.com/) palettes (unrelated to Skencil `.spl` files)
+- `.colors` loader for KDE palettes
+
 [0.2.0]: https://github.com/1j01/anypalette.js/compare/v0.1.0...v0.2.0
 ## [0.2.0] - 2020-06-09
 ### Changed

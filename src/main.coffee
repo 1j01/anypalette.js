@@ -77,6 +77,11 @@ load_palette = (o, callback)->
 			load: require "./loaders/SPL"
 		}
 		{
+			name: "Sketch palette"
+			exts: ["sketchpalette"]
+			load: require "./loaders/sketchpalette"
+		}
+		{
 			name: "CSS colors"
 			exts: ["css", "scss", "sass", "less", "styl", "html", "htm", "svg", "js", "ts", "xml", "txt"]
 			load: require "./loaders/CSS"

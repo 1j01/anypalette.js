@@ -1,5 +1,6 @@
 
-# Load a Sketch RGB palette
+# Load a Skencil palette (.spl) ("Sketch RGBPalette")
+# (not related to .sketchpalette Sketch App palette format)
 
 Palette = require "../Palette"
 

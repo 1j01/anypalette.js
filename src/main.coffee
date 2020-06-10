@@ -72,6 +72,11 @@ load_palette = (o, callback)->
 			load: require "./loaders/KDE"
 		}
 		{
+			name: "Sketch RGB palette"
+			exts: ["spl"]
+			load: require "./loaders/SPL"
+		}
+		{
 			name: "CSS colors"
 			exts: ["css", "scss", "sass", "less", "styl", "html", "htm", "svg", "js", "ts", "xml", "txt"]
 			load: require "./loaders/CSS"

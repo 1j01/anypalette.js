@@ -9,7 +9,8 @@ parse_gimp_or_kde_rgb_palette = (data, format_name)->
 		throw new Error "Not a #{format_name}"
 	
 	palette = new Palette()
-	i = 1
+	i = 0
+	# starts at i = 1 because the increment happens at the start of the loop
 	while (i += 1) < lines.length
 		line = lines[i]
 		

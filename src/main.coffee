@@ -67,6 +67,11 @@ load_palette = (o, callback)->
 			load: require "./loaders/GIMP"
 		}
 		{
+			name: "KDE RGB palette"
+			exts: ["colors"]
+			load: require "./loaders/KDE"
+		}
+		{
 			name: "CSS colors"
 			exts: ["css", "scss", "sass", "less", "styl", "html", "htm", "svg", "js", "ts", "xml", "txt"]
 			load: require "./loaders/CSS"

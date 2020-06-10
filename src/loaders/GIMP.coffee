@@ -3,10 +3,10 @@
 
 Palette = require "../Palette"
 
-module.exports = ({data})->
+parse_gimp_or_kde_rgb_palette = (data, format_name)->
 	lines = data.split(/[\n\r]+/m)
-	if lines[0] isnt "GIMP Palette"
-		throw new Error "Not a GIMP Palette"
+	if lines[0] isnt format_name
+		throw new Error "Not a #{format_name}"
 	
 	palette = new Palette()
 	i = 1
@@ -55,3 +55,8 @@ module.exports = ({data})->
 			name: r_g_b_name[4]
 		
 	palette
+
+module.exports = ({data})->
+	parse_gimp_or_kde_rgb_palette(data, "GIMP Palette")
+
+module.exports.parse_gimp_or_kde_rgb_palette = parse_gimp_or_kde_rgb_palette

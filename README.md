@@ -31,7 +31,7 @@ Supported (and unsupported) palette formats:
 | .wpe              | [Starcraft] Terrain Palette       | [Starcraft]                                                                       |   ✅   |         |
 | .sketchpalette    | [Sketch] Palette                  | [Sketch]                                                                          |   ✅   | Planned |
 | .spl              | [Skencil] Palette                 | [Skencil] (formerly called Sketch)                                                |   ✅   |         |
-| .colors           | KDE Colors                        | KDE(?)                                                                            |   ✅   |         |
+| .colors           | KolourPaint Color Collection      | [KolourPaint]                                                                     |   ✅   |         |
 | .gpa              | [Gpick] Palette                   | [Gpick]                                                                           | Planned |         |
 | .aco              | Adobe Color Swatches              | Adobe [Photoshop]                                                                 | Planned | Planned |
 | .act              | Adobe Color Table                 | Adobe [Photoshop] and [Illustrator]                                               | Planned | Planned |
@@ -56,7 +56,6 @@ Supported (and unsupported) palette formats:
 [Photoshop]: https://www.adobe.com/products/photoshop.html
 [InDesign]: https://www.adobe.com/products/indesign.html
 [Illustrator]: https://www.adobe.com/products/illustrator.html
-
 [Gimp]: https://www.gimp.org/
 [Inkscape]: https://inkscape.org/en/
 [Krita]: https://www.calligra.org/krita/

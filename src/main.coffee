@@ -67,9 +67,9 @@ load_palette = (o, callback)->
 			load: require "./loaders/GIMP"
 		}
 		{
-			name: "KDE RGB palette"
+			name: "KolourPaint palette"
 			exts: ["colors"]
-			load: require "./loaders/KDE"
+			load: require "./loaders/KolourPaint"
 		}
 		{
 			name: "Sketch RGB palette"

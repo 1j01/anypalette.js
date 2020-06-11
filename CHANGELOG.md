@@ -17,7 +17,8 @@ for potential future corrections.
 		Click to see more.
 	</summary>
 
-Nothing here yet!
+### Changed
+- Renamed `.colors` KDE RGB Palette loader from "KDE RGB palette" to "KolourPaint palette"
 
 </details>
 
@@ -33,7 +34,7 @@ Nothing here yet!
 ### Added
 - `.spl` loader for [Skencil](https://skencil.org/) palettes ("Sketch RGBPalette" - Skencil was formerly called Sketch)
 - `.sketchpalette` loader for [Sketch](https://www.sketch.com/) palettes (unrelated to Skencil `.spl` files)
-- `.colors` loader for KDE palettes
+- `.colors` loader for [KolourPaint](https://kde.org/applications/en/graphics/org.kde.kolourpaint) palettes
 
 [0.2.0]: https://github.com/1j01/anypalette.js/compare/v0.1.0...v0.2.0
 ## [0.2.0] - 2020-06-09

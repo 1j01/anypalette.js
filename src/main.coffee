@@ -86,6 +86,11 @@ load_palette = (o, callback)->
 			exts: ["css", "scss", "sass", "less", "styl", "html", "htm", "svg", "js", "ts", "xml", "txt"]
 			load: require "./loaders/CSS"
 		}
+		{
+			name: "tabular colors"
+			exts: ["csv", "tsv", "txt"]
+			load: require "./loaders/tabular"
+		}
 		# {
 		# 	name: "Adobe Color Swatch"
 		# 	exts: ["aco"]

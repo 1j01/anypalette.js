@@ -25,19 +25,20 @@ Supported (and unsupported) palette formats:
 | .gpl              | [GIMP][Gimp] Palette              | [Gimp], [Inkscape], [Krita], [KolourPaint], [Scribus], [CinePaint], [MyPaint]     |   ✅   | Planned |
 | .txt              | [Paint.NET] Palette               | [Paint.NET]                                                                       |   ✅   | Planned |
 | .pal, .psppalette | [Paint Shop Pro] Palette          | [Paint Shop Pro][] (Jasc Software / Corel)                                        |   ✅   | Planned |
-| .hpl              | [Homesite] Palette                | Allaire [Homesite] / Macromedia [ColdFusion]                                      |   ✅   | Planned |
+| .hpl              | [Homesite] Palette                | Allaire [Homesite] / Macromedia [ColdFusion]                                      |   ✅   |         |
 | .cs               | ColorSchemer                      | ColorSchemer Studio                                                               |   ✅   | Planned |
-| .pal              | [Starcraft] Palette               | [Starcraft]                                                                       |   ✅   | Planned |
-| .wpe              | [Starcraft] Terrain Palette       | [Starcraft]                                                                       |   ✅   | Planned |
-| .sketchpalette    | [Sketch] Palette                  | [Sketch]                                                                          | Planned | Planned |
-| .gpa              | [Gpick] Palette                   | [Gpick]                                                                           | Planned | Planned |
+| .pal              | [Starcraft] Palette               | [Starcraft]                                                                       |   ✅   |         |
+| .wpe              | [Starcraft] Terrain Palette       | [Starcraft]                                                                       |   ✅   |         |
+| .sketchpalette    | [Sketch] Palette                  | [Sketch]                                                                          |   ✅   | Planned |
+| .spl              | [Skencil] Palette                 | [Skencil] (formerly called Sketch)                                                |   ✅   |         |
+| .colors           | KDE Colors                        | KDE(?)                                                                            |   ✅   |         |
+| .gpa              | [Gpick] Palette                   | [Gpick]                                                                           | Planned |         |
 | .aco              | Adobe Color Swatches              | Adobe [Photoshop]                                                                 | Planned | Planned |
 | .act              | Adobe Color Table                 | Adobe [Photoshop] and [Illustrator]                                               | Planned | Planned |
 | .ase              | Adobe Swatch Exchange             | Adobe [Photoshop], [InDesign], and [Illustrator]                                  | Planned | Planned |
 | .acbl             | Adobe Color Book Library / Legacy | Adobe [InDesign] and [Illustrator]                                                | Planned | Planned |
 | .soc              | StarOffice Colors                 | [StarOffice], [OpenOffice], [LibreOffice]                                         | Planned | Planned |
-| .*                | And many more...                  | ...                                                                               | Planned | Planned |
-
+| .*                | And many more...                  |                                                                                   |         |         |
 
 [RIFF]: https://en.wikipedia.org/wiki/Resource_Interchange_File_Format
 [MS Paint]: https://en.wikipedia.org/wiki/Microsoft_Paint
@@ -50,6 +51,7 @@ Supported (and unsupported) palette formats:
 [OpenOffice]: https://www.openoffice.org/
 [LibreOffice]: https://www.libreoffice.org/
 [Sketch]: https://www.sketchapp.com/
+[Skencil]: https://skencil.org/
 [Gpick]: http://www.gpick.org/
 [Photoshop]: https://www.adobe.com/products/photoshop.html
 [InDesign]: https://www.adobe.com/products/indesign.html
@@ -177,18 +179,15 @@ Also for GIMP palettes, a `Color` may have a `name` (string or undefined)
 ## Todo
 
 
-* Save palettes to different formats. [jBinary](https://github.com/jDataView/jBinary) should be helpful.
+* Save palettes to different formats. [jBinary](https://github.com/jDataView/jBinary) may be helpful.
 
 
 * Load *all the palettes!*
 	* Adobe Color files (`.aco`) used in Photoshop
 	* Adobe Swatch Exchange (`.ase`) used in Photoshop, Illustrator and InDesign
-	* Sketch Palette (`.sketchpalette`)
-	* Skencil Palette (`.spl`)
 	* Magica Voxel Palette (`.png`) - see [MagicaVoxelPalettes](https://github.com/mattperrin/MagicaVoxelPalettes) for examples
 	* macOS Color Palette (`.clr`)
 	* Gpick Palette (`.gpa`)
-	* KDE Colors (`.colors`)
 	* Low priority
 		* ASCII Color Format (`.acf`)
 		* Binary Color Format (`.bcf`)
@@ -202,7 +201,7 @@ Also for GIMP palettes, a `Color` may have a `name` (string or undefined)
 			* StarOffice / OpenOffice.org / LibreOffice (`.soc`)
 
 
-* Prevent false positives from formats that are raw data without headers
+* Prevent false positive parsing of unsupported file types
 
 
 * Guess palette geometries

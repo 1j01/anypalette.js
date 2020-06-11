@@ -19,6 +19,7 @@ for potential future corrections.
 
 ### Changed
 - Renamed `.colors` KDE RGB Palette loader from "KDE RGB palette" to "KolourPaint palette"
+- Renamed `.spl` loader from "Sketch RGB palette" to "Skencil palette"
 
 </details>
 

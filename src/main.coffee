@@ -72,7 +72,7 @@ load_palette = (o, callback)->
 			load: require "./loaders/KolourPaint"
 		}
 		{
-			name: "Sketch RGB palette"
+			name: "Skencil palette"
 			exts: ["spl"]
 			load: require "./loaders/SPL"
 		}

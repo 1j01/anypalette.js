@@ -21,6 +21,9 @@ for potential future corrections.
 - Renamed `.colors` KDE RGB Palette loader from "KDE RGB palette" to "KolourPaint palette"
 - Renamed `.spl` loader from "Sketch RGB palette" to "Skencil palette"
 
+### Fixed
+- Improved error handling
+
 ### Added
 - Tabular colors loader for various formats that have comma, space, or tab separated RGB values, such as mtPaint's txt palette format
 - sK1 `.skp` loader (not very generalized - these files are Python source code as far as I can tell - but supporting RGB, CMYK, Grayscale, and a palette `name`, `description`, and `numberOfColumns`)

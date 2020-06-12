@@ -125,13 +125,17 @@
 					$output.text(text).addClass("status-error");
 				};
 				
-				this.update = function(err, palette){
-					if(err){
+				this.update = function(error, palette){
+					if(error){
 						$section.addClass("failed");
 						$output.append("<h3>Failed to load:</h3>");
-						var $ul = $("<ul class='errors'>").appendTo($output);
-						for(var i=0; i<err.errors.length; i++){
-							$ul.append($("<li class='error'>").text(err.errors[i].message));
+						if (error.errors) {
+							var $ul = $("<ul class='errors'>").appendTo($output);
+							for(var i=0; i<error.errors.length; i++){
+								$ul.append($("<li class='error'>").text(error.errors[i].message));
+							}
+						} else {
+							$output.append($("<p class='error'>").text(error));
 						}
 						return;
 					}

@@ -230,32 +230,34 @@ AnyPalette = {
 # Get palette from a file
 AnyPalette.loadPalette = (o, callback)->
 	if not o
-		throw new Error "Parameters required: AnyPalette.loadPalette(options, function callback(err, palette){})"
+		throw new TypeError "parameters required: AnyPalette.loadPalette(options, function callback(error, palette){})"
 	if not callback
-		throw new Error "Callback required: AnyPalette.loadPalette(options, function callback(err, palette){})"
+		throw new TypeError "callback required: AnyPalette.loadPalette(options, function callback(error, palette){})"
 	
 	o = normalize_options o
 	
 	if o.data
 		load_palette(o, callback)
-	else if File? and o.file instanceof File
+	else if o.file
+		if not (o.file instanceof File)
+			throw new TypeError "options.file was passed but it is not a File"
 		fr = new FileReader
+		fr.onerror = ->
+			callback(fr.error)
 		fr.onload = ->
 			o.data = fr.result
 			load_palette(o, callback)
 		fr.readAsBinaryString o.file
 	else if o.filePath?
 		fs = require "fs"
-		fs.readFile o.filePath, (err, data)->
-			if err
-				callback(err)
+		fs.readFile o.filePath, (error, data)->
+			if error
+				callback(error)
 			else
 				o.data = data.toString("binary")
 				load_palette(o, callback)
 	else
-		callback(new Error("Could not load. The File API may not be supported.")) # um...
-		# the File API would be supported if you've passed a File
-		# TODO: a better error message, about options (not) passed
+		throw new TypeError "either options.data or options.file or options.filePath must be passed"
 
 
 # Get a palette from a file or by any means necessary

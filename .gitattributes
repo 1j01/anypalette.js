@@ -1,1 +1,7 @@
 * text=auto
+*.txt text
+*.coffee text
+*.md text
+*.js text
+*.json text
+*.html text

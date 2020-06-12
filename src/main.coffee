@@ -101,11 +101,6 @@ load_palette = (o, callback)->
 		# 	exts: ["colors"]
 		# 	load: require "./loaders/theme"
 		# }
-		{
-			name: "tabular colors"
-			exts: ["csv", "tsv", "txt"]
-			load: require "./loaders/tabular"
-		}
 		# {
 		# 	name: "Adobe Color Swatch"
 		# 	exts: ["aco"]
@@ -154,6 +149,11 @@ load_palette = (o, callback)->
 		# 	exts: ["pal", "cpl"]
 		# 	load: require "./loaders/CorelDRAW"
 		# }
+		{
+			name: "tabular colors"
+			exts: ["csv", "tsv", "txt"]
+			load: require "./loaders/tabular"
+		}
 	]
 	
 	# find palette loaders that use this file extension

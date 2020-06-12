@@ -40,6 +40,8 @@ parse_css_hex_color = (hex_color)->
 		a: if $1.length is 4 then hex $1[3] + $1[3] else 1
 
 module.exports = ({data})->
+	if not data.match(/^\s*{/)
+		throw new Error "not sketchpalette JSON"
 	paletteContents = JSON.parse(data)
 
 	compatibleVersion = paletteContents.compatibleVersion

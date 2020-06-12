@@ -13,11 +13,11 @@ ONE LIBRARY SHALL RULE THEM ALL
 AnyPalette.js has a single interface for all formats, so you can load any of the supported file types with one call,
 and it'll choose an appropriate parser to use automatically.
 
-Loads from files that aren't intended specifically as palettes, but that have CSS-style color values in them (.css, .html, .svg, .js, etc.)
+It can even load from files that aren't intended specifically as palettes, but that have CSS-style color values in them (.css, .html, .svg, .js, etc.)
 
 Works in Node.js and in the browser.
 
-Supported (and unsupported) palette formats:
+Supported palette formats:
 
 | File Extension    | Name                              | Programs                                                                          |   Read  |  Write  |
 |-------------------|-----------------------------------|-----------------------------------------------------------------------------------|:-------:|:-------:|
@@ -32,13 +32,21 @@ Supported (and unsupported) palette formats:
 | .sketchpalette    | [Sketch] Palette                  | [Sketch]                                                                          |   ✅   | Planned |
 | .spl              | [Skencil] Palette                 | [Skencil] (formerly called Sketch)                                                |   ✅   |         |
 | .colors           | KolourPaint Color Collection      | [KolourPaint]                                                                     |   ✅   |         |
+| .colors           | Plasma Desktop Color Scheme       | [KDE] Plasma Desktop                                                              |   ✅   |         |
+| .theme            | Windows Theme                     | [Windows] Desktop                                                                 |   ✅   |         |
+| .themepack        | Windows Theme                     | [Windows] Desktop                                                                 |   ✅   |         |
+
+UNSUPPORTED palette formats (for now):
+
+| File Extension    | Name                              | Programs                                                                          |   Read  |  Write  |
+|-------------------|-----------------------------------|-----------------------------------------------------------------------------------|:-------:|:-------:|
 | .gpa              | [Gpick] Palette                   | [Gpick]                                                                           | Planned |         |
 | .aco              | Adobe Color Swatches              | Adobe [Photoshop]                                                                 | Planned | Planned |
 | .act              | Adobe Color Table                 | Adobe [Photoshop] and [Illustrator]                                               | Planned | Planned |
 | .ase              | Adobe Swatch Exchange             | Adobe [Photoshop], [InDesign], and [Illustrator]                                  | Planned | Planned |
 | .acbl             | Adobe Color Book Library / Legacy | Adobe [InDesign] and [Illustrator]                                                | Planned | Planned |
 | .soc              | StarOffice Colors                 | [StarOffice], [OpenOffice], [LibreOffice]                                         | Planned | Planned |
-| .*                | And many more...                  |                                                                                   |         |         |
+
 
 [RIFF]: https://en.wikipedia.org/wiki/Resource_Interchange_File_Format
 [MS Paint]: https://en.wikipedia.org/wiki/Microsoft_Paint
@@ -60,6 +68,8 @@ Supported (and unsupported) palette formats:
 [Inkscape]: https://inkscape.org/en/
 [Krita]: https://www.calligra.org/krita/
 [KolourPaint]: http://kolourpaint.org/
+[KDE]: https://kde.org/
+[Windows]: https://en.wikipedia.org/wiki/Microsoft_Windows
 [Scribus]: https://www.scribus.net/
 [CinePaint]: http://www.cinepaint.org/
 [MyPaint]: http://mypaint.org/
@@ -196,7 +206,7 @@ Also for GIMP palettes, a `Color` may have a `name` (string or undefined)
 			* AutoCAD Color Book (`.acb`)
 			* QuarkXPress Color Library (`.qcl`)
 			* Scribus (`.xml`)
-			* sK1 (`.skp`)
+			* sK1 (`.skpx` / `.skp`)
 			* StarOffice / OpenOffice.org / LibreOffice (`.soc`)
 
 

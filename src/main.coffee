@@ -127,9 +127,9 @@ load_palette = (o, callback)->
 		# 	load: require "./loaders/AdobeColorBook"
 		# }
 		{
-			name: "HPL palette"
+			name: "Homesite palette"
 			exts: ["hpl"]
-			load: require "./loaders/HPL"
+			load: require "./loaders/Homesite"
 		}
 		{
 			name: "StarCraft palette"

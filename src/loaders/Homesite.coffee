@@ -1,15 +1,11 @@
-
-# What does HPL stand for?
-# Howdy, Palette Lovers!
-
 Palette = require "../Palette"
 
 module.exports = ({data})->
 	lines = data.split(/[\n\r]+/m)
 	if lines[0] isnt "Palette"
-		throw new Error "Not an HPL palette"
+		throw new Error "Not a Homesite palette"
 	if not lines[1].match /Version [34]\.0/
-		throw new Error "Unsupported HPL version"
+		throw new Error "Unsupported Homesite palette version"
 	
 	palette = new Palette()
 	

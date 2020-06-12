@@ -9,7 +9,8 @@ Some errors were encountered when loading:
 	failed to load badlands.vr4 as Sketch palette: not sketchpalette JSON,
 	failed to load badlands.vr4 as sK1 palette: No colors found (0),
 	failed to load badlands.vr4 as CSS colors: Only one color found (1),
-	failed to load badlands.vr4 as tabular colors: No colors found (0),
-	failed to load badlands.vr4 as HPL palette: Not an HPL palette,
+	failed to load badlands.vr4 as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
+	failed to load badlands.vr4 as Homesite palette: Not a Homesite palette,
 	failed to load badlands.vr4 as StarCraft palette: Wrong file size, must be 768 bytes long (not 1779008),
-	failed to load badlands.vr4 as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 1779008)
+	failed to load badlands.vr4 as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 1779008),
+	failed to load badlands.vr4 as tabular colors: No colors found (0)

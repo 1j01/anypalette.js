@@ -10,6 +10,7 @@ Some errors were encountered when loading:
 	failed to load README.txt as Skencil palette: Line 2 doesn't match pattern null,
 	failed to load README.txt as Sketch palette: not sketchpalette JSON,
 	failed to load README.txt as sK1 palette: No colors found (0),
-	failed to load README.txt as HPL palette: Not an HPL palette,
+	failed to load README.txt as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
+	failed to load README.txt as Homesite palette: Not a Homesite palette,
 	failed to load README.txt as StarCraft palette: Wrong file size, must be 768 bytes long (not 134),
 	failed to load README.txt as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 134)

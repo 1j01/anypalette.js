@@ -1,4 +1,4 @@
-Loaded As:                      HPL palette (.hpl)
+Loaded As:                      Homesite palette (.hpl)
 
 matchedLoaderFileExtensions:    true
 geometrySpecifiedByFile:        undefined

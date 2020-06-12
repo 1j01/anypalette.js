@@ -9,7 +9,8 @@ Some errors were encountered when loading:
 	failed to load BEHR Whites.ase as Sketch palette: not sketchpalette JSON,
 	failed to load BEHR Whites.ase as sK1 palette: No colors found (0),
 	failed to load BEHR Whites.ase as CSS colors: No colors found (0),
-	failed to load BEHR Whites.ase as tabular colors: No colors found (0),
-	failed to load BEHR Whites.ase as HPL palette: Not an HPL palette,
+	failed to load BEHR Whites.ase as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
+	failed to load BEHR Whites.ase as Homesite palette: Not a Homesite palette,
 	failed to load BEHR Whites.ase as StarCraft palette: Wrong file size, must be 768 bytes long (not 7818),
-	failed to load BEHR Whites.ase as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 7818)
+	failed to load BEHR Whites.ase as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 7818),
+	failed to load BEHR Whites.ase as tabular colors: No colors found (0)

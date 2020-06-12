@@ -92,6 +92,16 @@ load_palette = (o, callback)->
 			load: require "./loaders/CSS"
 		}
 		{
+			name: "Windows desktop theme"
+			exts: ["theme", "themepack"]
+			load: require "./loaders/theme"
+		}
+		# {
+		# 	name: "KDE desktop theme"
+		# 	exts: ["colors"]
+		# 	load: require "./loaders/theme"
+		# }
+		{
 			name: "tabular colors"
 			exts: ["csv", "tsv", "txt"]
 			load: require "./loaders/tabular"

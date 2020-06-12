@@ -1,0 +1,23 @@
+Loaded As:                      GIMP palette (.gpl, .gimp, .colors)
+
+matchedLoaderFileExtensions:    true
+geometrySpecifiedByFile:        true
+numberOfColumns:                4
+
+Colors:
+rgb(0, 90, 158)
+rgb(0, 114, 198)
+rgb(42, 141, 212)
+rgb(205, 230, 247)
+rgb(10, 99, 50)
+rgb(33, 115, 70)
+rgb(67, 148, 103)
+rgb(211, 240, 224)
+rgb(184, 59, 29)
+rgb(210, 71, 38)
+rgb(240, 98, 62)
+rgb(252, 228, 220)
+rgb(25, 71, 138)
+rgb(43, 87, 154)
+rgb(62, 109, 181)
+rgb(213, 234, 242)

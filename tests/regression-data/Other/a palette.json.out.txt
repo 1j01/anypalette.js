@@ -1,4 +1,4 @@
-Loaded As:                      CSS-style colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
+Loaded As:                      CSS colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
 
 matchedLoaderFileExtensions:    false
 geometrySpecifiedByFile:        undefined

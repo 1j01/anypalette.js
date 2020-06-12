@@ -1,0 +1,15 @@
+Some errors were encountered when loading:
+	failed to load README.txt as Paint.NET palette: no colors returned,
+	failed to load README.txt as CSS colors: No colors found (0),
+	failed to load README.txt as tabular colors: No colors found (0),
+	failed to load README.txt as Paint Shop Pro palette: Not a JASC-PAL,
+	failed to load README.txt as RIFF PAL: RIFF header not found; not a RIFF PAL file,
+	failed to load README.txt as ColorSchemer palette: Index out of bound,
+	failed to load README.txt as GIMP palette: Not a GIMP Palette,
+	failed to load README.txt as KolourPaint palette: Not a KDE RGB Palette,
+	failed to load README.txt as Skencil palette: no colors returned,
+	failed to load README.txt as Sketch palette: not sketchpalette JSON,
+	failed to load README.txt as sK1 palette: No colors found (0),
+	failed to load README.txt as HPL palette: Not an HPL palette,
+	failed to load README.txt as StarCraft palette: Wrong file size, must be 768 bytes long (not 63),
+	failed to load README.txt as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 63)

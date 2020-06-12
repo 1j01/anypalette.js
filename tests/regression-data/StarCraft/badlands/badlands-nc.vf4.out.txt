@@ -1,0 +1,15 @@
+Some errors were encountered when loading:
+	failed to load badlands-nc.vf4 as Paint Shop Pro palette: Not a JASC-PAL,
+	failed to load badlands-nc.vf4 as RIFF PAL: RIFF header not found; not a RIFF PAL file,
+	failed to load badlands-nc.vf4 as ColorSchemer palette: no colors returned,
+	failed to load badlands-nc.vf4 as Paint.NET palette: no colors returned,
+	failed to load badlands-nc.vf4 as GIMP palette: Not a GIMP Palette,
+	failed to load badlands-nc.vf4 as KolourPaint palette: Not a KDE RGB Palette,
+	failed to load badlands-nc.vf4 as Skencil palette: Line 2 doesn't match pattern null,
+	failed to load badlands-nc.vf4 as Sketch palette: not sketchpalette JSON,
+	failed to load badlands-nc.vf4 as sK1 palette: No colors found (0),
+	failed to load badlands-nc.vf4 as CSS colors: No colors found (0),
+	failed to load badlands-nc.vf4 as tabular colors: No colors found (0),
+	failed to load badlands-nc.vf4 as HPL palette: Not an HPL palette,
+	failed to load badlands-nc.vf4 as StarCraft palette: Wrong file size, must be 768 bytes long (not 151072),
+	failed to load badlands-nc.vf4 as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 151072)

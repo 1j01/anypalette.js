@@ -1,0 +1,35 @@
+Loaded As:                      ColorSchemer palette (.cs)
+
+matchedLoaderFileExtensions:    false
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors:
+rgb(32, 12, 46)
+rgb(174, 4, 0)
+rgb(0, 0, 0)
+rgb(0, 0, 32)
+rgb(32, 32, 243)
+rgb(16, 29, 0)
+rgb(32, 32, 96)
+rgb(168, 61, 0)
+rgb(222, 0, 228)
+rgb(234, 129, 2)
+rgb(129, 130, 16)
+rgb(242, 239, 237)
+rgb(239, 242, 239)
+rgb(238, 242, 239)
+rgb(239, 238, 237)
+rgb(234, 237, 91)
+rgb(235, 141, 144)
+rgb(201, 0, 222)
+rgb(238, 238, 242)
+rgb(67, 235, 239)
+rgb(238, 140, 131)
+rgb(243, 242, 242)
+rgb(239, 238, 67)
+rgb(237, 7, 66)
+rgb(140, 140, 234)
+rgb(139, 141, 18)
+rgb(237, 68, 143)
+rgb(95, 143, 239)

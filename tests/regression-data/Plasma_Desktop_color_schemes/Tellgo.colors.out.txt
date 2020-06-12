@@ -1,0 +1,38 @@
+Loaded As:                      tabular colors (.csv, .tsv, .txt)
+
+matchedLoaderFileExtensions:    false
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors:
+rgb(56, 56, 56)
+rgb(112, 111, 110)
+rgb(40, 50, 80)
+rgb(20, 20, 40)
+rgb(60, 60, 60)
+rgb(61, 174, 233)
+rgb(189, 195, 199)
+rgb(41, 128, 185)
+rgb(218, 68, 83)
+rgb(246, 116, 0)
+rgb(255, 255, 255)
+rgb(39, 174, 96)
+rgb(250, 250, 250)
+rgb(66, 66, 66)
+rgb(51, 51, 51)
+rgb(49, 91, 239)
+rgb(136, 136, 136)
+rgb(237, 21, 21)
+rgb(201, 206, 59)
+rgb(222, 222, 222)
+rgb(17, 209, 22)
+rgb(79, 127, 239)
+rgb(45, 135, 255)
+rgb(234, 234, 234)
+rgb(252, 252, 252)
+rgb(50, 150, 255)
+rgb(253, 188, 75)
+rgb(77, 77, 77)
+rgb(55, 55, 55)
+rgb(20, 30, 60)
+rgb(200, 200, 200)

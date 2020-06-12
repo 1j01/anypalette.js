@@ -1,0 +1,15 @@
+Some errors were encountered when loading:
+	failed to load MS_Office_2013_text_colors.jcw as Paint Shop Pro palette: Not a JASC-PAL,
+	failed to load MS_Office_2013_text_colors.jcw as RIFF PAL: RIFF header not found; not a RIFF PAL file,
+	failed to load MS_Office_2013_text_colors.jcw as ColorSchemer palette: Index out of bound,
+	failed to load MS_Office_2013_text_colors.jcw as Paint.NET palette: no colors returned,
+	failed to load MS_Office_2013_text_colors.jcw as GIMP palette: Not a GIMP Palette,
+	failed to load MS_Office_2013_text_colors.jcw as KolourPaint palette: Not a KDE RGB Palette,
+	failed to load MS_Office_2013_text_colors.jcw as Skencil palette: no colors returned,
+	failed to load MS_Office_2013_text_colors.jcw as Sketch palette: not sketchpalette JSON,
+	failed to load MS_Office_2013_text_colors.jcw as sK1 palette: No colors found (0),
+	failed to load MS_Office_2013_text_colors.jcw as CSS colors: No colors found (0),
+	failed to load MS_Office_2013_text_colors.jcw as tabular colors: No colors found (0),
+	failed to load MS_Office_2013_text_colors.jcw as HPL palette: Not an HPL palette,
+	failed to load MS_Office_2013_text_colors.jcw as StarCraft palette: Wrong file size, must be 768 bytes long (not 211),
+	failed to load MS_Office_2013_text_colors.jcw as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 211)

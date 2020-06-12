@@ -1,4 +1,4 @@
-Loaded As:                      CSS-style colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
+Loaded As:                      CSS colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
 
 matchedLoaderFileExtensions:    true
 geometrySpecifiedByFile:        undefined
@@ -12,7 +12,8 @@ rgb(229, 242, 247)
 rgb(191, 224, 236)
 rgb(0, 105, 144)
 rgb(0, 79, 108)
-rgb(255, 255, 255)
+rgb(0, 255, 255)
+rgb(25, 0, 132)
 rgb(102, 181, 210)
 rgb(192, 222, 237)
 rgb(235, 107, 90)
@@ -21,4 +22,5 @@ rgb(253, 240, 238)
 rgb(250, 218, 213)
 rgb(188, 85, 72)
 rgb(141, 64, 54)
+rgb(25, 235, 107)
 rgb(243, 166, 156)

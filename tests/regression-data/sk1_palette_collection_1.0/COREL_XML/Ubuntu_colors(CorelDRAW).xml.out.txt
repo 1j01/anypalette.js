@@ -1,0 +1,16 @@
+Loaded As:                      tabular colors (.csv, .tsv, .txt)
+
+matchedLoaderFileExtensions:    false
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors:
+rgb(221.00008499999998, 72.000015, 19.999905000000002)
+rgb(119.000085, 40.99992, 82.99995)
+rgb(255, 255, 255)
+rgb(0, 0, 0)
+rgb(119.000085, 33.00006, 110.99997)
+rgb(93.99988499999999, 38.999955, 79.99987499999999)
+rgb(43.999995000000006, 0, 29.999985)
+rgb(174.000015, 167.00001, 158.999895)
+rgb(51, 51, 51)

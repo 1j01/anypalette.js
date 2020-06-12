@@ -1,0 +1,15 @@
+Some errors were encountered when loading:
+	failed to load Ubuntu_color_tints.ase as Paint Shop Pro palette: Not a JASC-PAL,
+	failed to load Ubuntu_color_tints.ase as RIFF PAL: RIFF header not found; not a RIFF PAL file,
+	failed to load Ubuntu_color_tints.ase as ColorSchemer palette: Index out of bound,
+	failed to load Ubuntu_color_tints.ase as Paint.NET palette: no colors returned,
+	failed to load Ubuntu_color_tints.ase as GIMP palette: Not a GIMP Palette,
+	failed to load Ubuntu_color_tints.ase as KolourPaint palette: Not a KDE RGB Palette,
+	failed to load Ubuntu_color_tints.ase as Skencil palette: no colors returned,
+	failed to load Ubuntu_color_tints.ase as Sketch palette: not sketchpalette JSON,
+	failed to load Ubuntu_color_tints.ase as sK1 palette: No colors found (0),
+	failed to load Ubuntu_color_tints.ase as CSS colors: No colors found (0),
+	failed to load Ubuntu_color_tints.ase as tabular colors: No colors found (0),
+	failed to load Ubuntu_color_tints.ase as HPL palette: Not an HPL palette,
+	failed to load Ubuntu_color_tints.ase as StarCraft palette: Wrong file size, must be 768 bytes long (not 5424),
+	failed to load Ubuntu_color_tints.ase as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 5424)

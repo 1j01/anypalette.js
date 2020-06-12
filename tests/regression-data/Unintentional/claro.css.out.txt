@@ -1,8 +1,15 @@
-Loaded As:                      CSS-style colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
+Loaded As:                      CSS colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
 
 matchedLoaderFileExtensions:    true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 
 Colors:
-rgb(NaN, NaN, NaN)
+rgb(0, 0, 0)
+rgb(255, 255, 255)
+rgb(127, 127, 127)
+rgb(190, 190, 190)
+rgb(118, 157, 192)
+rgb(207, 229, 250)
+rgb(171, 212, 251)
+rgb(171, 214, 255)

@@ -1,0 +1,17 @@
+Loaded As:                      sK1 palette (.skp)
+
+matchedLoaderFileExtensions:    true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                8
+
+Colors:
+rgb(51, 181, 229)
+rgb(170, 102, 204)
+rgb(153, 204, 0)
+rgb(255, 187, 51)
+rgb(255, 68, 68)
+rgb(0, 153, 204)
+rgb(153, 51, 204)
+rgb(102, 153, 0)
+rgb(255, 136, 0)
+rgb(204, 0, 0)

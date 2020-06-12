@@ -1,6 +1,6 @@
-Loaded As:                      HPL palette (.hpl)
+Loaded As:                      tabular colors (.csv, .tsv, .txt)
 
-matchedLoaderFileExtensions:    false
+matchedLoaderFileExtensions:    true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 

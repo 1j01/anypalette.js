@@ -1,0 +1,33 @@
+Loaded As:                      CSS colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
+
+matchedLoaderFileExtensions:    true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors:
+hsl(270, 60%, 70%)
+hsl(270.000058419654, 60%, 70%)
+hsl(0, 100%, 50%)
+hsl(30, 100%, 50%)
+hsl(60, 100%, 50%)
+hsl(90, 100%, 50%)
+hsl(120, 100%, 50%)
+hsl(150, 100%, 50%)
+hsl(180, 100%, 50%)
+hsl(210, 100%, 50%)
+hsl(240, 100%, 50%)
+hsl(270, 100%, 50%)
+hsl(300, 100%, 50%)
+hsl(330, 100%, 50%)
+hsl(360, 100%, 50%)
+hsl(120, 100%, 0%)
+hsl(120, 100%, 20%)
+hsl(120, 100%, 40%)
+hsl(120, 100%, 60%)
+hsl(120, 100%, 80%)
+hsl(120, 100%, 100%)
+hsl(120, 80%, 50%)
+hsl(120, 60%, 50%)
+hsl(120, 40%, 50%)
+hsl(120, 20%, 50%)
+hsl(120, 0%, 50%)

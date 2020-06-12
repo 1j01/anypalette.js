@@ -1,0 +1,15 @@
+Some errors were encountered when loading:
+	failed to load Color_names_supported_by_all_browsers_(sorted).jcw as Paint Shop Pro palette: Not a JASC-PAL,
+	failed to load Color_names_supported_by_all_browsers_(sorted).jcw as RIFF PAL: RIFF header not found; not a RIFF PAL file,
+	failed to load Color_names_supported_by_all_browsers_(sorted).jcw as ColorSchemer palette: Index out of bound,
+	failed to load Color_names_supported_by_all_browsers_(sorted).jcw as Paint.NET palette: no colors returned,
+	failed to load Color_names_supported_by_all_browsers_(sorted).jcw as GIMP palette: Not a GIMP Palette,
+	failed to load Color_names_supported_by_all_browsers_(sorted).jcw as KolourPaint palette: Not a KDE RGB Palette,
+	failed to load Color_names_supported_by_all_browsers_(sorted).jcw as Skencil palette: Line 2 doesn't match pattern null,
+	failed to load Color_names_supported_by_all_browsers_(sorted).jcw as Sketch palette: not sketchpalette JSON,
+	failed to load Color_names_supported_by_all_browsers_(sorted).jcw as sK1 palette: No colors found (0),
+	failed to load Color_names_supported_by_all_browsers_(sorted).jcw as CSS colors: No colors found (0),
+	failed to load Color_names_supported_by_all_browsers_(sorted).jcw as tabular colors: No colors found (0),
+	failed to load Color_names_supported_by_all_browsers_(sorted).jcw as HPL palette: Not an HPL palette,
+	failed to load Color_names_supported_by_all_browsers_(sorted).jcw as StarCraft palette: Wrong file size, must be 768 bytes long (not 4097),
+	failed to load Color_names_supported_by_all_browsers_(sorted).jcw as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 4097)

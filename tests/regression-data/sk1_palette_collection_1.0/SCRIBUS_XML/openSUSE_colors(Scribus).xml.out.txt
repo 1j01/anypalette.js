@@ -1,0 +1,21 @@
+Loaded As:                      CSS colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
+
+matchedLoaderFileExtensions:    true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors:
+rgb(252, 174, 27)
+rgb(227, 80, 1)
+rgb(255, 255, 102)
+rgb(178, 178, 71)
+rgb(148, 208, 6)
+rgb(34, 120, 8)
+rgb(212, 196, 255)
+rgb(76, 68, 102)
+rgb(80, 130, 255)
+rgb(0, 0, 116)
+rgb(186, 189, 183)
+rgb(46, 52, 54)
+rgb(255, 77, 77)
+rgb(140, 0, 0)

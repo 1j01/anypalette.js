@@ -1,0 +1,1 @@
+EISDIR: illegal operation on a directory, read

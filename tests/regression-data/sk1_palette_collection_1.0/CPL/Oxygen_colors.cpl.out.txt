@@ -1,0 +1,10 @@
+Loaded As:                      ColorSchemer palette (.cs)
+
+matchedLoaderFileExtensions:    false
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors:
+rgb(0, 0, 30)
+rgb(0, 121, 0)
+rgb(0, 5, 0)

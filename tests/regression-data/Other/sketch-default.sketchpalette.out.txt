@@ -1,0 +1,22 @@
+Loaded As:                      Sketch palette (.sketchpalette)
+
+matchedLoaderFileExtensions:    true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors:
+rgb(208, 2, 27)
+rgb(245, 166, 35)
+rgb(248, 231, 28)
+rgb(139, 87, 42)
+rgb(126, 211, 32.99999999999999)
+rgb(65, 117, 5)
+rgb(189, 16, 224)
+rgb(144, 19, 254)
+rgb(73.99999999999999, 144, 226)
+rgb(80, 227, 194)
+rgb(184, 233, 134)
+rgb(0, 0, 0)
+rgb(73.99999999999999, 73.99999999999999, 73.99999999999999)
+rgb(155, 155, 155)
+rgb(255, 255, 255)

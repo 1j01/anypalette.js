@@ -1,54 +1,15 @@
-Loaded As:                      StarCraft palette (.pal)
-
-matchedLoaderFileExtensions:    false
-geometrySpecifiedByFile:        undefined
-numberOfColumns:                undefined
-
-Colors:
-rgb(137, 80, 78)
-rgb(71, 13, 10)
-rgb(26, 10, 0)
-rgb(0, 0, 13)
-rgb(73, 72, 68)
-rgb(82, 0, 0)
-rgb(0, 64, 0)
-rgb(0, 0, 32)
-rgb(8, 3, 0)
-rgb(0, 0, 149)
-rgb(67, 142, 182)
-rgb(0, 0, 3)
-rgb(0, 80, 76)
-rgb(84, 69, 0)
-rgb(0, 0, 34)
-rgb(32, 52, 69)
-rgb(40, 60, 102)
-rgb(57, 49, 143)
-rgb(86, 59, 223)
-rgb(113, 38, 217)
-rgb(160, 102, 238)
-rgb(195, 154, 251)
-rgb(242, 54, 153)
-rgb(229, 80, 106)
-rgb(190, 48, 55)
-rgb(148, 110, 75)
-rgb(105, 47, 82)
-rgb(75, 36, 50)
-rgb(60, 57, 63)
-rgb(63, 116, 48)
-rgb(96, 130, 91)
-rgb(110, 225, 99)
-rgb(155, 255, 95)
-rgb(205, 228, 203)
-rgb(219, 252, 255)
-rgb(255, 255, 155)
-rgb(173, 183, 132)
-rgb(126, 135, 105)
-rgb(106, 106, 89)
-rgb(86, 82, 118)
-rgb(66, 138, 172)
-rgb(50, 50, 217)
-rgb(87, 99, 215)
-rgb(123, 186, 143)
-rgb(151, 74, 138)
-rgb(111, 48, 0)
-rgb(0, 0, 0)
+Some errors were encountered when loading:
+	failed to load db32_v1_pal64x32.png as Paint Shop Pro palette: Not a JASC-PAL,
+	failed to load db32_v1_pal64x32.png as RIFF PAL: RIFF header not found; not a RIFF PAL file,
+	failed to load db32_v1_pal64x32.png as ColorSchemer palette: Index out of bound,
+	failed to load db32_v1_pal64x32.png as Paint.NET palette: no colors returned,
+	failed to load db32_v1_pal64x32.png as GIMP palette: Not a GIMP Palette,
+	failed to load db32_v1_pal64x32.png as KolourPaint palette: Not a KDE RGB Palette,
+	failed to load db32_v1_pal64x32.png as Skencil palette: Line 2 doesn't match pattern null,
+	failed to load db32_v1_pal64x32.png as Sketch palette: not sketchpalette JSON,
+	failed to load db32_v1_pal64x32.png as sK1 palette: No colors found (0),
+	failed to load db32_v1_pal64x32.png as CSS colors: No colors found (0),
+	failed to load db32_v1_pal64x32.png as tabular colors: No colors found (0),
+	failed to load db32_v1_pal64x32.png as HPL palette: Not an HPL palette,
+	failed to load db32_v1_pal64x32.png as StarCraft palette: Wrong file size, must be 768 bytes long (not 945),
+	failed to load db32_v1_pal64x32.png as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 945)

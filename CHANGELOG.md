@@ -9,7 +9,7 @@ Refer to the [latest version of the changelog](https://github.com/1j01/anypalett
 for potential future corrections.
 (The changelog can't be retroactively updated within an npm release, so if for instance a breaking change was accidentally omitted, it wouldn't be in the changelog in the release, but it could be added later to the changelog on GitHub.)
 
-[Unreleased]: https://github.com/1j01/anypalette.js/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/1j01/anypalette.js/compare/v0.4.0...HEAD
 ## [Unreleased]
 <details>
 	<summary>
@@ -17,6 +17,12 @@ for potential future corrections.
 		Click to see more.
 	</summary>
 
+Nothing here yet!
+
+</details>
+
+[0.4.0]: https://github.com/1j01/anypalette.js/compare/v0.3.0...v0.4.0
+## [0.4.0] - 2020-06-12
 ### Changed
 - Renamed `.colors` KDE RGB Palette loader from "KDE RGB palette" to "KolourPaint palette"
 - Renamed `.spl` loader from "Sketch RGB palette" to "Skencil palette"
@@ -28,8 +34,7 @@ for potential future corrections.
 ### Added
 - Tabular colors loader for various formats that have comma, space, or tab separated RGB values, such as mtPaint's txt palette format
 - sK1 `.skp` loader (not very generalized - these files are Python source code as far as I can tell - but supporting RGB, CMYK, Grayscale, and a palette `name`, `description`, and `numberOfColumns`)
-
-</details>
+- Windows `.theme` and `.themepack` loader
 
 [0.3.0]: https://github.com/1j01/anypalette.js/compare/v0.2.0...v0.3.0
 ## [0.3.0] - 2020-06-10

@@ -1,3 +1,5 @@
+# Load an Allaire Homesite / Macromedia ColdFusion palette (.hpl)
+
 Palette = require "../Palette"
 
 module.exports = ({data})->
@@ -10,7 +12,7 @@ module.exports = ({data})->
 	palette = new Palette()
 	
 	for line, i in lines
-		if line.match /.+ .* .+/
+		if line.match /.+ .+ .+/
 			rgb = line.split(" ")
 			palette.add
 				r: rgb[0]

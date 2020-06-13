@@ -129,10 +129,26 @@
 					if(error){
 						$section.addClass("failed");
 						$output.append("<h3>Failed to load:</h3>");
+						// This very ugly code could be cleaned up by using data structures that aren't formed out of error objects.
+						// And the data structures and presentation could be flatter.
+						// Also, this is using undocumented features not part of the public API, to be clear.
 						if (error.errors) {
 							var $ul = $("<ul class='errors'>").appendTo($output);
 							for(var i=0; i<error.errors.length; i++){
-								$ul.append($("<li class='error'>").text(error.errors[i].message));
+								if (error.errors[i].errors) {
+									var $li = $("<li class='error'>").appendTo($ul);
+									if (error.errors[i].endianSwapped) {
+										$li.append("<h4>Trying swapped endianness:</h4>");
+									} else {
+										$li.append("<h4>Uh, more errors? I don't know what this is:</h4>");
+									}
+									var $inner_ul = $("<ul class='errors'>").appendTo($li);
+									for(var j=0; j<error.errors[i].errors.length; j++){
+										$("<li class='error'>").text(error.errors[i].errors[j].message).appendTo($inner_ul);
+									}
+								} else {
+									$("<li class='error'>").text(error.errors[i].message).appendTo($ul);
+								}
 							}
 						} else {
 							$output.append($("<p class='error'>").text(error));
@@ -140,6 +156,7 @@
 						return;
 					}
 					
+					// using undocumented properties not part of the API
 					$loaded_as.html(
 						"<span class='lesser-importance'>loaded as </span>"
 						+"<span>"+palette.loader.name+"</span>"

@@ -205,12 +205,16 @@ load_palette = (o, callback)->
 	
 	if not o.preventRecursionForEndianSwap
 		# TODO: retry only binary formats with endianness swapped
-		# TODO: include errors from before and after swapping, clearly dinstinguished
-		# console.log("Failures before trying swapping endianness:", new LoadingErrors(errors))
 		load_palette(Object.assign({}, o, {
 			preventRecursionForEndianSwap: true
 			data: swap_endianness_of_binary_string(o.data)
-		}), callback)
+		}), (error, palette)->
+			if error
+				error.endianSwapped = true
+				callback(new LoadingErrors([...errors, error]))
+			else
+				callback(null, palette)
+		)
 		return
 
 	callback(new LoadingErrors(errors))

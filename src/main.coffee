@@ -204,10 +204,13 @@ load_palette = (o, callback)->
 			return
 	
 	if not o.preventRecursionForEndianSwap
+		# TODO: retry only binary formats with endianness swapped
+		# TODO: include errors from before and after swapping, clearly dinstinguished
+		# console.log("Failures before trying swapping endianness:", new LoadingErrors(errors))
 		load_palette(Object.assign({}, o, {
 			preventRecursionForEndianSwap: true
 			data: swap_endianness_of_binary_string(o.data)
-		}))
+		}), callback)
 		return
 
 	callback(new LoadingErrors(errors))
@@ -230,12 +233,11 @@ swap_endianness_of_binary_string = (binary_string)->
 	array_buffer_to_string(swap_endianness_of_array_buffer(string_to_array_buffer(binary_string)))
 
 swap_endianness_of_array_buffer = (array_buffer)->
-	bytes_view = new Uint8Array(buf)
-	for i in [0..bytes.length] by 2
+	bytes = new Uint8Array(array_buffer)
+	for i in [0...bytes.length] by 2
 		[bytes[i], bytes[i+1]] = [bytes[i+1], bytes[i]]
-
-
-
+	# return array_buffer
+	return # prevent collecting loop results
 
 string_to_array_buffer = (string)->
 	buffer = new ArrayBuffer(string.length*2) # 2 bytes for each char

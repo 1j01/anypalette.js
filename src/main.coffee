@@ -234,13 +234,15 @@ normalize_options = (o = {})->
 	o
 
 swap_endianness_of_binary_string = (binary_string)->
-	array_buffer_to_string(swap_endianness_of_array_buffer(string_to_array_buffer(binary_string)))
+	array_buffer = string_to_array_buffer(binary_string)
+	swap_endianness_of_array_buffer(array_buffer)
+	array_buffer_to_string(array_buffer)
 
 swap_endianness_of_array_buffer = (array_buffer)->
 	bytes = new Uint8Array(array_buffer)
 	for i in [0...bytes.length] by 2
 		[bytes[i], bytes[i+1]] = [bytes[i+1], bytes[i]]
-	# return array_buffer
+	# return array_buffer # makes the in-place modification unclear at callsite
 	return # prevent collecting loop results
 
 string_to_array_buffer = (string)->

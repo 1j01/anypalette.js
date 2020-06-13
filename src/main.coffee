@@ -234,9 +234,9 @@ normalize_options = (o = {})->
 	o
 
 swap_endianness_of_binary_string = (binary_string)->
-	array_buffer = string_to_array_buffer(binary_string)
+	array_buffer = binary_string_to_array_buffer(binary_string)
 	swap_endianness_of_array_buffer(array_buffer)
-	array_buffer_to_string(array_buffer)
+	array_buffer_to_binary_string(array_buffer)
 
 swap_endianness_of_array_buffer = (array_buffer)->
 	bytes = new Uint8Array(array_buffer)
@@ -245,22 +245,22 @@ swap_endianness_of_array_buffer = (array_buffer)->
 	# return array_buffer # makes the in-place modification unclear at callsite
 	return # prevent collecting loop results
 
-string_to_array_buffer = (string)->
-	buffer = new ArrayBuffer(string.length*2) # 2 bytes for each char
-	bufView = new Uint16Array(buffer)
+binary_string_to_array_buffer = (string)->
+	array_buffer = new ArrayBuffer(string.length)
+	bytes = new Uint8Array(array_buffer)
 	for i in [0..string.length]
-		bufView[i] = string.charCodeAt(i)
-	return buffer
+		bytes[i] = string.charCodeAt(i)
+	return array_buffer
 
-array_buffer_to_string = (buffer)->
-	bufView = new Uint16Array(buffer)
-	length = bufView.length
+array_buffer_to_binary_string = (array_buffer)->
+	bytes = new Uint8Array(array_buffer)
+	length = bytes.length
 	result = ''
-	addition = Math.pow(2, 16) - 1
-	for i in [0...length] by addition
-		if i + addition > length
-			addition = length - i
-		result += String.fromCharCode.apply(null, bufView.subarray(i,i+addition))
+	chunk_size = Math.pow(2, 16) - 1
+	for i in [0...length] by chunk_size
+		if i + chunk_size > length
+			chunk_size = length - i
+		result += String.fromCharCode.apply(null, bytes.subarray(i, i + chunk_size))
 	return result
 
 

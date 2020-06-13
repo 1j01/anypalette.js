@@ -101,11 +101,11 @@ load_palette = (o, callback)->
 		# 	exts: ["colors"]
 		# 	load: require "./loaders/theme"
 		# }
-		# {
-		# 	name: "Adobe Color Swatch"
-		# 	exts: ["aco"]
-		# 	load: require "./loaders/AdobeColorSwatch"
-		# }
+		{
+			name: "Adobe Color Swatch"
+			exts: ["aco"]
+			load: require "./loaders/AdobeColorSwatch"
+		}
 		# {
 		# 	name: "Adobe Color Table"
 		# 	exts: ["act"]
@@ -203,6 +203,13 @@ load_palette = (o, callback)->
 			callback(null, palette)
 			return
 	
+	if not o.preventRecursionForEndianSwap
+		load_palette(Object.assign({}, o, {
+			preventRecursionForEndianSwap: true
+			data: swap_endianness_of_binary_string(o.data)
+		}))
+		return
+
 	callback(new LoadingErrors(errors))
 	return
 
@@ -218,6 +225,36 @@ normalize_options = (o = {})->
 	o.fileExt ?= "#{o.fileName}".split(".").pop()
 	o.fileExt = "#{o.fileExt}".toLowerCase()
 	o
+
+swap_endianness_of_binary_string = (binary_string)->
+	array_buffer_to_string(swap_endianness_of_array_buffer(string_to_array_buffer(binary_string)))
+
+swap_endianness_of_array_buffer = (array_buffer)->
+	bytes_view = new Uint8Array(buf)
+	for i in [0..bytes.length] by 2
+		[bytes[i], bytes[i+1]] = [bytes[i+1], bytes[i]]
+
+
+
+
+string_to_array_buffer = (string)->
+	buffer = new ArrayBuffer(string.length*2) # 2 bytes for each char
+	bufView = new Uint16Array(buffer)
+	for i in [0..string.length]
+		bufView[i] = string.charCodeAt(i)
+	return buffer
+
+array_buffer_to_string = (buffer)->
+	bufView = new Uint16Array(buffer)
+	length = bufView.length
+	result = ''
+	addition = Math.pow(2, 16) - 1
+	for i in [0...length] by addition
+		if i + addition > length
+			addition = length - i
+		result += String.fromCharCode.apply(null, bufView.subarray(i,i+addition))
+	return result
+
 
 AnyPalette = {
 	Color

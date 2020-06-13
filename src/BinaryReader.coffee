@@ -37,6 +37,9 @@ class BinaryReader
 			@_pos += 2
 		str
 	
+	skip: (n_bytes)->
+		@seek(@_pos + n_bytes)
+
 	# Public
 	
 	readInt8: -> @_decodeInt(8, true)

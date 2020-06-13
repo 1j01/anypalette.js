@@ -16,7 +16,9 @@ class Color
 		{
 			@r, @g, @b,
 			@h, @s, @v, @l,
+			@L, @a, # @b is awkardly shared between rgb and Lab models
 			c, m, y, k,
+			x, y, z,
 			@name
 		} = options
 
@@ -50,16 +52,17 @@ class Color
 			@b = 255 * (1 - Math.min(1, y * (1 - k) + k))
 		else
 			# UNTESTED UNTESTED UNTESTED UNTESTED UNTESTED UNTESTED
-			if @l? and @a? and @b?
+			if @L? and @a? and @b?
 				white =
 					x: 95.047
 					y: 100.000
 					z: 108.883
 				
+				y = (@L + 16) / 116
 				xyz = 
-					y: (raw.l + 16) / 116
-					x: raw.a / 500 + xyz.y
-					z: xyz.y - raw.b / 200
+					y: y
+					x: @a / 500 + y
+					z: y - @b / 200
 				
 				for _ in "xyz"
 					powed = Math.pow(xyz[_], 3)
@@ -74,9 +77,9 @@ class Color
 			# UNTESTED UNTESTED UNTESTED UNTESTED
 			if @x? and @y? and @z?
 				xyz =
-					x: raw.x / 100
-					y: raw.y / 100
-					z: raw.z / 100
+					x: x / 100
+					y: y / 100
+					z: z / 100
 				
 				rgb =
 					r: xyz.x * 3.2406 + xyz.y * -1.5372 + xyz.z * -0.4986
@@ -97,7 +100,7 @@ class Color
 					
 					#rgb[_] = Math.round(rgb[_] * 255)
 			else
-				throw new Error "Color constructor must be called with {r,g,b} or {h,s,v} or {h,s,l} or {c,m,y,k} or {x,y,z} or {l,a,b},
+				throw new Error "Color constructor must be called with {r,g,b} or {h,s,v} or {h,s,l} or {c,m,y,k} or {x,y,z} or {L,a,b},
 					#{
 						try
 							"got #{JSON.stringify(options)}"

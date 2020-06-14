@@ -149,6 +149,10 @@ if localStorage?.debug_binary == "true"
 	debug_container.style.top = "0"
 	debug_container.style.right = "0"
 	debug_container.style.bottom = "0"
+	debug_container.style.background = "black"
+	debug_container.style.color = "white"
+	debug_container.style.fontFamily = "monospace"
+	debug_container.style.whitespace = "pre"
 	debug_container.classList.add("anypalette-debug-container")
 	document.body.appendChild debug_container
 
@@ -159,7 +163,24 @@ module.exports = (...args)->
 			set: (target, key, value)->
 				target[key] = value
 				if key is "_pos"
-					debug_container.textContent = "Current position: #{target._pos}"
+					# debug_container.textContent = "Current position: #{target._pos}"
+					debug_container.innerHTML = ""
+					before = target._buffer.slice(0, target._pos)
+					hilight = target._buffer.slice(target._pos, target._pos+1)
+					after = target._buffer.slice(target._pos+1)
+					show_hex = (binary_string, include_space)->
+						document.createTextNode(
+							Array::map.call(binary_string, (x)-> x.charCodeAt(0).toString(16)).join(" ") + (if include_space then " " else "")
+						)
+					debug_container.appendChild(show_hex(before, true))
+					hilight_span = document.createElement("span")
+					hilight_span.appendChild(show_hex(hilight))
+					debug_container.appendChild(document.createTextNode(" "))
+					hilight_span.style.background = "yellow"
+					hilight_span.style.color = "black"
+					hilight_span.style.boxShadow = "0 2px 2px yellow"
+					debug_container.appendChild(hilight_span)
+					debug_container.appendChild(show_hex(after))
 				return true
 		)
 	else

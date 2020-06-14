@@ -106,11 +106,11 @@ load_palette = (o, callback)->
 		# 	exts: ["aco"]
 		# 	load: require "./loaders/AdobeColorSwatch"
 		# }
-		# {
-		# 	name: "Adobe Color Table"
-		# 	exts: ["act"]
-		# 	load: require "./loaders/AdobeColorTable"
-		# }
+		{
+			name: "Adobe Color Table"
+			exts: ["act"]
+			load: require "./loaders/AdobeColorTable"
+		}
 		# {
 		# 	name: "Adobe Swatch Exchange"
 		# 	exts: ["ase"]

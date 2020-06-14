@@ -10,14 +10,17 @@ module.exports = ({data})->
 	
 	version = br.readUInt16()
 	n_colors = br.readUInt16()
+	if version > 10
+		throw new Error("probably loading with wrong endianness if this is an Adobe Color Swatch file")
 	if version == 1 and br.getSize() > 4+n_colors*10+1 # Added 1 for the Focoltone library in Photoshop 5
 		br.seek(4+n_colors*10)
 		version = br.readUInt16()
 		n_colors = br.readUInt16()
-	for i in [0..n_colors]
+	for i in [0..n_colors] then try
 		# id = null
 		model = br.readUInt16()
 		model_names = ['RGB','HSB','CMYK','Pantone','Focoltone','Trumatch','Toyo','Lab','Gray','WideCMYK','HKS','DIC','TotalInk','MonitorRGB','Duotone','Opacity']
+		console.log(model, model_names[model], arguments[0]) if model
 		if model == 2
 			[C,M,Y,K] = [br.readUInt16(), br.readUInt16(), br.readUInt16(), br.readUInt16()]
 			palette.add
@@ -47,11 +50,12 @@ module.exports = ({data})->
 				v: V/0xFFFF*100
 			br.skip(2)
 		else if model == 7
-			[L,a,b] = struct.unpack('>H 2h',file.read(6))
+			[L,a,b] = [br.readUInt16(), br.readInt16(), br.readInt16()] # note unsigned then signed and signed
+			# TODO: test stuff and see if value ranges are at all right
 			palette.add
-				L: L/100*100
-				a: a/100*100
-				b: b/100*100
+				L: L/10000*100
+				a: a/10000*100
+				b: b/10000*100
 			br.skip(2)
 		else if model == 8
 			K = br.readUInt16()

@@ -18,7 +18,7 @@ class Color
 			@h, @s, @v, @l,
 			@L, @a, # @b is awkardly shared between rgb and Lab models
 			c, m, y, k,
-			x, y, z,
+			x, z, # y is shared between cmyk and xyz models
 			@name
 		} = options
 
@@ -59,7 +59,7 @@ class Color
 					z: 108.883
 				
 				y = (@L + 16) / 116
-				xyz = 
+				xyz =
 					y: y
 					x: @a / 500 + y
 					z: y - @b / 200
@@ -73,6 +73,7 @@ class Color
 						xyz[_] = (xyz[_] - 16 / 116) / 7.787
 					
 					#xyz[_] = _round(xyz[_] * white[_])
+					@[_] = xyz[_]
 				
 			# UNTESTED UNTESTED UNTESTED UNTESTED
 			if @x? and @y? and @z?

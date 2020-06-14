@@ -149,13 +149,17 @@ if localStorage?.debug_binary == "true"
 	debug_container.style.top = "0"
 	debug_container.style.right = "0"
 	debug_container.style.bottom = "0"
+	debug_container.style.zIndex = "100"
 	debug_container.style.background = "black"
 	debug_container.style.color = "white"
 	debug_container.style.fontFamily = "monospace"
 	debug_container.style.whiteSpace = "pre-wrap"
+	debug_container.style.overflow = "auto"
 	debug_container.style.display = "none"
 	debug_container.classList.add("anypalette-debug-container")
 	document.body.appendChild debug_container
+
+	window._debug_view = mode: "hex"
 
 module.exports = (...args)->
 	if (try localStorage?.debug_binary == "true")
@@ -168,7 +172,6 @@ module.exports = (...args)->
 				window._bad_binary_string = string
 				window._bad_binary_string_bytes = array
 			return array
-		window._debug_view = mode: "hex"
 		show_hex = (binary_string)->
 			document.createTextNode(
 				if window._debug_view.mode is "hex"

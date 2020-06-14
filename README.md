@@ -26,7 +26,7 @@ Supported palette formats:
 | .txt              | [Paint.NET] Palette               | [Paint.NET]                                                                       |   ✅   | Planned |
 | .pal, .psppalette | [Paint Shop Pro] Palette          | [Paint Shop Pro][] (Jasc Software / Corel)                                        |   ✅   | Planned |
 | .hpl              | [Homesite] Palette                | Allaire [Homesite] / Macromedia [ColdFusion]                                      |   ✅   |         |
-| .cs               | ColorSchemer                      | ColorSchemer Studio                                                               |   ✅   | Planned |
+| .cs               | ColorSchemer                      | ColorSchemer Studio                                                               |   ✅*  | Planned |
 | .pal              | [Starcraft] Palette               | [Starcraft]                                                                       |   ✅   |         |
 | .wpe              | [Starcraft] Terrain Palette       | [Starcraft]                                                                       |   ✅   |         |
 | .sketchpalette    | [Sketch] Palette                  | [Sketch]                                                                          |   ✅   | Planned |
@@ -35,6 +35,8 @@ Supported palette formats:
 | .colors           | Plasma Desktop Color Scheme       | [KDE] Plasma Desktop                                                              |   ✅   |         |
 | .theme            | Windows Theme                     | [Windows] Desktop                                                                 |   ✅   |         |
 | .themepack        | Windows Theme                     | [Windows] Desktop                                                                 |   ✅   |         |
+
+\*The ColorSchemer file parser is only enabled when a file name is available, either thru passing a `File` object, or providing `options.fileName`, and the file extension is `.cs`
 
 UNSUPPORTED palette formats (for now):
 

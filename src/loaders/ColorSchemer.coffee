@@ -4,7 +4,10 @@
 BinaryReader = require "../BinaryReader"
 Palette = require "../Palette"
 
-module.exports = ({data})->
+module.exports = ({data, fileExt})->
+
+	if fileExt isnt "cs"
+		throw new Error("ColorSchemer loader is only enabled when file extension is '.cs' (saw '.#{fileExt}' instead)")
 	
 	palette = new Palette()
 	br = new BinaryReader(data)

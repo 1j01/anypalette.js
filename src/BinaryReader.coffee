@@ -168,6 +168,16 @@ module.exports = (...args)->
 				window._bad_binary_string = string
 				window._bad_binary_string_bytes = array
 			return array
+		window._debug_view = mode: "hex"
+		show_hex = (binary_string)->
+			document.createTextNode(
+				if window._debug_view.mode is "hex"
+					binary_string_to_array(binary_string).map(
+						(x)-> if (not isFinite(x)) or x > 0xff then "{BAD BYTE #{x}}" else "0#{x.toString(16)}".slice(-2)
+					).join(" ")
+				else
+					binary_string
+			)
 		tid = -1
 		return new Proxy(
 			new BinaryReader(...args),
@@ -178,12 +188,6 @@ module.exports = (...args)->
 					before = target._buffer.slice(0, target._pos)
 					hilight = target._buffer.slice(target._pos, target._pos+1)
 					after = target._buffer.slice(target._pos+1)
-					show_hex = (binary_string)->
-						document.createTextNode(
-							binary_string_to_array(binary_string).map(
-								(x)-> if (not isFinite(x)) or x > 0xff then "{BAD BYTE #{x}}" else "0#{x.toString(16)}".slice(-2)
-							).join(" ")
-						)
 					debug_container.appendChild(show_hex(before, true))
 					hilight_span = document.createElement("span")
 					debug_container.appendChild(document.createTextNode(" "))

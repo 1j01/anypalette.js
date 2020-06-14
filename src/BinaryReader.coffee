@@ -142,24 +142,24 @@ class BinaryReader
 		if @_pos + Math.ceil(neededBits / 8) > @_buffer.length
 			throw new Error "Index out of bound"
 
+if localStorage?.debug_binary == "true"
+	debug_container = document.createElement("div")
+	debug_container.style.position = "fixed"
+	debug_container.style.left = "0"
+	debug_container.style.top = "0"
+	debug_container.style.right = "0"
+	debug_container.style.bottom = "0"
+	debug_container.classList.add("anypalette-debug-container")
+	document.body.appendChild debug_container
+
 module.exports = (...args)->
 	if localStorage?.debug_binary == "true"
-		debug_container = document.createElement("div")
-		debug_container.style.position = "fixed"
-		debug_container.style.left = "0"
-		debug_container.style.top = "0"
-		debug_container.style.right = "0"
-		debug_container.style.bottom = "0"
-		debug_container.classList.add("anypalette-debug-container")
-		document.body.appendChild debug_container
-		render_debug = =>
-			debug_container.textContent = @_pos
 		return new Proxy(
 			new BinaryReader(...args),
 			set: (target, key, value)->
 				target[key] = value
 				if key is "_pos"
-					render_debug()
+					debug_container.textContent = "Current position: #{target._pos}"
 				return true
 		)
 	else

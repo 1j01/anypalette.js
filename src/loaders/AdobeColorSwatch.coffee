@@ -16,35 +16,36 @@ module.exports = ({data})->
 		br.seek(4+n_colors*10)
 		version = br.readUInt16()
 		n_colors = br.readUInt16()
-	for i in [0..n_colors] then try
-		# id = null
+	for i in [0..n_colors]
+		id = null
+		color = null
 		model = br.readUInt16()
 		model_names = ['RGB','HSB','CMYK','Pantone','Focoltone','Trumatch','Toyo','Lab','Gray','WideCMYK','HKS','DIC','TotalInk','MonitorRGB','Duotone','Opacity']
 		console.log(model, model_names[model], arguments[0]) if model
 		if model == 2
 			[C,M,Y,K] = [br.readUInt16(), br.readUInt16(), br.readUInt16(), br.readUInt16()]
-			palette.add
+			color =
 				c: 1-C/0xFFFF*100
 				m: 1-M/0xFFFF*100
 				y: 1-Y/0xFFFF*100
 				k: 1-K/0xFFFF*100
 		else if model == 9
 			[C,M,Y,K] = [br.readUInt16(), br.readUInt16(), br.readUInt16(), br.readUInt16()]
-			palette.add
+			color =
 				c: C/10000*100
 				m: M/10000*100
 				y: Y/10000*100
 				k: K/10000*100
 		else if model == 0
 			[R,G,B] = [br.readUInt16(), br.readUInt16(), br.readUInt16()]
-			palette.add
+			color =
 				r: R/0xFFFF*255
 				g: G/0xFFFF*255
 				b: B/0xFFFF*255
 			br.skip(2)
 		else if model == 1
 			[H,S,V] = [br.readUInt16(), br.readUInt16(), br.readUInt16()]
-			palette.add
+			color =
 				h: H/0xFFFF*360
 				s: S/0xFFFF*100
 				v: V/0xFFFF*100
@@ -52,14 +53,14 @@ module.exports = ({data})->
 		else if model == 7
 			[L,a,b] = [br.readUInt16(), br.readInt16(), br.readInt16()] # note unsigned then signed and signed
 			# TODO: test stuff and see if value ranges are at all right
-			palette.add
+			color =
 				L: L/10000*100
 				a: a/10000*100
 				b: b/10000*100
 			br.skip(2)
 		else if model == 8
 			K = br.readUInt16()
-			palette.add
+			color =
 				r: K/10000*255
 				g: K/10000*255
 				b: K/10000*255
@@ -68,29 +69,17 @@ module.exports = ({data})->
 			throw new Error("unsupported color model [#{model_names[model] ? model}]\n")
 			# id = file.read(7).split('\x00', 1)[0].strip()
 			# br.skip(1)
-		# if version == 2
-		# 	length = struct.unpack('>L',file.read(4))[0]
-		# 	if length > 0
-		# 		id = unicode(struct.unpack(str(length*2)+'s',file.read(length*2))[0],'utf_16_be').split('\x00', 1)[0]
-		# if version == 0 # Photoshop 6
-		# 	length = struct.unpack('B',file.read(1))[0]
-		# 	if length > 0
-		# 		id = file.read(length)
-		# if not id and len(item.values) > 0
-		# 	id = idfromvals(item.values[item.values.keys()[0]])
-		# else if not id
-		# 	id = 'col'+str(i)
-		# if id in swatchbook.materials
-		# 	if (len(item.values) == 0 and len(swatchbook.materials[id].values) == 0) or (item.values[item.values.keys()[0]] == swatchbook.materials[id].values[swatchbook.materials[id].values.keys()[0]])
-		# 		swatchbook.book.items.append(Swatch(id))
-		# 		continue
-		# 	else
-		# 		sys.stderr.write('duplicated id: '+id+'\n')
-		# 		item.info.title = id
-		# 		id = id+'col'+str(i)
-		# item.info.identifier = id
-		# swatchbook.materials[id] = item
-		# swatchbook.book.items.append(Swatch(id))
+		if version == 2
+			# length = br.readUInt32()
+			# if length > 0
+			# 	id = unicode(struct.unpack(str(length*2)+'s',file.read(length*2))[0],'utf_16_be').split('\x00', 1)[0]
+			id = br.readUnicodeStringLong().replace("\x00", "(\\x00)")
+		if version == 0 # Photoshop 6
+			length = br.readByte()
+			if length > 0
+				id = br.readString(length)
+		color.name = id
+		palette.add(color)
 
 	return palette
 

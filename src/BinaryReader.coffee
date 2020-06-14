@@ -36,6 +36,16 @@ class BinaryReader
 			@_pos += 2
 		str
 	
+	readUnicodeStringLong: ->
+		length = @readUInt32()
+		# console.log {length}
+		@_checkSize(length * 16)
+		str = ""
+		for i in [0..length]
+			str += String.fromCharCode(@_buffer.substr(@_pos, 1) | (@_buffer.substr(@_pos+1, 1) << 8))
+			@_pos += 2
+		str
+	
 	skip: (n_bytes)->
 		@seek(@_pos + n_bytes)
 

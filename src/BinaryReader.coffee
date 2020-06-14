@@ -163,6 +163,10 @@ module.exports = (...args)->
 			array = new Array(string.length)
 			for i in [0...string.length]
 				array[i] = string.charCodeAt(i)
+			if array.some((byte)-> (byte > 255) or (not isFinite(byte)))
+				console.warn("Binary string bad! See window._bad_binary_string and window._bad_binary_string_bytes")
+				window._bad_binary_string = string
+				window._bad_binary_string_bytes = array
 			return array
 		tid = -1
 		return new Proxy(

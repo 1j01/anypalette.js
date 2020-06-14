@@ -205,9 +205,14 @@ load_palette = (o, callback)->
 	
 	if not o.preventRecursionForEndianSwap
 		# TODO: retry only binary formats with endianness swapped
+		endian_swapped_data = swap_endianness_of_binary_string(o.data)
+		if swap_endianness_of_binary_string(endian_swapped_data) isnt o.data
+			console.warn("Inconsistent swap_endianness_of_binary_string results, see window._original_binary_string and function window._swap_endianness_of_binary_string")
+			window._original_binary_string = o.data
+			window._swap_endianness_of_binary_string = swap_endianness_of_binary_string
 		load_palette(Object.assign({}, o, {
 			preventRecursionForEndianSwap: true
-			data: swap_endianness_of_binary_string(o.data)
+			data: endian_swapped_data
 		}), (error, palette)->
 			if error
 				error.endianSwapped = true
@@ -250,6 +255,10 @@ binary_string_to_array_buffer = (string)->
 	bytes = new Uint8Array(array_buffer)
 	for i in [0...string.length]
 		bytes[i] = string.charCodeAt(i)
+	if bytes.some((byte)-> (byte > 255) or (not isFinite(byte)))
+		console.warn("Binary string bad! See window._bad_binary_string and window._bad_binary_string_bytes")
+		window._bad_binary_string = string
+		window._bad_binary_string_bytes = bytes
 	return array_buffer
 
 array_buffer_to_binary_string = (array_buffer)->

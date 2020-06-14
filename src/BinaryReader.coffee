@@ -153,24 +153,33 @@ if localStorage?.debug_binary == "true"
 	debug_container.style.color = "white"
 	debug_container.style.fontFamily = "monospace"
 	debug_container.style.whitespace = "pre"
+	debug_container.style.display = "none"
 	debug_container.classList.add("anypalette-debug-container")
 	document.body.appendChild debug_container
 
 module.exports = (...args)->
-	if localStorage?.debug_binary == "true"
+	if (try localStorage?.debug_binary == "true")
+		binary_string_to_array = (string)->
+			array = new Array(string.length)
+			for i in [0...string.length]
+				array[i] = string.charCodeAt(i)
+			return array
+		tid = -1
 		return new Proxy(
 			new BinaryReader(...args),
 			set: (target, key, value)->
 				target[key] = value
 				if key is "_pos"
-					# debug_container.textContent = "Current position: #{target._pos}"
 					debug_container.innerHTML = ""
 					before = target._buffer.slice(0, target._pos)
 					hilight = target._buffer.slice(target._pos, target._pos+1)
 					after = target._buffer.slice(target._pos+1)
 					show_hex = (binary_string, include_space)->
 						document.createTextNode(
-							Array::map.call(binary_string, (x)-> x.charCodeAt(0).toString(16)).join(" ") + (if include_space then " " else "")
+							binary_string_to_array(binary_string).map(
+								(x)-> if (not isFinite(x)) or x > 0xff then "{BAD BYTE #{x}}" else "0#{x.toString(16)}".slice(-2)
+							).join(" ") +
+							(if include_space then " " else "")
 						)
 					debug_container.appendChild(show_hex(before, true))
 					hilight_span = document.createElement("span")
@@ -181,6 +190,9 @@ module.exports = (...args)->
 					hilight_span.style.boxShadow = "0 2px 2px yellow"
 					debug_container.appendChild(hilight_span)
 					debug_container.appendChild(show_hex(after))
+					clearTimeout(tid)
+					tid = setTimeout(-> debug_container.style.display = "none")
+					debug_container.style.display = "block"
 				return true
 		)
 	else

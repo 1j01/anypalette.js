@@ -152,7 +152,7 @@ if localStorage?.debug_binary == "true"
 	debug_container.style.background = "black"
 	debug_container.style.color = "white"
 	debug_container.style.fontFamily = "monospace"
-	debug_container.style.whitespace = "pre"
+	debug_container.style.whiteSpace = "pre-wrap"
 	debug_container.style.display = "none"
 	debug_container.classList.add("anypalette-debug-container")
 	document.body.appendChild debug_container
@@ -174,21 +174,21 @@ module.exports = (...args)->
 					before = target._buffer.slice(0, target._pos)
 					hilight = target._buffer.slice(target._pos, target._pos+1)
 					after = target._buffer.slice(target._pos+1)
-					show_hex = (binary_string, include_space)->
+					show_hex = (binary_string)->
 						document.createTextNode(
 							binary_string_to_array(binary_string).map(
 								(x)-> if (not isFinite(x)) or x > 0xff then "{BAD BYTE #{x}}" else "0#{x.toString(16)}".slice(-2)
-							).join(" ") +
-							(if include_space then " " else "")
+							).join(" ")
 						)
 					debug_container.appendChild(show_hex(before, true))
 					hilight_span = document.createElement("span")
-					hilight_span.appendChild(show_hex(hilight))
 					debug_container.appendChild(document.createTextNode(" "))
+					hilight_span.appendChild(show_hex(hilight))
 					hilight_span.style.background = "yellow"
 					hilight_span.style.color = "black"
 					hilight_span.style.boxShadow = "0 2px 2px yellow"
 					debug_container.appendChild(hilight_span)
+					debug_container.appendChild(document.createTextNode(" "))
 					debug_container.appendChild(show_hex(after))
 					clearTimeout(tid)
 					tid = setTimeout(-> debug_container.style.display = "none")

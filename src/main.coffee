@@ -248,7 +248,7 @@ swap_endianness_of_array_buffer = (array_buffer)->
 binary_string_to_array_buffer = (string)->
 	array_buffer = new ArrayBuffer(string.length)
 	bytes = new Uint8Array(array_buffer)
-	for i in [0..string.length]
+	for i in [0...string.length]
 		bytes[i] = string.charCodeAt(i)
 	return array_buffer
 

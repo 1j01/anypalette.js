@@ -51,11 +51,11 @@ load_palette = (o, callback)->
 			exts: ["pal"]
 			load: require "./loaders/RIFF"
 		}
-		{
-			name: "ColorSchemer palette"
-			exts: ["cs"]
-			load: require "./loaders/ColorSchemer"
-		}
+		# {
+		# 	name: "ColorSchemer palette"
+		# 	exts: ["cs"]
+		# 	load: require "./loaders/ColorSchemer"
+		# }
 		{
 			name: "Paint.NET palette"
 			exts: ["txt"]

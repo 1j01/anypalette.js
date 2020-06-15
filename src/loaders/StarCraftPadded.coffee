@@ -1,5 +1,5 @@
 
-# WPE (StarCraft padded raw palette)
+# Load a StarCraft padded raw palette (.wpe)
 
 BinaryReader = require "../BinaryReader"
 Palette = require "../Palette"

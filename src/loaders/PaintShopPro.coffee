@@ -1,5 +1,5 @@
 
-# Load a JASC PAL file (Paint Shop Pro palette file)
+# Load a JASC PAL file (Paint Shop Pro palette file) (.pal)
 
 BinaryReader = require "../BinaryReader"
 Palette = require "../Palette"

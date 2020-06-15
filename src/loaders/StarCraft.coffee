@@ -1,5 +1,5 @@
 
-# PAL (StarCraft raw palette)
+# Load a StarCraft raw palette (.pal)
 
 BinaryReader = require "../BinaryReader"
 Palette = require "../Palette"

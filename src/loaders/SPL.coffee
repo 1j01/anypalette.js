@@ -1,6 +1,6 @@
 
 # Load a Skencil palette (.spl) ("Sketch RGBPalette")
-# (not related to .sketchpalette Sketch App palette format)
+# Skencil was formerly called Sketch, but this is not related to the .sketchpalette format.
 
 Palette = require "../Palette"
 

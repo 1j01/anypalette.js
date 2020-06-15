@@ -1,5 +1,5 @@
 
-# Load a Resource Interchange File Format PAL file
+# Load a Resource Interchange File Format Palette file (.pal)
 
 # ported from C# code at https://worms2d.info/Palette_file
 

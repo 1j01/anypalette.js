@@ -1,5 +1,6 @@
-# Load sK1 palettes
-# These files are actually pythonic, but let's just try to parse them in a basic, non-general way
+# Load sK1 palettes (.skp)
+# These files are actually apparently python source code,
+# but let's just try to parse them in a basic, non-general way
 
 Palette = require "../Palette"
 

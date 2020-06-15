@@ -1,6 +1,6 @@
 
 # Load a Sketch App JSON palette (.sketchpalette)
-# (not related to .spl Sketch RGB palette format)
+# (not related to .spl Sketch RGB Palette format)
 
 # based on https://github.com/andrewfiorillo/sketch-palettes/blob/5b6bfa6eb25cb3244a9e6a226df259e8fb31fc2c/Sketch%20Palettes.sketchplugin/Contents/Sketch/sketchPalettes.js
 

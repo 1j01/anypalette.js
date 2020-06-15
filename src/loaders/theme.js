@@ -1,4 +1,4 @@
-// Load Windows .theme and .themepack files, and KDE .colors color schemes
+// Load Windows .theme and .themepack files
 
 var Palette = require("../Palette");
 

@@ -1,5 +1,5 @@
 
-# Load a ColorSchemer palette
+# Load a ColorSchemer palette (.cs)
 
 BinaryReader = require "../BinaryReader"
 Palette = require "../Palette"

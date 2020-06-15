@@ -1,5 +1,5 @@
 
-# Load a GIMP palette
+# Load a GIMP palette (.gpl), also used by or supported by many programs, such as Inkscape, Krita,
 
 Palette = require "../Palette"
 

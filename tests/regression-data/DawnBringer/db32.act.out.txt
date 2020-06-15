@@ -1,6 +1,6 @@
-Loaded As:                      StarCraft palette (.pal)
+Loaded As:                      Adobe Color Table (.act)
 
-matchedLoaderFileExtensions:    false
+matchedLoaderFileExtensions:    true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 

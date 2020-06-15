@@ -1,10 +1,17 @@
-Loaded As:                      ColorSchemer palette (.cs)
-
-matchedLoaderFileExtensions:    false
-geometrySpecifiedByFile:        undefined
-numberOfColumns:                undefined
-
-Colors:
-rgb(0, 0, 30)
-rgb(0, 108, 0)
-rgb(0, 112, 0)
+Some errors were encountered when loading:
+	failed to load Color_names_supported_by_all_browsers.cpl as Paint Shop Pro palette: Not a JASC-PAL,
+	failed to load Color_names_supported_by_all_browsers.cpl as RIFF PAL: RIFF header not found; not a RIFF PAL file,
+	failed to load Color_names_supported_by_all_browsers.cpl as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.cpl' instead),
+	failed to load Color_names_supported_by_all_browsers.cpl as Paint.NET palette: no colors returned,
+	failed to load Color_names_supported_by_all_browsers.cpl as GIMP palette: Not a GIMP Palette,
+	failed to load Color_names_supported_by_all_browsers.cpl as KolourPaint palette: Not a KDE RGB Palette,
+	failed to load Color_names_supported_by_all_browsers.cpl as Skencil palette: Line 2 doesn't match pattern null,
+	failed to load Color_names_supported_by_all_browsers.cpl as Sketch palette: not sketchpalette JSON,
+	failed to load Color_names_supported_by_all_browsers.cpl as sK1 palette: No colors found (0),
+	failed to load Color_names_supported_by_all_browsers.cpl as CSS colors: looks like a binary file,
+	failed to load Color_names_supported_by_all_browsers.cpl as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
+	failed to load Color_names_supported_by_all_browsers.cpl as Adobe Color Table: file size must be 768 or 772 bytes (saw 4462), OR file extension must be '.act' (saw '.cpl'),
+	failed to load Color_names_supported_by_all_browsers.cpl as Homesite palette: Not a Homesite palette,
+	failed to load Color_names_supported_by_all_browsers.cpl as StarCraft palette: Wrong file size, must be 768 bytes long (not 4462),
+	failed to load Color_names_supported_by_all_browsers.cpl as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 4462),
+	failed to load Color_names_supported_by_all_browsers.cpl as tabular colors: No colors found (0)

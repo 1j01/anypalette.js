@@ -24,6 +24,7 @@ Supported palette formats:
 | .pal              | [RIFF] Palette                    | [MS Paint] for Windows 95 and Windows NT 4.0                                      |   ✅   | Planned |
 | .gpl              | [GIMP][Gimp] Palette              | [Gimp], [Inkscape], [Krita], [KolourPaint], [Scribus], [CinePaint], [MyPaint]     |   ✅   | Planned |
 | .txt              | [Paint.NET] Palette               | [Paint.NET]                                                                       |   ✅   | Planned |
+| .act              | Adobe Color Table                 | Adobe [Photoshop] and [Illustrator]                                               |   ✅   | Planned |
 | .pal, .psppalette | [Paint Shop Pro] Palette          | [Paint Shop Pro][] (Jasc Software / Corel)                                        |   ✅   | Planned |
 | .hpl              | [Homesite] Palette                | Allaire [Homesite] / Macromedia [ColdFusion]                                      |   ✅   |         |
 | .cs               | ColorSchemer                      | ColorSchemer Studio                                                               |   ✅*  | Planned |
@@ -36,7 +37,8 @@ Supported palette formats:
 | .theme            | Windows Theme                     | [Windows] Desktop                                                                 |   ✅   |         |
 | .themepack        | Windows Theme                     | [Windows] Desktop                                                                 |   ✅   |         |
 
-\*The ColorSchemer file parser is only enabled when a file name is available, either thru passing a `File` object, or providing `options.fileName`, and the file extension is `.cs`
+\*The ColorSchemer file parser is only enabled when the file extension is `.cs`,
+provided by passing a `File` object, or `options.fileName`, or `options.fileExt`, or `options.filePath`
 
 UNSUPPORTED palette formats (for now):
 
@@ -44,7 +46,6 @@ UNSUPPORTED palette formats (for now):
 |-------------------|-----------------------------------|-----------------------------------------------------------------------------------|:-------:|:-------:|
 | .gpa              | [Gpick] Palette                   | [Gpick]                                                                           | Planned |         |
 | .aco              | Adobe Color Swatches              | Adobe [Photoshop]                                                                 | Planned | Planned |
-| .act              | Adobe Color Table                 | Adobe [Photoshop] and [Illustrator]                                               | Planned | Planned |
 | .ase              | Adobe Swatch Exchange             | Adobe [Photoshop], [InDesign], and [Illustrator]                                  | Planned | Planned |
 | .acbl             | Adobe Color Book Library / Legacy | Adobe [InDesign] and [Illustrator]                                                | Planned | Planned |
 | .soc              | StarOffice Colors                 | [StarOffice], [OpenOffice], [LibreOffice]                                         | Planned | Planned |
@@ -119,7 +120,7 @@ Properties and methods not documented here may break without notice.
 
 ### `AnyPalette.loadPalette(options, callback)`
 
-Knowing the file extension means AnyPalette.js can often pick the correct palette loader right away, which can improve the load speed, and also (TODO:) some loaders won't load except via their specific file extension because they can't determine if the file is actually in that format or not (for raw data formats without headers).
+Knowing the file extension means AnyPalette.js can often pick the correct palette loader right away, which can improve the load speed, and also some loaders won't load except via their specific file extension because they can't determine if the file is actually in that format or not (for raw data formats without headers).
 
 - `options.file` - the palette file to load, as a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File)
 - `options.data` - the palette file data to load, as a binary string (**not** an ArrayBuffer/TypedArray/DataView)
@@ -184,7 +185,7 @@ See [Using JavaScript's 'toString' Method](http://adripofjavascript.com/blog/dri
 
 `Color` objects also have `r`, `g`, `b` properties, **OR** `h`, `s`, `l`, depending on how they were loaded
 
-Also for GIMP palettes, a `Color` may have a `name` (string or undefined)
+Also for some palette formats, such as `.gpl` files, a `Color` may have a `name` (it's either a string or undefined)
 
 
 ## Todo
@@ -210,9 +211,6 @@ Also for GIMP palettes, a `Color` may have a `name` (string or undefined)
 			* Scribus (`.xml`)
 			* sK1 (`.skpx` / `.skp`)
 			* StarOffice / OpenOffice.org / LibreOffice (`.soc`)
-
-
-* Prevent false positive parsing of unsupported file types
 
 
 * Guess palette geometries
@@ -250,7 +248,7 @@ Don't commit `build/anypalette.js` until cutting a release
 
 Update [CHANGELOG.md](CHANGELOG.md)'s [Unreleased] section with any notable changes,
 following the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format.
-(Include any information someone upgrading the library might need to know.)
+Include any information someone upgrading the library might need to know.
 
 When pulling changes (e.g. syncing a fork) you may need to `npm install` again to update the dependencies.
 

@@ -1,14 +1,14 @@
-Loaded As:                      CSS colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
+Loaded As:                      tabular colors (.csv, .tsv, .txt)
 
 matchedLoaderFileExtensions:    false
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 
 Colors:
-rgb(0, 17, 0)
-rgb(204, 0, 170)
-rgb(68, 34, 34)
-rgb(102, 34, 136)
-rgb(51, 17, 51)
-rgb(153, 34, 119)
-rgb(102, 17, 102)
+rgb(4, 6, 8)
+rgb(2, 4, 6)
+rgb(0, 6, 8)
+rgb(1, 1, 1)
+rgb(5, 7, 7)
+rgb(6, 9, 9)
+rgb(0, 2, 4)

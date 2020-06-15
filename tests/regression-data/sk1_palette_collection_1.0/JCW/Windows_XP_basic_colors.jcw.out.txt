@@ -1,54 +1,17 @@
-Loaded As:                      CSS colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
-
-matchedLoaderFileExtensions:    false
-geometrySpecifiedByFile:        undefined
-numberOfColumns:                undefined
-
-Colors:
-rgb(255, 128, 128)
-rgb(255, 255, 128)
-rgb(128, 255, 128)
-rgb(0, 255, 128)
-rgb(128, 255, 255)
-rgb(0, 128, 255)
-rgb(255, 128, 192)
-rgb(255, 128, 255)
-rgb(255, 0, 0)
-rgb(255, 255, 0)
-rgb(128, 255, 0)
-rgb(0, 255, 64)
-rgb(0, 255, 255)
-rgb(0, 128, 192)
-rgb(128, 128, 192)
-rgb(255, 0, 255)
-rgb(128, 64, 64)
-rgb(255, 128, 64)
-rgb(0, 255, 0)
-rgb(0, 128, 128)
-rgb(0, 64, 128)
-rgb(128, 128, 255)
-rgb(128, 0, 64)
-rgb(255, 0, 128)
-rgb(128, 0, 0)
-rgb(255, 128, 0)
-rgb(0, 128, 0)
-rgb(0, 128, 64)
-rgb(0, 0, 255)
-rgb(0, 0, 160)
-rgb(128, 0, 128)
-rgb(128, 0, 255)
-rgb(64, 0, 0)
-rgb(128, 64, 0)
-rgb(0, 64, 0)
-rgb(0, 64, 64)
-rgb(0, 0, 128)
-rgb(0, 0, 64)
-rgb(64, 0, 64)
-rgb(64, 0, 128)
-rgb(0, 0, 0)
-rgb(128, 128, 0)
-rgb(128, 128, 64)
-rgb(128, 128, 128)
-rgb(64, 128, 128)
-rgb(192, 192, 192)
-rgb(255, 255, 255)
+Some errors were encountered when loading:
+	failed to load Windows_XP_basic_colors.jcw as Paint Shop Pro palette: Not a JASC-PAL,
+	failed to load Windows_XP_basic_colors.jcw as RIFF PAL: RIFF header not found; not a RIFF PAL file,
+	failed to load Windows_XP_basic_colors.jcw as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.jcw' instead),
+	failed to load Windows_XP_basic_colors.jcw as Paint.NET palette: no colors returned,
+	failed to load Windows_XP_basic_colors.jcw as GIMP palette: Not a GIMP Palette,
+	failed to load Windows_XP_basic_colors.jcw as KolourPaint palette: Not a KDE RGB Palette,
+	failed to load Windows_XP_basic_colors.jcw as Skencil palette: no colors returned,
+	failed to load Windows_XP_basic_colors.jcw as Sketch palette: not sketchpalette JSON,
+	failed to load Windows_XP_basic_colors.jcw as sK1 palette: No colors found (0),
+	failed to load Windows_XP_basic_colors.jcw as CSS colors: looks like a binary file,
+	failed to load Windows_XP_basic_colors.jcw as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
+	failed to load Windows_XP_basic_colors.jcw as Adobe Color Table: file size must be 768 or 772 bytes (saw 1400), OR file extension must be '.act' (saw '.jcw'),
+	failed to load Windows_XP_basic_colors.jcw as Homesite palette: Not a Homesite palette,
+	failed to load Windows_XP_basic_colors.jcw as StarCraft palette: Wrong file size, must be 768 bytes long (not 1400),
+	failed to load Windows_XP_basic_colors.jcw as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 1400),
+	failed to load Windows_XP_basic_colors.jcw as tabular colors: No colors found (0)

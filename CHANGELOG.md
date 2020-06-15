@@ -9,7 +9,7 @@ Refer to the [latest version of the changelog](https://github.com/1j01/anypalett
 for potential future corrections.
 (The changelog can't be retroactively updated within an npm release, so if for instance a breaking change was accidentally omitted, it wouldn't be in the changelog in the release, but it could be added later to the changelog on GitHub.)
 
-[Unreleased]: https://github.com/1j01/anypalette.js/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/1j01/anypalette.js/compare/v0.5.0...HEAD
 ## [Unreleased]
 <details>
 	<summary>
@@ -20,6 +20,15 @@ for potential future corrections.
 Nothing here yet!
 
 </details>
+
+[0.5.0]: https://github.com/1j01/anypalette.js/compare/v0.4.0...v0.5.0
+## [0.5.0] - 2020-06-14
+### Changed
+- Prevented false positive parsing of CSS colors by detecting if a file is binary. (Some binary files would by chance contain things that look like CSS hex colors, such as `#a9e`)
+- Prevented false positive parsing of ColorSchemer files by limiting it to when the file extension is `.cs`
+
+### Added
+- Adobe Color Table `.act` loader (This very simple format overlaps with the Starcraft palette format, so some `.act` files would already be loaded with the Starcraft loader, but now the name shows up as "Adobe Color Table" instead of "Starcraft palette" in the demo, which is nice.)
 
 [0.4.0]: https://github.com/1j01/anypalette.js/compare/v0.3.0...v0.4.0
 ## [0.4.0] - 2020-06-12

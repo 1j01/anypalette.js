@@ -157,7 +157,7 @@
 								.attr("title", color.name ? (color.name + "\n" + color) : color)
 							
 							col += 1;
-							if(col > palette.numberOfColumns){
+							if(col >= palette.numberOfColumns){
 								col = 0;
 								$row = $("<div class='palette-row'>").appendTo($output);
 							}

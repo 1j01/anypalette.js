@@ -35,4 +35,6 @@ load_adobe_color_table = ({data, fileExt})->
 			b: br.readUInt8()
 		i += 1
 	
+	palette.numberOfColumns = 16 # configurable in Photoshop, but this is the default view, and for instance Visibone and the default swatches rely on this layout
+
 	palette

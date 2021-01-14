@@ -62,10 +62,10 @@
 		"watch": "gulp --require coffeescript/register"
 	},
 	"devDependencies": {
-		"browserify": "^16.5.1",
+		"browserify": "^17.0.0",
 		"coffeeify": "^3.0.1",
 		"coffeescript": "2.5.1",
-		"concurrently": "^5.2.0",
+		"concurrently": "^5.3.0",
 		"glob": "^7.1.6",
 		"gulp": "^4.0.2",
 		"live-server": "^1.2.1",

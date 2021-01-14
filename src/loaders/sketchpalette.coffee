@@ -48,8 +48,8 @@ module.exports = ({data})->
 
 	# Check for presets in file, else set to empty array
 	colorDefinitions = paletteContents.colors ? []
-	gradientDefinitions = paletteContents.gradients ? []
-	imageDefinitions = paletteContents.images ? []
+	# gradientDefinitions = paletteContents.gradients ? []
+	# imageDefinitions = paletteContents.images ? []
 	colorAssets = []
 	gradientAssets = []
 	images = []
@@ -59,7 +59,6 @@ module.exports = ({data})->
 	# Check if plugin is out of date and incompatible with a newer palette version
 	if compatibleVersion and compatibleVersion > version
 		throw new Error("Can't handle compatibleVersion of #{compatibleVersion}.")
-		return
 
 	# Check for older hex code palette version
 	if not compatibleVersion or compatibleVersion < 1.4

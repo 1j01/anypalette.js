@@ -1,7 +1,6 @@
 
 # Load a JASC PAL file (Paint Shop Pro palette file) (.pal)
 
-BinaryReader = require "../BinaryReader"
 Palette = require "../Palette"
 
 module.exports = ({data})->
@@ -10,8 +9,8 @@ module.exports = ({data})->
 		throw new Error "Not a JASC-PAL"
 	if lines[1] isnt "0100"
 		throw new Error "Unknown JASC-PAL version"
-	if lines[2] isnt "256"
-		"that's ok"
+	# if lines[2] isnt "256"
+	# 	"that's ok"
 	
 	palette = new Palette()
 	#n_colors = Number(lines[2])

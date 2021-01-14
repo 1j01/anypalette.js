@@ -51,15 +51,15 @@ class Color
 		else
 			# UNTESTED UNTESTED UNTESTED UNTESTED UNTESTED UNTESTED
 			if @l? and @a? and @b?
-				white =
-					x: 95.047
-					y: 100.000
-					z: 108.883
+				# white =
+				# 	x: 95.047
+				# 	y: 100.000
+				# 	z: 108.883
 				
-				xyz = 
+				xyz =
 					y: (raw.l + 16) / 116
-					x: raw.a / 500 + xyz.y
-					z: xyz.y - raw.b / 200
+				xyz.x = raw.a / 500 + xyz.y
+				xyz.z = xyz.y - raw.b / 200
 				
 				for _ in "xyz"
 					powed = Math.pow(xyz[_], 3)
@@ -101,7 +101,7 @@ class Color
 					#{
 						try
 							"got #{JSON.stringify(options)}"
-						catch e
+						catch
 							"got something that couldn't be displayed with JSON.stringify for this error message"
 					}
 				"

@@ -1,7 +1,6 @@
 
 # Load a Paint.NET palette file (.txt)
 
-BinaryReader = require "../BinaryReader"
 Palette = require "../Palette"
 
 module.exports = ({data})->

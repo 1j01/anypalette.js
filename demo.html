@@ -191,12 +191,12 @@
 
 					$save.text("Save As...");
 					$save.one("click", () => {
-						let format_index = 0;
+						let format_index = -1;
 						let format;
 						const formats = Object.values(AnyPalette.formats).filter((format)=> format.write);
 						let iid = setInterval(()=> {
-							$save.text(formats[format_index].name);
 							format_index = ++format_index % formats.length;
+							$save.text(formats[format_index].name);
 						}, 500);
 						$save.on("click", () => {
 							var [file, ext] = AnyPalette.savePalette(palette, formats[format_index]);

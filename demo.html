@@ -110,7 +110,7 @@
 				$header_inner
 					.prependTo($header)
 					.addClass("header-text")
-					.text(palette_name);
+					.text(palette_name.replace(/.*\//, ""));
 				
 				this.appendTo = function(e){
 					$section.appendTo(e);
@@ -202,7 +202,37 @@
 					"s2green.pal",
 					"spacewar.pal",
 					//"test32.gif",
-					"drf.color.styl.txt"
+					"drf.color.styl.txt",
+					"material-design.sketchpalette",
+					"sketch-default.sketchpalette",
+					"ios.sketchpalette",
+					"Default_Paint.NET_Palette.txt",
+				]
+			},{
+				name: "Windows Themes",
+				description: "Windows theme and themepack files are supported. Well, themepack files might not work if there's optional compression, but I haven't ran into that.",
+				dir: "Windows_themes/",
+				fnames: [
+					"Peggys Pastels.themepack",
+					"Solarized Dark.themepack",
+					"Windows Official/Inside your Computer (high color).theme",
+					"Windows Official/The 60's USA (256 color).theme",
+					"Windows Official/Windows Default.theme",
+				]
+			},{
+				name: "Nord",
+				description: `<a href="https://www.nordtheme.com/">Nord</a> is “an arctic, north-bluish color palette.” <br/> The Wavefront Material Template Library (MTL) file format is not supported yet, but it loads anyways just with some extra colors.`,
+				dir: "Nord/",
+				fnames: [
+					"nord.css",
+					"nord.scss",
+					"nord.less",
+					"nord.styl",
+					// "native/nord.aco",
+					// "native/nord.ase",
+					// "native/nord.gpa",
+					// "native/nord.clr",
+					"native/nord.mtl",
 				]
 			},{
 				name: "DawnBringer's palettes",
@@ -221,7 +251,7 @@
 				description: "<a href='http://www.visibone.com/swatches/'>Visibone</a> color swatches in various formats",
 				dir: "Other/",
 				fnames: [
-					"VisiBone2.aco",
+					// "VisiBone2.aco",
 					"VisiBone2.gimp",
 					"VisiBone2_ap.hpl",
 					"VisiBone2_km.psppalette"

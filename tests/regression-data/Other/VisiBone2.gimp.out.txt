@@ -2,7 +2,7 @@ Loaded As:                      GIMP palette (.gpl, .gimp, .colors)
 
 matchedLoaderFileExtensions:    true
 geometrySpecifiedByFile:        true
-numberOfColumns:                15
+numberOfColumns:                16
 
 Colors:
 rgb(255, 255, 255)

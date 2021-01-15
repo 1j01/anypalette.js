@@ -1,0 +1,9 @@
+Loaded As:                      Adobe Color Table (.act)
+
+matchedLoaderFileExtensions:    true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                16
+
+Colors:
+rgb(0, 0, 0)
+rgb(255, 255, 255)

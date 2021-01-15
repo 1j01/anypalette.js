@@ -1,0 +1,18 @@
+Loaded As:                      Windows desktop theme (.theme, .themepack)
+
+matchedLoaderFileExtensions:    true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors:
+rgb(215, 165, 47)
+rgb(66, 0, 66)
+rgb(128, 0, 128)
+rgb(255, 255, 255)
+rgb(0, 0, 0)
+rgb(245, 234, 207)
+rgb(160, 160, 164)
+rgb(236, 213, 157)
+rgb(224, 204, 136)
+rgb(208, 204, 144)
+rgb(192, 192, 192)

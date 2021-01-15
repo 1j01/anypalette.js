@@ -97,7 +97,8 @@
 				var $output = $("<div>").appendTo($section);
 				
 				var $loaded_as = $("<span>").appendTo($header);
-				var $toggle_dupes = $("<a>").appendTo($header).hide();
+				var $toggle_dupes = $("<button>").appendTo($header).hide();
+				var $save = $("<button>").appendTo($header);
 				
 				var $header_inner;
 				if(url){
@@ -167,14 +168,14 @@
 					var n_dupes = palette.withDuplicates.length - palette.length;
 					var s = (n_dupes > 1) ? "s" : "";
 					var toggle = 0;
-					$toggle_dupes.text("show duplicate"+s);
+					$toggle_dupes.text("Show Duplicate"+s);
 					$toggle_dupes.on("click", function(e){
 						if(toggle = !toggle){
 							show_colors(palette.withDuplicates);
-							$toggle_dupes.text("hide duplicate"+s);
+							$toggle_dupes.text("Hide Duplicate"+s);
 						}else{
 							show_colors(palette);
-							$toggle_dupes.text("show duplicate"+s);
+							$toggle_dupes.text("Show Duplicate"+s);
 						}
 					});
 					$toggle_dupes.on("mousedown", function(e){
@@ -187,6 +188,27 @@
 							$toggle_dupes.click();
 						}
 					}
+
+					$save.text("Save As...");
+					$save.one("click", () => {
+						let format_index = -1;
+						let format;
+						const formats = Object.values(AnyPalette.formats).filter((format)=> format.write);
+						let iid = setInterval(()=> {
+							format_index = ++format_index % formats.length;
+							$save.text(formats[format_index].name);
+						}, 500);
+						$save.on("click", () => {
+							var [file, ext] = AnyPalette.savePalette(palette, formats[format_index]);
+							var url = URL.createObjectURL(file);
+							var a = document.createElement("a");
+							a.href = url;
+							a.download = file.name;
+							document.body.appendChild(a);
+							a.click();
+							document.body.removeChild(a);
+						});
+					});
 				};
 			}
 			

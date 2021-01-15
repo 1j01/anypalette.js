@@ -242,6 +242,7 @@ it'll rebuild the library when changes to the source files are detected, and it'
 Run `npm test` to update a `regression-data` folder, and then view any changes with git.  
 If the changes are good/positive, that's good! Commit the changes along with the source code.  
 If the changes are bad/negative, try to fix the regression.  
+If all the files are deleted, not just changed, make sure to run `git submodule update --init`  
 
 Don't commit `build/anypalette.js` until cutting a release
 (to reduce noise and avoid conflicts when reverting and such).

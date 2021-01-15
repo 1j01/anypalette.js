@@ -21,6 +21,9 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 	glob "#{palettes_folder}/*/**/*", ignore: "**/node_modules/**", nodir: true, (err, file_paths)->
 		if err
 			throw err
+		if file_paths.length is 0
+			console.error("No palette files found in #{palettes_folder}.\nMake sure to run: git submodule update --init")
+			return
 		for file_path in file_paths
 			do (file_path)->
 				relative_path = path.relative(palettes_folder, file_path)

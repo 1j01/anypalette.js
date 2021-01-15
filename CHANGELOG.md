@@ -21,6 +21,11 @@ Nothing here yet!
 
 </details>
 
+[0.5.2]: https://github.com/1j01/anypalette.js/compare/v0.5.1...v0.5.2
+## [0.5.2] - 2021-01-15
+### Fixed
+- Adobe Color Table and StarCraft palettes missing last color
+
 [0.5.1]: https://github.com/1j01/anypalette.js/compare/v0.5.0...v0.5.1
 ## [0.5.1] - 2021-01-14
 ### Changed

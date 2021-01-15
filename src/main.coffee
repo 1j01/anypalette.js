@@ -268,5 +268,52 @@ AnyPalette.gimmeAPalette = (o, callback)->
 	AnyPalette.loadPalette o, (err, palette)->
 		callback(null, palette ? new RandomPalette)
 
+AnyPalette.formats = {
+	KDE_RGB_PALETTE: "KDE_RGB_PALETTE",
+	RIFF_PALETTE: "RIFF_PALETTE",
+	GIMP_PALETTE: "GIMP_PALETTE",
+	SKETCH_JSON_PALETTE: "SKETCH_JSON_PALETTE",
+};
+
+AnyPalette.savePalette = (palette, format_id)->
+	palette_writers = [
+		{
+			id: AnyPalette.formats.GIMP_PALETTE,
+			name: "GIMP palette"
+			exts: ["gpl"]
+			write: require "./writers/GIMP"
+		}
+		{
+			id: AnyPalette.formats.KDE_RGB_PALETTE,
+			name: "KolourPaint palette"
+			exts: ["colors"]
+			write: require "./writers/KolourPaint"
+		}
+		# {
+		# 	id: AnyPalette.formats.RIFF_PALETTE,
+		# 	name: "RIFF PAL"
+		# 	exts: ["pal"]
+		# 	write: require "./writers/RIFF"
+		# }
+		{
+			id: AnyPalette.formats.SKETCH_JSON_PALETTE,
+			name: "Sketch palette"
+			exts: ["sketchpalette"]
+			write: require "./writers/sketchpalette"
+		}
+	]
+
+	format_id ?= AnyPalette.formats.GIMP_PALETTE
+
+	format = palette_writers.find((format)-> format.id is format_id)
+
+	if not format
+		throw new Error("Format '#{format_id}' not supported for saving palettes")
+	
+	palette_content = format.write(palette)
+	file = new File([palette_content], (palette.name ? "Saved Colors") + ".#{format.exts[0]}")
+	return [file, format.exts[0]]
+
+
 # Exports
 module.exports = AnyPalette

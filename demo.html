@@ -98,6 +98,7 @@
 				
 				var $loaded_as = $("<span>").appendTo($header);
 				var $toggle_dupes = $("<a>").appendTo($header).hide();
+				var $save = $("<a>").appendTo($header);
 				
 				var $header_inner;
 				if(url){
@@ -187,6 +188,18 @@
 							$toggle_dupes.click();
 						}
 					}
+
+					$save.text("Save");
+					$save.on("click", () => {
+						var [file, ext] = AnyPalette.savePalette(palette, AnyPalette.formats.GIMP_PALETTE);
+						var url = URL.createObjectURL(file);
+						var a = document.createElement("a");
+						a.href = url;
+						a.download = file.name;
+						document.body.appendChild(a);
+						a.click();
+						document.body.removeChild(a);
+					});
 				};
 			}
 			

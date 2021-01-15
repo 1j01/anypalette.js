@@ -79,6 +79,7 @@ formats =
 		name: "Sketch palette"
 		exts: ["sketchpalette"]
 		load: require "./loaders/sketchpalette"
+		write: require "./writers/sketchpalette"
 	}
 	SK1_PALETTE: {
 		name: "sK1 palette"

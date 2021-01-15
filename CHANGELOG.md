@@ -21,6 +21,11 @@ Nothing here yet!
 
 </details>
 
+[0.5.1]: https://github.com/1j01/anypalette.js/compare/v0.5.0...v0.5.1
+## [0.5.1] - 2021-01-14
+### Changed
+- Adobe Color Table (`.act`) palettes now have `numberOfColumns` defined as `16`. The palette view in Photoshop can be resized, but some palettes, such as Visibone, rely on the default size of 16 columns.
+
 [0.5.0]: https://github.com/1j01/anypalette.js/compare/v0.4.0...v0.5.0
 ## [0.5.0] - 2020-06-14
 ### Changed

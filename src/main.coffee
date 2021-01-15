@@ -208,7 +208,6 @@ load_palette = (o, callback)->
 				fileExtensionsPretty: exts_pretty
 			palette.matchedLoaderFileExtensions = matching_ext[format_id]?
 			
-			palette.finalize()
 			callback(null, palette)
 			return
 	

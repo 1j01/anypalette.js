@@ -6,35 +6,39 @@ class Palette extends Array
 	
 	constructor: (args...)->
 		super(args...)
+		@name = undefined
+		@description = undefined
+		@numberOfColumns = undefined
+		@geometrySpecifiedByFile = undefined
 	
 	add: (o)->
 		new_color = new Color(o)
 		@push new_color
 	
-	finalize: ->
-		# TODO: get this working properly and enable
-		# if not @numberOfColumns
-		# 	@guess_dimensions()
-		unless @parentPaletteWithoutDuplicates
-			@withDuplicates = new Palette
-			@withDuplicates.parentPaletteWithoutDuplicates = @
-			@withDuplicates[i] = @[i] for i in [0...@length]
-			@withDuplicates.numberOfColumns = @numberOfColumns
-			@withDuplicates.geometrySpecifiedByFile = @geometrySpecifiedByFile
-			@withDuplicates.finalize()
+	withoutDuplicates: ->
+		new_palette = new Palette
+		new_palette.name = @name
 
-			# in-place uniquify
-			i = 0
-			while i < @length
-				i_color = @[i]
-				j = i + 1
-				while j < @length
-					j_color = @[j]
-					if i_color.is j_color
-						@.splice(j, 1)
-						j -= 1
-					j += 1
-				i += 1
+		# These aren't super meaningful if some colors are removed:
+		# new_palette.numberOfColumns = @numberOfColumns
+		# new_palette.geometrySpecifiedByFile = @geometrySpecifiedByFile
+
+		new_palette[..] = @[..]
+		# In-place uniquify
+		# (Can't simply use `new_palette[..] = [...new Set(@)]` because it's Color objects, not strings)
+		i = 0
+		while i < new_palette.length
+			i_color = new_palette[i]
+			j = i + 1
+			while j < new_palette.length
+				j_color = new_palette[j]
+				if i_color.is j_color
+					new_palette.splice(j, 1)
+					j -= 1
+				j += 1
+			i += 1
+		
+		new_palette
 
 	###
 	guess_dimensions: ->

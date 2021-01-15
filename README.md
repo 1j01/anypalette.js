@@ -150,30 +150,24 @@ Stores a list of Colors, with some additional data.
 Because `Palette` is a subclass of `Array`, you can use `forEach`, `map`, `join` and other methods,
 or access the colors via indexing e.g. `palette[0]` and loop over them using `palette.length`
 
-#### `palette.withDuplicates`
+#### `palette.withoutDuplicates()`
 
 Some palette formats are commonly made variable size by just leaving unused slots a certain color
 such as `#000` or `#00F`.
-So by default, duplicates are removed.
-You can get all duplicates with `palette.withDuplicates` (which is another `Palette`)
+You can get a `Palette` with only unique colors with `palette.withoutDuplicates()`
 
 #### `palette.numberOfColumns`
 
 `palette.numberOfColumns` may contain a number of columns for the palette to fit into (with the number of rows being implicit).  
-You should ignore an `numberOfColumns` of zero, and may want to ignore this property entirely.
-
-Currently only GIMP palettes will have this specified, but geometry guessing is planned.
-
-You should use `palette.withDuplicates` (and `palette.withDuplicates.numberOfColumns`) to work with file-specified geometry.
-
+You should ignore a `numberOfColumns` of zero, and MAY want to ignore this property entirely, as Inkscape does for example.
 
 ### class `Color`
 
 (Accessible as `AnyPalette.Color`)
 
 
-`Color` has a `toString` method that returns a CSS color.  
-You can therefore pass a Color object directly to an element's style or a canvas's context.
+`Color` has a `toString` method that returns a CSS color, which means you can
+pass a Color object directly to an element's style or a canvas's context.
 
 ```javascript
 var color = palette[0];

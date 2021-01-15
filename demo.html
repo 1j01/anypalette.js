@@ -163,18 +163,18 @@
 							}
 						});
 					};
-					show_colors(palette);
+					show_colors(palette.withoutDuplicates());
 					
-					var n_dupes = palette.withDuplicates.length - palette.length;
+					var n_dupes = palette.length - palette.withoutDuplicates().length;
 					var s = (n_dupes > 1) ? "s" : "";
-					var toggle = 0;
+					var toggle = false;
 					$toggle_dupes.text("Show Duplicate"+s);
 					$toggle_dupes.on("click", function(e){
 						if(toggle = !toggle){
-							show_colors(palette.withDuplicates);
+							show_colors(palette);
 							$toggle_dupes.text("Hide Duplicate"+s);
 						}else{
-							show_colors(palette);
+							show_colors(palette.withoutDuplicates());
 							$toggle_dupes.text("Show Duplicate"+s);
 						}
 					});
@@ -184,7 +184,7 @@
 					
 					if(n_dupes > 0){
 						$toggle_dupes.show();
-						if(palette.withDuplicates.geometrySpecifiedByFile){
+						if(palette.geometrySpecifiedByFile){
 							$toggle_dupes.click();
 						}
 					}

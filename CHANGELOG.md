@@ -17,7 +17,25 @@ for potential future corrections.
 		Click to see more.
 	</summary>
 
-Nothing here yet!
+
+### Changed
+- Duplicate colors are included by default now. To get unique colors only, use `AnyPalette.uniqueColors(palette)`
+- `color.is(colorB)` is now `Color.is(colorA, colorB)` and does a comparison based on component values instead of the string representation.
+
+### Removed
+- `palette.withDuplicates`: Duplicate colors are included by default now.
+- (undocumented and silly) `RandomPalette`, `RandomColor`, `gimmeAPalette`
+- (undocumented) `palette.loader`, `matchedLoaderFileExtensions`
+
+### Added
+- `AnyPalette.uniqueColors(palette)`: Use this to get a version of a palette with only unique colors.
+  Note: `numberOfColumns` on the returned palette is undefined, because the geometry doesn't necessarily apply if some colors are removed.
+  `name` is however copied over.
+- `r`, `g`, `b` properties on `Color` objects are now always available.
+- Alpha support (translucent colors)
+- **Support for saving files!**
+  Use `var [file, ext] = AnyPalette.writePalette(palette, AnyPalette.formats.GIMP_PALETTE)` to save a GPL file.
+- `loadPalette` callback now gets extra parameters for getting info about the format the file was parsed as.
 
 </details>
 

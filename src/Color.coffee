@@ -6,13 +6,21 @@
 # s/l: 0 to 100
 # c/m/y/k: 0 to 100
 
+# input: h in [0,360] and s,l in [0,100] - output: r,g,b in [0,255]
+hsl2rgb = (h, s, l)->
+	s /= 100
+	l /= 100
+	a = s * Math.min(l, 1-l)
+	f = (n, k = (n+h/30)%12)-> l - a*Math.max(Math.min(k-3, 9-k, 1), -1)
+	return [f(0), f(8), f(4)].map((component)-> component * 255)
+
 module.exports =
 class Color
 	constructor: (options)->
 		# @TODO: don't assign all of {@r, @g, @b, @h, @s, @v, @l} right away
 		# only assign the properties that are used
-		# also maybe always have @r @g @b (or @red @green @blue) but still stringify to hsl() if hsl or hsv given
 		# TODO: expect numbers or convert to numbers
+		# TODO: warn/error for numbers outside range
 		{
 			@r, @g, @b,
 			@h, @s, @v, @l,
@@ -33,10 +41,11 @@ class Color
 			else if @l?
 				# Hue Saturation Lightness
 				# (no conversions needed here)
+			else if @b?
+				throw new Error "Hue, Saturation, Brightness not supported. Use either Lightness ({h, s, l}) or Value ({h, s, v}) for cylindrical a color space."
 			else
-				# TODO: improve error message (especially if @b given)
-				throw new Error "Hue, saturation, and...? (either lightness or value)"
-			# TODO: maybe convert to @r @g @b here
+				throw new Error "Hue, saturation, and.. what? (either lightness (l) or value (v) expected)"
+			[@r, @g, @b] = hsl2rgb(@h, @s, @l)
 		else if c? and m? and y? and k?
 			# Cyan Magenta Yellow blacK
 			# UNTESTED
@@ -108,19 +117,20 @@ class Color
 		
 	
 	toString: ->
-		if @r?
-			# Red Green Blue
-			if @a? # Alpha
-				"rgba(#{@r}, #{@g}, #{@b}, #{@a})"
-			else # Opaque
-				"rgb(#{@r}, #{@g}, #{@b})"
-		else if @h?
+		if @h?
 			# Hue Saturation Lightness
 			# (Assume h:0-360, s:0-100, l:0-100)
 			if @a? # Alpha
 				"hsla(#{@h}, #{@s}%, #{@l}%, #{@a})"
 			else # Opaque
 				"hsl(#{@h}, #{@s}%, #{@l}%)"
+		else if @r?
+			# Red Green Blue
+			# (Assume r:0-255, g:0-255, b:0-255)
+			if @a? # Alpha
+				"rgba(#{@r}, #{@g}, #{@b}, #{@a})"
+			else # Opaque
+				"rgb(#{@r}, #{@g}, #{@b})"
 	
 	is: (color)->
 		# compare as strings

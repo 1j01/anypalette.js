@@ -183,7 +183,7 @@ ctx.fillStyle = color;
 
 See [Using JavaScript's 'toString' Method](http://adripofjavascript.com/blog/drips/using-javascripts-tostring-method.html), which incidentally uses a `Color` class as an example.
 
-`Color` objects also have `r`, `g`, `b` properties, **OR** `h`, `s`, `l`, depending on how they were loaded
+`Color` objects also have `r`, `g`, `b` properties, and **depending on how they were loaded**, might have `h`, `s`, `l`.
 
 Also for some palette formats, such as `.gpl` files, a `Color` may have a `name` (it's either a string or undefined)
 

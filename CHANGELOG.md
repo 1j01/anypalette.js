@@ -25,6 +25,7 @@ for potential future corrections.
 - `withoutDuplicates()`: Use this to get a version of a palette with only unique colors.
   Note: `numberOfColumns` on the returned palette is undefined, because the geometry doesn't necessarily apply if some colors are removed.
   `name` is however copied over.
+- `r`, `g`, `b` properties on `Color` objects are now always available.
 - **Support for saving files!**
   Use `var [file, ext] = AnyPalette.savePalette(palette, AnyPalette.formats.GIMP_PALETTE)` to save a GPL file.
 

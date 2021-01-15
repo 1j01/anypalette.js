@@ -13,122 +13,122 @@ formats =
 	PAINT_SHOP_PRO_PALETTE: {
 		name: "Paint Shop Pro palette"
 		exts: ["pal", "psppalette"]
-		load: require "./loaders/PaintShopPro"
+		load: require "./formats/PaintShopPro"
 	}
 	RIFF_PALETTE: {
 		name: "RIFF PAL"
 		exts: ["pal"]
-		load: require "./loaders/RIFF"
+		load: require "./formats/RIFF"
 	}
 	COLORSCHEMER_PALETTE: {
 		name: "ColorSchemer palette"
 		exts: ["cs"]
-		load: require "./loaders/ColorSchemer"
+		load: require "./formats/ColorSchemer"
 	}
 	PAINTDOTNET_PALETTE: {
 		name: "Paint.NET palette"
 		exts: ["txt"]
-		load: require "./loaders/Paint.NET"
+		load: require "./formats/Paint.NET"
 	}
 	GIMP_PALETTE: {
 		name: "GIMP palette"
 		exts: ["gpl", "gimp", "colors"]
-		load: require "./loaders/GIMP"
-		write: require "./writers/GIMP"
+		load: require "./formats/GIMP"
+		write: (require "./formats/GIMP").write
 	}
 	KOULORPAINT_PALETTE: {
 		name: "KolourPaint palette"
 		exts: ["colors"]
-		load: require "./loaders/KolourPaint"
+		load: require "./formats/KolourPaint"
 	}
 	SKENCIL_PALETTE: {
 		name: "Skencil palette"
 		exts: ["spl"]
-		load: require "./loaders/SPL"
+		load: require "./formats/SPL"
 	}
 	SKETCH_JSON_PALETTE: {
 		name: "Sketch palette"
 		exts: ["sketchpalette"]
-		load: require "./loaders/sketchpalette"
-		write: require "./writers/sketchpalette"
+		load: require "./formats/sketchpalette"
+		write: (require "./formats/sketchpalette").write
 	}
 	SK1_PALETTE: {
 		name: "sK1 palette"
 		exts: ["skp"]
-		load: require "./loaders/SKP"
+		load: require "./formats/SKP"
 	}
 	CSS_COLORS: {
 		name: "CSS colors"
 		exts: ["css", "scss", "sass", "less", "styl", "html", "htm", "svg", "js", "ts", "xml", "txt"]
-		load: require "./loaders/CSS"
+		load: require "./formats/CSS"
 	}
 	WINDOWS_THEME_COLORS: {
 		name: "Windows desktop theme"
 		exts: ["theme", "themepack"]
-		load: require "./loaders/theme"
+		load: require "./formats/theme"
 	}
 	# KDE_THEME_COLORS: {
 	# 	name: "KDE desktop theme"
 	# 	exts: ["colors"]
-	# 	load: require "./loaders/theme"
+	# 	load: require "./formats/theme"
 	# }
 	KDE_RGB_PALETTE: {
 		name: "KolourPaint palette"
 		exts: ["colors"]
-		write: require "./writers/KolourPaint"
+		write: (require "./formats/KolourPaint").write
 	}
 	# ADOBE_COLOR_SWATCH_PALETTE: {
 	# 	name: "Adobe Color Swatch"
 	# 	exts: ["aco"]
-	# 	load: require "./loaders/AdobeColorSwatch"
+	# 	load: require "./formats/AdobeColorSwatch"
 	# }
 	ADOBE_COLOR_TABLE_PALETTE: {
 		name: "Adobe Color Table"
 		exts: ["act"]
-		load: require "./loaders/AdobeColorTable"
+		load: require "./formats/AdobeColorTable"
 	}
 	# ADOBE_SWATCH_EXCHANGE_PALETTE: {
 	# 	name: "Adobe Swatch Exchange"
 	# 	exts: ["ase"]
-	# 	load: require "./loaders/AdobeSwatchExchange"
+	# 	load: require "./formats/AdobeSwatchExchange"
 	# }
 	# ADOBE_COLOR_BOOK_PALETTE: {
 	# 	name: "Adobe Color Book"
 	# 	exts: ["acb"]
-	# 	load: require "./loaders/AdobeColorBook"
+	# 	load: require "./formats/AdobeColorBook"
 	# }
 	HOMESITE_PALETTE: {
 		name: "Homesite palette"
 		exts: ["hpl"]
-		load: require "./loaders/Homesite"
+		load: require "./formats/Homesite"
 	}
 	STARCRAFT_PALETTE: {
 		name: "StarCraft palette"
 		exts: ["pal"]
-		load: require "./loaders/StarCraft"
+		load: require "./formats/StarCraft"
 	}
 	STARCRAFT_PADDED: {
 		name: "StarCraft terrain palette"
 		exts: ["wpe"]
-		load: require "./loaders/StarCraftPadded"
+		load: require "./formats/StarCraftPadded"
 	}
 
 	# AUTOCAD_COLOR_BOOK_PALETTE: {
 	# 	name: "AutoCAD Color Book"
 	# 	exts: ["acb"]
-	# 	load: require "./loaders/AutoCADColorBook"
+	# 	load: require "./formats/AutoCADColorBook"
 	# }
 
 	# CORELDRAW_PALETTE: {
 	# 	# (same as Paint Shop Pro palette?)
 	# 	name: "CorelDRAW palette"
 	# 	exts: ["pal", "cpl"]
-	# 	load: require "./loaders/CorelDRAW"
+	# 	load: require "./formats/CorelDRAW"
 	# }
 	TABULAR: {
 		name: "tabular colors"
 		exts: ["csv", "tsv", "txt"]
-		load: require "./loaders/tabular"
+		load: require "./formats/tabular"
 	}
 
 load_palette = (o, callback)->
@@ -148,6 +148,8 @@ load_palette = (o, callback)->
 	errors = []
 	for format_id in format_ids
 		format = formats[format_id]
+		if not format.load
+			continue # skip this format
 		try
 			palette = format.load(o)
 			if palette.length is 0

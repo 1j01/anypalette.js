@@ -1,5 +1,5 @@
 
-# Load a Sketch App JSON palette (.sketchpalette)
+# Read/write Sketch App JSON palette (.sketchpalette)
 # (not related to .spl Sketch RGB Palette format)
 
 # based on https://github.com/andrewfiorillo/sketch-palettes/blob/5b6bfa6eb25cb3244a9e6a226df259e8fb31fc2c/Sketch%20Palettes.sketchplugin/Contents/Sketch/sketchPalettes.js
@@ -119,3 +119,19 @@ module.exports = ({data})->
 		# 		gradientAssets.push(MSGradientAsset.alloc().initWithAsset_name(msgradient, gradientName))
 
 	palette
+
+module.exports.write = (palette)->
+	JSON.stringify({
+		"compatibleVersion": "1.4",
+		"pluginVersion": "1.4",
+		"colors": palette.map((color)->
+			{
+				"red": color.r / 255
+				"green": color.g / 255
+				"blue": color.b / 255
+				"alpha": color.a ? 1
+			}
+		)
+	}, null, "\t")
+
+module.exports.extension = "sketchpalette";

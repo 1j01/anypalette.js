@@ -97,8 +97,8 @@
 				var $output = $("<div>").appendTo($section);
 				
 				var $loaded_as = $("<span>").appendTo($header);
-				var $toggle_dupes = $("<a>").appendTo($header).hide();
-				var $save = $("<a>").appendTo($header);
+				var $toggle_dupes = $("<button>").appendTo($header).hide();
+				var $save = $("<button>").appendTo($header);
 				
 				var $header_inner;
 				if(url){
@@ -168,14 +168,14 @@
 					var n_dupes = palette.withDuplicates.length - palette.length;
 					var s = (n_dupes > 1) ? "s" : "";
 					var toggle = 0;
-					$toggle_dupes.text("show duplicate"+s);
+					$toggle_dupes.text("Show Duplicate"+s);
 					$toggle_dupes.on("click", function(e){
 						if(toggle = !toggle){
 							show_colors(palette.withDuplicates);
-							$toggle_dupes.text("hide duplicate"+s);
+							$toggle_dupes.text("Hide Duplicate"+s);
 						}else{
 							show_colors(palette);
-							$toggle_dupes.text("show duplicate"+s);
+							$toggle_dupes.text("Show Duplicate"+s);
 						}
 					});
 					$toggle_dupes.on("mousedown", function(e){
@@ -189,9 +189,16 @@
 						}
 					}
 
-					$save.text("Save");
+					$save.text("Save As...");
+					let i = 0;
+					let format;
+					const format_ids = Object.keys(AnyPalette.formats);
+					let iid = setInterval(()=> {
+						$save.text(AnyPalette.formats[format_ids[i]].name);
+						i = ++i % format_ids.length;
+					}, 500);
 					$save.on("click", () => {
-						var [file, ext] = AnyPalette.savePalette(palette, AnyPalette.formats.GIMP_PALETTE);
+						var [file, ext] = AnyPalette.savePalette(palette, format_ids[i]);
 						var url = URL.createObjectURL(file);
 						var a = document.createElement("a");
 						a.href = url;

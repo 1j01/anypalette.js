@@ -27,13 +27,11 @@ load_adobe_color_table = ({data, fileExt})->
 	)
 		throw new Error "file size must be 768 or 772 bytes (saw #{br.getSize()}), OR file extension must be '.act' (saw '.#{fileExt}')"
 	
-	i = 0
-	while i < 255
+	for [0...256]
 		palette.add
 			r: br.readUInt8()
 			g: br.readUInt8()
 			b: br.readUInt8()
-		i += 1
 	
 	palette.numberOfColumns = 16 # configurable in Photoshop, but this is the default view, and for instance Visibone and the default swatches rely on this layout
 

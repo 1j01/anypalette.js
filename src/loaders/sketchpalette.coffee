@@ -79,8 +79,8 @@ module.exports = ({data})->
 
 		# # Pattern Fills: convert base64 strings to MSImageData objects
 		# if imageDefinitions.length > 0
-		# 	for i in [0..imageDefinitions.length]
-		# 		nsdata = NSData.alloc().initWithBase64EncodedString_options(imageDefinitions[i].data, 0)
+		# 	for imageDefinition in imageDefinitions
+		# 		nsdata = NSData.alloc().initWithBase64EncodedString_options(imageDefinition.data, 0)
 		# 		nsimage = NSImage.alloc().initWithData(nsdata)
 		# 		# msimage = MSImageData.alloc().initWithImageConvertingColorSpace(nsimage)
 		# 		msimage = MSImageData.alloc().initWithImage(nsimage)
@@ -88,18 +88,17 @@ module.exports = ({data})->
 
 		# # Gradient Fills: build MSGradientStop and MSGradient objects
 		# if gradientDefinitions.length > 0
-		# 	for i in [0..gradientDefinitions.length]
+		# 	for gradient in gradientDefinitions
 		# 		# Create gradient stops
-		# 		gradient = gradientDefinitions[i]
 		# 		stops = []
-		# 		for j in [0..gradient.stops]
+		# 		for stop in gradient.stops
 		# 			color = MSColor.colorWithRed_green_blue_alpha(
-		# 				gradient.stops[j].color.red,
-		# 				gradient.stops[j].color.green,
-		# 				gradient.stops[j].color.blue,
-		# 				gradient.stops[j].color.alpha
+		# 				stop.color.red,
+		# 				stop.color.green,
+		# 				stop.color.blue,
+		# 				stop.color.alpha
 		# 			)
-		# 			stops.push(MSGradientStop.stopWithPosition_color_(gradient.stops[j].position, color))
+		# 			stops.push(MSGradientStop.stopWithPosition_color_(stop.position, color))
 
 		# 		# Create gradient object and set basic properties
 		# 		msgradient = MSGradient.new()
@@ -116,7 +115,7 @@ module.exports = ({data})->
 		# 		msgradient.setFrom({ x: fromValue[0], y: fromValue[1] })
 		# 		msgradient.setTo({ x: toValue[0], y: toValue[1] })
 
-		# 		gradientName = gradientDefinitions[i].name ? gradientDefinitions[i].name : null
+		# 		gradientName = gradient.name ? null
 		# 		gradientAssets.push(MSGradientAsset.alloc().initWithAsset_name(msgradient, gradientName))
 
 	palette

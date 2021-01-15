@@ -130,13 +130,11 @@ load_adobe_swatch_exchange = ({data})->
 	palette = new Palette()
 	br = new BinaryReader(data)
 	
-	i = 0
-	while i < 255
+	for [0...256]
 		palette.add
 			r: br.readByte()
 			g: br.readByte()
 			b: br.readByte()
-		i += 1
 	
 	palette
 
@@ -168,7 +166,7 @@ load_adobe_color_book = ({data})->
 	page_selector_offset = br.readUInt16()
 	color_space = br.readUInt16()
 	
-	for i in [0..color_count]
+	for [0...color_count]
 		color_name = br.readUnicodeString()
 		color_code = br.readString(6)
 		
@@ -214,6 +212,5 @@ load_adobe_color_book = ({data})->
 				bad()
 			when 10 # HKS
 				bad()
-			
 	
 	palette

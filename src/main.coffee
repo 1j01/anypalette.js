@@ -233,6 +233,7 @@ AnyPalette = {
 	RandomColor
 	RandomPalette
 	# LoadingErrors
+	formats
 }
 
 # Get palette from a file
@@ -275,39 +276,6 @@ AnyPalette.gimmeAPalette = (o, callback)->
 	
 	AnyPalette.loadPalette o, (err, palette)->
 		callback(null, palette ? new RandomPalette)
-
-AnyPalette.formats =
-	KDE_RGB_PALETTE: "KDE_RGB_PALETTE",
-	RIFF_PALETTE: "RIFF_PALETTE",
-	GIMP_PALETTE: "GIMP_PALETTE",
-	SKETCH_JSON_PALETTE: "SKETCH_JSON_PALETTE",
-};
-
-palette_writers =
-	{
-		id: AnyPalette.formats.GIMP_PALETTE,
-		name: "GIMP palette"
-		exts: ["gpl"]
-	}
-	{
-		id: AnyPalette.formats.KDE_RGB_PALETTE,
-		name: "KolourPaint palette"
-		exts: ["colors"]
-		write: require "./writers/KolourPaint"
-	}
-	# {
-	# 	id: AnyPalette.formats.RIFF_PALETTE,
-	# 	name: "RIFF PAL"
-	# 	exts: ["pal"]
-	# 	write: require "./writers/RIFF"
-	# }
-	{
-		id: AnyPalette.formats.SKETCH_JSON_PALETTE,
-		name: "Sketch palette"
-		exts: ["sketchpalette"]
-		write: require "./writers/sketchpalette"
-	}
-]
 
 AnyPalette.savePalette = (palette, format_id)->
 	format_id ?= AnyPalette.formats.GIMP_PALETTE

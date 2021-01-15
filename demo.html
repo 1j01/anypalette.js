@@ -190,15 +190,15 @@
 					}
 
 					$save.text("Save As...");
-					let i = 0;
+					let format_index = 0;
 					let format;
 					const format_ids = Object.keys(AnyPalette.formats);
 					let iid = setInterval(()=> {
-						$save.text(AnyPalette.formats[format_ids[i]].name);
-						i = ++i % format_ids.length;
+						$save.text(AnyPalette.formats[format_ids[format_index]].name);
+						format_index = ++format_index % format_ids.length;
 					}, 500);
 					$save.on("click", () => {
-						var [file, ext] = AnyPalette.savePalette(palette, format_ids[i]);
+						var [file, ext] = AnyPalette.savePalette(palette, format_ids[format_index]);
 						var url = URL.createObjectURL(file);
 						var a = document.createElement("a");
 						a.href = url;

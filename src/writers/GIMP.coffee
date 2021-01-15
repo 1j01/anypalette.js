@@ -13,6 +13,6 @@ write_gimp_or_kde_rgb_palette = (palette, format_name)->
 module.exports = (palette)->
 	write_gimp_or_kde_rgb_palette(palette, "GIMP Palette")
 
-module.exports.extension = "gpl";
+module.exports.extension = "gpl"
 
 module.exports.write_gimp_or_kde_rgb_palette = write_gimp_or_kde_rgb_palette

@@ -190,22 +190,24 @@
 					}
 
 					$save.text("Save As...");
-					let format_index = 0;
-					let format;
-					const format_ids = Object.keys(AnyPalette.formats);
-					let iid = setInterval(()=> {
-						$save.text(AnyPalette.formats[format_ids[format_index]].name);
-						format_index = ++format_index % format_ids.length;
-					}, 500);
-					$save.on("click", () => {
-						var [file, ext] = AnyPalette.savePalette(palette, format_ids[format_index]);
-						var url = URL.createObjectURL(file);
-						var a = document.createElement("a");
-						a.href = url;
-						a.download = file.name;
-						document.body.appendChild(a);
-						a.click();
-						document.body.removeChild(a);
+					$save.one("click", () => {
+						let format_index = 0;
+						let format;
+						const formats = Object.values(AnyPalette.formats).filter((format)=> format.write);
+						let iid = setInterval(()=> {
+							$save.text(formats[format_index].name);
+							format_index = ++format_index % formats.length;
+						}, 500);
+						$save.on("click", () => {
+							var [file, ext] = AnyPalette.savePalette(palette, formats[format_index]);
+							var url = URL.createObjectURL(file);
+							var a = document.createElement("a");
+							a.href = url;
+							a.download = file.name;
+							document.body.appendChild(a);
+							a.click();
+							document.body.removeChild(a);
+						});
 					});
 				};
 			}

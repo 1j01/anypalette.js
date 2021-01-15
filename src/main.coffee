@@ -277,14 +277,9 @@ AnyPalette.gimmeAPalette = (o, callback)->
 	AnyPalette.loadPalette o, (err, palette)->
 		callback(null, palette ? new RandomPalette)
 
-AnyPalette.savePalette = (palette, format_id)->
-	format_id ?= AnyPalette.formats.GIMP_PALETTE
+AnyPalette.savePalette = (palette, format)->
+	format ?= AnyPalette.formats.GIMP_PALETTE
 
-	format = palette_writers.find((format)-> format.id is format_id)
-
-	if not format
-		throw new Error("Format '#{format_id}' not supported for saving palettes")
-	
 	palette_content = format.write(palette)
 	file = new File([palette_content], (palette.name ? "Saved Colors") + ".#{format.exts[0]}")
 	return [file, format.exts[0]]

@@ -2,7 +2,7 @@ Loaded As:                      Adobe Color Table (.act)
 
 matchedLoaderFileExtensions:    true
 geometrySpecifiedByFile:        undefined
-numberOfColumns:                undefined
+numberOfColumns:                16
 
 Colors:
 rgb(255, 255, 255)

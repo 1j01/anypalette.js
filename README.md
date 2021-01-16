@@ -210,10 +210,24 @@ ctx.fillStyle = color;
 
 See [*Using JavaScript's 'toString' Method*](http://adripofjavascript.com/blog/drips/using-javascripts-tostring-method.html), which incidentally uses a `Color` class as an example.
 
+In some cases you may need to call `toString()` explicitly to get a string, for example:
+
+```javascript
+var shortenedColorStrings = palette.map((color)=> color.toString().replace(/\s/g, ""));
+```
+
 `Color` objects also have `r`, `g`, `b` properties, and **depending on how they were loaded**, might have `h`, `s`, `l`, and/or `alpha`.
 
 Also for some palette formats, such as `.gpl` files, a `Color` may have a `name` (it's either a string or `undefined`)
 
+### `Color.is(colorA, colorB, epsilon=0.0001)`
+
+Determines whether two colors are equal in value, or nearly equal.
+```js
+var firstTwoColorsExactlyEqual = AnyPalette.Color.is(palette[0], palette[1], 0);
+var firstTwoColorsNearlyEqual = AnyPalette.Color.is(palette[0], palette[1], 0.001);
+var firstTwoColorsSimilar = AnyPalette.Color.is(palette[0], palette[1], 20);
+```
 
 ## Todo
 

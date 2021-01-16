@@ -8,6 +8,14 @@ AnyPalette = require '../build/anypalette.js'
 # i.e. a git status "#{__dirname}/regression-data" with changes listed... other than FOLDER-README.md ideally
 # maybe FOLDER-README.md should just be above, in this folder (tests/)?
 
+# Some inputs that have interesting characteristics, like columns but no name, name but no columns, etc.
+writer_test_file_path_regexp = ///
+	ios.sketchpalette # number precision - some palette formats need to round to avoid a decimal point
+	|palettes/sk1_palette_collection_1.0/SKP/Color_names_supported_by_all_browsers.skp # named colors, number precision, multiline description
+	|KDE40.colors # no columns, no palette name, named colors
+	|Nord.gpl # palette name, palette columns, named colors
+///
+
 glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file_paths)->
 	if err
 		throw err
@@ -50,3 +58,15 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 					mkdirp.sync	path.dirname(output_file_path)
 					fs.writeFileSync output_file_path, result, "utf8"
 					console.log "Wrote", (if err then "failed" else "parsed"), output_file_path
+
+					# test writers
+					if file_path.match(writer_test_file_path_regexp)
+						for format_id in Object.keys(AnyPalette.formats)
+							format = AnyPalette.formats[format_id]
+							if format.write
+								output_file_path = path.join(__dirname, "regression-data", "writing", "#{path.basename(file_path)}.out.#{format.fileExtensions[0]}")
+								mkdirp.sync	path.dirname(output_file_path)
+								result = AnyPalette.writePalette(palette, format)
+								fs.writeFileSync output_file_path, result, "utf8"
+								console.log "Wrote", format_id, output_file_path
+

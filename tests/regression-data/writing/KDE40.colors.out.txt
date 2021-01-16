@@ -1,0 +1,45 @@
+;paint.net Palette File
+;Palette Name: 
+;Description: 
+;Colors: 40
+;Columns: 
+ff000000
+ff303030
+ff585858
+ff808080
+ffa0a0a0
+ffc3c3c3
+ffdcdcdc
+ffffffff
+ff400000
+ff800000
+ffc00000
+ffff0000
+ffffc0c0
+ff004000
+ff008000
+ff00c000
+ff00ff00
+ffc0ffc0
+ff000080
+ff0000c0
+ff0000ff
+ffc0c0ff
+ff404000
+ff808000
+ffc0c000
+ffffff00
+ffffffc0
+ff004040
+ff008080
+ff00c0c0
+ff00ffff
+ffc0ffff
+ff800080
+ffc000c0
+ffff00ff
+ffffc0ff
+ffc05800
+ffff8000
+ffffa858
+ffffdca8

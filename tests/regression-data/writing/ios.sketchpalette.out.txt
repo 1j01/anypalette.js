@@ -1,0 +1,15 @@
+;paint.net Palette File
+;Palette Name: 
+;Description: 
+;Colors: 10
+;Columns: 
+ff5ac8fa
+ffffcc00
+ffff9500
+ffff2d55
+ff007aff
+ff4cd964
+ffff3b30
+ff8e8e93
+ffefeff4
+ff000000

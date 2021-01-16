@@ -22,7 +22,7 @@ Supported palette formats:
 | File Extension    | Name                              | Programs                                                                          |   Read  |  Write  |
 |-------------------|-----------------------------------|-----------------------------------------------------------------------------------|:-------:|:-------:|
 | .pal              | [RIFF] Palette                    | [MS Paint] for Windows 95 and Windows NT 4.0                                      |   ✅   | Planned |
-| .gpl              | [GIMP][Gimp] Palette              | [Gimp], [Inkscape], [Krita], [KolourPaint], [Scribus], [CinePaint], [MyPaint]     |   ✅   | Planned |
+| .gpl              | [GIMP][Gimp] Palette              | [Gimp], [Inkscape], [Krita], [KolourPaint], [Scribus], [CinePaint], [MyPaint]     |   ✅   |   ✅    |
 | .txt              | [Paint.NET] Palette               | [Paint.NET]                                                                       |   ✅   | Planned |
 | .act              | Adobe Color Table                 | Adobe [Photoshop] and [Illustrator]                                               |   ✅   | Planned |
 | .pal, .psppalette | [Paint Shop Pro] Palette          | [Paint Shop Pro][] (Jasc Software / Corel)                                        |   ✅   | Planned |
@@ -30,14 +30,16 @@ Supported palette formats:
 | .cs               | ColorSchemer                      | ColorSchemer Studio                                                               |   ✅*  | Planned |
 | .pal              | [Starcraft] Palette               | [Starcraft]                                                                       |   ✅   |         |
 | .wpe              | [Starcraft] Terrain Palette       | [Starcraft]                                                                       |   ✅   |         |
-| .sketchpalette    | [Sketch] Palette                  | [Sketch]                                                                          |   ✅   | Planned |
+| .sketchpalette    | [Sketch] Palette                  | [Sketch]                                                                          |   ✅   |   ✅    |
 | .spl              | [Skencil] Palette                 | [Skencil] (formerly called Sketch)                                                |   ✅   |         |
-| .colors           | KolourPaint Color Collection      | [KolourPaint]                                                                     |   ✅   |         |
+| .colors           | KolourPaint Color Collection      | [KolourPaint]                                                                     |   ✅   |   ✅    |
 | .colors           | Plasma Desktop Color Scheme       | [KDE] Plasma Desktop                                                              |   ✅   |         |
 | .theme            | Windows Theme                     | [Windows] Desktop                                                                 |   ✅   |         |
 | .themepack        | Windows Theme                     | [Windows] Desktop                                                                 |   ✅   |         |
+| .css, .scss, .styl| Cascading StyleSheets             | Web browsers / web pages                                                          |   ✅   |   ✅    |
+| .html, .svg, .js  | any text files with CSS colors    | Web browsers / web pages                                                          |   ✅   |         |
 
-\*The ColorSchemer file parser is only enabled when the file extension is `.cs`,
+\*The ColorSchemer file parser is only enabled when the file extension is known to be `.cs`,
 provided by passing a `File` object, or `options.fileName`, or `options.fileExt`, or `options.filePath`
 
 UNSUPPORTED palette formats (for now):
@@ -138,6 +140,25 @@ Shortcut to load from a [`File`](https://developer.mozilla.org/en-US/docs/Web/AP
 ### `AnyPalette.loadPalette(filePath, callback)`
 
 Shortcut to load from a file path in Node.js - equivalent to passing `{filePath: filePath}` for `options`.
+
+### `AnyPalette.writePalette(palette, format)`
+
+Returns string content of a file, in a given format.
+
+To save a palette as a GPL file, sending a download in a browser:
+
+```js
+var format = AnyPalette.formats.GIMP_PALETTE;
+var file_content = AnyPalette.writePalette(palette, format);
+var file = new File([file_content], "Saved Colors.gpl");
+var url = URL.createObjectURL(file);
+var a = document.createElement("a");
+a.href = url;
+a.download = file.name;
+document.body.appendChild(a);
+a.click(); // Note: this must happen during a user gesture to work
+document.body.removeChild(a);
+```
 
 
 ### class `Palette` extends `Array`

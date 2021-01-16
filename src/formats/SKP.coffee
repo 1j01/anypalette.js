@@ -1,5 +1,5 @@
 # Load sK1 palettes (.skp)
-# These files are actually apparently python source code,
+# These files seem like python source code or similar,
 # but let's just try to parse them in a basic, non-general way
 
 Palette = require "../Palette"
@@ -14,11 +14,9 @@ module.exports = ({data})->
 		add_comments: (line)->
 			palette.description ?= ""
 			palette.description += line + "\n"
-		set_columns: (columns_str)->
-			palette.numberOfColumns = parseInt(columns_str)
-		color: (color_def_str)->
-			color_def = JSON.parse(color_def_str.replace(/\bu(['"])/g, "$1").replace(/'/g, '"'))
-			[color_type, components, alpha, name] = color_def
+		set_columns: (columns)->
+			palette.numberOfColumns = columns
+		color: ([color_type, components, alpha, name])->
 			switch color_type
 				when "RGB"
 					palette.add
@@ -50,7 +48,11 @@ module.exports = ({data})->
 		match = line.match(/([\w_]+)\((.*)\)/)
 		if match
 			[_, fn_name, args_str] = match
-			fns[fn_name]?(args_str)
+			fn = fns[fn_name]
+			if fn
+				# TODO: proper parsing that handles u"You've got mail!" etc.
+				args = JSON.parse("[#{args_str.replace(/\bu(['"])/g, "$1").replace(/'/g, '"')}]")
+				fn(args...)
 
 	n = palette.length
 	if n < 2

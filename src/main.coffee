@@ -2,35 +2,6 @@
 Palette = require "./Palette"
 Color = require "./Color"
 
-class RandomColor extends Color
-	constructor: ->
-		super()
-		@randomize()
-	
-	randomize: ->
-		@h = Math.random() * 360
-		@s = Math.random() * 100
-		@l = Math.random() * 100
-	
-	toString: ->
-		@randomize()
-		"hsl(#{@h}, #{@s}%, #{@l}%)"
-	
-	is: -> no
-
-class RandomPalette extends Palette
-	constructor: ->
-		super()
-		@loader =
-			name: "Completely Random Colors™"
-			fileExtensions: []
-			fileExtensionsPretty: "(.crc sjf(Df09sjdfksdlfmnm ';';"
-		@matchedLoaderFileExtensions = no
-		@confidence = 0
-		@finalize()
-		for i in [0..Math.random()*15+5]
-			@push new RandomColor()
-
 class LoadingErrors extends Error
 	constructor: (@errors)->
 		super()
@@ -230,8 +201,6 @@ normalize_options = (o = {})->
 AnyPalette = {
 	Color
 	Palette
-	RandomColor
-	RandomPalette
 	# LoadingErrors
 	formats
 }
@@ -267,15 +236,6 @@ AnyPalette.loadPalette = (o, callback)->
 				load_palette(o, callback)
 	else
 		throw new TypeError "either options.data or options.file or options.filePath must be passed"
-
-
-# Get a palette from a file or by any means necessary
-# (as in fall back to completely random data)
-AnyPalette.gimmeAPalette = (o, callback)->
-	o = normalize_options o
-	
-	AnyPalette.loadPalette o, (err, palette)->
-		callback(null, palette ? new RandomPalette)
 
 AnyPalette.savePalette = (palette, format)->
 	format ?= AnyPalette.formats.GIMP_PALETTE

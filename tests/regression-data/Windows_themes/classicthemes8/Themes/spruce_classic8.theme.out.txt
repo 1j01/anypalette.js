@@ -6,7 +6,7 @@ numberOfColumns:                undefined
 
 Colors (in GPL format):
 GIMP Palette
-Name: Saved Colors
+Name: Spruce
 Columns: 8
 #
 89  151 100   rgb(89, 151, 100)

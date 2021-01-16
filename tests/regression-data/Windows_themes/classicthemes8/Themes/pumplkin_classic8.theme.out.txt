@@ -6,7 +6,7 @@ numberOfColumns:                undefined
 
 Colors (in GPL format):
 GIMP Palette
-Name: Saved Colors
+Name: Pumpkin
 Columns: 8
 #
 215 165 47    rgb(215, 165, 47)

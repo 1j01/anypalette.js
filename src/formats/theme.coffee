@@ -51,6 +51,7 @@ parseThemeFileString = (themeIni)->
 						g: components[1]
 						b: components[2]
 						name: key
+	palette.name = theme["Theme"]?.DisplayName # or theme["General"]?.Name for KDE .colors
 	palette
 
 module.exports = ({data})->

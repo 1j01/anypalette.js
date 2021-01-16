@@ -6,7 +6,7 @@ numberOfColumns:                undefined
 
 Colors (in GPL format):
 GIMP Palette
-Name: Saved Colors
+Name: Teal for Shelbi - Dark
 Columns: 8
 #
 0   96  96    rgb(0, 96, 96)

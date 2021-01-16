@@ -6,7 +6,7 @@ numberOfColumns:                undefined
 
 Colors (in GPL format):
 GIMP Palette
-Name: Saved Colors
+Name: Wheat
 Columns: 8
 #
 128 128 0     rgb(128, 128, 0)

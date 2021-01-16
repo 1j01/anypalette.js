@@ -6,7 +6,7 @@ numberOfColumns:                undefined
 
 Colors (in GPL format):
 GIMP Palette
-Name: Saved Colors
+Name: Vista-esque Midnight (Green)
 Columns: 8
 #
 18  91  30    rgb(18, 91, 30)

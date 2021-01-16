@@ -6,7 +6,7 @@ numberOfColumns:                undefined
 
 Colors (in GPL format):
 GIMP Palette
-Name: Saved Colors
+Name: Solarized Dark
 Columns: 8
 #
 0   43  54    rgb(0, 43, 54)

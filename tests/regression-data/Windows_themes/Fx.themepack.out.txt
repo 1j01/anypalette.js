@@ -6,7 +6,7 @@ numberOfColumns:                undefined
 
 Colors (in GPL format):
 GIMP Palette
-Name: Saved Colors
+Name: Fx
 Columns: 8
 #
 235 233 228   rgb(235, 233, 228)

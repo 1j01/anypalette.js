@@ -6,7 +6,7 @@ numberOfColumns:                undefined
 
 Colors (in GPL format):
 GIMP Palette
-Name: Saved Colors
+Name: Windows Hybrid - Dark
 Columns: 8
 #
 0   0   64    rgb(0, 0, 64)

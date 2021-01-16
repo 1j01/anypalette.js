@@ -6,7 +6,7 @@ numberOfColumns:                undefined
 
 Colors (in GPL format):
 GIMP Palette
-Name: Saved Colors
+Name: Desert
 Columns: 8
 #
 0   128 128   rgb(0, 128, 128)

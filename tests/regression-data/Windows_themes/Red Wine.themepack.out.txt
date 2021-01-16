@@ -6,7 +6,7 @@ numberOfColumns:                undefined
 
 Colors (in GPL format):
 GIMP Palette
-Name: Saved Colors
+Name: Red Wine
 Columns: 8
 #
 64  0   12    rgb(64, 0, 12)

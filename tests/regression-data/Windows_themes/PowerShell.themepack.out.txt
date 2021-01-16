@@ -6,7 +6,7 @@ numberOfColumns:                undefined
 
 Colors (in GPL format):
 GIMP Palette
-Name: Saved Colors
+Name: PowerShell
 Columns: 8
 #
 1   36  86    rgb(1, 36, 86)

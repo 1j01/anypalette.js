@@ -6,7 +6,7 @@ numberOfColumns:                undefined
 
 Colors (in GPL format):
 GIMP Palette
-Name: Saved Colors
+Name: Slate
 Columns: 8
 #
 85  128 151   rgb(85, 128, 151)

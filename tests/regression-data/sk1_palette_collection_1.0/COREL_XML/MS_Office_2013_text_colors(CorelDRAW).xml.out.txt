@@ -1,13 +1,18 @@
 Loaded As:                      tabular colors (.csv, .tsv, .txt)
 
-matchedLoaderFileExtensions:    false
+matchedFileExtension:           false
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 
-Colors:
-rgb(0, 0, 0)
-rgb(51, 51, 51)
-rgb(102, 102, 102)
-rgb(51, 102, 153)
-rgb(200.00007, 200.00007, 200.00007)
-rgb(168.00011999999998, 15.00012, 33.999915)
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+0   0   0     rgb(0, 0, 0)
+51  51  51    rgb(51, 51, 51)
+102 102 102   rgb(102, 102, 102)
+51  102 153   rgb(51, 102, 153)
+200 200 200   rgb(200.00007, 200.00007, 200.00007)
+168 15  34    rgb(168.00011999999998, 15.00012, 33.999915)
+51  51  51    rgb(51, 51, 51)

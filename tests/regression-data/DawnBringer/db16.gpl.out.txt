@@ -1,23 +1,27 @@
 Loaded As:                      GIMP palette (.gpl, .gimp, .colors)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        true
 numberOfColumns:                8
 
-Colors:
-rgb(20, 12, 28)
-rgb(68, 36, 52)
-rgb(48, 52, 109)
-rgb(78, 74, 78)
-rgb(133, 76, 48)
-rgb(52, 101, 36)
-rgb(208, 70, 72)
-rgb(117, 113, 97)
-rgb(89, 125, 206)
-rgb(210, 125, 44)
-rgb(133, 149, 161)
-rgb(109, 170, 44)
-rgb(210, 170, 153)
-rgb(109, 194, 202)
-rgb(218, 212, 94)
-rgb(222, 238, 214)
+Colors (in GPL format):
+GIMP Palette
+Name: DawnBringer's 16 Color Palette
+Columns: 8
+#
+20  12  28    rgb(20, 12, 28)
+68  36  52    rgb(68, 36, 52)
+48  52  109   rgb(48, 52, 109)
+78  74  78    rgb(78, 74, 78)
+133 76  48    rgb(133, 76, 48)
+52  101 36    rgb(52, 101, 36)
+208 70  72    rgb(208, 70, 72)
+117 113 97    rgb(117, 113, 97)
+89  125 206   rgb(89, 125, 206)
+210 125 44    rgb(210, 125, 44)
+133 149 161   rgb(133, 149, 161)
+109 170 44    rgb(109, 170, 44)
+210 170 153   rgb(210, 170, 153)
+109 194 202   rgb(109, 194, 202)
+218 212 94    rgb(218, 212, 94)
+222 238 214   rgb(222, 238, 214)

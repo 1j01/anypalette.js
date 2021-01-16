@@ -1,16 +1,20 @@
 Loaded As:                      ColorSchemer palette (.cs)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 
-Colors:
-rgb(51, 17, 0)
-rgb(85, 34, 0)
-rgb(187, 68, 17)
-rgb(238, 238, 170)
-rgb(221, 170, 85)
-rgb(204, 51, 0)
-rgb(255, 255, 187)
-rgb(238, 187, 85)
-rgb(85, 17, 0)
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+51  17  0     rgb(51, 17, 0)
+85  34  0     rgb(85, 34, 0)
+187 68  17    rgb(187, 68, 17)
+238 238 170   rgb(238, 238, 170)
+221 170 85    rgb(221, 170, 85)
+204 51  0     rgb(204, 51, 0)
+255 255 187   rgb(255, 255, 187)
+238 187 85    rgb(238, 187, 85)
+85  17  0     rgb(85, 17, 0)

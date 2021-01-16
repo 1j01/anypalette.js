@@ -1,15 +1,19 @@
 Loaded As:                      sK1 palette (.skp)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                1
 
-Colors:
-rgba(63, 63, 95, 1)
-rgba(92, 92, 92, 1)
-rgba(130, 130, 130, 1)
-rgba(159, 159, 159, 1)
-rgba(191, 191, 191, 1)
-rgba(223, 223, 191, 1)
-rgba(0, 0, 0, 1)
-rgba(255, 255, 255, 1)
+Colors (in GPL format):
+GIMP Palette
+Name: 'Eclipse icon 8-color palette'
+Columns: 1
+#
+63  63  95    rgba(63, 63, 95, 1)
+92  92  92    rgba(92, 92, 92, 1)
+130 130 130   rgba(130, 130, 130, 1)
+159 159 159   rgba(159, 159, 159, 1)
+191 191 191   rgba(191, 191, 191, 1)
+223 223 191   rgba(223, 223, 191, 1)
+0   0   0     rgba(0, 0, 0, 1)
+255 255 255   rgba(255, 255, 255, 1)

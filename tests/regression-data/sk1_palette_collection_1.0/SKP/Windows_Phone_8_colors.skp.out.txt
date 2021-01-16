@@ -1,27 +1,31 @@
 Loaded As:                      sK1 palette (.skp)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                4
 
-Colors:
-rgba(164, 196, 0, 1)
-rgba(96, 169, 23, 1)
-rgba(0, 138, 0, 1)
-rgba(0, 171, 169, 1)
-rgba(27, 161, 226, 1)
-rgba(0, 80, 239, 1)
-rgba(106, 0, 255, 1)
-rgba(170, 0, 255, 1)
-rgba(244, 114, 208, 1)
-rgba(216, 0, 115, 1)
-rgba(162, 0, 37, 1)
-rgba(229, 20, 0, 1)
-rgba(250, 104, 0, 1)
-rgba(240, 163, 10, 1)
-rgba(227, 200, 0, 1)
-rgba(130, 90, 44, 1)
-rgba(109, 135, 100, 1)
-rgba(100, 118, 135, 1)
-rgba(118, 96, 138, 1)
-rgba(160, 82, 45, 1)
+Colors (in GPL format):
+GIMP Palette
+Name: 'Windows Phone 8 colors'
+Columns: 4
+#
+164 196 0     rgba(164, 196, 0, 1)
+96  169 23    rgba(96, 169, 23, 1)
+0   138 0     rgba(0, 138, 0, 1)
+0   171 169   rgba(0, 171, 169, 1)
+27  161 226   rgba(27, 161, 226, 1)
+0   80  239   rgba(0, 80, 239, 1)
+106 0   255   rgba(106, 0, 255, 1)
+170 0   255   rgba(170, 0, 255, 1)
+244 114 208   rgba(244, 114, 208, 1)
+216 0   115   rgba(216, 0, 115, 1)
+162 0   37    rgba(162, 0, 37, 1)
+229 20  0     rgba(229, 20, 0, 1)
+250 104 0     rgba(250, 104, 0, 1)
+240 163 10    rgba(240, 163, 10, 1)
+227 200 0     rgba(227, 200, 0, 1)
+130 90  44    rgba(130, 90, 44, 1)
+109 135 100   rgba(109, 135, 100, 1)
+100 118 135   rgba(100, 118, 135, 1)
+118 96  138   rgba(118, 96, 138, 1)
+160 82  45    rgba(160, 82, 45, 1)

@@ -1,17 +1,21 @@
 Loaded As:                      sK1 palette (.skp)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                8
 
-Colors:
-rgba(51, 181, 229, 1)
-rgba(170, 102, 204, 1)
-rgba(153, 204, 0, 1)
-rgba(255, 187, 51, 1)
-rgba(255, 68, 68, 1)
-rgba(0, 153, 204, 1)
-rgba(153, 51, 204, 1)
-rgba(102, 153, 0, 1)
-rgba(255, 136, 0, 1)
-rgba(204, 0, 0, 1)
+Colors (in GPL format):
+GIMP Palette
+Name: 'Android ICS colors'
+Columns: 8
+#
+51  181 229   rgba(51, 181, 229, 1)
+170 102 204   rgba(170, 102, 204, 1)
+153 204 0     rgba(153, 204, 0, 1)
+255 187 51    rgba(255, 187, 51, 1)
+255 68  68    rgba(255, 68, 68, 1)
+0   153 204   rgba(0, 153, 204, 1)
+153 51  204   rgba(153, 51, 204, 1)
+102 153 0     rgba(102, 153, 0, 1)
+255 136 0     rgba(255, 136, 0, 1)
+204 0   0     rgba(204, 0, 0, 1)

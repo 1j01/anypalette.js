@@ -1,22 +1,26 @@
 Loaded As:                      Sketch palette (.sketchpalette)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 
-Colors:
-rgba(208, 2, 27, 1)
-rgba(245, 166, 35, 1)
-rgba(248, 231, 28, 1)
-rgba(139, 87, 42, 1)
-rgba(126, 211, 32.99999999999999, 1)
-rgba(65, 117, 5, 1)
-rgba(189, 16, 224, 1)
-rgba(144, 19, 254, 1)
-rgba(73.99999999999999, 144, 226, 1)
-rgba(80, 227, 194, 1)
-rgba(184, 233, 134, 1)
-rgba(0, 0, 0, 1)
-rgba(73.99999999999999, 73.99999999999999, 73.99999999999999, 1)
-rgba(155, 155, 155, 1)
-rgba(255, 255, 255, 1)
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+208 2   27    rgba(208, 2, 27, 1)
+245 166 35    rgba(245, 166, 35, 1)
+248 231 28    rgba(248, 231, 28, 1)
+139 87  42    rgba(139, 87, 42, 1)
+126 211 33    rgba(126, 211, 32.99999999999999, 1)
+65  117 5     rgba(65, 117, 5, 1)
+189 16  224   rgba(189, 16, 224, 1)
+144 19  254   rgba(144, 19, 254, 1)
+74  144 226   rgba(73.99999999999999, 144, 226, 1)
+80  227 194   rgba(80, 227, 194, 1)
+184 233 134   rgba(184, 233, 134, 1)
+0   0   0     rgba(0, 0, 0, 1)
+74  74  74    rgba(73.99999999999999, 73.99999999999999, 73.99999999999999, 1)
+155 155 155   rgba(155, 155, 155, 1)
+255 255 255   rgba(255, 255, 255, 1)

@@ -1,15 +1,19 @@
 Loaded As:                      sK1 palette (.skp)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                4
 
-Colors:
-rgba(90, 200, 250, 1)
-rgba(255, 204, 0, 1)
-rgba(255, 149, 0, 1)
-rgba(255, 45, 85, 1)
-rgba(0, 122, 255, 1)
-rgba(76, 217, 100, 1)
-rgba(255, 59, 48, 1)
-rgba(142, 142, 147, 1)
+Colors (in GPL format):
+GIMP Palette
+Name: 'iOS 7 colors'
+Columns: 4
+#
+90  200 250   rgba(90, 200, 250, 1)
+255 204 0     rgba(255, 204, 0, 1)
+255 149 0     rgba(255, 149, 0, 1)
+255 45  85    rgba(255, 45, 85, 1)
+0   122 255   rgba(0, 122, 255, 1)
+76  217 100   rgba(76, 217, 100, 1)
+255 59  48    rgba(255, 59, 48, 1)
+142 142 147   rgba(142, 142, 147, 1)

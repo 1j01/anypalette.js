@@ -1,23 +1,27 @@
 Loaded As:                      sK1 palette (.skp)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                1
 
-Colors:
-rgba(0, 130, 153, 1)
-rgba(0, 160, 177, 1)
-rgba(38, 114, 236, 1)
-rgba(46, 141, 239, 1)
-rgba(140, 0, 149, 1)
-rgba(167, 0, 174, 1)
-rgba(81, 51, 171, 1)
-rgba(100, 62, 191, 1)
-rgba(172, 25, 61, 1)
-rgba(191, 30, 75, 1)
-rgba(210, 71, 38, 1)
-rgba(220, 87, 46, 1)
-rgba(0, 138, 0, 1)
-rgba(0, 166, 0, 1)
-rgba(9, 74, 178, 1)
-rgba(10, 91, 196, 1)
+Colors (in GPL format):
+GIMP Palette
+Name: 'Windows 8 colors'
+Columns: 1
+#
+0   130 153   rgba(0, 130, 153, 1)
+0   160 177   rgba(0, 160, 177, 1)
+38  114 236   rgba(38, 114, 236, 1)
+46  141 239   rgba(46, 141, 239, 1)
+140 0   149   rgba(140, 0, 149, 1)
+167 0   174   rgba(167, 0, 174, 1)
+81  51  171   rgba(81, 51, 171, 1)
+100 62  191   rgba(100, 62, 191, 1)
+172 25  61    rgba(172, 25, 61, 1)
+191 30  75    rgba(191, 30, 75, 1)
+210 71  38    rgba(210, 71, 38, 1)
+220 87  46    rgba(220, 87, 46, 1)
+0   138 0     rgba(0, 138, 0, 1)
+0   166 0     rgba(0, 166, 0, 1)
+9   74  178   rgba(9, 74, 178, 1)
+10  91  196   rgba(10, 91, 196, 1)

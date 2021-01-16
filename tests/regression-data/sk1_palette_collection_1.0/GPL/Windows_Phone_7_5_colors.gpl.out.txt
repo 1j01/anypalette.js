@@ -1,17 +1,21 @@
 Loaded As:                      GIMP palette (.gpl, .gimp, .colors)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        true
 numberOfColumns:                4
 
-Colors:
-rgb(162, 193, 57)
-rgb(51, 153, 51)
-rgb(0, 171, 169)
-rgb(27, 161, 226)
-rgb(170, 0, 255)
-rgb(230, 113, 184)
-rgb(216, 0, 115)
-rgb(229, 20, 0)
-rgb(240, 150, 9)
-rgb(160, 80, 0)
+Colors (in GPL format):
+GIMP Palette
+Name: Windows Phone 7.5 colors
+Columns: 4
+#
+162 193 57    rgb(162, 193, 57)
+51  153 51    rgb(51, 153, 51)
+0   171 169   rgb(0, 171, 169)
+27  161 226   rgb(27, 161, 226)
+170 0   255   rgb(170, 0, 255)
+230 113 184   rgb(230, 113, 184)
+216 0   115   rgb(216, 0, 115)
+229 20  0     rgb(229, 20, 0)
+240 150 9     rgb(240, 150, 9)
+160 80  0     rgb(160, 80, 0)

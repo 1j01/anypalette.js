@@ -1,13 +1,18 @@
 Loaded As:                      GIMP palette (.gpl, .gimp, .colors)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 
-Colors:
-rgb(0, 0, 0)
-rgb(51, 51, 51)
-rgb(102, 102, 102)
-rgb(51, 102, 153)
-rgb(200, 200, 200)
-rgb(168, 15, 34)
+Colors (in GPL format):
+GIMP Palette
+Name: MS Office 2013 text colors
+Columns: 8
+#
+0   0   0     rgb(0, 0, 0)
+51  51  51    rgb(51, 51, 51)
+102 102 102   rgb(102, 102, 102)
+51  102 153   rgb(51, 102, 153)
+200 200 200   rgb(200, 200, 200)
+168 15  34    rgb(168, 15, 34)
+51  51  51    rgb(51, 51, 51)

@@ -1,14 +1,21 @@
 Loaded As:                      tabular colors (.csv, .tsv, .txt)
 
-matchedLoaderFileExtensions:    false
+matchedFileExtension:           false
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 
-Colors:
-rgb(4, 6, 8)
-rgb(2, 4, 6)
-rgb(0, 6, 8)
-rgb(1, 1, 1)
-rgb(5, 7, 7)
-rgb(6, 9, 9)
-rgb(0, 2, 4)
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+4   6   8     rgb(4, 6, 8)
+2   4   6     rgb(2, 4, 6)
+2   4   6     rgb(2, 4, 6)
+0   6   8     rgb(0, 6, 8)
+1   1   1     rgb(1, 1, 1)
+5   7   7     rgb(5, 7, 7)
+6   9   9     rgb(6, 9, 9)
+0   2   4     rgb(0, 2, 4)
+0   6   8     rgb(0, 6, 8)
+0   6   8     rgb(0, 6, 8)

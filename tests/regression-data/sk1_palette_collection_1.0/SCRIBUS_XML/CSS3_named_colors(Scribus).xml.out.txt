@@ -1,23 +1,27 @@
 Loaded As:                      CSS colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 
-Colors:
-rgb(0, 0, 0)
-rgb(192, 192, 192)
-rgb(128, 128, 128)
-rgb(255, 255, 255)
-rgb(128, 0, 0)
-rgb(255, 0, 0)
-rgb(128, 0, 128)
-rgb(255, 0, 255)
-rgb(0, 128, 0)
-rgb(0, 255, 0)
-rgb(128, 128, 0)
-rgb(255, 255, 0)
-rgb(0, 0, 128)
-rgb(0, 0, 255)
-rgb(0, 128, 128)
-rgb(0, 255, 255)
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+0   0   0     rgb(0, 0, 0)
+192 192 192   rgb(192, 192, 192)
+128 128 128   rgb(128, 128, 128)
+255 255 255   rgb(255, 255, 255)
+128 0   0     rgb(128, 0, 0)
+255 0   0     rgb(255, 0, 0)
+128 0   128   rgb(128, 0, 128)
+255 0   255   rgb(255, 0, 255)
+0   128 0     rgb(0, 128, 0)
+0   255 0     rgb(0, 255, 0)
+128 128 0     rgb(128, 128, 0)
+255 255 0     rgb(255, 255, 0)
+0   0   128   rgb(0, 0, 128)
+0   0   255   rgb(0, 0, 255)
+0   128 128   rgb(0, 128, 128)
+0   255 255   rgb(0, 255, 255)

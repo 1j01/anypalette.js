@@ -1,21 +1,25 @@
 Loaded As:                      sK1 palette (.skp)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                1
 
-Colors:
-rgba(252, 174, 27, 1)
-rgba(227, 80, 1, 1)
-rgba(255, 255, 102, 1)
-rgba(178, 178, 71, 1)
-rgba(148, 208, 6, 1)
-rgba(34, 120, 8, 1)
-rgba(212, 196, 255, 1)
-rgba(76, 68, 102, 1)
-rgba(80, 130, 255, 1)
-rgba(0, 0, 116, 1)
-rgba(186, 189, 183, 1)
-rgba(46, 52, 54, 1)
-rgba(255, 77, 77, 1)
-rgba(140, 0, 0, 1)
+Colors (in GPL format):
+GIMP Palette
+Name: 'openSUSE colors'
+Columns: 1
+#
+252 174 27    rgba(252, 174, 27, 1)
+227 80  1     rgba(227, 80, 1, 1)
+255 255 102   rgba(255, 255, 102, 1)
+178 178 71    rgba(178, 178, 71, 1)
+148 208 6     rgba(148, 208, 6, 1)
+34  120 8     rgba(34, 120, 8, 1)
+212 196 255   rgba(212, 196, 255, 1)
+76  68  102   rgba(76, 68, 102, 1)
+80  130 255   rgba(80, 130, 255, 1)
+0   0   116   rgba(0, 0, 116, 1)
+186 189 183   rgba(186, 189, 183, 1)
+46  52  54    rgba(46, 52, 54, 1)
+255 77  77    rgba(255, 77, 77, 1)
+140 0   0     rgba(140, 0, 0, 1)

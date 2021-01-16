@@ -1,17 +1,36 @@
 Loaded As:                      Windows desktop theme (.theme, .themepack)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 
-Colors:
-rgb(255, 0, 0)
-rgb(138, 102, 79)
-rgb(255, 255, 255)
-rgb(0, 0, 0)
-rgb(232, 208, 184)
-rgb(160, 112, 56)
-rgb(208, 168, 112)
-rgb(159, 115, 53)
-rgb(128, 0, 0)
-rgb(225, 224, 210)
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+255 0   0     rgb(255, 0, 0)
+138 102 79    rgb(138, 102, 79)
+255 0   0     rgb(255, 0, 0)
+255 255 255   rgb(255, 255, 255)
+255 255 255   rgb(255, 255, 255)
+255 255 255   rgb(255, 255, 255)
+0   0   0     rgb(0, 0, 0)
+232 208 184   rgb(232, 208, 184)
+160 112 56    rgb(160, 112, 56)
+208 168 112   rgb(208, 168, 112)
+0   0   0     rgb(0, 0, 0)
+0   0   0     rgb(0, 0, 0)
+208 168 112   rgb(208, 168, 112)
+208 168 112   rgb(208, 168, 112)
+159 115 53    rgb(159, 115, 53)
+208 168 112   rgb(208, 168, 112)
+160 112 56    rgb(160, 112, 56)
+160 112 56    rgb(160, 112, 56)
+0   0   0     rgb(0, 0, 0)
+208 168 112   rgb(208, 168, 112)
+232 208 184   rgb(232, 208, 184)
+0   0   0     rgb(0, 0, 0)
+208 168 112   rgb(208, 168, 112)
+128 0   0     rgb(128, 0, 0)
+225 224 210   rgb(225, 224, 210)

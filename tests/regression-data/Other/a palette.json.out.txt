@@ -1,15 +1,20 @@
 Loaded As:                      CSS colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
 
-matchedLoaderFileExtensions:    false
+matchedFileExtension:           false
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 
-Colors:
-rgb(0, 0, 0)
-rgb(70, 82, 45)
-rgb(159, 159, 143)
-rgb(211, 222, 178)
-rgb(255, 255, 255)
-rgb(47, 35, 16)
-rgb(92, 5, 6)
-rgb(105, 80, 75)
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+0   0   0     rgb(0, 0, 0)
+70  82  45    rgb(70, 82, 45)
+159 159 143   rgb(159, 159, 143)
+211 222 178   rgb(211, 222, 178)
+255 255 255   rgb(255, 255, 255)
+0   0   0     rgb(0, 0, 0)
+47  35  16    rgb(47, 35, 16)
+92  5   6     rgb(92, 5, 6)
+105 80  75    rgb(105, 80, 75)

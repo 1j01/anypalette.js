@@ -1,17 +1,21 @@
 Loaded As:                      sK1 palette (.skp)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                4
 
-Colors:
-rgba(140, 191, 38, 1)
-rgba(51, 153, 51, 1)
-rgba(0, 171, 169, 1)
-rgba(27, 161, 226, 1)
-rgba(170, 0, 255, 1)
-rgba(230, 113, 184, 1)
-rgba(255, 0, 151, 1)
-rgba(229, 20, 0, 1)
-rgba(240, 150, 9, 1)
-rgba(160, 80, 0, 1)
+Colors (in GPL format):
+GIMP Palette
+Name: 'Windows Phone 7 colors'
+Columns: 4
+#
+140 191 38    rgba(140, 191, 38, 1)
+51  153 51    rgba(51, 153, 51, 1)
+0   171 169   rgba(0, 171, 169, 1)
+27  161 226   rgba(27, 161, 226, 1)
+170 0   255   rgba(170, 0, 255, 1)
+230 113 184   rgba(230, 113, 184, 1)
+255 0   151   rgba(255, 0, 151, 1)
+229 20  0     rgba(229, 20, 0, 1)
+240 150 9     rgba(240, 150, 9, 1)
+160 80  0     rgba(160, 80, 0, 1)

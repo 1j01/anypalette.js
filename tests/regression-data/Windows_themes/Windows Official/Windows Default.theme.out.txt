@@ -1,14 +1,36 @@
 Loaded As:                      Windows desktop theme (.theme, .themepack)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 
-Colors:
-rgb(0, 0, 128)
-rgb(0, 128, 128)
-rgb(255, 255, 255)
-rgb(0, 0, 0)
-rgb(192, 192, 192)
-rgb(128, 128, 128)
-rgb(255, 255, 225)
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+0   0   128   rgb(0, 0, 128)
+0   128 128   rgb(0, 128, 128)
+0   0   128   rgb(0, 0, 128)
+255 255 255   rgb(255, 255, 255)
+255 255 255   rgb(255, 255, 255)
+255 255 255   rgb(255, 255, 255)
+0   0   0     rgb(0, 0, 0)
+192 192 192   rgb(192, 192, 192)
+128 128 128   rgb(128, 128, 128)
+192 192 192   rgb(192, 192, 192)
+0   0   0     rgb(0, 0, 0)
+0   0   0     rgb(0, 0, 0)
+192 192 192   rgb(192, 192, 192)
+192 192 192   rgb(192, 192, 192)
+128 128 128   rgb(128, 128, 128)
+192 192 192   rgb(192, 192, 192)
+128 128 128   rgb(128, 128, 128)
+128 128 128   rgb(128, 128, 128)
+0   0   0     rgb(0, 0, 0)
+192 192 192   rgb(192, 192, 192)
+255 255 255   rgb(255, 255, 255)
+0   0   0     rgb(0, 0, 0)
+192 192 192   rgb(192, 192, 192)
+0   0   0     rgb(0, 0, 0)
+255 255 225   rgb(255, 255, 225)

@@ -1,16 +1,20 @@
 Loaded As:                      sK1 palette (.skp)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                1
 
-Colors:
-rgba(221, 72, 20, 1)
-rgba(119, 41, 83, 1)
-rgba(255, 255, 255, 1)
-rgba(0, 0, 0, 1)
-rgba(119, 33, 111, 1)
-rgba(94, 39, 80, 1)
-rgba(44, 0, 30, 1)
-rgba(174, 167, 159, 1)
-rgba(51, 51, 51, 1)
+Colors (in GPL format):
+GIMP Palette
+Name: 'Ubuntu colors'
+Columns: 1
+#
+221 72  20    rgba(221, 72, 20, 1)
+119 41  83    rgba(119, 41, 83, 1)
+255 255 255   rgba(255, 255, 255, 1)
+0   0   0     rgba(0, 0, 0, 1)
+119 33  111   rgba(119, 33, 111, 1)
+94  39  80    rgba(94, 39, 80, 1)
+44  0   30    rgba(44, 0, 30, 1)
+174 167 159   rgba(174, 167, 159, 1)
+51  51  51    rgba(51, 51, 51, 1)

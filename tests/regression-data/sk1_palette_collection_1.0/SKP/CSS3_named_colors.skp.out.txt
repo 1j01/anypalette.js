@@ -1,23 +1,27 @@
 Loaded As:                      sK1 palette (.skp)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                1
 
-Colors:
-rgba(0, 0, 0, 1)
-rgba(192, 192, 192, 1)
-rgba(128, 128, 128, 1)
-rgba(255, 255, 255, 1)
-rgba(128, 0, 0, 1)
-rgba(255, 0, 0, 1)
-rgba(128, 0, 128, 1)
-rgba(255, 0, 255, 1)
-rgba(0, 128, 0, 1)
-rgba(0, 255, 0, 1)
-rgba(128, 128, 0, 1)
-rgba(255, 255, 0, 1)
-rgba(0, 0, 128, 1)
-rgba(0, 0, 255, 1)
-rgba(0, 128, 128, 1)
-rgba(0, 255, 255, 1)
+Colors (in GPL format):
+GIMP Palette
+Name: 'CSS3 named colors'
+Columns: 1
+#
+0   0   0     rgba(0, 0, 0, 1)
+192 192 192   rgba(192, 192, 192, 1)
+128 128 128   rgba(128, 128, 128, 1)
+255 255 255   rgba(255, 255, 255, 1)
+128 0   0     rgba(128, 0, 0, 1)
+255 0   0     rgba(255, 0, 0, 1)
+128 0   128   rgba(128, 0, 128, 1)
+255 0   255   rgba(255, 0, 255, 1)
+0   128 0     rgba(0, 128, 0, 1)
+0   255 0     rgba(0, 255, 0, 1)
+128 128 0     rgba(128, 128, 0, 1)
+255 255 0     rgba(255, 255, 0, 1)
+0   0   128   rgba(0, 0, 128, 1)
+0   0   255   rgba(0, 0, 255, 1)
+0   128 128   rgba(0, 128, 128, 1)
+0   255 255   rgba(0, 255, 255, 1)

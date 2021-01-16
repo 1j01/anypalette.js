@@ -1,17 +1,42 @@
 Loaded As:                      Windows desktop theme (.theme, .themepack)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 
-Colors:
-rgb(0, 43, 54)
-rgb(7, 54, 66)
-rgb(131, 148, 150)
-rgb(88, 110, 117)
-rgb(211, 54, 130)
-rgb(238, 232, 213)
-rgb(38, 139, 210)
-rgb(181, 137, 0)
-rgb(253, 246, 227)
-rgb(108, 113, 196)
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+0   43  54    rgb(0, 43, 54)
+0   43  54    rgb(0, 43, 54)
+0   43  54    rgb(0, 43, 54)
+0   43  54    rgb(0, 43, 54)
+0   43  54    rgb(0, 43, 54)
+7   54  66    rgb(7, 54, 66)
+0   43  54    rgb(0, 43, 54)
+0   43  54    rgb(0, 43, 54)
+0   43  54    rgb(0, 43, 54)
+0   43  54    rgb(0, 43, 54)
+131 148 150   rgb(131, 148, 150)
+0   43  54    rgb(0, 43, 54)
+7   54  66    rgb(7, 54, 66)
+88  110 117   rgb(88, 110, 117)
+211 54  130   rgb(211, 54, 130)
+238 232 213   rgb(238, 232, 213)
+38  139 210   rgb(38, 139, 210)
+7   54  66    rgb(7, 54, 66)
+7   54  66    rgb(7, 54, 66)
+131 148 150   rgb(131, 148, 150)
+181 137 0     rgb(181, 137, 0)
+253 246 227   rgb(253, 246, 227)
+7   54  66    rgb(7, 54, 66)
+131 148 150   rgb(131, 148, 150)
+211 54  130   rgb(211, 54, 130)
+131 148 150   rgb(131, 148, 150)
+0   43  54    rgb(0, 43, 54)
+108 113 196   rgb(108, 113, 196)
+0   43  54    rgb(0, 43, 54)
+0   43  54    rgb(0, 43, 54)
+131 148 150   rgb(131, 148, 150)

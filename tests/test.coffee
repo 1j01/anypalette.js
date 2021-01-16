@@ -32,19 +32,18 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 						if err
 							err.message
 						else
-							# TODO: display color names
 							# TODO: add a "Can Parse Without Knowing Ext:"
 							# - pass {fileExt: null} and make sure / make it so this is treated as explicitly ignoring file extensions
 							# - check that it parses exactly the same, including geometry
 							"""
 							Loaded As:                      #{formatUsed.name} (#{formatUsed.fileExtensionsPretty})
 
-							matchedLoaderFileExtensions:    #{matchedFileExtension}
+							matchedFileExtension:           #{matchedFileExtension}
 							geometrySpecifiedByFile:        #{palette.geometrySpecifiedByFile}
 							numberOfColumns:                #{palette.numberOfColumns}
 
-							Colors:
-							#{AnyPalette.uniqueColors(palette).join('\n')}
+							Colors (in GPL format):
+							#{AnyPalette.writePalette(palette, AnyPalette.formats.GIMP_PALETTE)}
 
 							"""
 					output_file_path = path.join(__dirname, "regression-data", relative_path + ".out.txt")

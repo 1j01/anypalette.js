@@ -1,22 +1,26 @@
 Loaded As:                      sK1 palette (.skp)
 
-matchedLoaderFileExtensions:    true
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                6
 
-Colors:
-rgba(171, 171, 171, 1)
-rgba(138, 207, 255, 1)
-rgba(245, 152, 214, 1)
-rgba(243, 210, 64, 1)
-rgba(173, 216, 95, 1)
-rgba(120, 217, 217, 1)
-rgba(255, 175, 81, 1)
-rgba(255, 111, 111, 1)
-rgba(243, 89, 168, 1)
-rgba(71, 207, 116, 1)
-rgba(196, 138, 255, 1)
-rgba(88, 177, 252, 1)
-rgba(152, 152, 255, 1)
-rgba(195, 181, 168, 1)
-rgba(252, 252, 252, 1)
+Colors (in GPL format):
+GIMP Palette
+Name: 'Windows 10 personalizing colors'
+Columns: 6
+#
+171 171 171   rgba(171, 171, 171, 1)
+138 207 255   rgba(138, 207, 255, 1)
+245 152 214   rgba(245, 152, 214, 1)
+243 210 64    rgba(243, 210, 64, 1)
+173 216 95    rgba(173, 216, 95, 1)
+120 217 217   rgba(120, 217, 217, 1)
+255 175 81    rgba(255, 175, 81, 1)
+255 111 111   rgba(255, 111, 111, 1)
+243 89  168   rgba(243, 89, 168, 1)
+71  207 116   rgba(71, 207, 116, 1)
+196 138 255   rgba(196, 138, 255, 1)
+88  177 252   rgba(88, 177, 252, 1)
+152 152 255   rgba(152, 152, 255, 1)
+195 181 168   rgba(195, 181, 168, 1)
+252 252 252   rgba(252, 252, 252, 1)

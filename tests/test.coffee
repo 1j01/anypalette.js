@@ -27,7 +27,7 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 		for file_path in file_paths
 			do (file_path)->
 				relative_path = path.relative(palettes_folder, file_path)
-				AnyPalette.loadPalette file_path, (err, palette)->
+				AnyPalette.loadPalette file_path, (err, palette, formatUsed, matchedFileExtension)->
 					result =
 						if err
 							err.message
@@ -35,11 +35,11 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 							# TODO: display color names
 							# TODO: add a "Can Parse Without Knowing Ext:"
 							# - pass {fileExt: null} and make sure / make it so this is treated as explicitly ignoring file extensions
-							# - check that it parses exactly the same, including geometry, just not matchedLoaderFileExtensions
+							# - check that it parses exactly the same, including geometry
 							"""
-							Loaded As:                      #{palette.loader.name} (#{palette.loader.fileExtensionsPretty})
+							Loaded As:                      #{formatUsed.name} (#{formatUsed.fileExtensionsPretty})
 
-							matchedLoaderFileExtensions:    #{palette.matchedLoaderFileExtensions}
+							matchedLoaderFileExtensions:    #{matchedFileExtension}
 							geometrySpecifiedByFile:        #{palette.geometrySpecifiedByFile}
 							numberOfColumns:                #{palette.numberOfColumns}
 

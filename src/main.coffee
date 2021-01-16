@@ -12,133 +12,137 @@ class LoadingErrors extends Error
 formats =
 	PAINT_SHOP_PRO_PALETTE: {
 		name: "Paint Shop Pro palette"
-		exts: ["pal", "psppalette"]
+		fileExtensions: ["pal", "psppalette"]
 		load: require "./formats/PaintShopPro"
 	}
 	RIFF_PALETTE: {
 		name: "RIFF PAL"
-		exts: ["pal"]
+		fileExtensions: ["pal"]
 		load: require "./formats/RIFF"
 	}
 	COLORSCHEMER_PALETTE: {
 		name: "ColorSchemer palette"
-		exts: ["cs"]
+		fileExtensions: ["cs"]
 		load: require "./formats/ColorSchemer"
 	}
 	PAINTDOTNET_PALETTE: {
 		name: "Paint.NET palette"
-		exts: ["txt"]
+		fileExtensions: ["txt"]
 		load: require "./formats/Paint.NET"
 		write: (require "./formats/Paint.NET").write
 	}
 	GIMP_PALETTE: {
 		name: "GIMP palette"
-		exts: ["gpl", "gimp", "colors"]
+		fileExtensions: ["gpl", "gimp", "colors"]
 		load: require "./formats/GIMP"
 		write: (require "./formats/GIMP").write
 	}
 	KOULORPAINT_PALETTE: {
 		name: "KolourPaint palette"
-		exts: ["colors"]
+		fileExtensions: ["colors"]
 		load: require "./formats/KolourPaint"
 	}
 	SKENCIL_PALETTE: {
 		name: "Skencil palette"
-		exts: ["spl"]
+		fileExtensions: ["spl"]
 		load: require "./formats/SPL"
 	}
 	SKETCH_JSON_PALETTE: {
 		name: "Sketch palette"
-		exts: ["sketchpalette"]
+		fileExtensions: ["sketchpalette"]
 		load: require "./formats/sketchpalette"
 		write: (require "./formats/sketchpalette").write
 	}
 	SK1_PALETTE: {
 		name: "sK1 palette"
-		exts: ["skp"]
+		fileExtensions: ["skp"]
 		load: require "./formats/SKP"
 	}
 	CSS_COLORS: {
 		name: "CSS colors"
-		exts: ["css", "scss", "sass", "less", "styl", "html", "htm", "svg", "js", "ts", "xml", "txt"]
+		fileExtensions: ["css", "scss", "sass", "less", "styl", "html", "htm", "svg", "js", "ts", "xml", "txt"]
 		load: require "./formats/CSS"
 		write: (require "./formats/CSS").write
 	}
 	WINDOWS_THEME_COLORS: {
 		name: "Windows desktop theme"
-		exts: ["theme", "themepack"]
+		fileExtensions: ["theme", "themepack"]
 		load: require "./formats/theme"
 	}
 	# KDE_THEME_COLORS: {
 	# 	name: "KDE desktop theme"
-	# 	exts: ["colors"]
+	# 	fileExtensions: ["colors"]
 	# 	load: require "./formats/theme"
 	# }
 	KDE_RGB_PALETTE: {
 		name: "KolourPaint palette"
-		exts: ["colors"]
+		fileExtensions: ["colors"]
 		write: (require "./formats/KolourPaint").write
 	}
 	# ADOBE_COLOR_SWATCH_PALETTE: {
 	# 	name: "Adobe Color Swatch"
-	# 	exts: ["aco"]
+	# 	fileExtensions: ["aco"]
 	# 	load: require "./formats/AdobeColorSwatch"
 	# }
 	ADOBE_COLOR_TABLE_PALETTE: {
 		name: "Adobe Color Table"
-		exts: ["act"]
+		fileExtensions: ["act"]
 		load: require "./formats/AdobeColorTable"
 	}
 	# ADOBE_SWATCH_EXCHANGE_PALETTE: {
 	# 	name: "Adobe Swatch Exchange"
-	# 	exts: ["ase"]
+	# 	fileExtensions: ["ase"]
 	# 	load: require "./formats/AdobeSwatchExchange"
 	# }
 	# ADOBE_COLOR_BOOK_PALETTE: {
 	# 	name: "Adobe Color Book"
-	# 	exts: ["acb"]
+	# 	fileExtensions: ["acb"]
 	# 	load: require "./formats/AdobeColorBook"
 	# }
 	HOMESITE_PALETTE: {
 		name: "Homesite palette"
-		exts: ["hpl"]
+		fileExtensions: ["hpl"]
 		load: require "./formats/Homesite"
 	}
 	STARCRAFT_PALETTE: {
 		name: "StarCraft palette"
-		exts: ["pal"]
+		fileExtensions: ["pal"]
 		load: require "./formats/StarCraft"
 	}
 	STARCRAFT_PADDED: {
 		name: "StarCraft terrain palette"
-		exts: ["wpe"]
+		fileExtensions: ["wpe"]
 		load: require "./formats/StarCraftPadded"
 	}
 
 	# AUTOCAD_COLOR_BOOK_PALETTE: {
 	# 	name: "AutoCAD Color Book"
-	# 	exts: ["acb"]
+	# 	fileExtensions: ["acb"]
 	# 	load: require "./formats/AutoCADColorBook"
 	# }
 
 	# CORELDRAW_PALETTE: {
 	# 	# (same as Paint Shop Pro palette?)
 	# 	name: "CorelDRAW palette"
-	# 	exts: ["pal", "cpl"]
+	# 	fileExtensions: ["pal", "cpl"]
 	# 	load: require "./formats/CorelDRAW"
 	# }
 	TABULAR: {
 		name: "tabular colors"
-		exts: ["csv", "tsv", "txt"]
+		fileExtensions: ["csv", "tsv", "txt"]
 		load: require "./formats/tabular"
 	}
+
+for format_id in Object.keys(formats)
+	format = formats[format_id]
+	format.fileExtensionsPretty = ".#{format.fileExtensions.join(", .")}"
 
 load_palette = (o, callback)->
 	
 	# find formats that use this file extension
 	matching_ext = {}
 	for format_id in Object.keys(formats)
-		if formats[format_id].exts.indexOf(o.fileExt) > -1
+		if formats[format_id].fileExtensions.indexOf(o.fileExt) > -1
 			matching_ext[format_id] = true
 	
 	# sort formats to the beginning that use this file extension
@@ -173,17 +177,8 @@ load_palette = (o, callback)->
 		if palette
 			# console?.info? "loaded #{o.fileName} as #{format.name}"
 			palette.confidence = if matching_ext[format_id]? then 0.9 else 0.01
-			exts_pretty = ".#{format.exts.join(", .")}"
 			
-			# TODO: probably rename loader -> format when 2-way data flow (read/write) is supported
-			# TODO: maybe make this a 3rd (and fourth?) argument to the callback
-			palette.loader =
-				name: format.name
-				fileExtensions: format.exts
-				fileExtensionsPretty: exts_pretty
-			palette.matchedLoaderFileExtensions = matching_ext[format_id]?
-			
-			callback(null, palette)
+			callback(null, palette, format, matching_ext[format_id]?)
 			return
 	
 	callback(new LoadingErrors(errors))
@@ -246,8 +241,8 @@ AnyPalette.writePalette = (palette, format)->
 
 	palette_content_string = format.write(palette)
 	return palette_content_string
-	# file = new File([palette_content_string], (palette.name ? "Saved Colors") + ".#{format.exts[0]}")
-	# return [file, format.exts[0]]
+	# file = new File([palette_content_string], (palette.name ? "Saved Colors") + ".#{format.fileExtensions[0]}")
+	# return [file, format.fileExtensions[0]]
 
 
 # Exports

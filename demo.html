@@ -125,7 +125,7 @@
 					$output.text(text).addClass("status-error");
 				};
 				
-				this.update = function(error, palette){
+				this.update = function(error, palette, formatUsed, matchedFileExtension){
 					if(error){
 						$section.addClass("failed");
 						$output.append("<h3>Failed to load:</h3>");
@@ -142,8 +142,8 @@
 					
 					$loaded_as.html(
 						"<span class='lesser-importance'>loaded as </span>"
-						+"<span>"+palette.loader.name+"</span>"
-						+"<span class='lesser-importance'> ("+(palette.loader.fileExtensionsPretty)+")"+(palette.matchedLoaderFileExtensions?"":" - file extension not matched")+"</span>"
+						+"<span>"+formatUsed.name+"</span>"
+						+"<span class='lesser-importance'> ("+(formatUsed.fileExtensionsPretty)+")"+(matchedFileExtension?"":" - file extension not matched")+"</span>"
 					);
 					
 					var show_colors = function(palette){
@@ -201,7 +201,7 @@
 						$save.on("click", () => {
 							var format = formats[format_index];
 							var file_content = AnyPalette.writePalette(palette, format);
-							var file = new File([file_content], `${palette_name.replace(/.*\//, "")}.${format.exts[0]}`);
+							var file = new File([file_content], `${palette_name.replace(/.*\//, "")}.${format.fileExtensions[0]}`);
 							var url = URL.createObjectURL(file);
 							var a = document.createElement("a");
 							a.href = url;
@@ -338,8 +338,8 @@
 								AnyPalette.loadPalette({
 									data: data,
 									fileName: fname
-								}, function(err, palette){
-									palette_view.update(err, palette);
+								}, function(err, palette, formatUsed, matchedFileExtension){
+									palette_view.update(err, palette, formatUsed, matchedFileExtension);
 								});
 							})
 							.fail(function(){
@@ -356,8 +356,8 @@
 					palette_view.status("Loading palette from file...");
 					
 					setTimeout(function(){
-						AnyPalette.loadPalette(file, function(err, palette){
-							palette_view.update(err, palette);
+						AnyPalette.loadPalette(file, function(err, palette, formatUsed, matchedFileExtension){
+							palette_view.update(err, palette, formatUsed, matchedFileExtension);
 							if (palette) {
 								window.console && console.log(`New palette: ${palette.map(()=> `%c█`).join("")}`, ...palette.map((color)=> `color: ${color};`));
 								window.console && console.log(palette);

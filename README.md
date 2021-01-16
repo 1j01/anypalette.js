@@ -23,7 +23,7 @@ Supported palette formats:
 |-------------------|-----------------------------------|-----------------------------------------------------------------------------------|:-------:|:-------:|
 | .pal              | [RIFF] Palette                    | [MS Paint] for Windows 95 and Windows NT 4.0                                      |   ✅   | Planned |
 | .gpl              | [GIMP][Gimp] Palette              | [Gimp], [Inkscape], [Krita], [KolourPaint], [Scribus], [CinePaint], [MyPaint]     |   ✅   |   ✅    |
-| .txt              | [Paint.NET] Palette               | [Paint.NET]                                                                       |   ✅   | Planned |
+| .txt              | [Paint.NET] Palette               | [Paint.NET]                                                                       |   ✅   |   ✅    |
 | .act              | Adobe Color Table                 | Adobe [Photoshop] and [Illustrator]                                               |   ✅   | Planned |
 | .pal, .psppalette | [Paint Shop Pro] Palette          | [Paint Shop Pro][] (Jasc Software / Corel)                                        |   ✅   | Planned |
 | .hpl              | [Homesite] Palette                | Allaire [Homesite] / Macromedia [ColdFusion]                                      |   ✅   |         |

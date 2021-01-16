@@ -29,6 +29,7 @@ formats =
 		name: "Paint.NET palette"
 		exts: ["txt"]
 		load: require "./formats/Paint.NET"
+		write: (require "./formats/Paint.NET").write
 	}
 	GIMP_PALETTE: {
 		name: "GIMP palette"

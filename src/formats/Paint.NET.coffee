@@ -1,5 +1,5 @@
 
-# Load a Paint.NET palette file (.txt)
+# Read/write Paint.NET palette format (.txt)
 
 Palette = require "../Palette"
 
@@ -28,11 +28,28 @@ module.exports.write = (palette)->
 		alpha ?= 1
 		alpha *= 255
 		[alpha, r, g, b].map(component_to_hex).join("")
+	comments = """
+	Paint.NET Palette File
+	Lines that start with a semicolon are comments
+	Colors are written as 8-digit hexadecimal numbers: aarrggbb
+	For example, this would specify green: FF00FF00
+	The alpha ('aa') value specifies how transparent a color is. FF is fully opaque, 00 is fully transparent.
+	A palette must consist of ninety six (96) colors. If there are less than this, the remaining color
+	slots will be set to white (FFFFFFFF). If there are more, then the remaining colors will be ignored.
+	
+
 	"""
-	;paint.net Palette File
-	;Palette Name: #{palette.name ? ""}
-	;Description: #{palette.description ? ""}
-	;Colors: #{palette.length}
-	;Columns: #{palette.numberOfColumns ? ""}
+	if palette.name
+		comments += "Palette Name: #{palette.name}\n"
+	if palette.description
+		comments += "Description: #{palette.description}\n"
+	comments += "Colors: #{palette.length}\n"
+	if palette.numberOfColumns
+		comments += "Columns: #{palette.numberOfColumns}\n"
+	
+	comments = "; #{comments}".replace(/\n/g, "\n; ").replace(/\s*\n/g, "\n")
+
+	"""
+	#{comments}
 	#{palette.map(stringify_color).join("\n")}
 	"""

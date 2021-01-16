@@ -5,11 +5,11 @@ geometrySpecifiedByFile:        undefined
 numberOfColumns:                1
 
 Colors:
-rgb(0, 0, 0)
-rgb(33, 33, 33)
-rgb(51, 51, 51)
-rgb(102, 102, 102)
-rgb(200, 200, 200)
-rgb(234, 234, 234)
-rgb(244, 244, 244)
-rgb(255, 255, 255)
+rgba(0, 0, 0, 1)
+rgba(33, 33, 33, 1)
+rgba(51, 51, 51, 1)
+rgba(102, 102, 102, 1)
+rgba(200, 200, 200, 1)
+rgba(234, 234, 234, 1)
+rgba(244, 244, 244, 1)
+rgba(255, 255, 255, 1)

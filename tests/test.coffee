@@ -81,7 +81,7 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 											console.log("Original format:", format)
 											console.error "Reparsed with a different format (#{reparsed_as_format.name} rather than #{format.name})"
 											process.exit(1)
-										if palette.every((color, index)-> reparsed_palette[index].is color)
+										if palette.every((color, index)-> AnyPalette.Color.is(reparsed_palette[index], color))
 											console.log "Reparsing successful - it's a match!"
 										else
 											console.log("Reparsed:", [reparsed_palette...].map((color)-> color.toString()))

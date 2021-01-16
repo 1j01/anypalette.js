@@ -241,7 +241,7 @@ AnyPalette.writePalette = (palette, format)->
 	# file = new File([palette_content_string], (palette.name ? "Saved Colors") + ".#{format.fileExtensions[0]}")
 	# return [file, format.fileExtensions[0]]
 
-AnyPalette.uniqueColors = (palette)->
+AnyPalette.uniqueColors = (palette, epsilon)->
 	new_palette = new Palette
 	new_palette.name = @name
 	new_palette.description = @description
@@ -259,7 +259,7 @@ AnyPalette.uniqueColors = (palette)->
 		j = i + 1
 		while j < new_palette.length
 			j_color = new_palette[j]
-			if i_color.is j_color
+			if Color.is(i_color, j_color, epsilon)
 				new_palette.splice(j, 1)
 				j -= 1
 			j += 1

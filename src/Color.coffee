@@ -133,8 +133,8 @@ class Color
 			else
 				"rgb(#{@r}, #{@g}, #{@b})"
 	
-	is: (color, epsilon=0.0001)->
-		Math.abs(color.r - @r) < epsilon and
-		Math.abs(color.g - @g) < epsilon and
-		Math.abs(color.b - @b) < epsilon and
-		Math.abs((color.alpha ? 1) - (@alpha ? 1)) < epsilon
+	@is: (colorA, colorB, epsilon=0.0001)->
+		Math.abs(colorA.r - colorB.r) < epsilon and
+		Math.abs(colorA.g - colorB.g) < epsilon and
+		Math.abs(colorA.b - colorB.b) < epsilon and
+		Math.abs((colorA.alpha ? 1) - (colorB.alpha ? 1)) < epsilon

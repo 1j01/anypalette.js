@@ -358,6 +358,10 @@
 					setTimeout(function(){
 						AnyPalette.loadPalette(file, function(err, palette){
 							palette_view.update(err, palette);
+							if (palette) {
+								window.console && console.log(`New palette: ${palette.map(()=> `%c█`).join("")}`, ...palette.map((color)=> `color: ${color};`));
+								window.console && console.log(palette);
+							}
 						});
 					}, i * 100); //stagger loading
 				});

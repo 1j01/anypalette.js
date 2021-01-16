@@ -9,34 +9,34 @@ GIMP Palette
 Name: Eggplant
 Columns: 8
 #
-88  128 120   rgb(88, 128, 120)
-64  0   64    rgb(64, 0, 64)
-88  128 120   rgb(88, 128, 120)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-144 176 168   rgb(144, 176, 168)
-144 176 168   rgb(144, 176, 168)
-144 176 168   rgb(144, 176, 168)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-144 176 168   rgb(144, 176, 168)
-144 176 168   rgb(144, 176, 168)
-128 128 128   rgb(128, 128, 128)
-144 176 168   rgb(144, 176, 168)
-88  128 120   rgb(88, 128, 120)
-88  128 120   rgb(88, 128, 120)
-0   0   0     rgb(0, 0, 0)
-88  128 120   rgb(88, 128, 120)
-200 216 216   rgb(200, 216, 216)
-0   0   0     rgb(0, 0, 0)
-144 176 168   rgb(144, 176, 168)
-128 0   128   rgb(128, 0, 128)
-255 255 255   rgb(255, 255, 255)
-131 75  131   rgb(131, 75, 131)
-203 189 210   rgb(203, 189, 210)
-192 192 192   rgb(192, 192, 192)
-88  128 120   rgb(88, 128, 120)
-0   0   0     rgb(0, 0, 0)
-144 176 168   rgb(144, 176, 168)
+88  128 120   ActiveTitle
+64  0   64    Background
+88  128 120   Hilight
+255 255 255   HilightText
+255 255 255   TitleText
+255 255 255   Window
+0   0   0     WindowText
+144 176 168   Scrollbar
+144 176 168   InactiveTitle
+144 176 168   Menu
+0   0   0     WindowFrame
+0   0   0     MenuText
+144 176 168   ActiveBorder
+144 176 168   InactiveBorder
+128 128 128   AppWorkspace
+144 176 168   ButtonFace
+88  128 120   ButtonShadow
+88  128 120   GrayText
+0   0   0     ButtonText
+88  128 120   InactiveTitleText
+200 216 216   ButtonHilight
+0   0   0     ButtonDkShadow
+144 176 168   ButtonLight
+128 0   128   InfoText
+255 255 255   InfoWindow
+131 75  131   GradientActiveTitle
+203 189 210   GradientInactiveTitle
+192 192 192   ButtonAlternateFace
+88  128 120   HotTrackingColor
+0   0   0     MenuHilight
+144 176 168   MenuBar

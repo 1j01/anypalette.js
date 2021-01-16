@@ -9,34 +9,34 @@ GIMP Palette
 Name: Peggys Pastels
 Columns: 8
 #
-250 224 228   rgb(250, 224, 228)
-162 219 210   rgb(162, 219, 210)
-0   191 188   rgb(0, 191, 188)
-0   187 169   rgb(0, 187, 169)
-244 193 202   rgb(244, 193, 202)
-244 255 255   rgb(244, 255, 255)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-244 193 202   rgb(244, 193, 202)
-244 193 202   rgb(244, 193, 202)
-255 184 182   rgb(255, 184, 182)
-162 219 210   rgb(162, 219, 210)
-0   0   0     rgb(0, 0, 0)
-244 193 202   rgb(244, 193, 202)
-222 69  96    rgb(222, 69, 96)
-222 69  96    rgb(222, 69, 96)
-0   0   0     rgb(0, 0, 0)
-0   85  77    rgb(0, 85, 77)
-250 224 228   rgb(250, 224, 228)
-64  64  64    rgb(64, 64, 64)
-247 219 215   rgb(247, 219, 215)
-0   0   0     rgb(0, 0, 0)
-204 255 255   rgb(204, 255, 255)
-181 181 181   rgb(181, 181, 181)
-0   128 128   rgb(0, 128, 128)
-202 156 185   rgb(202, 156, 185)
-236 145 162   rgb(236, 145, 162)
-162 219 210   rgb(162, 219, 210)
-244 193 202   rgb(244, 193, 202)
+250 224 228   Scrollbar
+162 219 210   Background
+0   191 188   ActiveTitle
+0   187 169   InactiveTitle
+244 193 202   Menu
+244 255 255   Window
+0   0   0     WindowFrame
+0   0   0     MenuText
+0   0   0     WindowText
+255 255 255   TitleText
+244 193 202   ActiveBorder
+244 193 202   InactiveBorder
+255 184 182   AppWorkspace
+162 219 210   Hilight
+0   0   0     HilightText
+244 193 202   ButtonFace
+222 69  96    ButtonShadow
+222 69  96    GrayText
+0   0   0     ButtonText
+0   85  77    InactiveTitleText
+250 224 228   ButtonHilight
+64  64  64    ButtonDkShadow
+247 219 215   ButtonLight
+0   0   0     InfoText
+204 255 255   InfoWindow
+181 181 181   ButtonAlternateFace
+0   128 128   HotTrackingColor
+202 156 185   GradientActiveTitle
+236 145 162   GradientInactiveTitle
+162 219 210   MenuHilight
+244 193 202   MenuBar

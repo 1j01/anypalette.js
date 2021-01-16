@@ -9,34 +9,34 @@ GIMP Palette
 Name: Precision
 Columns: 8
 #
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-127 127 127   rgb(127, 127, 127)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-127 127 127   rgb(127, 127, 127)
-255 255 255   rgb(255, 255, 255)
-127 127 127   rgb(127, 127, 127)
-127 127 127   rgb(127, 127, 127)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-192 192 192   rgb(192, 192, 192)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-192 192 192   rgb(192, 192, 192)
-64  64  64    rgb(64, 64, 64)
-0   0   0     rgb(0, 0, 0)
+0   0   0     ActiveTitle
+0   0   0     Background
+255 255 255   Hilight
+0   0   0     HilightText
+255 255 255   TitleText
+0   0   0     Window
+255 255 255   WindowText
+127 127 127   Scrollbar
+0   0   0     InactiveTitle
+0   0   0     Menu
+0   0   0     WindowFrame
+255 255 255   MenuText
+0   0   0     ActiveBorder
+0   0   0     InactiveBorder
+0   0   0     AppWorkspace
+0   0   0     ButtonFace
+0   0   0     ButtonShadow
+127 127 127   GrayText
+255 255 255   ButtonText
+127 127 127   InactiveTitleText
+127 127 127   ButtonHilight
+0   0   0     ButtonDkShadow
+0   0   0     ButtonLight
+192 192 192   InfoText
+0   0   0     InfoWindow
+0   0   0     GradientActiveTitle
+0   0   0     GradientInactiveTitle
+0   0   0     ButtonAlternateFace
+192 192 192   HotTrackingColor
+64  64  64    MenuHilight
+0   0   0     MenuBar

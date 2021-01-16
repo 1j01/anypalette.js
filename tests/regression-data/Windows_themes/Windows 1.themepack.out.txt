@@ -9,34 +9,34 @@ GIMP Palette
 Name: Windows 1
 Columns: 8
 #
-255 85  85    rgb(255, 85, 85)
-85  254 120   rgb(85, 254, 120)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-255 255 85    rgb(255, 255, 85)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-85  255 85    rgb(85, 255, 85)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-85  85  85    rgb(85, 85, 85)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-255 255 85    rgb(255, 255, 85)
-85  85  85    rgb(85, 85, 85)
-0   0   85    rgb(0, 0, 85)
-85  85  255   rgb(85, 85, 255)
-109 109 199   rgb(109, 109, 199)
-85  85  255   rgb(85, 85, 255)
-255 255 85    rgb(255, 255, 85)
+255 85  85    Scrollbar
+85  254 120   Background
+0   0   0     ActiveTitle
+0   0   0     InactiveTitle
+255 255 85    Menu
+255 255 255   Window
+0   0   0     WindowFrame
+0   0   0     MenuText
+0   0   0     WindowText
+255 255 255   TitleText
+255 255 255   ActiveBorder
+255 255 255   InactiveBorder
+85  255 85    AppWorkspace
+0   0   0     Hilight
+255 255 255   HilightText
+255 255 255   ButtonFace
+0   0   0     ButtonShadow
+85  85  85    GrayText
+0   0   0     ButtonText
+255 255 255   InactiveTitleText
+255 255 255   ButtonHilight
+255 255 255   ButtonDkShadow
+0   0   0     ButtonLight
+0   0   0     InfoText
+255 255 85    InfoWindow
+85  85  85    ButtonAlternateFace
+0   0   85    HotTrackingColor
+85  85  255   GradientActiveTitle
+109 109 199   GradientInactiveTitle
+85  85  255   MenuHilight
+255 255 85    MenuBar

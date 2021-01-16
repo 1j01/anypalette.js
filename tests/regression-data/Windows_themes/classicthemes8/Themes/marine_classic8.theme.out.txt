@@ -9,34 +9,34 @@ GIMP Palette
 Name: Marine
 Columns: 8
 #
-0   0   128   rgb(0, 0, 128)
-44  78  71    rgb(44, 78, 71)
-0   0   128   rgb(0, 0, 128)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-200 224 216   rgb(200, 224, 216)
-0   0   0     rgb(0, 0, 0)
-200 224 216   rgb(200, 224, 216)
-72  144 136   rgb(72, 144, 136)
-136 192 184   rgb(136, 192, 184)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-136 192 184   rgb(136, 192, 184)
-136 192 184   rgb(136, 192, 184)
-75  141 132   rgb(75, 141, 132)
-136 192 184   rgb(136, 192, 184)
-72  144 136   rgb(72, 144, 136)
-72  144 136   rgb(72, 144, 136)
-0   0   0     rgb(0, 0, 0)
-192 192 192   rgb(192, 192, 192)
-200 224 216   rgb(200, 224, 216)
-0   0   0     rgb(0, 0, 0)
-136 192 184   rgb(136, 192, 184)
-0   0   0     rgb(0, 0, 0)
-200 224 216   rgb(200, 224, 216)
-24  180 192   rgb(24, 180, 192)
-120 204 216   rgb(120, 204, 216)
-192 192 192   rgb(192, 192, 192)
-0   0   128   rgb(0, 0, 128)
-0   0   0     rgb(0, 0, 0)
-136 192 184   rgb(136, 192, 184)
+0   0   128   ActiveTitle
+44  78  71    Background
+0   0   128   Hilight
+255 255 255   HilightText
+255 255 255   TitleText
+200 224 216   Window
+0   0   0     WindowText
+200 224 216   Scrollbar
+72  144 136   InactiveTitle
+136 192 184   Menu
+0   0   0     WindowFrame
+0   0   0     MenuText
+136 192 184   ActiveBorder
+136 192 184   InactiveBorder
+75  141 132   AppWorkspace
+136 192 184   ButtonFace
+72  144 136   ButtonShadow
+72  144 136   GrayText
+0   0   0     ButtonText
+192 192 192   InactiveTitleText
+200 224 216   ButtonHilight
+0   0   0     ButtonDkShadow
+136 192 184   ButtonLight
+0   0   0     InfoText
+200 224 216   InfoWindow
+24  180 192   GradientActiveTitle
+120 204 216   GradientInactiveTitle
+192 192 192   ButtonAlternateFace
+0   0   128   HotTrackingColor
+0   0   0     MenuHilight
+136 192 184   MenuBar

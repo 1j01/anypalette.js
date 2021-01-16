@@ -9,28 +9,28 @@ GIMP Palette
 Name: Saved Colors
 Columns: 8
 #
-0   0   48    rgb(0, 0, 48)
-40  72  128   rgb(40, 72, 128)
-255 192 64    rgb(255, 192, 64)
-0   0   0     rgb(0, 0, 0)
-255 192 64    rgb(255, 192, 64)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-152 176 224   rgb(152, 176, 224)
-40  72  128   rgb(40, 72, 128)
-56  104 200   rgb(56, 104, 200)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-56  104 200   rgb(56, 104, 200)
-56  104 200   rgb(56, 104, 200)
-37  68  131   rgb(37, 68, 131)
-56  104 200   rgb(56, 104, 200)
-40  72  128   rgb(40, 72, 128)
-40  72  128   rgb(40, 72, 128)
-0   0   0     rgb(0, 0, 0)
-168 184 216   rgb(168, 184, 216)
-152 176 224   rgb(152, 176, 224)
-0   0   0     rgb(0, 0, 0)
-56  104 200   rgb(56, 104, 200)
-128 0   128   rgb(128, 0, 128)
-255 255 255   rgb(255, 255, 255)
+0   0   48    ActiveTitle
+40  72  128   Background
+255 192 64    Hilight
+0   0   0     HilightText
+255 192 64    TitleText
+255 255 255   Window
+0   0   0     WindowText
+152 176 224   Scrollbar
+40  72  128   InactiveTitle
+56  104 200   Menu
+0   0   0     WindowFrame
+0   0   0     MenuText
+56  104 200   ActiveBorder
+56  104 200   InactiveBorder
+37  68  131   AppWorkspace
+56  104 200   ButtonFace
+40  72  128   ButtonShadow
+40  72  128   GrayText
+0   0   0     ButtonText
+168 184 216   InactiveTitleText
+152 176 224   ButtonHilight
+0   0   0     ButtonDkShadow
+56  104 200   ButtonLight
+128 0   128   InfoText
+255 255 255   InfoWindow

@@ -9,34 +9,34 @@ GIMP Palette
 Name: Fx
 Columns: 8
 #
-235 233 228   rgb(235, 233, 228)
-0   83  159   rgb(0, 83, 159)
-230 96  0     rgb(230, 96, 0)
-187 34  0     rgb(187, 34, 0)
-215 211 200   rgb(215, 211, 200)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-215 211 200   rgb(215, 211, 200)
-215 211 200   rgb(215, 211, 200)
-156 147 120   rgb(156, 147, 120)
-0   150 211   rgb(0, 150, 211)
-255 255 255   rgb(255, 255, 255)
-212 221 228   rgb(212, 221, 228)
-156 147 120   rgb(156, 147, 120)
-66  79  90    rgb(66, 79, 90)
-0   0   0     rgb(0, 0, 0)
-215 211 200   rgb(215, 211, 200)
-235 233 228   rgb(235, 233, 228)
-64  64  64    rgb(64, 64, 64)
-215 211 200   rgb(215, 211, 200)
-0   0   0     rgb(0, 0, 0)
-234 239 242   rgb(234, 239, 242)
-181 181 181   rgb(181, 181, 181)
-0   83  159   rgb(0, 83, 159)
-255 203 0     rgb(255, 203, 0)
-230 96  0     rgb(230, 96, 0)
-10  36  106   rgb(10, 36, 106)
-212 208 200   rgb(212, 208, 200)
+235 233 228   Scrollbar
+0   83  159   Background
+230 96  0     ActiveTitle
+187 34  0     InactiveTitle
+215 211 200   Menu
+255 255 255   Window
+0   0   0     WindowFrame
+0   0   0     MenuText
+0   0   0     WindowText
+255 255 255   TitleText
+215 211 200   ActiveBorder
+215 211 200   InactiveBorder
+156 147 120   AppWorkspace
+0   150 211   Hilight
+255 255 255   HilightText
+212 221 228   ButtonFace
+156 147 120   ButtonShadow
+66  79  90    GrayText
+0   0   0     ButtonText
+215 211 200   InactiveTitleText
+235 233 228   ButtonHilight
+64  64  64    ButtonDkShadow
+215 211 200   ButtonLight
+0   0   0     InfoText
+234 239 242   InfoWindow
+181 181 181   ButtonAlternateFace
+0   83  159   HotTrackingColor
+255 203 0     GradientActiveTitle
+230 96  0     GradientInactiveTitle
+10  36  106   MenuHilight
+212 208 200   MenuBar

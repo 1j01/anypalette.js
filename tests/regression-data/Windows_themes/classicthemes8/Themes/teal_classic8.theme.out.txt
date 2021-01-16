@@ -9,34 +9,34 @@ GIMP Palette
 Name: Teal
 Columns: 8
 #
-0   128 128   rgb(0, 128, 128)
-0   64  64    rgb(0, 64, 64)
-0   128 128   rgb(0, 128, 128)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-192 192 192   rgb(192, 192, 192)
-128 128 128   rgb(128, 128, 128)
-192 192 192   rgb(192, 192, 192)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-192 192 192   rgb(192, 192, 192)
-192 192 192   rgb(192, 192, 192)
-128 128 128   rgb(128, 128, 128)
-192 192 192   rgb(192, 192, 192)
-128 128 128   rgb(128, 128, 128)
-128 128 128   rgb(128, 128, 128)
-0   0   0     rgb(0, 0, 0)
-255 251 240   rgb(255, 251, 240)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-192 192 192   rgb(192, 192, 192)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-0   204 216   rgb(0, 204, 216)
-152 200 184   rgb(152, 200, 184)
-192 192 192   rgb(192, 192, 192)
-0   128 128   rgb(0, 128, 128)
-0   0   0     rgb(0, 0, 0)
-192 192 192   rgb(192, 192, 192)
+0   128 128   ActiveTitle
+0   64  64    Background
+0   128 128   Hilight
+255 255 255   HilightText
+255 255 255   TitleText
+255 255 255   Window
+0   0   0     WindowText
+192 192 192   Scrollbar
+128 128 128   InactiveTitle
+192 192 192   Menu
+0   0   0     WindowFrame
+0   0   0     MenuText
+192 192 192   ActiveBorder
+192 192 192   InactiveBorder
+128 128 128   AppWorkspace
+192 192 192   ButtonFace
+128 128 128   ButtonShadow
+128 128 128   GrayText
+0   0   0     ButtonText
+255 251 240   InactiveTitleText
+255 255 255   ButtonHilight
+0   0   0     ButtonDkShadow
+192 192 192   ButtonLight
+0   0   0     InfoText
+255 255 255   InfoWindow
+0   204 216   GradientActiveTitle
+152 200 184   GradientInactiveTitle
+192 192 192   ButtonAlternateFace
+0   128 128   HotTrackingColor
+0   0   0     MenuHilight
+192 192 192   MenuBar

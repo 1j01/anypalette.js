@@ -9,34 +9,34 @@ GIMP Palette
 Name: PowerShell
 Columns: 8
 #
-1   36  86    rgb(1, 36, 86)
-1   36  86    rgb(1, 36, 86)
-1   36  86    rgb(1, 36, 86)
-1   36  86    rgb(1, 36, 86)
-1   36  86    rgb(1, 36, 86)
-128 128 128   rgb(128, 128, 128)
-1   36  86    rgb(1, 36, 86)
-128 128 128   rgb(128, 128, 128)
-128 128 128   rgb(128, 128, 128)
-128 128 128   rgb(128, 128, 128)
-255 255 255   rgb(255, 255, 255)
-1   36  86    rgb(1, 36, 86)
-1   36  86    rgb(1, 36, 86)
-180 180 180   rgb(180, 180, 180)
-0   128 128   rgb(0, 128, 128)
-255 255 255   rgb(255, 255, 255)
-0   192 0     rgb(0, 192, 0)
-1   36  86    rgb(1, 36, 86)
-1   36  86    rgb(1, 36, 86)
-192 192 192   rgb(192, 192, 192)
-0   128 128   rgb(0, 128, 128)
-255 255 225   rgb(255, 255, 225)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-1   36  86    rgb(1, 36, 86)
-0   128 128   rgb(0, 128, 128)
-180 180 180   rgb(180, 180, 180)
-255 255 255   rgb(255, 255, 255)
-1   36  86    rgb(1, 36, 86)
-1   36  86    rgb(1, 36, 86)
-238 237 240   rgb(238, 237, 240)
+1   36  86    ActiveBorder
+1   36  86    ActiveTitle
+1   36  86    AppWorkspace
+1   36  86    Background
+1   36  86    ButtonAlternateFace
+128 128 128   ButtonDkShadow
+1   36  86    ButtonFace
+128 128 128   ButtonHilight
+128 128 128   ButtonLight
+128 128 128   ButtonShadow
+255 255 255   ButtonText
+1   36  86    GradientActiveTitle
+1   36  86    GradientInactiveTitle
+180 180 180   GrayText
+0   128 128   Hilight
+255 255 255   HilightText
+0   192 0     HotTrackingColor
+1   36  86    InactiveBorder
+1   36  86    InactiveTitle
+192 192 192   InactiveTitleText
+0   128 128   InfoText
+255 255 225   InfoWindow
+255 255 255   Menu
+255 255 255   MenuBar
+1   36  86    MenuHilight
+0   128 128   MenuText
+180 180 180   Scrollbar
+255 255 255   TitleText
+1   36  86    Window
+1   36  86    WindowFrame
+238 237 240   WindowText

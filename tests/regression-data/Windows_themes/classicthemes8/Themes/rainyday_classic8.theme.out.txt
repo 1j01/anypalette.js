@@ -9,34 +9,34 @@ GIMP Palette
 Name: Rainy Day
 Columns: 8
 #
-79  101 125   rgb(79, 101, 125)
-0   0   0     rgb(0, 0, 0)
-79  101 125   rgb(79, 101, 125)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-193 204 217   rgb(193, 204, 217)
-128 128 128   rgb(128, 128, 128)
-131 153 177   rgb(131, 153, 177)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-131 153 177   rgb(131, 153, 177)
-131 153 177   rgb(131, 153, 177)
-128 128 128   rgb(128, 128, 128)
-131 153 177   rgb(131, 153, 177)
-79  101 125   rgb(79, 101, 125)
-79  101 125   rgb(79, 101, 125)
-0   0   0     rgb(0, 0, 0)
-193 204 217   rgb(193, 204, 217)
-193 204 217   rgb(193, 204, 217)
-0   0   0     rgb(0, 0, 0)
-131 153 177   rgb(131, 153, 177)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-128 180 208   rgb(128, 180, 208)
-176 188 208   rgb(176, 188, 208)
-192 192 192   rgb(192, 192, 192)
-79  101 125   rgb(79, 101, 125)
-0   0   0     rgb(0, 0, 0)
-131 153 177   rgb(131, 153, 177)
+79  101 125   ActiveTitle
+0   0   0     Background
+79  101 125   Hilight
+255 255 255   HilightText
+255 255 255   TitleText
+255 255 255   Window
+0   0   0     WindowText
+193 204 217   Scrollbar
+128 128 128   InactiveTitle
+131 153 177   Menu
+0   0   0     WindowFrame
+0   0   0     MenuText
+131 153 177   ActiveBorder
+131 153 177   InactiveBorder
+128 128 128   AppWorkspace
+131 153 177   ButtonFace
+79  101 125   ButtonShadow
+79  101 125   GrayText
+0   0   0     ButtonText
+193 204 217   InactiveTitleText
+193 204 217   ButtonHilight
+0   0   0     ButtonDkShadow
+131 153 177   ButtonLight
+0   0   0     InfoText
+255 255 255   InfoWindow
+128 180 208   GradientActiveTitle
+176 188 208   GradientInactiveTitle
+192 192 192   ButtonAlternateFace
+79  101 125   HotTrackingColor
+0   0   0     MenuHilight
+131 153 177   MenuBar

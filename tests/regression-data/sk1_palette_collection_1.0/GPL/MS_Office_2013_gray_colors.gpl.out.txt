@@ -9,11 +9,11 @@ GIMP Palette
 Name: MS Office 2013 gray colors
 Columns: 8
 #
-0   0   0     rgb(0, 0, 0)
-33  33  33    rgb(33, 33, 33)
-51  51  51    rgb(51, 51, 51)
-102 102 102   rgb(102, 102, 102)
-200 200 200   rgb(200, 200, 200)
-234 234 234   rgb(234, 234, 234)
-244 244 244   rgb(244, 244, 244)
-255 255 255   rgb(255, 255, 255)
+0   0   0     Black
+33  33  33    Dark
+51  51  51    Primary
+102 102 102   Secondary
+200 200 200   Tertiary
+234 234 234   Light
+244 244 244   Lighter
+255 255 255   White

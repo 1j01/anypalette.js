@@ -9,34 +9,34 @@ GIMP Palette
 Name: Maple
 Columns: 8
 #
-128 0   0     rgb(128, 0, 0)
-0   0   0     rgb(0, 0, 0)
-198 166 70    rgb(198, 166, 70)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-242 236 215   rgb(242, 236, 215)
-198 166 70    rgb(198, 166, 70)
-230 216 174   rgb(230, 216, 174)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-230 216 174   rgb(230, 216, 174)
-230 216 174   rgb(230, 216, 174)
-198 166 70    rgb(198, 166, 70)
-230 216 174   rgb(230, 216, 174)
-198 166 70    rgb(198, 166, 70)
-198 166 70    rgb(198, 166, 70)
-0   0   0     rgb(0, 0, 0)
-242 236 215   rgb(242, 236, 215)
-242 236 215   rgb(242, 236, 215)
-0   0   0     rgb(0, 0, 0)
-230 216 174   rgb(230, 216, 174)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-192 156 56    rgb(192, 156, 56)
-224 200 136   rgb(224, 200, 136)
-192 192 192   rgb(192, 192, 192)
-198 166 70    rgb(198, 166, 70)
-0   0   0     rgb(0, 0, 0)
-230 216 174   rgb(230, 216, 174)
+128 0   0     ActiveTitle
+0   0   0     Background
+198 166 70    Hilight
+0   0   0     HilightText
+255 255 255   TitleText
+255 255 255   Window
+0   0   0     WindowText
+242 236 215   Scrollbar
+198 166 70    InactiveTitle
+230 216 174   Menu
+0   0   0     WindowFrame
+0   0   0     MenuText
+230 216 174   ActiveBorder
+230 216 174   InactiveBorder
+198 166 70    AppWorkspace
+230 216 174   ButtonFace
+198 166 70    ButtonShadow
+198 166 70    GrayText
+0   0   0     ButtonText
+242 236 215   InactiveTitleText
+242 236 215   ButtonHilight
+0   0   0     ButtonDkShadow
+230 216 174   ButtonLight
+0   0   0     InfoText
+255 255 255   InfoWindow
+192 156 56    GradientActiveTitle
+224 200 136   GradientInactiveTitle
+192 192 192   ButtonAlternateFace
+198 166 70    HotTrackingColor
+0   0   0     MenuHilight
+230 216 174   MenuBar

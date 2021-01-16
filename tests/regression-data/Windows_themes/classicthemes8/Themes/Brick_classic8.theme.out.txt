@@ -9,34 +9,34 @@ GIMP Palette
 Name: Brick
 Columns: 8
 #
-128 0   0     rgb(128, 0, 0)
-66  0   0     rgb(66, 0, 0)
-141 137 97    rgb(141, 137, 97)
-255 255 255   rgb(255, 255, 255)
-225 224 210   rgb(225, 224, 210)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-225 224 210   rgb(225, 224, 210)
-141 137 97    rgb(141, 137, 97)
-194 191 165   rgb(194, 191, 165)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-194 191 165   rgb(194, 191, 165)
-194 191 165   rgb(194, 191, 165)
-225 224 210   rgb(225, 224, 210)
-194 191 165   rgb(194, 191, 165)
-141 137 97    rgb(141, 137, 97)
-141 137 97    rgb(141, 137, 97)
-0   0   0     rgb(0, 0, 0)
-225 224 210   rgb(225, 224, 210)
-225 224 210   rgb(225, 224, 210)
-0   0   0     rgb(0, 0, 0)
-194 191 165   rgb(194, 191, 165)
-128 0   0     rgb(128, 0, 0)
-225 224 210   rgb(225, 224, 210)
-176 116 64    rgb(176, 116, 64)
-200 184 112   rgb(200, 184, 112)
-192 192 192   rgb(192, 192, 192)
-128 0   0     rgb(128, 0, 0)
-0   0   0     rgb(0, 0, 0)
-194 191 165   rgb(194, 191, 165)
+128 0   0     ActiveTitle
+66  0   0     Background
+141 137 97    Hilight
+255 255 255   HilightText
+225 224 210   TitleText
+255 255 255   Window
+0   0   0     WindowText
+225 224 210   Scrollbar
+141 137 97    InactiveTitle
+194 191 165   Menu
+0   0   0     WindowFrame
+0   0   0     MenuText
+194 191 165   ActiveBorder
+194 191 165   InactiveBorder
+225 224 210   AppWorkspace
+194 191 165   ButtonFace
+141 137 97    ButtonShadow
+141 137 97    GrayText
+0   0   0     ButtonText
+225 224 210   InactiveTitleText
+225 224 210   ButtonHilight
+0   0   0     ButtonDkShadow
+194 191 165   ButtonLight
+128 0   0     InfoText
+225 224 210   InfoWindow
+176 116 64    GradientActiveTitle
+200 184 112   GradientInactiveTitle
+192 192 192   ButtonAlternateFace
+128 0   0     HotTrackingColor
+0   0   0     MenuHilight
+194 191 165   MenuBar

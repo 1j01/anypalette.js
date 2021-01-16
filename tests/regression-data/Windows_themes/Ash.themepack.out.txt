@@ -9,34 +9,34 @@ GIMP Palette
 Name: Ash
 Columns: 8
 #
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-64  64  64    rgb(64, 64, 64)
-0   0   0     rgb(0, 0, 0)
-175 175 175   rgb(175, 175, 175)
-63  63  63    rgb(63, 63, 63)
-96  96  96    rgb(96, 96, 96)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-96  96  96    rgb(96, 96, 96)
-96  96  96    rgb(96, 96, 96)
-32  32  32    rgb(32, 32, 32)
-96  96  96    rgb(96, 96, 96)
-63  63  63    rgb(63, 63, 63)
-128 128 128   rgb(128, 128, 128)
-0   0   0     rgb(0, 0, 0)
-128 128 128   rgb(128, 128, 128)
-175 175 175   rgb(175, 175, 175)
-0   0   0     rgb(0, 0, 0)
-96  96  96    rgb(96, 96, 96)
-192 192 192   rgb(192, 192, 192)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-192 192 192   rgb(192, 192, 192)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
+0   0   0     ActiveTitle
+0   0   0     Background
+0   0   0     Hilight
+255 255 255   HilightText
+255 255 255   TitleText
+64  64  64    Window
+0   0   0     WindowText
+175 175 175   Scrollbar
+63  63  63    InactiveTitle
+96  96  96    Menu
+0   0   0     WindowFrame
+0   0   0     MenuText
+96  96  96    ActiveBorder
+96  96  96    InactiveBorder
+32  32  32    AppWorkspace
+96  96  96    ButtonFace
+63  63  63    ButtonShadow
+128 128 128   GrayText
+0   0   0     ButtonText
+128 128 128   InactiveTitleText
+175 175 175   ButtonHilight
+0   0   0     ButtonDkShadow
+96  96  96    ButtonLight
+192 192 192   InfoText
+0   0   0     InfoWindow
+0   0   0     GradientActiveTitle
+0   0   0     GradientInactiveTitle
+0   0   0     ButtonAlternateFace
+192 192 192   HotTrackingColor
+0   0   0     MenuHilight
+0   0   0     MenuBar

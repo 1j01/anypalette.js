@@ -9,34 +9,34 @@ GIMP Palette
 Name: Pumpkin
 Columns: 8
 #
-215 165 47    rgb(215, 165, 47)
-66  0   66    rgb(66, 0, 66)
-128 0   128   rgb(128, 0, 128)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-245 234 207   rgb(245, 234, 207)
-160 160 164   rgb(160, 160, 164)
-236 213 157   rgb(236, 213, 157)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-236 213 157   rgb(236, 213, 157)
-236 213 157   rgb(236, 213, 157)
-245 234 207   rgb(245, 234, 207)
-236 213 157   rgb(236, 213, 157)
-215 165 47    rgb(215, 165, 47)
-215 165 47    rgb(215, 165, 47)
-0   0   0     rgb(0, 0, 0)
-245 234 207   rgb(245, 234, 207)
-245 234 207   rgb(245, 234, 207)
-0   0   0     rgb(0, 0, 0)
-236 213 157   rgb(236, 213, 157)
-128 0   128   rgb(128, 0, 128)
-255 255 255   rgb(255, 255, 255)
-224 204 136   rgb(224, 204, 136)
-208 204 144   rgb(208, 204, 144)
-192 192 192   rgb(192, 192, 192)
-215 165 47    rgb(215, 165, 47)
-0   0   0     rgb(0, 0, 0)
-236 213 157   rgb(236, 213, 157)
+215 165 47    ActiveTitle
+66  0   66    Background
+128 0   128   Hilight
+255 255 255   HilightText
+255 255 255   TitleText
+255 255 255   Window
+0   0   0     WindowText
+245 234 207   Scrollbar
+160 160 164   InactiveTitle
+236 213 157   Menu
+0   0   0     WindowFrame
+0   0   0     MenuText
+236 213 157   ActiveBorder
+236 213 157   InactiveBorder
+245 234 207   AppWorkspace
+236 213 157   ButtonFace
+215 165 47    ButtonShadow
+215 165 47    GrayText
+0   0   0     ButtonText
+245 234 207   InactiveTitleText
+245 234 207   ButtonHilight
+0   0   0     ButtonDkShadow
+236 213 157   ButtonLight
+128 0   128   InfoText
+255 255 255   InfoWindow
+224 204 136   GradientActiveTitle
+208 204 144   GradientInactiveTitle
+192 192 192   ButtonAlternateFace
+215 165 47    HotTrackingColor
+0   0   0     MenuHilight
+236 213 157   MenuBar

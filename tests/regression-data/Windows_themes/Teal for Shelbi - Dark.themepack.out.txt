@@ -9,34 +9,34 @@ GIMP Palette
 Name: Teal for Shelbi - Dark
 Columns: 8
 #
-0   96  96    rgb(0, 96, 96)
-0   64  64    rgb(0, 64, 64)
-0   128 128   rgb(0, 128, 128)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-0   48  48    rgb(0, 48, 48)
-255 255 255   rgb(255, 255, 255)
-88  139 139   rgb(88, 139, 139)
-24  50  50    rgb(24, 50, 50)
-32  64  64    rgb(32, 64, 64)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-32  64  64    rgb(32, 64, 64)
-32  64  64    rgb(32, 64, 64)
-21  43  43    rgb(21, 43, 43)
-32  64  64    rgb(32, 64, 64)
-21  43  43    rgb(21, 43, 43)
-64  128 128   rgb(64, 128, 128)
-255 255 255   rgb(255, 255, 255)
-192 204 204   rgb(192, 204, 204)
-88  139 139   rgb(88, 139, 139)
-0   0   0     rgb(0, 0, 0)
-32  64  64    rgb(32, 64, 64)
-255 255 255   rgb(255, 255, 255)
-0   32  32    rgb(0, 32, 32)
-0   132 132   rgb(0, 132, 132)
-92  112 112   rgb(92, 112, 112)
-192 192 192   rgb(192, 192, 192)
-0   132 132   rgb(0, 132, 132)
-0   128 128   rgb(0, 128, 128)
-32  64  64    rgb(32, 64, 64)
+0   96  96    ActiveTitle
+0   64  64    Background
+0   128 128   Hilight
+255 255 255   HilightText
+255 255 255   TitleText
+0   48  48    Window
+255 255 255   WindowText
+88  139 139   Scrollbar
+24  50  50    InactiveTitle
+32  64  64    Menu
+0   0   0     WindowFrame
+255 255 255   MenuText
+32  64  64    ActiveBorder
+32  64  64    InactiveBorder
+21  43  43    AppWorkspace
+32  64  64    ButtonFace
+21  43  43    ButtonShadow
+64  128 128   GrayText
+255 255 255   ButtonText
+192 204 204   InactiveTitleText
+88  139 139   ButtonHilight
+0   0   0     ButtonDkShadow
+32  64  64    ButtonLight
+255 255 255   InfoText
+0   32  32    InfoWindow
+0   132 132   GradientActiveTitle
+92  112 112   GradientInactiveTitle
+192 192 192   ButtonAlternateFace
+0   132 132   HotTrackingColor
+0   128 128   MenuHilight
+32  64  64    MenuBar

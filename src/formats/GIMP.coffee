@@ -68,7 +68,7 @@ write_gimp_or_kde_rgb_palette = (palette, format_name)->
 	#
 	#{palette.map((color)=>
 		{r, g, b} = color
-		"#{[r, g, b].map((component)=> "#{Math.round(component)}".padEnd(3, " ")).join(" ")}   #{color}"
+		"#{[r, g, b].map((component)=> "#{Math.round(component)}".padEnd(3, " ")).join(" ")}   #{color.name or color}"
 	).join("\n")}
 	"""
 

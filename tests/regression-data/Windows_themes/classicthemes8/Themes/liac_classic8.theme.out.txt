@@ -9,34 +9,34 @@ GIMP Palette
 Name: Liac
 Columns: 8
 #
-90  78  177   rgb(90, 78, 177)
-0   0   0     rgb(0, 0, 0)
-90  78  177   rgb(90, 78, 177)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-174 168 217   rgb(174, 168, 217)
-128 128 128   rgb(128, 128, 128)
-174 168 217   rgb(174, 168, 217)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-174 168 217   rgb(174, 168, 217)
-174 168 217   rgb(174, 168, 217)
-90  78  177   rgb(90, 78, 177)
-174 168 217   rgb(174, 168, 217)
-90  78  177   rgb(90, 78, 177)
-90  78  177   rgb(90, 78, 177)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-216 213 236   rgb(216, 213, 236)
-0   0   0     rgb(0, 0, 0)
-174 168 217   rgb(174, 168, 217)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-182 143 203   rgb(182, 143, 203)
-184 180 208   rgb(184, 180, 208)
-192 192 192   rgb(192, 192, 192)
-90  78  177   rgb(90, 78, 177)
-0   0   0     rgb(0, 0, 0)
-174 168 217   rgb(174, 168, 217)
+90  78  177   ActiveTitle
+0   0   0     Background
+90  78  177   Hilight
+255 255 255   HilightText
+255 255 255   TitleText
+255 255 255   Window
+0   0   0     WindowText
+174 168 217   Scrollbar
+128 128 128   InactiveTitle
+174 168 217   Menu
+0   0   0     WindowFrame
+0   0   0     MenuText
+174 168 217   ActiveBorder
+174 168 217   InactiveBorder
+90  78  177   AppWorkspace
+174 168 217   ButtonFace
+90  78  177   ButtonShadow
+90  78  177   GrayText
+0   0   0     ButtonText
+255 255 255   InactiveTitleText
+216 213 236   ButtonHilight
+0   0   0     ButtonDkShadow
+174 168 217   ButtonLight
+0   0   0     InfoText
+255 255 255   InfoWindow
+182 143 203   GradientActiveTitle
+184 180 208   GradientInactiveTitle
+192 192 192   ButtonAlternateFace
+90  78  177   HotTrackingColor
+0   0   0     MenuHilight
+174 168 217   MenuBar

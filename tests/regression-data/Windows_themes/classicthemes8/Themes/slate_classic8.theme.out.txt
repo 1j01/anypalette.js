@@ -9,34 +9,34 @@ GIMP Palette
 Name: Slate
 Columns: 8
 #
-85  128 151   rgb(85, 128, 151)
-65  65  65    rgb(65, 65, 65)
-85  128 151   rgb(85, 128, 151)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-206 220 227   rgb(206, 220, 227)
-128 128 128   rgb(128, 128, 128)
-157 185 200   rgb(157, 185, 200)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-157 185 200   rgb(157, 185, 200)
-157 185 200   rgb(157, 185, 200)
-66  66  66    rgb(66, 66, 66)
-157 185 200   rgb(157, 185, 200)
-85  128 151   rgb(85, 128, 151)
-85  128 151   rgb(85, 128, 151)
-0   0   0     rgb(0, 0, 0)
-192 192 192   rgb(192, 192, 192)
-206 220 227   rgb(206, 220, 227)
-0   0   0     rgb(0, 0, 0)
-157 185 200   rgb(157, 185, 200)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-136 184 216   rgb(136, 184, 216)
-160 188 200   rgb(160, 188, 200)
-192 192 192   rgb(192, 192, 192)
-85  128 151   rgb(85, 128, 151)
-0   0   0     rgb(0, 0, 0)
-157 185 200   rgb(157, 185, 200)
+85  128 151   ActiveTitle
+65  65  65    Background
+85  128 151   Hilight
+255 255 255   HilightText
+255 255 255   TitleText
+255 255 255   Window
+0   0   0     WindowText
+206 220 227   Scrollbar
+128 128 128   InactiveTitle
+157 185 200   Menu
+0   0   0     WindowFrame
+0   0   0     MenuText
+157 185 200   ActiveBorder
+157 185 200   InactiveBorder
+66  66  66    AppWorkspace
+157 185 200   ButtonFace
+85  128 151   ButtonShadow
+85  128 151   GrayText
+0   0   0     ButtonText
+192 192 192   InactiveTitleText
+206 220 227   ButtonHilight
+0   0   0     ButtonDkShadow
+157 185 200   ButtonLight
+0   0   0     InfoText
+255 255 255   InfoWindow
+136 184 216   GradientActiveTitle
+160 188 200   GradientInactiveTitle
+192 192 192   ButtonAlternateFace
+85  128 151   HotTrackingColor
+0   0   0     MenuHilight
+157 185 200   MenuBar

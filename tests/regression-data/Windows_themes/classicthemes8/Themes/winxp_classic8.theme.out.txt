@@ -9,30 +9,30 @@ GIMP Palette
 Name: Windows XP Classic
 Columns: 8
 #
-10  36  106   rgb(10, 36, 106)
-58  110 165   rgb(58, 110, 165)
-10  36  106   rgb(10, 36, 106)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-212 208 200   rgb(212, 208, 200)
-128 128 128   rgb(128, 128, 128)
-212 208 200   rgb(212, 208, 200)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-212 208 200   rgb(212, 208, 200)
-212 208 200   rgb(212, 208, 200)
-128 128 128   rgb(128, 128, 128)
-212 208 200   rgb(212, 208, 200)
-128 128 128   rgb(128, 128, 128)
-128 128 128   rgb(128, 128, 128)
-0   0   0     rgb(0, 0, 0)
-212 208 200   rgb(212, 208, 200)
-255 255 255   rgb(255, 255, 255)
-64  64  64    rgb(64, 64, 64)
-212 208 200   rgb(212, 208, 200)
-0   0   0     rgb(0, 0, 0)
-255 255 225   rgb(255, 255, 225)
-166 202 240   rgb(166, 202, 240)
-192 192 192   rgb(192, 192, 192)
+10  36  106   ActiveTitle
+58  110 165   Background
+10  36  106   Hilight
+255 255 255   HilightText
+255 255 255   TitleText
+255 255 255   Window
+0   0   0     WindowText
+212 208 200   Scrollbar
+128 128 128   InactiveTitle
+212 208 200   Menu
+0   0   0     WindowFrame
+0   0   0     MenuText
+212 208 200   ActiveBorder
+212 208 200   InactiveBorder
+128 128 128   AppWorkspace
+212 208 200   ButtonFace
+128 128 128   ButtonShadow
+128 128 128   GrayText
+0   0   0     ButtonText
+212 208 200   InactiveTitleText
+255 255 255   ButtonHilight
+64  64  64    ButtonDkShadow
+212 208 200   ButtonLight
+0   0   0     InfoText
+255 255 225   InfoWindow
+166 202 240   GradientActiveTitle
+192 192 192   GradientInactiveTitle

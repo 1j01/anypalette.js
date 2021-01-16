@@ -9,34 +9,34 @@ GIMP Palette
 Name: Wheat
 Columns: 8
 #
-128 128 0     rgb(128, 128, 0)
-0   64  29    rgb(0, 64, 29)
-128 128 0     rgb(128, 128, 0)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-238 238 208   rgb(238, 238, 208)
-188 188 65    rgb(188, 188, 65)
-222 222 160   rgb(222, 222, 160)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-222 222 160   rgb(222, 222, 160)
-222 222 160   rgb(222, 222, 160)
-188 188 65    rgb(188, 188, 65)
-222 222 160   rgb(222, 222, 160)
-188 188 65    rgb(188, 188, 65)
-188 188 65    rgb(188, 188, 65)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-238 238 208   rgb(238, 238, 208)
-0   0   0     rgb(0, 0, 0)
-222 222 160   rgb(222, 222, 160)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-200 176 72    rgb(200, 176, 72)
-184 184 128   rgb(184, 184, 128)
-192 192 192   rgb(192, 192, 192)
-128 128 0     rgb(128, 128, 0)
-0   0   0     rgb(0, 0, 0)
-222 222 160   rgb(222, 222, 160)
+128 128 0     ActiveTitle
+0   64  29    Background
+128 128 0     Hilight
+255 255 255   HilightText
+255 255 255   TitleText
+255 255 255   Window
+0   0   0     WindowText
+238 238 208   Scrollbar
+188 188 65    InactiveTitle
+222 222 160   Menu
+0   0   0     WindowFrame
+0   0   0     MenuText
+222 222 160   ActiveBorder
+222 222 160   InactiveBorder
+188 188 65    AppWorkspace
+222 222 160   ButtonFace
+188 188 65    ButtonShadow
+188 188 65    GrayText
+0   0   0     ButtonText
+255 255 255   InactiveTitleText
+238 238 208   ButtonHilight
+0   0   0     ButtonDkShadow
+222 222 160   ButtonLight
+0   0   0     InfoText
+255 255 255   InfoWindow
+200 176 72    GradientActiveTitle
+184 184 128   GradientInactiveTitle
+192 192 192   ButtonAlternateFace
+128 128 0     HotTrackingColor
+0   0   0     MenuHilight
+222 222 160   MenuBar

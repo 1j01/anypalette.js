@@ -9,34 +9,34 @@ GIMP Palette
 Name: Vista-esque Midnight (Green)
 Columns: 8
 #
-18  91  30    rgb(18, 91, 30)
-15  45  30    rgb(15, 45, 30)
-32  128 44    rgb(32, 128, 44)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-128 128 128   rgb(128, 128, 128)
-18  91  30    rgb(18, 91, 30)
-32  32  32    rgb(32, 32, 32)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-32  32  32    rgb(32, 32, 32)
-32  32  32    rgb(32, 32, 32)
-21  21  21    rgb(21, 21, 21)
-32  32  32    rgb(32, 32, 32)
-21  21  21    rgb(21, 21, 21)
-32  32  32    rgb(32, 32, 32)
-255 255 255   rgb(255, 255, 255)
-192 192 192   rgb(192, 192, 192)
-128 128 128   rgb(128, 128, 128)
-0   0   0     rgb(0, 0, 0)
-32  32  32    rgb(32, 32, 32)
-255 255 255   rgb(255, 255, 255)
-0   30  0     rgb(0, 30, 0)
-100 168 60    rgb(100, 168, 60)
-18  91  30    rgb(18, 91, 30)
-192 192 192   rgb(192, 192, 192)
-64  180 64    rgb(64, 180, 64)
-32  128 44    rgb(32, 128, 44)
-32  32  32    rgb(32, 32, 32)
+18  91  30    ActiveTitle
+15  45  30    Background
+32  128 44    Hilight
+255 255 255   HilightText
+255 255 255   TitleText
+0   0   0     Window
+255 255 255   WindowText
+128 128 128   Scrollbar
+18  91  30    InactiveTitle
+32  32  32    Menu
+0   0   0     WindowFrame
+255 255 255   MenuText
+32  32  32    ActiveBorder
+32  32  32    InactiveBorder
+21  21  21    AppWorkspace
+32  32  32    ButtonFace
+21  21  21    ButtonShadow
+32  32  32    GrayText
+255 255 255   ButtonText
+192 192 192   InactiveTitleText
+128 128 128   ButtonHilight
+0   0   0     ButtonDkShadow
+32  32  32    ButtonLight
+255 255 255   InfoText
+0   30  0     InfoWindow
+100 168 60    GradientActiveTitle
+18  91  30    GradientInactiveTitle
+192 192 192   ButtonAlternateFace
+64  180 64    HotTrackingColor
+32  128 44    MenuHilight
+32  32  32    MenuBar

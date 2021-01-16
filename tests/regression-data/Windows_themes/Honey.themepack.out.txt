@@ -9,34 +9,34 @@ GIMP Palette
 Name: Honey
 Columns: 8
 #
-255 255 0     rgb(255, 255, 0)
-170 123 0     rgb(170, 123, 0)
-170 123 0     rgb(170, 123, 0)
-255 255 0     rgb(255, 255, 0)
-0   0   0     rgb(0, 0, 0)
-255 220 128   rgb(255, 220, 128)
-0   0   0     rgb(0, 0, 0)
-255 220 128   rgb(255, 220, 128)
-255 186 0     rgb(255, 186, 0)
-255 186 0     rgb(255, 186, 0)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-255 186 0     rgb(255, 186, 0)
-255 186 0     rgb(255, 186, 0)
-170 123 0     rgb(170, 123, 0)
-255 186 0     rgb(255, 186, 0)
-170 123 0     rgb(170, 123, 0)
-170 123 0     rgb(170, 123, 0)
-0   0   0     rgb(0, 0, 0)
-170 123 0     rgb(170, 123, 0)
-255 220 128   rgb(255, 220, 128)
-64  64  64    rgb(64, 64, 64)
-255 186 0     rgb(255, 186, 0)
-0   0   0     rgb(0, 0, 0)
-255 220 128   rgb(255, 220, 128)
-255 186 0     rgb(255, 186, 0)
-255 220 128   rgb(255, 220, 128)
-192 192 192   rgb(192, 192, 192)
-128 128 0     rgb(128, 128, 0)
-0   0   128   rgb(0, 0, 128)
-192 192 192   rgb(192, 192, 192)
+255 255 0     ActiveTitle
+170 123 0     Background
+170 123 0     Hilight
+255 255 0     HilightText
+0   0   0     TitleText
+255 220 128   Window
+0   0   0     WindowText
+255 220 128   Scrollbar
+255 186 0     InactiveTitle
+255 186 0     Menu
+0   0   0     WindowFrame
+0   0   0     MenuText
+255 186 0     ActiveBorder
+255 186 0     InactiveBorder
+170 123 0     AppWorkspace
+255 186 0     ButtonFace
+170 123 0     ButtonShadow
+170 123 0     GrayText
+0   0   0     ButtonText
+170 123 0     InactiveTitleText
+255 220 128   ButtonHilight
+64  64  64    ButtonDkShadow
+255 186 0     ButtonLight
+0   0   0     InfoText
+255 220 128   InfoWindow
+255 186 0     GradientActiveTitle
+255 220 128   GradientInactiveTitle
+192 192 192   ButtonAlternateFace
+128 128 0     HotTrackingColor
+0   0   128   MenuHilight
+192 192 192   MenuBar

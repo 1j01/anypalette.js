@@ -9,34 +9,34 @@ GIMP Palette
 Name: Rose
 Columns: 8
 #
-159 96  112   rgb(159, 96, 112)
-128 128 128   rgb(128, 128, 128)
-159 96  112   rgb(159, 96, 112)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-207 175 183   rgb(207, 175, 183)
-160 160 164   rgb(160, 160, 164)
-207 175 183   rgb(207, 175, 183)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-207 175 183   rgb(207, 175, 183)
-207 175 183   rgb(207, 175, 183)
-159 96  112   rgb(159, 96, 112)
-207 175 183   rgb(207, 175, 183)
-159 96  112   rgb(159, 96, 112)
-159 96  112   rgb(159, 96, 112)
-0   0   0     rgb(0, 0, 0)
-125 125 125   rgb(125, 125, 125)
-231 216 220   rgb(231, 216, 220)
-0   0   0     rgb(0, 0, 0)
-207 175 183   rgb(207, 175, 183)
-0   0   0     rgb(0, 0, 0)
-255 255 255   rgb(255, 255, 255)
-216 204 208   rgb(216, 204, 208)
-208 212 208   rgb(208, 212, 208)
-192 192 192   rgb(192, 192, 192)
-159 96  112   rgb(159, 96, 112)
-0   0   0     rgb(0, 0, 0)
-207 175 183   rgb(207, 175, 183)
+159 96  112   ActiveTitle
+128 128 128   Background
+159 96  112   Hilight
+255 255 255   HilightText
+255 255 255   TitleText
+255 255 255   Window
+0   0   0     WindowText
+207 175 183   Scrollbar
+160 160 164   InactiveTitle
+207 175 183   Menu
+0   0   0     WindowFrame
+0   0   0     MenuText
+207 175 183   ActiveBorder
+207 175 183   InactiveBorder
+159 96  112   AppWorkspace
+207 175 183   ButtonFace
+159 96  112   ButtonShadow
+159 96  112   GrayText
+0   0   0     ButtonText
+125 125 125   InactiveTitleText
+231 216 220   ButtonHilight
+0   0   0     ButtonDkShadow
+207 175 183   ButtonLight
+0   0   0     InfoText
+255 255 255   InfoWindow
+216 204 208   GradientActiveTitle
+208 212 208   GradientInactiveTitle
+192 192 192   ButtonAlternateFace
+159 96  112   HotTrackingColor
+0   0   0     MenuHilight
+207 175 183   MenuBar

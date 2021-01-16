@@ -9,34 +9,34 @@ GIMP Palette
 Name: Blue
 Columns: 8
 #
-0   0   128   rgb(0, 0, 128)
-58  110 165   rgb(58, 110, 165)
-51  153 255   rgb(51, 153, 255)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-211 228 248   rgb(211, 228, 248)
-49  131 221   rgb(49, 131, 221)
-166 202 240   rgb(166, 202, 240)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-166 202 240   rgb(166, 202, 240)
-166 202 240   rgb(166, 202, 240)
-49  131 221   rgb(49, 131, 221)
-166 202 240   rgb(166, 202, 240)
-49  131 221   rgb(49, 131, 221)
-49  131 221   rgb(49, 131, 221)
-0   0   0     rgb(0, 0, 0)
-0   0   128   rgb(0, 0, 128)
-211 228 248   rgb(211, 228, 248)
-0   0   0     rgb(0, 0, 0)
-166 202 240   rgb(166, 202, 240)
-0   0   0     rgb(0, 0, 0)
-225 225 255   rgb(225, 225, 255)
-16  132 208   rgb(16, 132, 208)
-49  131 221   rgb(49, 131, 221)
-192 192 192   rgb(192, 192, 192)
-0   0   128   rgb(0, 0, 128)
-0   0   128   rgb(0, 0, 128)
-166 202 240   rgb(166, 202, 240)
+0   0   128   ActiveTitle
+58  110 165   Background
+51  153 255   Hilight
+255 255 255   HilightText
+255 255 255   TitleText
+255 255 255   Window
+0   0   0     WindowText
+211 228 248   Scrollbar
+49  131 221   InactiveTitle
+166 202 240   Menu
+0   0   0     WindowFrame
+0   0   0     MenuText
+166 202 240   ActiveBorder
+166 202 240   InactiveBorder
+49  131 221   AppWorkspace
+166 202 240   ButtonFace
+49  131 221   ButtonShadow
+49  131 221   GrayText
+0   0   0     ButtonText
+0   0   128   InactiveTitleText
+211 228 248   ButtonHilight
+0   0   0     ButtonDkShadow
+166 202 240   ButtonLight
+0   0   0     InfoText
+225 225 255   InfoWindow
+16  132 208   GradientActiveTitle
+49  131 221   GradientInactiveTitle
+192 192 192   ButtonAlternateFace
+0   0   128   HotTrackingColor
+0   0   128   MenuHilight
+166 202 240   MenuBar

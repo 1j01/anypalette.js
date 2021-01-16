@@ -9,34 +9,34 @@ GIMP Palette
 Name: Storm
 Columns: 8
 #
-128 0   128   rgb(128, 0, 128)
-0   0   0     rgb(0, 0, 0)
-128 0   128   rgb(128, 0, 128)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-192 192 192   rgb(192, 192, 192)
-128 128 128   rgb(128, 128, 128)
-192 192 192   rgb(192, 192, 192)
-0   0   0     rgb(0, 0, 0)
-0   0   0     rgb(0, 0, 0)
-192 192 192   rgb(192, 192, 192)
-192 192 192   rgb(192, 192, 192)
-128 128 128   rgb(128, 128, 128)
-192 192 192   rgb(192, 192, 192)
-128 128 128   rgb(128, 128, 128)
-128 128 128   rgb(128, 128, 128)
-0   0   0     rgb(0, 0, 0)
-192 192 192   rgb(192, 192, 192)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-192 192 192   rgb(192, 192, 192)
-128 0   128   rgb(128, 0, 128)
-255 255 255   rgb(255, 255, 255)
-56  140 176   rgb(56, 140, 176)
-168 172 168   rgb(168, 172, 168)
-192 192 192   rgb(192, 192, 192)
-128 0   128   rgb(128, 0, 128)
-0   0   0     rgb(0, 0, 0)
-192 192 192   rgb(192, 192, 192)
+128 0   128   ActiveTitle
+0   0   0     Background
+128 0   128   Hilight
+255 255 255   HilightText
+255 255 255   TitleText
+255 255 255   Window
+0   0   0     WindowText
+192 192 192   Scrollbar
+128 128 128   InactiveTitle
+192 192 192   Menu
+0   0   0     WindowFrame
+0   0   0     MenuText
+192 192 192   ActiveBorder
+192 192 192   InactiveBorder
+128 128 128   AppWorkspace
+192 192 192   ButtonFace
+128 128 128   ButtonShadow
+128 128 128   GrayText
+0   0   0     ButtonText
+192 192 192   InactiveTitleText
+255 255 255   ButtonHilight
+0   0   0     ButtonDkShadow
+192 192 192   ButtonLight
+128 0   128   InfoText
+255 255 255   InfoWindow
+56  140 176   GradientActiveTitle
+168 172 168   GradientInactiveTitle
+192 192 192   ButtonAlternateFace
+128 0   128   HotTrackingColor
+0   0   0     MenuHilight
+192 192 192   MenuBar

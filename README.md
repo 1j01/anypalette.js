@@ -161,7 +161,14 @@ document.body.appendChild(a);
 a.click(); // Note: this must happen during a user gesture to work
 document.body.removeChild(a);
 ```
+#### `AnyPalette.uniqueColors(palette)`
 
+Some palette formats are commonly made variable size by just leaving unused slots a certain color
+such as `#000` or `#00F`.
+You can get a [`Palette`](#class-palette-extends-array) with only unique colors like so:
+```js
+var withoutDuplicates = AnyPalette.uniqueColors(palette);
+```
 
 ### class `Palette` extends `Array`
 
@@ -172,12 +179,6 @@ Stores a list of [`Color`](#class-color)s, and some metadata.
 
 Because `Palette` is a subclass of `Array`, you can use `forEach`, `map`, `join` and other methods,
 or access the colors via indexing e.g. `palette[0]` and loop over them using `palette.length`
-
-#### `palette.withoutDuplicates()`
-
-Some palette formats are commonly made variable size by just leaving unused slots a certain color
-such as `#000` or `#00F`.
-You can get a `Palette` with only unique colors with `palette.withoutDuplicates()`
 
 #### `palette.numberOfColumns`
 
@@ -207,17 +208,14 @@ div.style.background = color;
 ctx.fillStyle = color;
 ```
 
-See [Using JavaScript's 'toString' Method](http://adripofjavascript.com/blog/drips/using-javascripts-tostring-method.html), which incidentally uses a `Color` class as an example.
+See [*Using JavaScript's 'toString' Method*](http://adripofjavascript.com/blog/drips/using-javascripts-tostring-method.html), which incidentally uses a `Color` class as an example.
 
-`Color` objects also have `r`, `g`, `b` properties, and **depending on how they were loaded**, might have `h`, `s`, `l`.
+`Color` objects also have `r`, `g`, `b` properties, and **depending on how they were loaded**, might have `h`, `s`, `l`, and/or `alpha`.
 
-Also for some palette formats, such as `.gpl` files, a `Color` may have a `name` (it's either a string or undefined)
+Also for some palette formats, such as `.gpl` files, a `Color` may have a `name` (it's either a string or `undefined`)
 
 
 ## Todo
-
-
-* Save palettes to different formats. [jBinary](https://github.com/jDataView/jBinary) may be helpful.
 
 
 * Load *all the palettes!*

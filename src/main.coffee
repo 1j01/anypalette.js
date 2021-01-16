@@ -61,6 +61,7 @@ formats =
 		name: "CSS colors"
 		exts: ["css", "scss", "sass", "less", "styl", "html", "htm", "svg", "js", "ts", "xml", "txt"]
 		load: require "./formats/CSS"
+		write: (require "./formats/CSS").write
 	}
 	WINDOWS_THEME_COLORS: {
 		name: "Windows desktop theme"

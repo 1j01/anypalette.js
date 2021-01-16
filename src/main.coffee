@@ -237,12 +237,13 @@ AnyPalette.loadPalette = (o, callback)->
 	else
 		throw new TypeError "either options.data or options.file or options.filePath must be passed"
 
-AnyPalette.savePalette = (palette, format)->
+AnyPalette.writePalette = (palette, format)->
 	format ?= AnyPalette.formats.GIMP_PALETTE
 
-	palette_content = format.write(palette)
-	file = new File([palette_content], (palette.name ? "Saved Colors") + ".#{format.exts[0]}")
-	return [file, format.exts[0]]
+	palette_content_string = format.write(palette)
+	return palette_content_string
+	# file = new File([palette_content_string], (palette.name ? "Saved Colors") + ".#{format.exts[0]}")
+	# return [file, format.exts[0]]
 
 
 # Exports

@@ -199,7 +199,9 @@
 							$save.text(formats[format_index].name);
 						}, 500);
 						$save.on("click", () => {
-							var [file, ext] = AnyPalette.savePalette(palette, formats[format_index]);
+							var format = formats[format_index];
+							var file_content = AnyPalette.writePalette(palette, format);
+							var file = new File([file_content], `${palette_name.replace(/.*\//, "")}.${format.exts[0]}`);
 							var url = URL.createObjectURL(file);
 							var a = document.createElement("a");
 							a.href = url;

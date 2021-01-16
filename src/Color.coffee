@@ -133,6 +133,8 @@ class Color
 			else
 				"rgb(#{@r}, #{@g}, #{@b})"
 	
-	is: (color)->
-		# compare as strings
-		"#{@}" is "#{color}"
+	is: (color, epsilon=0.0001)->
+		Math.abs(color.r - @r) < epsilon and
+		Math.abs(color.g - @g) < epsilon and
+		Math.abs(color.b - @b) < epsilon and
+		Math.abs((color.alpha ? 1) - (@alpha ? 1)) < epsilon

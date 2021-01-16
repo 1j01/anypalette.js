@@ -81,13 +81,10 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 											console.log("Original format:", format)
 											console.error "Reparsed with a different format (#{reparsed_as_format.name} rather than #{format.name})"
 											process.exit(1)
-										rounded = Array.from(palette).map (color)->
-											color.toString().replace /\d+\.\d+/g, (num_str)->
-												Math.round parseFloat num_str
-										if rounded.every((color, index)-> reparsed_palette[index].is color)
+										if palette.every((color, index)-> reparsed_palette[index].is color)
 											console.log "Reparsing successful - it's a match!"
 										else
-											console.log("Reparsed:", Array.from reparsed_palette.map((color)-> color.toString()))
-											console.log("Original (but with numbers rounded):", Array.from rounded.map((color)-> color.toString()))
+											console.log("Reparsed:", [reparsed_palette...].map((color)-> color.toString()))
+											console.log("Original:", [palette...].map((color)-> color.toString()))
 											console.error "Reparsing failed - colors don't match!"
-											# process.exit(1)
+											process.exit(1)

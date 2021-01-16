@@ -6,7 +6,7 @@ numberOfColumns:                1
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Android icon colors'
+Name: Android icon colors
 Columns: 1
 #
 255 255 255   rgba(255, 255, 255, 1)

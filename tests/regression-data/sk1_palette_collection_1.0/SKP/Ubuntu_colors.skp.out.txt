@@ -6,7 +6,7 @@ numberOfColumns:                1
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Ubuntu colors'
+Name: Ubuntu colors
 Columns: 1
 #
 221 72  20    rgba(221, 72, 20, 1)

@@ -6,7 +6,7 @@ numberOfColumns:                15
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Google Material design palette'
+Name: Google Material design palette
 Columns: 15
 #
 244 67  54    rgba(244.0000006556511, 67.00000360608101, 54.00000058114529, 1)

@@ -6,7 +6,7 @@ numberOfColumns:                6
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Windows 10 personalizing colors'
+Name: Windows 10 personalizing colors
 Columns: 6
 #
 171 171 171   rgba(171, 171, 171, 1)

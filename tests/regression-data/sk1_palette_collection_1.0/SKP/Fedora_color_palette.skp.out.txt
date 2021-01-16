@@ -6,7 +6,7 @@ numberOfColumns:                2
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Fedora color palette'
+Name: Fedora color palette
 Columns: 2
 #
 60  110 180   rgba(60, 110, 180, 1)

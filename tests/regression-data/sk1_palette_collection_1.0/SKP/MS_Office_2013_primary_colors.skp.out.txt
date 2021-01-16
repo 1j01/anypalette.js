@@ -6,7 +6,7 @@ numberOfColumns:                4
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'MS Office 2013 primary colors'
+Name: MS Office 2013 primary colors
 Columns: 4
 #
 0   90  158   rgba(0, 90, 158, 1)

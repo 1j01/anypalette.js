@@ -6,7 +6,7 @@ numberOfColumns:                20
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'X11 named colors'
+Name: X11 named colors
 Columns: 20
 #
 255 250 250   rgba(255, 250, 250, 1)

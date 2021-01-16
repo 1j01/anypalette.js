@@ -6,7 +6,7 @@ numberOfColumns:                4
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Lible Colors'
+Name: Lible Colors
 Columns: 4
 #
 24  163 3     rgba(24, 163, 3, 1)

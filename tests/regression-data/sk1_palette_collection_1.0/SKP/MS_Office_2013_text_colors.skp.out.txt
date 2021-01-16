@@ -6,7 +6,7 @@ numberOfColumns:                1
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'MS Office 2013 text colors'
+Name: MS Office 2013 text colors
 Columns: 1
 #
 0   0   0     rgba(0, 0, 0, 1)

@@ -6,7 +6,7 @@ numberOfColumns:                4
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Windows Phone 7 colors'
+Name: Windows Phone 7 colors
 Columns: 4
 #
 140 191 38    rgba(140, 191, 38, 1)

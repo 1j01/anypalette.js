@@ -6,7 +6,7 @@ numberOfColumns:                3
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Echo Icon Theme Palette'
+Name: Echo Icon Theme Palette
 Columns: 3
 #
 25  174 255   rgba(25, 174, 255, 1)

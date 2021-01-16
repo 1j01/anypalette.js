@@ -6,7 +6,7 @@ numberOfColumns:                1
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Windows 8 colors'
+Name: Windows 8 colors
 Columns: 1
 #
 0   130 153   rgba(0, 130, 153, 1)

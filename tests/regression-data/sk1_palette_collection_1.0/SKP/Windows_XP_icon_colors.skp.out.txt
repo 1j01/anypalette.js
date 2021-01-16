@@ -6,7 +6,7 @@ numberOfColumns:                1
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Windows XP icon colors'
+Name: Windows XP icon colors
 Columns: 1
 #
 153 102 0     rgba(153, 102, 0, 1)

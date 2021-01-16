@@ -6,7 +6,7 @@ numberOfColumns:                1
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Eclipse icon 8-color palette'
+Name: Eclipse icon 8-color palette
 Columns: 1
 #
 63  63  95    rgba(63, 63, 95, 1)

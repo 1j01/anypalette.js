@@ -6,7 +6,7 @@ numberOfColumns:                1
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'openSUSE colors'
+Name: openSUSE colors
 Columns: 1
 #
 252 174 27    rgba(252, 174, 27, 1)

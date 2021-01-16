@@ -6,7 +6,7 @@ numberOfColumns:                1
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'LibreOffice branding colors'
+Name: LibreOffice branding colors
 Columns: 1
 #
 112 167 82    rgba(112, 167, 82, 1)

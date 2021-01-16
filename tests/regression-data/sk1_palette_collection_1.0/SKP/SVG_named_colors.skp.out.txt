@@ -6,7 +6,7 @@ numberOfColumns:                1
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'SVG named colors'
+Name: SVG named colors
 Columns: 1
 #
 240 248 255   rgba(240, 248, 255, 1)

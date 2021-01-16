@@ -6,7 +6,7 @@ numberOfColumns:                14
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Ubuntu color tints'
+Name: Ubuntu color tints
 Columns: 14
 #
 221 72  20    rgba(221, 72, 20, 1)

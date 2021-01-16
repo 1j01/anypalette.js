@@ -6,7 +6,7 @@ numberOfColumns:                8
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Android ICS colors'
+Name: Android ICS colors
 Columns: 8
 #
 51  181 229   rgba(51, 181, 229, 1)

@@ -6,7 +6,7 @@ numberOfColumns:                4
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'iOS 7 colors'
+Name: iOS 7 colors
 Columns: 4
 #
 90  200 250   rgba(90, 200, 250, 1)

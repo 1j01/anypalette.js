@@ -6,7 +6,7 @@ numberOfColumns:                5
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Bluecurve icon colors'
+Name: Bluecurve icon colors
 Columns: 5
 #
 221 190 221   rgba(221, 190, 221, 1)

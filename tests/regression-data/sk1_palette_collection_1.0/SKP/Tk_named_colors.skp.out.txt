@@ -6,7 +6,7 @@ numberOfColumns:                5
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Tk named colors'
+Name: Tk named colors
 Columns: 5
 #
 240 248 255   rgba(240, 248, 255, 1)

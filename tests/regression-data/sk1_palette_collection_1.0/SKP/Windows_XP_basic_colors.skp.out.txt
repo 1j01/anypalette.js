@@ -6,7 +6,7 @@ numberOfColumns:                8
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Windows XP basic colors'
+Name: Windows XP basic colors
 Columns: 8
 #
 255 128 128   rgba(255, 128, 128, 1)

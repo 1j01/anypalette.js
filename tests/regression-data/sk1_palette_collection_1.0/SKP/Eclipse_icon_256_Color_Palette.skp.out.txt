@@ -6,7 +6,7 @@ numberOfColumns:                16
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Eclipse icon 256 Color Palette'
+Name: Eclipse icon 256 Color Palette
 Columns: 16
 #
 0   0   0     rgba(0, 0, 0, 1)

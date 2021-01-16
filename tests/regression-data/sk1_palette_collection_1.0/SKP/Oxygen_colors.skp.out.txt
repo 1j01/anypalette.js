@@ -6,7 +6,7 @@ numberOfColumns:                1
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Oxygen colors'
+Name: Oxygen colors
 Columns: 1
 #
 56  37  9     rgba(56, 37, 9, 1)

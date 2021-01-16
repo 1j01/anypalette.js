@@ -6,7 +6,7 @@ numberOfColumns:                5
 
 Colors (in GPL format):
 GIMP Palette
-Name: 'Flat UI colors'
+Name: Flat UI colors
 Columns: 5
 #
 26  188 156   rgba(26, 188, 156, 1)

@@ -1,6 +1,7 @@
 
-# Detect CSS colors (except named colors)
+# Detect CSS colors (except named colors), and write .css files
 
+css_escape = require "css.escape"
 Palette = require "../Palette"
 
 # TODO: detect names via structures like CSS variables, JSON object keys/values, comments
@@ -155,3 +156,14 @@ module.exports = ({data})->
 		][n] + " (#{n})")
 	
 	most_colors
+
+module.exports.write = (palette)->
+	"""
+	:root {
+		#{
+			palette.map((color, index)->
+				"--#{if color.name then css_escape(color.name.replace(/\s/g, "-")) else "color-#{index+1}"}: #{color};"
+			).join("\n\t")
+		}
+	}
+	"""

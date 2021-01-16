@@ -163,9 +163,10 @@
 							}
 						});
 					};
-					show_colors(palette.withoutDuplicates());
+					var withoutDuplicates = AnyPalette.uniqueColors(palette);
+					show_colors(withoutDuplicates);
 					
-					var n_dupes = palette.length - palette.withoutDuplicates().length;
+					var n_dupes = palette.length - withoutDuplicates.length;
 					var s = (n_dupes > 1) ? "s" : "";
 					var toggle = false;
 					$toggle_dupes.text("Show Duplicate"+s);
@@ -174,7 +175,7 @@
 							show_colors(palette);
 							$toggle_dupes.text("Hide Duplicate"+s);
 						}else{
-							show_colors(palette.withoutDuplicates());
+							show_colors(withoutDuplicates);
 							$toggle_dupes.text("Show Duplicate"+s);
 						}
 					});

@@ -244,6 +244,32 @@ AnyPalette.writePalette = (palette, format)->
 	# file = new File([palette_content_string], (palette.name ? "Saved Colors") + ".#{format.fileExtensions[0]}")
 	# return [file, format.fileExtensions[0]]
 
+AnyPalette.uniqueColors = (palette)->
+	new_palette = new Palette
+	new_palette.name = @name
+	new_palette.description = @description
+
+	# These aren't super meaningful if some colors are removed:
+	# new_palette.numberOfColumns = palette.numberOfColumns
+	# new_palette.geometrySpecifiedByFile = palette.geometrySpecifiedByFile
+
+	new_palette[..] = palette[..]
+	# In-place uniquify
+	# (Can't simply use `new_palette[..] = [...new Set(palette)]` because it's Color objects, not strings)
+	i = 0
+	while i < new_palette.length
+		i_color = new_palette[i]
+		j = i + 1
+		while j < new_palette.length
+			j_color = new_palette[j]
+			if i_color.is j_color
+				new_palette.splice(j, 1)
+				j -= 1
+			j += 1
+		i += 1
+	
+	new_palette
+
 
 # Exports
 module.exports = AnyPalette

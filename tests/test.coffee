@@ -44,7 +44,7 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 							numberOfColumns:                #{palette.numberOfColumns}
 
 							Colors:
-							#{palette.withoutDuplicates().join('\n')}
+							#{AnyPalette.uniqueColors(palette).join('\n')}
 
 							"""
 					output_file_path = path.join(__dirname, "regression-data", relative_path + ".out.txt")

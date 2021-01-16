@@ -9,19 +9,19 @@ GIMP Palette
 Name: MS Office 2013 primary colors
 Columns: 4
 #
-0   90  158   rgba(0, 90, 158, 1)
-0   114 198   rgba(0, 114, 198, 1)
-42  141 212   rgba(42, 141, 212, 1)
-205 230 247   rgba(205, 230, 247, 1)
-10  99  50    rgba(10, 99, 50, 1)
-33  115 70    rgba(33, 115, 70, 1)
-67  148 103   rgba(67, 148, 103, 1)
-211 240 224   rgba(211, 240, 224, 1)
-184 59  29    rgba(184, 59, 29, 1)
-210 71  38    rgba(210, 71, 38, 1)
-240 98  62    rgba(240, 98, 62, 1)
-252 228 220   rgba(252, 228, 220, 1)
-25  71  138   rgba(25, 71, 138, 1)
-43  87  154   rgba(43, 87, 154, 1)
-62  109 181   rgba(62, 109, 181, 1)
-213 234 242   rgba(213, 234, 242, 1)
+0   90  158   Outlook Dark
+0   114 198   Outlook Primary
+42  141 212   Outlook Secondary
+205 230 247   Outlook Light
+10  99  50    Excel Dark
+33  115 70    Excel Primary
+67  148 103   Excel Secondary
+211 240 224   Excel Light
+184 59  29    PowerPoint Dark
+210 71  38    PowerPoint Primary
+240 98  62    PowerPoint Secondary
+252 228 220   PowerPoint Light
+25  71  138   Word Dark
+43  87  154   Word Primary
+62  109 181   Word Secondary
+213 234 242   Word Light

@@ -9,17 +9,17 @@ GIMP Palette
 Name: openSUSE colors
 Columns: 1
 #
-252 174 27    rgba(252, 174, 27, 1)
-227 80  1     rgba(227, 80, 1, 1)
-255 255 102   rgba(255, 255, 102, 1)
-178 178 71    rgba(178, 178, 71, 1)
-148 208 6     rgba(148, 208, 6, 1)
-34  120 8     rgba(34, 120, 8, 1)
-212 196 255   rgba(212, 196, 255, 1)
-76  68  102   rgba(76, 68, 102, 1)
-80  130 255   rgba(80, 130, 255, 1)
-0   0   116   rgba(0, 0, 116, 1)
-186 189 183   rgba(186, 189, 183, 1)
-46  52  54    rgba(46, 52, 54, 1)
-255 77  77    rgba(255, 77, 77, 1)
-140 0   0     rgba(140, 0, 0, 1)
+252 174 27    Light Orange
+227 80  1     Dark Orange
+255 255 102   Light Butter
+178 178 71    Dark Butter
+148 208 6     Light Lemon
+34  120 8     Dark Lemon
+212 196 255   Light Plum
+76  68  102   Dark Plum
+80  130 255   Light Sky
+0   0   116   Dark Sky
+186 189 183   Light Dust
+46  52  54    Dark Dust
+255 77  77    Light Blood
+140 0   0     Dark Blood

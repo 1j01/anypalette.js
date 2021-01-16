@@ -12,7 +12,7 @@ class Palette extends Array
 		@geometrySpecifiedByFile = undefined
 	
 	add: (o)->
-		new_color = new Color(o)
+		new_color = if o instanceof Color then o else new Color(o)
 		@push new_color
 	
 	###

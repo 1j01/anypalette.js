@@ -9,60 +9,60 @@ GIMP Palette
 Name: Mageia colors
 Columns: 1
 #
-0   0   0     rgba(0, 0, 0, 1)
-183 183 183   rgba(183, 183, 183, 1)
-255 255 255   rgba(255, 255, 255, 1)
-54  0   94    rgba(54, 0, 94, 1)
-76  0   111   rgba(76, 0, 111, 1)
-97  12  129   rgba(97, 12, 129, 1)
-119 36  147   rgba(119, 36, 147, 1)
-140 56  165   rgba(140, 56, 165, 1)
-163 76  184   rgba(163, 76, 184, 1)
-185 95  202   rgba(185, 95, 202, 1)
-208 115 222   rgba(208, 115, 222, 1)
-231 135 241   rgba(231, 135, 241, 1)
-0   18  96    rgba(0, 18, 96, 1)
-28  33  114   rgba(28, 33, 114, 1)
-54  49  131   rgba(54, 49, 131, 1)
-77  65  149   rgba(77, 65, 149, 1)
-100 83  168   rgba(100, 83, 168, 1)
-122 100 186   rgba(122, 100, 186, 1)
-144 119 205   rgba(144, 119, 205, 1)
-166 138 224   rgba(166, 138, 224, 1)
-189 158 244   rgba(189, 158, 244, 1)
-0   42  95    rgba(0, 42, 95, 1)
-0   57  112   rgba(0, 57, 112, 1)
-0   74  129   rgba(0, 74, 129, 1)
-9   91  147   rgba(9, 91, 147, 1)
-50  109 165   rgba(50, 109, 165, 1)
-76  128 184   rgba(76, 128, 184, 1)
-101 147 202   rgba(101, 147, 202, 1)
-124 166 221   rgba(124, 166, 221, 1)
-147 187 241   rgba(147, 187, 241, 1)
-16  94  125   rgba(16, 94, 125, 1)
-49  112 143   rgba(49, 112, 143, 1)
-73  131 161   rgba(73, 131, 161, 1)
-96  150 179   rgba(96, 150, 179, 1)
-119 170 197   rgba(119, 170, 197, 1)
-141 190 216   rgba(141, 190, 216, 1)
-164 211 235   rgba(164, 211, 235, 1)
-187 232 255   rgba(187, 232, 255, 1)
-210 253 255   rgba(210, 253, 255, 1)
-0   1   39    rgba(0, 1, 39, 1)
-0   1   39    rgba(0, 1, 39, 1)
-0   23  53    rgba(0, 23, 53, 1)
-5   38  69    rgba(5, 38, 69, 1)
-31  53  85    rgba(31, 53, 85, 1)
-52  70  102   rgba(52, 70, 102, 1)
-72  87  119   rgba(72, 87, 119, 1)
-92  105 136   rgba(92, 105, 136, 1)
-113 124 154   rgba(113, 124, 154, 1)
-126 0   1     rgba(126, 0, 1, 1)
-149 0   17    rgba(149, 0, 17, 1)
-174 0   29    rgba(174, 0, 29, 1)
-198 0   43    rgba(198, 0, 43, 1)
-223 1   58    rgba(223, 1, 58, 1)
-247 47  73    rgba(247, 47, 73, 1)
-255 73  88    rgba(255, 73, 88, 1)
-255 97  105   rgba(255, 97, 105, 1)
-255 119 122   rgba(255, 119, 122, 1)
+0   0   0     Black
+183 183 183   Bombay ~
+255 255 255   White
+54  0   94    Midnight blue ~
+76  0   111   Midnight blue ~
+97  12  129   Indigo ~
+119 36  147   Dark magenta ~
+140 56  165   Fuchsia ~
+163 76  184   Medium violet red ~
+185 95  202   Medium purple ~
+208 115 222   Orchid ~
+231 135 241   Violet ~
+0   18  96    Midnight blue ~
+28  33  114   Midnight blue
+54  49  131   Indigo ~
+77  65  149   Daisy bush ~
+100 83  168   Studio ~
+122 100 186   Fuchsia ~
+144 119 205   True v ~
+166 138 224   Cornflower ~
+189 158 244   Deep sky blue ~
+0   42  95    Paris m ~
+0   57  112   Resolution blue ~
+0   74  129   Jacksons purple ~
+9   91  147   Endeavour ~
+50  109 165   Scampi ~
+76  128 184   Curious blue
+101 147 202   Picton blue ~
+124 166 221   Jordy blue ~
+147 187 241   Dark turquoise ~
+16  94  125   Bahama blue ~
+49  112 143   Waikawa grey ~
+73  131 161   Dark cyan ~
+96  150 179   Shakespeare ~
+119 170 197   Polo blue ~
+141 190 216   Moon raker ~
+164 211 235   Sail ~
+187 232 255   Pale turquoise ~
+210 253 255   Light cyan ~
+0   1   39    Stratos ~
+0   1   39    Stratos ~
+0   23  53    Outer space ~
+5   38  69    Violent violet ~
+31  53  85    Cobalt
+52  70  102   Bay of many ~
+72  87  119   Chambray
+92  105 136   Wedgewood ~
+113 124 154   Hippie blue ~
+126 0   1     Dark red ~
+149 0   17    Bright red ~
+174 0   29    Firebrick ~
+198 0   43    Mandy ~
+223 1   58    Crimson ~
+247 47  73    Orange red ~
+255 73  88    Orange red ~
+255 97  105   Tomato
+255 119 122   Coral ~

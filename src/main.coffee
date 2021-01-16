@@ -57,6 +57,7 @@ formats =
 		name: "sK1 palette"
 		fileExtensions: ["skp"]
 		load: require "./formats/SKP"
+		write: (require "./formats/SKP").write
 	}
 	CSS_COLORS: {
 		name: "CSS colors"

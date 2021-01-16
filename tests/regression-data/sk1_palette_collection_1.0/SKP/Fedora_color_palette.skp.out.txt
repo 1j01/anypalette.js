@@ -9,13 +9,13 @@ GIMP Palette
 Name: Fedora color palette
 Columns: 2
 #
-60  110 180   rgba(60, 110, 180, 1)
-41  65  114   rgba(41, 65, 114, 1)
-219 50  121   rgba(219, 50, 121, 1)
-229 151 40    rgba(229, 151, 40, 1)
-121 219 50    rgba(121, 219, 50, 1)
-160 124 188   rgba(160, 124, 188, 1)
-0   0   0     rgba(0, 0, 0, 1)
-76  76  76    rgba(76, 76, 76, 1)
-140 140 140   rgba(140, 140, 140, 1)
-222 222 222   rgba(222, 222, 222, 1)
+60  110 180   Fedora Blue
+41  65  114   Fedora Dark Blue
+219 50  121   Friends Magenta
+229 151 40    Features Orange
+121 219 50    First Green
+160 124 188   Freedom Purple
+0   0   0     Black
+76  76  76    Dark Grey
+140 140 140   Grey
+222 222 222   Light Grey

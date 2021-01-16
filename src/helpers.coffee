@@ -1,0 +1,30 @@
+# TODO: DRY with CSS.coffee
+module.exports.parse_css_hex_color = (hex_color)->
+	hex = (x)-> parseInt(x, 16)
+	
+	match = hex_color.match(///
+		\# # hashtag # #/
+		(
+			[0-9A-F]{3} # three hex-digits (#A0C)
+			|
+			[0-9A-F]{6} # six hex-digits (#AA00CC)
+			|
+			[0-9A-F]{4} # with alpha, four hex-digits (#A0CF)
+			|
+			[0-9A-F]{8} # with alpha, eight hex-digits (#AA00CCFF)
+		)
+		(?![0-9A-F]) # (and no more!)
+	///gim)
+
+	[$0, $1] = match
+
+	if $1.length > 4
+		r: hex $1[0] + $1[1]
+		g: hex $1[2] + $1[3]
+		b: hex $1[4] + $1[5]
+		alpha: if $1.length is 8 then (hex $1[6] + $1[7])/255 else 1
+	else
+		r: hex $1[0] + $1[0]
+		g: hex $1[1] + $1[1]
+		b: hex $1[2] + $1[2]
+		alpha: if $1.length is 4 then (hex $1[3] + $1[3])/255 else 1

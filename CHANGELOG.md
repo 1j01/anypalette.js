@@ -19,6 +19,7 @@ for potential future corrections.
 
 ### Removed
 - `withDuplicates`: Duplicate colors are included by default now.
+- (undocumented and silly) `RandomPalette`, `RandomColor`, `gimmeAPalette`
 
 ### Added
 - `withoutDuplicates()`: Use this to get a version of a palette with only unique colors.

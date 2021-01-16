@@ -27,7 +27,7 @@ for potential future corrections.
   `name` is however copied over.
 - `r`, `g`, `b` properties on `Color` objects are now always available.
 - **Support for saving files!**
-  Use `var [file, ext] = AnyPalette.savePalette(palette, AnyPalette.formats.GIMP_PALETTE)` to save a GPL file.
+  Use `var [file, ext] = AnyPalette.writePalette(palette, AnyPalette.formats.GIMP_PALETTE)` to save a GPL file.
 
 </details>
 

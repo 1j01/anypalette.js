@@ -129,7 +129,9 @@ Knowing the file extension means AnyPalette.js can often pick the correct palett
 - `options.filePath` - a path to a palette file, for Node.js usage
 - `options.fileName` (optional) - the file name, if you have it, including the file extension - can be obtained from `options.file` or `options.filePath`
 - `options.fileExt` (optional) - the file extension, if you have it, *excluding* the dot, e.g. `"pal"` - can be obtained from `options.fileName` or `options.file` or `options.filePath`
-- `callback(error, palette)` (required) - called when palette loading is finished, either with an error (in the first argument) or a `Palette` (in the second)
+- `callback(error, palette, formatUsed, matchedFileExtension)` (required) - called when palette loading is finished, either with an error (in the first argument) or with the remaining arguments in the case of success:
+	- `palette`: a [`Palette`](#class-palette-extends-array)
+
 
 Note: the callback is asynchronous to allow for file loading, but all the palette parsing is currently synchronous.
 
@@ -166,7 +168,7 @@ document.body.removeChild(a);
 (Accessible as `AnyPalette.Palette`)
 
 
-Stores a list of Colors, with some additional data.
+Stores a list of [`Color`](#class-color)s, and some metadata.
 
 Because `Palette` is a subclass of `Array`, you can use `forEach`, `map`, `join` and other methods,
 or access the colors via indexing e.g. `palette[0]` and loop over them using `palette.length`
@@ -180,7 +182,16 @@ You can get a `Palette` with only unique colors with `palette.withoutDuplicates(
 #### `palette.numberOfColumns`
 
 `palette.numberOfColumns` may contain a number of columns for the palette to fit into (with the number of rows being implicit).  
-You should ignore a `numberOfColumns` of zero, and MAY want to ignore this property entirely, as Inkscape does for example.
+You should ignore a `numberOfColumns` of zero or `undefined`, and MAY want to ignore this property entirely.
+Inkscape, for example, ignores the number of columns specified in a palette.
+
+#### `palette.name`
+
+`palette.name` may contain a name for the palette (as a string), or `undefined`.
+
+#### `palette.description`
+
+`palette.description` may contain a description for the palette (as a string), or `undefined`.
 
 ### class `Color`
 

@@ -62,11 +62,32 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 					# test writers
 					if file_path.match(writer_test_file_path_regexp)
 						for format_id in Object.keys(AnyPalette.formats)
-							format = AnyPalette.formats[format_id]
-							if format.write
-								output_file_path = path.join(__dirname, "regression-data", "writing", "#{path.basename(file_path)}.out.#{format.fileExtensions[0]}")
-								mkdirp.sync	path.dirname(output_file_path)
-								result = AnyPalette.writePalette(palette, format)
-								fs.writeFileSync output_file_path, result, "utf8"
-								console.log "Wrote", format_id, output_file_path
+							do (format_id)->
+								format = AnyPalette.formats[format_id]
+								if format.write
+									output_file_path = path.join(__dirname, "regression-data", "writing", "#{path.basename(file_path)}.out.#{format.fileExtensions[0]}")
+									mkdirp.sync	path.dirname(output_file_path)
+									result = AnyPalette.writePalette(palette, format)
+									fs.writeFileSync output_file_path, result, "utf8"
+									console.log "Wrote", format_id, output_file_path
 
+									AnyPalette.loadPalette {data: result}, (err, reparsed_palette, reparsed_as_format, matched_file_extension)->
+										if err
+											console.error "Reparsing failed - #{err}"
+											process.exit(1)
+											return
+										if reparsed_as_format isnt format
+											console.log("Reparsed as format:", reparsed_as_format)
+											console.log("Original format:", format)
+											console.error "Reparsed with a different format (#{reparsed_as_format.name} rather than #{format.name})"
+											process.exit(1)
+										rounded = Array.from(palette).map (color)->
+											color.toString().replace /\d+\.\d+/g, (num_str)->
+												Math.round parseFloat num_str
+										if rounded.every((color, index)-> reparsed_palette[index].is color)
+											console.log "Reparsing successful - it's a match!"
+										else
+											console.log("Reparsed:", Array.from reparsed_palette.map((color)-> color.toString()))
+											console.log("Original (but with numbers rounded):", Array.from rounded.map((color)-> color.toString()))
+											console.error "Reparsing failed - colors don't match!"
+											# process.exit(1)

@@ -37,10 +37,11 @@ formats =
 		load: require "./formats/GIMP"
 		write: (require "./formats/GIMP").write
 	}
-	KOULORPAINT_PALETTE: {
+	KDE_RGB_PALETTE: {
 		name: "KolourPaint palette"
 		fileExtensions: ["colors"]
 		load: require "./formats/KolourPaint"
+		write: (require "./formats/KolourPaint").write
 	}
 	SKENCIL_PALETTE: {
 		name: "Skencil palette"
@@ -75,11 +76,6 @@ formats =
 	# 	fileExtensions: ["colors"]
 	# 	load: require "./formats/theme"
 	# }
-	KDE_RGB_PALETTE: {
-		name: "KolourPaint palette"
-		fileExtensions: ["colors"]
-		write: (require "./formats/KolourPaint").write
-	}
 	# ADOBE_COLOR_SWATCH_PALETTE: {
 	# 	name: "Adobe Color Swatch"
 	# 	fileExtensions: ["aco"]

@@ -191,10 +191,10 @@ load_adobe_color_book = ({data})->
 					b: br.readByte()
 			when 2 # CMYK
 				add
-					c: br.readByte()
-					m: br.readByte()
-					y: br.readByte()
-					k: br.readByte()
+					c: br.readByte() / 255 * 100
+					m: br.readByte() / 255 * 100
+					y: br.readByte() / 255 * 100
+					k: br.readByte() / 255 * 100
 			when 3 # Pantone
 				bad()
 			when 4 # Focoltone

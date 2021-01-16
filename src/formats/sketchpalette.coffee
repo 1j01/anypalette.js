@@ -32,12 +32,12 @@ parse_css_hex_color = (hex_color)->
 		r: hex $1[0] + $1[1]
 		g: hex $1[2] + $1[3]
 		b: hex $1[4] + $1[5]
-		a: if $1.length is 8 then hex $1[6] + $1[7] else 1
+		alpha: if $1.length is 8 then (hex $1[6] + $1[7])/255 else 1
 	else
 		r: hex $1[0] + $1[0]
 		g: hex $1[1] + $1[1]
 		b: hex $1[2] + $1[2]
-		a: if $1.length is 4 then hex $1[3] + $1[3] else 1
+		alpha: if $1.length is 4 then (hex $1[3] + $1[3])/255 else 1
 
 module.exports = ({data})->
 	if not data.match(/^\s*{/)
@@ -73,7 +73,7 @@ module.exports = ({data})->
 					r: color_definition.red * 255
 					g: color_definition.green * 255
 					b: color_definition.blue * 255
-					a: color_definition.alpha * 255
+					alpha: color_definition.alpha
 					name: color_definition.name
 				)
 

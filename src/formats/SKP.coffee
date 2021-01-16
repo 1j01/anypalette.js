@@ -25,26 +25,26 @@ module.exports = ({data})->
 						r: components[0] * 255
 						g: components[1] * 255
 						b: components[2] * 255
-						a: alpha
+						alpha: alpha
 				when "Grayscale"
 					palette.add
 						r: components[0] * 255
 						g: components[0] * 255
 						b: components[0] * 255
-						a: alpha
+						alpha: alpha
 				when "CMYK"
 					palette.add
 						c: components[0] * 100
 						m: components[1] * 100
 						y: components[2] * 100
 						k: components[3] * 100
-						a: alpha
+						alpha: alpha
 				when "HSL"
 					palette.add
 						h: components[0] * 360
 						s: components[1] * 100
 						l: components[2] * 100
-						a: alpha
+						alpha: alpha
 	
 	for line in lines
 		match = line.match(/([\w_]+)\((.*)\)/)

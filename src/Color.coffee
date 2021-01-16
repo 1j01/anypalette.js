@@ -1,6 +1,6 @@
 
 # color value ranges:
-# a: 0 to 1
+# alpha: 0 to 1
 # r/g/b: 0 to 255
 # h: 0 to 360
 # s/l: 0 to 100
@@ -25,6 +25,7 @@ class Color
 			@r, @g, @b,
 			@h, @s, @v, @l,
 			c, m, y, k,
+			@alpha, # can't be @a because of CIELAB color space (L*a*b*)
 			@name
 		} = options
 
@@ -120,16 +121,16 @@ class Color
 		if @h?
 			# Hue Saturation Lightness
 			# (Assume h:0-360, s:0-100, l:0-100)
-			if @a? # Alpha
-				"hsla(#{@h}, #{@s}%, #{@l}%, #{@a})"
-			else # Opaque
+			if @alpha?
+				"hsla(#{@h}, #{@s}%, #{@l}%, #{@alpha})"
+			else
 				"hsl(#{@h}, #{@s}%, #{@l}%)"
 		else if @r?
 			# Red Green Blue
 			# (Assume r:0-255, g:0-255, b:0-255)
-			if @a? # Alpha
-				"rgba(#{@r}, #{@g}, #{@b}, #{@a})"
-			else # Opaque
+			if @alpha?
+				"rgba(#{@r}, #{@g}, #{@b}, #{@alpha})"
+			else
 				"rgb(#{@r}, #{@g}, #{@b})"
 	
 	is: (color)->

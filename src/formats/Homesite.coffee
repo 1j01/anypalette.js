@@ -12,11 +12,11 @@ module.exports = ({data})->
 	palette = new Palette()
 	
 	for line, i in lines
-		if line.match /.+ .+ .+/
-			rgb = line.split(" ")
+		match = line.match(/(\d+)\s+(\d+)\s+(\d+)/)
+		if match
 			palette.add
-				red: Number(rgb[0]) / 255
-				green: Number(rgb[1]) / 255
-				blue: Number(rgb[2]) / 255
+				red: Number(match[1]) / 255
+				green: Number(match[2]) / 255
+				blue: Number(match[3]) / 255
 	
 	palette

@@ -1,11 +1,5 @@
 
 # color value ranges are all 0 to 1
-# FORMERLY:
-# alpha: 0 to 1
-# red/green/blue: 0 to 255
-# hue: 0 to 360
-# saturation/lightness: 0 to 100
-# cyan/magenta/yellow/key: 0 to 100
 
 # input: hue,saturation,lightness in [0,1] - output: red,green,blue in [0,1]
 hsl2rgb = (hue, saturation, lightness)->

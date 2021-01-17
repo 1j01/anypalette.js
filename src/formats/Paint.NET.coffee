@@ -12,10 +12,10 @@ module.exports = ({data})->
 	for line in data.split(/[\n\r]+/m)
 		m = line.match(/^([0-9A-F]{2})([0-9A-F]{2})([0-9A-F]{2})([0-9A-F]{2})$/i)
 		if m then palette.add
-			alpha: (hex m[1]) / 255
-			r: hex m[2]
-			g: hex m[3]
-			b: hex m[4]
+			alpha: hex(m[1]) / 255
+			red: hex(m[2]) / 255
+			green: hex(m[3]) / 255
+			blue: hex(m[4]) / 255
 	
 	palette
 

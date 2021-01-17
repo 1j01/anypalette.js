@@ -47,9 +47,9 @@ parseThemeFileString = (themeIni)->
 					components[i] = parseInt(component, 10)
 				if components.every((component)-> isFinite(component))
 					palette.add
-						r: components[0]
-						g: components[1]
-						b: components[2]
+						red: components[0] / 255
+						green: components[1] / 255
+						blue: components[2] / 255
 						name: key
 	palette.name = theme["Theme"]?.DisplayName # or theme["General"]?.Name for KDE .colors
 	palette

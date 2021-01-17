@@ -37,9 +37,9 @@ module.exports = ({data})->
 			throw new Error "Line #{i} doesn't match pattern #{r_g_b_name}" # TODO: better message?
 		
 		palette.add
-			r: r_g_b_name[1] * 255
-			g: r_g_b_name[2] * 255
-			b: r_g_b_name[3] * 255
+			red: Number(r_g_b_name[1])
+			green: Number(r_g_b_name[2])
+			blue: Number(r_g_b_name[3])
 			name: r_g_b_name[4]
 		
 	palette

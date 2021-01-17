@@ -29,9 +29,9 @@ load_adobe_color_table = ({data, fileExt})->
 	
 	for [0...256]
 		palette.add
-			r: br.readUInt8()
-			g: br.readUInt8()
-			b: br.readUInt8()
+			red: br.readUInt8() / 255
+			green: br.readUInt8() / 255
+			blue: br.readUInt8() / 255
 	
 	palette.numberOfColumns = 16 # configurable in Photoshop, but this is the default view, and for instance Visibone and the default swatches rely on this layout
 

@@ -19,8 +19,8 @@ module.exports = ({data})->
 		if line isnt "" and i > 2
 			rgb = line.split(" ")
 			palette.add
-				r: rgb[0]
-				g: rgb[1]
-				b: rgb[2]
+				red: Number(rgb[0]) / 255
+				green: Number(rgb[1]) / 255
+				blue: Number(rgb[2]) / 255
 	
 	palette

@@ -46,16 +46,16 @@ module.exports = ({data})->
 	///gim, (m, $1)->
 		if $1.length > 4
 			palette_hex_long.add
-				r: hex $1[0] + $1[1]
-				g: hex $1[2] + $1[3]
-				b: hex $1[4] + $1[5]
-				alpha: if $1.length is 8 then (hex $1[6] + $1[7])/255
+				red: hex($1[0] + $1[1]) / 255
+				green: hex($1[2] + $1[3]) / 255
+				blue: hex($1[4] + $1[5]) / 255
+				alpha: if $1.length is 8 then hex($1[6] + $1[7]) / 255
 		else
 			palette_hex_short.add
-				r: hex $1[0] + $1[0]
-				g: hex $1[1] + $1[1]
-				b: hex $1[2] + $1[2]
-				alpha: if $1.length is 4 then (hex $1[3] + $1[3])/255
+				red: hex($1[0] + $1[0]) / 255
+				green: hex($1[1] + $1[1]) / 255
+				blue: hex($1[2] + $1[2]) / 255
+				alpha: if $1.length is 4 then hex($1[3] + $1[3]) / 255
 	
 	data.replace ///
 		rgb\(
@@ -72,9 +72,9 @@ module.exports = ({data})->
 		\)
 	///gim, (_m, r_val, r_unit, g_val, g_unit, b_val, b_unit)->
 		palette_rgb.add
-			r: Number(r_val) * (if r_unit is "%" then 255/100 else 1)
-			g: Number(g_val) * (if g_unit is "%" then 255/100 else 1)
-			b: Number(b_val) * (if b_unit is "%" then 255/100 else 1)
+			red: Number(r_val) / (if r_unit is "%" then 100 else 255)
+			green: Number(g_val) / (if g_unit is "%" then 100 else 255)
+			blue: Number(b_val) / (if b_unit is "%" then 100 else 255)
 	
 	data.replace ///
 		rgba?\(
@@ -94,10 +94,10 @@ module.exports = ({data})->
 		\)
 	///gim, (_m, r_val, r_unit, g_val, g_unit, b_val, b_unit, a_val, a_unit)->
 		palette_rgba.add
-			r: Number(r_val) * (if r_unit is "%" then 255/100 else 1)
-			g: Number(g_val) * (if g_unit is "%" then 255/100 else 1)
-			b: Number(b_val) * (if b_unit is "%" then 255/100 else 1)
-			alpha: Number(a_val) * (if a_unit is "%" then 1/100 else 1)
+			red: Number(r_val) / (if r_unit is "%" then 100 else 255)
+			green: Number(g_val) / (if g_unit is "%" then 100 else 255)
+			blue: Number(b_val) / (if b_unit is "%" then 100 else 255)
+			alpha: Number(a_val) / (if a_unit is "%" then 100 else 1)
 	
 	data.replace ///
 		hsl\(

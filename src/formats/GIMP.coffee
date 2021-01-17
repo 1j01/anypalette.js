@@ -50,9 +50,9 @@ parse_gimp_or_kde_rgb_palette = (data, format_name)->
 			throw new Error "Line #{i} doesn't match pattern #{r_g_b_name}" # TODO: better message?
 		
 		palette.add
-			r: Number r_g_b_name[1]
-			g: Number r_g_b_name[2]
-			b: Number r_g_b_name[3]
+			red: Number(r_g_b_name[1]) / 255
+			green: Number(r_g_b_name[2]) / 255
+			blue: Number(r_g_b_name[3]) / 255
 			name: r_g_b_name[4]
 		
 	palette

@@ -14,10 +14,10 @@ module.exports = ({data})->
 	
 	for [0...256]
 		palette.add
-			r: br.readByte()
-			g: br.readByte()
-			b: br.readByte()
-			#: no padding
+			red: br.readByte() / 255
+			green: br.readByte() / 255
+			blue: br.readByte() / 255
+		# no padding
 	
 	#? palette.numberOfColumns = 16
 	palette

@@ -39,13 +39,7 @@ module.exports = ({data})->
 		# Color Fills: convert rgba colors
 		if colorDefinitions.length > 0
 			for color_definition in colorDefinitions
-				palette.add(
-					r: color_definition.red * 255
-					g: color_definition.green * 255
-					b: color_definition.blue * 255
-					alpha: color_definition.alpha
-					name: color_definition.name
-				)
+				palette.add(color_definition)
 
 		# # Pattern Fills: convert base64 strings to MSImageData objects
 		# if imageDefinitions.length > 0

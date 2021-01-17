@@ -17,9 +17,9 @@ module.exports = ({data, fileExt})->
 	for i in [0...color_count]
 		br.seek(8 + i * 26)
 		palette.add
-			r: br.readByte()
-			g: br.readByte()
-			b: br.readByte()
+			red: br.readByte() / 255
+			green: br.readByte() / 255
+			blue: br.readByte() / 255
 
 	palette
 

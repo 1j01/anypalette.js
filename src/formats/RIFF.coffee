@@ -41,11 +41,10 @@ module.exports = ({data})->
 	palette = new Palette()
 	i = 0
 	while (i += 1) < palNumEntries - 1
-		
 		palette.add
-			r: br.readByte()
-			g: br.readByte()
-			b: br.readByte()
-			_: br.readByte() # "flags", always 0x00
+			red: br.readByte() / 255
+			green: br.readByte() / 255
+			blue: br.readByte() / 255
+		br.readByte() # "flags", always 0x00
 	
 	palette

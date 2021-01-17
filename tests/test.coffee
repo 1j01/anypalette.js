@@ -16,12 +16,12 @@ writer_test_file_path_regexp = ///
 	|Nord.gpl # palette name, palette columns, named colors
 ///
 
-glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file_paths)->
+glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.*", (err, file_paths)->
 	if err
 		throw err
 	for file_path in file_paths
 		fs.unlinkSync(file_path)
-	console.log "Cleared regression-data folder of all .out.txt files"
+	console.log "Cleared regression-data folder of all *.out.* files"
 
 	# forward slashes required for glob, but also using this to determine the subfolders for output
 	palettes_folder = "#{__dirname.replace(/\\/g, "/")}/../palettes"
@@ -88,3 +88,11 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.txt", (err, file
 											console.log("Original:", [palette...].map((color)-> color.toString()))
 											console.error "Reparsing failed - colors don't match!"
 											process.exit(1)
+										result2 = AnyPalette.writePalette(reparsed_palette, format)
+										if result2 isnt result
+											console.error "Saved palette serialized differently when reading back and saving again"
+											console.log "Original save:", output_file_path
+											output_2_file_path = output_file_path.replace(/\.out/, ".out.2")
+											fs.writeFileSync output_2_file_path, result2, "utf8"
+											console.log "Second save:", output_2_file_path
+											# process.exit(1)

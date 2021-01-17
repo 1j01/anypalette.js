@@ -281,6 +281,7 @@ Run `npm test` to update a `regression-data` folder, and then view any changes w
 If the changes are good/positive, that's good! Commit the changes along with the source code.  
 If the changes are bad/negative, try to fix the regression.  
 If all the files are deleted, not just changed, make sure to run `git submodule update --init`  
+`*.out.2.*` files are for files that are saved differently when loading a saved file. Ideally we want none of these.
 
 Don't commit `build/anypalette.js` until cutting a release
 (to reduce noise and avoid conflicts when reverting and such).

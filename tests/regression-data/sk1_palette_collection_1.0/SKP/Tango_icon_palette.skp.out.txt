@@ -1,7 +1,7 @@
 Loaded As:                      sK1 palette (.skp)
 
 matchedFileExtension:           true
-geometrySpecifiedByFile:        undefined
+geometrySpecifiedByFile:        true
 numberOfColumns:                3
 
 Colors (in GPL format):

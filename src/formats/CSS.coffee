@@ -114,9 +114,9 @@ module.exports = ({data})->
 		\)
 	///gim, (_m, h_val, h_unit, s_val, s_unit, l_val, l_unit)->
 		palette_hsl.add
-			h: Number(h_val) * (if h_unit is "rad" then 180/Math.PI else if h_unit is "turn" then 360 else 1)
-			s: Number(s_val) * (if s_unit is "%" then 1 else 100)
-			l: Number(l_val) * (if l_unit is "%" then 1 else 100)
+			hue: Number(h_val) * (if h_unit is "rad" then 1/2/Math.PI else if h_unit is "turn" then 1 else 1/360)
+			saturation: Number(s_val) * (if s_unit is "%" then 1/100 else 1)
+			lightness: Number(l_val) * (if l_unit is "%" then 1/100 else 1)
 	
 	data.replace ///
 		hsla?\(
@@ -136,9 +136,9 @@ module.exports = ({data})->
 		\)
 	///gim, (_m, h_val, h_unit, s_val, s_unit, l_val, l_unit, a_val, a_unit)->
 		palette_hsla.add
-			h: Number(h_val) * (if h_unit is "rad" then 180/Math.PI else if h_unit is "turn" then 360 else 1)
-			s: Number(s_val) * (if s_unit is "%" then 1 else 100)
-			l: Number(l_val) * (if l_unit is "%" then 1 else 100)
+			hue: Number(h_val) * (if h_unit is "rad" then 1/2/Math.PI else if h_unit is "turn" then 1 else 1/360)
+			saturation: Number(s_val) * (if s_unit is "%" then 1/100 else 1)
+			lightness: Number(l_val) * (if l_unit is "%" then 1/100 else 1)
 			alpha: Number(a_val) * (if a_unit is "%" then 1/100 else 1)
 	
 	most_colors = []

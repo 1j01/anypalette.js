@@ -24,7 +24,6 @@ class Palette extends Array
 		# saturation/lightness/value: 0 to 100
 		# cyan/magenta/yellow/key: 0 to 100
 		# x/y/z: 0 to 100
-		# l/a/b: 0 to 100
 
 		for component_name in component_names when o[component_name]?
 			if (not isFinite(o[component_name])) or (typeof o[component_name] isnt "number")
@@ -51,10 +50,6 @@ class Palette extends Array
 				delete o.l # avoid conflict with L*a*b*
 			if o.v?
 				o.value = o.v / 100
-		if o.l? and o.a? and o.b?
-			o.l /= 100
-			o.a /= 100
-			o.b /= 100
 		if o.x? and o.y? and o.z?
 			o.x /= 100
 			o.y /= 100

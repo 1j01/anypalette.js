@@ -37,31 +37,31 @@ module.exports = ({data})->
 			switch color_type
 				when "RGB"
 					palette.add
-						r: components[0] * 255
-						g: components[1] * 255
-						b: components[2] * 255
+						red: components[0]
+						green: components[1]
+						blue: components[2]
 						alpha: alpha
 						name: name
 				when "Grayscale"
 					palette.add
-						r: components[0] * 255
-						g: components[0] * 255
-						b: components[0] * 255
+						red: components[0]
+						green: components[0]
+						blue: components[0]
 						alpha: alpha
 						name: name
 				when "CMYK"
 					palette.add
-						c: components[0] * 100
-						m: components[1] * 100
-						y: components[2] * 100
-						k: components[3] * 100
+						cyan: components[0]
+						magenta: components[1]
+						yellow: components[2]
+						key: components[3]
 						alpha: alpha
 						name: name
 				when "HSL"
 					palette.add
-						h: components[0] * 360
-						s: components[1] * 100
-						l: components[2] * 100
+						hue: components[0]
+						saturation: components[1]
+						lightness: components[2]
 						alpha: alpha
 						name: name
 	

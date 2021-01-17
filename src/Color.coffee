@@ -18,7 +18,7 @@ class Color
 			@red, @green, @blue,
 			@hue, @saturation, @value, @lightness,
 			cyan, magenta, yellow, key,
-			@alpha, # can't be @a because of CIELAB color space (L*a*b*)
+			@alpha,
 			@name
 		} = options
 

@@ -36,8 +36,8 @@ module.exports = ({data})->
 	
 	if most_colors.every((color)-> color.red <= 1/255 and color.green <= 1/255 and color.blue <= 1/255)
 		most_colors.forEach (color)->
-			color.r *= 255
-			color.g *= 255
-			color.b *= 255
+			color.red *= 255
+			color.green *= 255
+			color.blue *= 255
 
 	most_colors

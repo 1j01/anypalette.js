@@ -32,10 +32,10 @@ load_adobe_color_swatch = ({data})->
 	color_count += 1
 	
 	color_space = br.readUInt16()
-	w = br.readUInt16()
-	x = br.readUInt16()
-	y = br.readUInt16()
-	z = br.readUInt16()
+	w = br.readUInt16() / MAX_UINT16
+	x = br.readUInt16() / MAX_UINT16
+	y = br.readUInt16() / MAX_UINT16
+	z = br.readUInt16() / MAX_UINT16
 	separator = br.readUInt16()
 	lenplus1 = br.readUInt16() # let's not parse any further
 	
@@ -49,9 +49,9 @@ load_adobe_color_swatch = ({data})->
 		
 		when 1
 			palette.add
-				h: w / MAX_UINT16
-				s: x / MAX_UINT16
-				v: y / MAX_UINT16
+				hue: w
+				saturation: x
+				value: y
 				name: name
 	
 	# skip to the next color
@@ -114,14 +114,13 @@ load_adobe_color_swatch = ({data})->
 		# calculate color values and write them to the palette
 		switch color_space
 			when 0
-				color.r = w / 255
-				color.g = x / 255
-				color.b = y / 255
-			
+				color.red = w
+				color.green = x
+				color.blue = y
 			when 1
-				color.h = w / 182.04
-				color.s = x / 655.35
-				color.v = y / 655.35
+				color.hue = w
+				color.saturation = x
+				color.value = y
 	
 	palette
 
@@ -134,9 +133,9 @@ load_adobe_swatch_exchange = ({data})->
 	
 	for [0...256]
 		palette.add
-			r: br.readByte()
-			g: br.readByte()
-			b: br.readByte()
+			red: br.readByte() / 255
+			green: br.readByte() / 255
+			blue: br.readByte() / 255
 	
 	palette
 
@@ -183,20 +182,20 @@ load_adobe_color_book = ({data})->
 		switch color_space
 			when 0 # RGB
 				add
-					r: br.readByte()
-					g: br.readByte()
-					b: br.readByte()
+					red: br.readByte() / 255
+					green: br.readByte() / 255
+					blue: br.readByte() / 255
 			when 1 # HSB
 				add
-					h: br.readByte()
-					s: br.readByte()
-					b: br.readByte()
+					hue: br.readByte() / 255
+					saturation: br.readByte() / 255
+					value: br.readByte() / 255
 			when 2 # CMYK
 				add
-					c: br.readByte() / 255 * 100
-					m: br.readByte() / 255 * 100
-					y: br.readByte() / 255 * 100
-					k: br.readByte() / 255 * 100
+					cyan: br.readByte() / 255
+					magenta: br.readByte() / 255
+					yellow: br.readByte() / 255
+					key: br.readByte() / 255
 			when 3 # Pantone
 				bad()
 			when 4 # Focoltone
@@ -207,9 +206,9 @@ load_adobe_color_book = ({data})->
 				bad()
 			when 7 # Lab (CIELAB D50)
 				add
-					l: br.readByte()
-					a: br.readByte()
-					b: br.readByte()
+					l: br.readByte() / 255
+					a: br.readByte() / 255
+					b: br.readByte() / 255
 			when 8 # Grayscale
 				bad()
 			when 10 # HKS

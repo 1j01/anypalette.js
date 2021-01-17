@@ -31,7 +31,7 @@ Supported palette formats:
 | .pal              | [Starcraft] Palette               | [Starcraft]                                                                       |   ✅   |         |
 | .wpe              | [Starcraft] Terrain Palette       | [Starcraft]                                                                       |   ✅   |         |
 | .sketchpalette    | [Sketch] Palette                  | [Sketch]                                                                          |   ✅   |   ✅    |
-| .spl              | [Skencil] Palette                 | [Skencil] (formerly called Sketch)                                                |   ✅   |         |
+| .spl              | [Skencil] Palette                 | [Skencil] (formerly called Sketch)                                                |   ✅   |   ✅    |
 | .colors           | KolourPaint Color Collection      | [KolourPaint]                                                                     |   ✅   |   ✅    |
 | .colors           | Plasma Desktop Color Scheme       | [KDE] Plasma Desktop                                                              |   ✅   |         |
 | .theme            | Windows Theme                     | [Windows] Desktop                                                                 |   ✅   |         |

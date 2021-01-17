@@ -60,6 +60,8 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.*", (err, file_p
 					console.log "Wrote", (if err then "failed" else "parsed"), output_file_path
 
 					# test writers
+					if not palette
+						return
 					if file_path.match(writer_test_file_path_regexp)
 						for format_id in Object.keys(AnyPalette.formats)
 							do (format_id)->

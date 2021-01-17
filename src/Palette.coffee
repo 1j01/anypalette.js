@@ -1,6 +1,11 @@
 
 Color = require "./Color"
 
+component_names = [
+	"r", "g", "b", "h", "s", "l", "v", "x", "y", "z", "a", "b", "c", "m", "y", "k",
+	"red", "green", "blue", "hue", "saturation", "lightness", "value", "cyan", "magenta", "yellow", "key", "alpha"
+]
+
 module.exports =
 class Palette extends Array
 	
@@ -20,6 +25,12 @@ class Palette extends Array
 		# cyan/magenta/yellow/key: 0 to 100
 		# x/y/z: 0 to 100
 		# l/a/b: 0 to 100
+
+		for component_name in component_names when o[component_name]?
+			if (not isFinite(o[component_name])) or (typeof o[component_name] isnt "number")
+				throw new TypeError("palette.add() component option #{component_name} is not a finite number: #{JSON.stringify(o[component_name])}")
+			# if o[component_name] < 0 or o[component_name] > 1
+			# 	throw new TypeError("palette.add() component option #{component_name} outside range of [0,1]: #{o[component_name]}")
 
 		if o.r?
 			o.red = o.r / 255

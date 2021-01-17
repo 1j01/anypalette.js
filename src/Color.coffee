@@ -7,13 +7,13 @@ hsl2rgb = (hue, saturation, lightness)->
 	f = (n, k = (n+hue*12)%12)-> lightness - a*Math.max(Math.min(k-3, 9-k, 1), -1)
 	return [f(0), f(8), f(4)].map((component)-> component)
 
+component_names = ["red", "green", "blue", "hue", "saturation", "lightness", "value", "cyan", "magenta", "yellow", "key", "alpha", "x", "y", "z", "l", "a", "b"]
+
 module.exports =
 class Color
 	constructor: (options)->
 		# @TODO: don't assign all of {@red, @green, @blue, @hue, @saturation, @value, @lightness} right away
 		# only assign the properties that are used
-		# TODO: expect numbers or convert to numbers
-		# TODO: warn/error for numbers outside range
 		{
 			@red, @green, @blue,
 			@hue, @saturation, @value, @lightness,
@@ -21,6 +21,12 @@ class Color
 			@alpha, # can't be @a because of CIELAB color space (L*a*b*)
 			@name
 		} = options
+
+		for component_name in component_names when options[component_name]?
+			if (not isFinite(options[component_name])) or (typeof options[component_name] isnt "number")
+				throw new TypeError("Color component option #{component_name} is not a finite number: #{JSON.stringify(options[component_name])}")
+			if options[component_name] < 0 or options[component_name] > 1
+				throw new TypeError("Color component option #{component_name} outside range of [0,1]: #{options[component_name]}")
 
 		if @red? and @green? and @blue?
 			# Red Green Blue
@@ -36,9 +42,9 @@ class Color
 				# Hue Saturation Lightness
 				# (no conversions needed here)
 			else if options.brightness?
-				throw new Error "{hue, saturation, brightness} not supported. Use either {hue, saturation, lightness} or {hue, saturation, value} for cylindrical a color space."
+				throw new TypeError "{hue, saturation, brightness} not supported. Use either {hue, saturation, lightness} or {hue, saturation, value} for cylindrical a color space."
 			else
-				throw new Error "Hue, saturation, and.. what? (either lightness (l) or value (value) expected)"
+				throw new TypeError "Hue, saturation, and.. what? (either lightness (l) or value (value) expected)"
 			[@red, @green, @blue] = hsl2rgb(@hue, @saturation, @lightness)
 		else if cyan? and magenta? and yellow? and key?
 			# Cyan Magenta Yellow blacK
@@ -95,7 +101,7 @@ class Color
 					
 					#rgb[_] = Math.round(rgb[_] * 255)
 			else
-				throw new Error "Color constructor must be called with {red,green,blue} or {hue,saturation,value} or {hue,saturation,lightness} or {cyan,magenta,yellow,key} or {x,y,z} or {l,a,b},
+				throw new TypeError "Color constructor must be called with {red,green,blue} or {hue,saturation,value} or {hue,saturation,lightness} or {cyan,magenta,yellow,key} or {x,y,z} or {l,a,b},
 					#{
 						try
 							"got #{JSON.stringify(options)}"

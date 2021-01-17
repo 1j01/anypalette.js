@@ -2,6 +2,8 @@
 BinaryReader = require "../BinaryReader"
 Palette = require "../Palette"
 
+MAX_UINT16 = 2**16 - 1
+
 load_adobe_color_swatch = ({data})->
 	# ACO (Adobe Color Swatch)
 	throw new Error "Not actually implemented, despite over a hundred lines of code"
@@ -40,16 +42,16 @@ load_adobe_color_swatch = ({data})->
 	switch color_space
 		when 0
 			palette.add
-				r: w / 255
-				g: x / 255
-				b: y / 255
+				red: w
+				green: x
+				blue: y
 				name: name
 		
 		when 1
 			palette.add
-				h: w / 182.04
-				s: x / 655.35
-				v: y / 655.35
+				h: w / MAX_UINT16
+				s: x / MAX_UINT16
+				v: y / MAX_UINT16
 				name: name
 	
 	# skip to the next color

@@ -15,8 +15,8 @@ module.exports = ({data})->
 		if line.match /.+ .+ .+/
 			rgb = line.split(" ")
 			palette.add
-				r: rgb[0]
-				g: rgb[1]
-				b: rgb[2]
+				r: Number rgb[0]
+				g: Number rgb[1]
+				b: Number rgb[2]
 	
 	palette

@@ -13,9 +13,9 @@ module.exports = ({data})->
 		match = line.match(regexp)
 		if match
 			palette.add
-				r: match[1]
-				g: match[2]
-				b: match[3]
+				r: Number match[1]
+				g: Number match[2]
+				b: Number match[3]
 	for line in lines
 		try_parse_line line, csv_palette, /([0-9]*\.?[0-9]+),\s*([0-9]*\.?[0-9]+),\s*([0-9]*\.?[0-9]+)/
 		try_parse_line line, ssv_palette, /([0-9]*\.?[0-9]+)\s+([0-9]*\.?[0-9]+)\s+([0-9]*\.?[0-9]+)/

@@ -1,63 +1,57 @@
 
-# color value ranges:
+# color value ranges are all 0 to 1
+# FORMERLY:
 # alpha: 0 to 1
-# r/g/b: 0 to 255
-# h: 0 to 360
-# s/l: 0 to 100
-# c/m/y/k: 0 to 100
+# red/green/blue: 0 to 255
+# hue: 0 to 360
+# saturation/lightness: 0 to 100
+# cyan/magenta/yellow/key: 0 to 100
 
-# input: h in [0,360] and s,l in [0,100] - output: r,g,b in [0,255]
-hsl2rgb = (h, s, l)->
-	s /= 100
-	l /= 100
-	a = s * Math.min(l, 1-l)
-	f = (n, k = (n+h/30)%12)-> l - a*Math.max(Math.min(k-3, 9-k, 1), -1)
-	return [f(0), f(8), f(4)].map((component)-> component * 255)
+# input: hue,saturation,lightness in [0,1] - output: red,green,blue in [0,1]
+hsl2rgb = (hue, saturation, lightness)->
+	a = saturation * Math.min(lightness, 1-lightness)
+	f = (n, k = (n+hue*12)%12)-> lightness - a*Math.max(Math.min(k-3, 9-k, 1), -1)
+	return [f(0), f(8), f(4)].map((component)-> component)
 
 module.exports =
 class Color
 	constructor: (options)->
-		# @TODO: don't assign all of {@r, @g, @b, @h, @s, @v, @l} right away
+		# @TODO: don't assign all of {@red, @green, @blue, @hue, @saturation, @value, @lightness} right away
 		# only assign the properties that are used
 		# TODO: expect numbers or convert to numbers
 		# TODO: warn/error for numbers outside range
 		{
-			@r, @g, @b,
-			@h, @s, @v, @l,
-			c, m, y, k,
+			@red, @green, @blue,
+			@hue, @saturation, @value, @lightness,
+			cyan, magenta, yellow, key,
 			@alpha, # can't be @a because of CIELAB color space (L*a*b*)
 			@name
 		} = options
 
-		if @r? and @g? and @b?
+		if @red? and @green? and @blue?
 			# Red Green Blue
 			# (no conversions needed here)
-		else if @h? and @s?
+		else if @hue? and @saturation?
 			# Cylindrical Color Space
-			if @v?
+			if @value?
 				# Hue Saturation Value
-				@l = (2 - @s / 100) * @v / 2
-				@s = @s * @v / (if @l < 50 then @l * 2 else 200 - @l * 2)
-				@s = 0 if isNaN @s
-			else if @l?
+				@lightness = (2 - @saturation) * @value / 2
+				@saturation = @saturation * @value / (if @lightness < 0.5 then @lightness * 2 else 2 - @lightness * 2)
+				@saturation = 0 if isNaN @saturation
+			else if @lightness?
 				# Hue Saturation Lightness
 				# (no conversions needed here)
-			else if @b?
-				throw new Error "Hue, Saturation, Brightness not supported. Use either Lightness ({h, s, l}) or Value ({h, s, v}) for cylindrical a color space."
+			else if options.brightness?
+				throw new Error "{hue, saturation, brightness} not supported. Use either {hue, saturation, lightness} or {hue, saturation, value} for cylindrical a color space."
 			else
-				throw new Error "Hue, saturation, and.. what? (either lightness (l) or value (v) expected)"
-			[@r, @g, @b] = hsl2rgb(@h, @s, @l)
-		else if c? and m? and y? and k?
+				throw new Error "Hue, saturation, and.. what? (either lightness (l) or value (value) expected)"
+			[@red, @green, @blue] = hsl2rgb(@hue, @saturation, @lightness)
+		else if cyan? and magenta? and yellow? and key?
 			# Cyan Magenta Yellow blacK
 			# UNTESTED
-			c /= 100
-			m /= 100
-			y /= 100
-			k /= 100
-			
-			@r = 255 * (1 - Math.min(1, c * (1 - k) + k))
-			@g = 255 * (1 - Math.min(1, m * (1 - k) + k))
-			@b = 255 * (1 - Math.min(1, y * (1 - k) + k))
+			@red = (1 - Math.min(1, cyan * (1 - key) + key))
+			@green = (1 - Math.min(1, magenta * (1 - key) + key))
+			@blue = (1 - Math.min(1, yellow * (1 - key) + key))
 		else
 			# UNTESTED UNTESTED UNTESTED UNTESTED UNTESTED UNTESTED
 			if @l? and @a? and @b?
@@ -84,9 +78,9 @@ class Color
 			# UNTESTED UNTESTED UNTESTED UNTESTED
 			if @x? and @y? and @z?
 				xyz =
-					x: raw.x / 100
-					y: raw.y / 100
-					z: raw.z / 100
+					x: raw.x
+					y: raw.y
+					z: raw.z
 				
 				rgb =
 					r: xyz.x * 3.2406 + xyz.y * -1.5372 + xyz.z * -0.4986
@@ -107,7 +101,7 @@ class Color
 					
 					#rgb[_] = Math.round(rgb[_] * 255)
 			else
-				throw new Error "Color constructor must be called with {r,g,b} or {h,s,v} or {h,s,l} or {c,m,y,k} or {x,y,z} or {l,a,b},
+				throw new Error "Color constructor must be called with {red,green,blue} or {hue,saturation,value} or {hue,saturation,lightness} or {cyan,magenta,yellow,key} or {x,y,z} or {l,a,b},
 					#{
 						try
 							"got #{JSON.stringify(options)}"
@@ -118,23 +112,21 @@ class Color
 		
 	
 	toString: ->
-		if @h?
+		if @hue?
 			# Hue Saturation Lightness
-			# (Assume h:0-360, s:0-100, l:0-100)
 			if @alpha?
-				"hsla(#{@h}, #{@s}%, #{@l}%, #{@alpha})"
+				"hsla(#{@hue * 360}, #{@saturation * 100}%, #{@lightness * 100}%, #{@alpha})"
 			else
-				"hsl(#{@h}, #{@s}%, #{@l}%)"
-		else if @r?
+				"hsl(#{@hue * 360}, #{@saturation * 100}%, #{@lightness * 100}%)"
+		else if @red?
 			# Red Green Blue
-			# (Assume r:0-255, g:0-255, b:0-255)
 			if @alpha?
-				"rgba(#{@r}, #{@g}, #{@b}, #{@alpha})"
+				"rgba(#{@red * 255}, #{@green * 255}, #{@blue * 255}, #{@alpha})"
 			else
-				"rgb(#{@r}, #{@g}, #{@b})"
+				"rgb(#{@red * 255}, #{@green * 255}, #{@blue * 255})"
 	
 	@is: (colorA, colorB, epsilon=0.0001)->
-		Math.abs(colorA.r - colorB.r) < epsilon and
-		Math.abs(colorA.g - colorB.g) < epsilon and
-		Math.abs(colorA.b - colorB.b) < epsilon and
+		Math.abs(colorA.red - colorB.red) < epsilon and
+		Math.abs(colorA.green - colorB.green) < epsilon and
+		Math.abs(colorA.blue - colorB.blue) < epsilon and
 		Math.abs((colorA.alpha ? 1) - (colorB.alpha ? 1)) < epsilon

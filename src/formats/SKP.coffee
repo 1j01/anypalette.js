@@ -27,12 +27,17 @@ module.exports = ({data})->
 			palette.geometrySpecifiedByFile = true
 		hexcolor: (hexcolor, name)->
 			# TODO: find example palettes with hexcolor()
+			# I think adding # is unnesessary
 			color = parse_css_hex_color("#" + hexcolor)
 			color.name = name
 			palette.add(color)
-		rgbcolor: (r, g, b, name)->
+		rgbcolor: (red, green, blue, name)->
 			# TODO: find example palettes with rgbcolor()
-			palette.add({r, g, b, name})
+			palette.add
+				red: red / 255
+				green: green / 255
+				blue: blue / 255
+				name: name
 		color: ([color_type, components, alpha, name])->
 			switch color_type
 				when "RGB"

@@ -19,7 +19,9 @@ module.exports = ({data})->
 		# set_source: (source)-> palette.source = source
 		add_comments: (line)->
 			palette.description ?= ""
-			palette.description += line + "\n"
+			if palette.description.length > 0
+				palette.description += "\n"
+			palette.description += line
 		set_columns: (columns)->
 			palette.numberOfColumns = columns
 		hexcolor: (hexcolor, name)->

@@ -9,7 +9,6 @@
 ; Palette Name: Color names supported by all browsers
 ; Description: The palette is published here:
 ; http://www.w3schools.com/html/html_colornames.asp
-;
 ; Colors: 141
 ; Columns: 1
 ; 

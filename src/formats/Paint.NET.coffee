@@ -21,13 +21,12 @@ module.exports = ({data})->
 
 module.exports.write = (palette)->
 	component_to_hex = (component)->
-		hex = Math.round(component).toString(16)
+		hex = Math.round(component * 255).toString(16)
 		if hex.length is 1 then "0#{hex}" else hex
 	stringify_color = (color)->
-		{alpha, r, g, b} = color
+		{alpha, red, green, blue} = color
 		alpha ?= 1
-		alpha *= 255
-		[alpha, r, g, b].map(component_to_hex).join("")
+		[alpha, red, green, blue].map(component_to_hex).join("")
 	comments = """
 	Paint.NET Palette File
 	Lines that start with a semicolon are comments

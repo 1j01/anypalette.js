@@ -208,12 +208,12 @@ module.exports.write = (palette)->
 	if palette.numberOfColumns
 		str += "set_columns(#{palette.numberOfColumns})\n"
 	for color in palette
-		if color.h?
+		if color.hue?
 			color_type = "HSL"
-			components = [color.h / 360, color.s / 100, color.l / 100]
+			components = [color.hue, color.saturation, color.lightness]
 		else
 			color_type = "RGB"
-			components = [color.r / 255, color.g / 255, color.b / 255]
+			components = [color.red, color.green, color.blue]
 		alpha = color.alpha ? 1
 		name = color.name ? color.toString()
 		str += "color([#{serialize_str(color_type)}, [#{components.join(", ")}], #{alpha}, #{serialize_str(name)}])\n"

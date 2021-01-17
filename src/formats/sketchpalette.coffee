@@ -95,9 +95,9 @@ module.exports.write = (palette)->
 		"compatibleVersion": "1.4",
 		"pluginVersion": "1.4",
 		"colors": palette.map((color)->
-			{alpha, red, green, blue} = color
+			{red, green, blue, alpha} = color
 			alpha ?= 1
-			{alpha, red, green, blue}
+			{red, green, blue, alpha}
 		)
 	}, null, "\t")
 

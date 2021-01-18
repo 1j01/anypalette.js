@@ -47,7 +47,7 @@ parse_gimp_or_kde_rgb_palette = (data, format_name)->
 			$ # "and that should be the end of the line"
 		///)
 		if not r_g_b_name
-			throw new Error "Line #{i} doesn't match pattern #{r_g_b_name}" # TODO: better message?
+			throw new Error "Line #{i} doesn't match pattern of red green blue name" # TODO: better message?
 		
 		palette.add
 			red: Number(r_g_b_name[1]) / 255

@@ -34,7 +34,7 @@ module.exports = ({data})->
 			$ # "and that should be the end of the line"
 		///)
 		if not r_g_b_name
-			throw new Error "Line #{i} doesn't match pattern #{r_g_b_name}" # TODO: better message?
+			throw new Error "Line #{i} doesn't match pattern of red green blue name" # TODO: better message?
 		
 		palette.add
 			red: Number(r_g_b_name[1])

@@ -216,7 +216,7 @@ In some cases you may need to call `toString()` explicitly to get a string, for 
 var shortenedColorStrings = palette.map((color)=> color.toString().replace(/\s/g, ""));
 ```
 
-`Color` objects also have `r`, `g`, `b` properties, and **depending on how they were loaded**, might have `h`, `s`, `l`, and/or `alpha`.
+`Color` objects also have `red`, `green`, `blue` properties, and **depending on how they were loaded**, might have `hue`, `saturation`, `lightness`, and/or `alpha`.
 
 Also for some palette formats, such as `.gpl` files, a `Color` may have a `name` (it's either a string or `undefined`)
 

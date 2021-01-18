@@ -31,8 +31,8 @@ for potential future corrections.
 - `AnyPalette.uniqueColors(palette)`: Use this to get a version of a palette with only unique colors.
   Note: `numberOfColumns` on the returned palette is undefined, because the geometry doesn't necessarily apply if some colors are removed.
   `name` is however copied over.
-- `r`, `g`, `b` properties on `Color` objects are now always available.
-- Alpha support (translucent colors)
+- `Color` objects now have `red`, `green`, `blue` properties. The range is `[0,1]`, not `[0,255]`, and they are available even if the input format is HSL or another colorspace.
+- Alpha support (translucent colors). `color.alpha` exists only if alpha is defined for a color. This is used for choosing between string representations.
 - **Support for saving files!**
   Use `var [file, ext] = AnyPalette.writePalette(palette, AnyPalette.formats.GIMP_PALETTE)` to save a GPL file.
 - `loadPalette` callback now gets extra parameters for getting info about the format the file was parsed as.

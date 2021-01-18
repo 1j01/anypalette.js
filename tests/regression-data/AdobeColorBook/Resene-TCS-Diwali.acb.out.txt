@@ -5,7 +5,7 @@ Some errors were encountered when loading:
 	failed to load Resene-TCS-Diwali.acb as Paint.NET palette: no colors returned,
 	failed to load Resene-TCS-Diwali.acb as GIMP palette: Not a GIMP Palette,
 	failed to load Resene-TCS-Diwali.acb as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load Resene-TCS-Diwali.acb as Skencil palette: no colors returned,
+	failed to load Resene-TCS-Diwali.acb as Skencil palette: Not a Skencil palette,
 	failed to load Resene-TCS-Diwali.acb as Sketch palette: not sketchpalette JSON,
 	failed to load Resene-TCS-Diwali.acb as sK1 palette: No colors found (0),
 	failed to load Resene-TCS-Diwali.acb as CSS colors: No colors found (0),

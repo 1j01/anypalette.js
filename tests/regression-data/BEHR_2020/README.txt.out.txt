@@ -7,7 +7,7 @@ Some errors were encountered when loading:
 	failed to load README.txt as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.txt' instead),
 	failed to load README.txt as GIMP palette: Not a GIMP Palette,
 	failed to load README.txt as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load README.txt as Skencil palette: no colors returned,
+	failed to load README.txt as Skencil palette: Not a Skencil palette,
 	failed to load README.txt as Sketch palette: not sketchpalette JSON,
 	failed to load README.txt as sK1 palette: No colors found (0),
 	failed to load README.txt as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,

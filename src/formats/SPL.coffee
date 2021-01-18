@@ -7,6 +7,9 @@ Palette = require "../Palette"
 module.exports = ({data})->
 	lines = data.split(/[\n\r]+/m)
 	
+	if lines[0] isnt "##Sketch RGBPalette 0"
+		throw new Error("Not a Skencil palette")
+
 	palette = new Palette()
 	i = 1
 	while (i += 1) < lines.length

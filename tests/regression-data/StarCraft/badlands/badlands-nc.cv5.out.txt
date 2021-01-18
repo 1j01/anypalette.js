@@ -5,7 +5,7 @@ Some errors were encountered when loading:
 	failed to load badlands-nc.cv5 as Paint.NET palette: no colors returned,
 	failed to load badlands-nc.cv5 as GIMP palette: Not a GIMP Palette,
 	failed to load badlands-nc.cv5 as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load badlands-nc.cv5 as Skencil palette: Line 2 doesn't match pattern of red green blue name,
+	failed to load badlands-nc.cv5 as Skencil palette: Not a Skencil palette,
 	failed to load badlands-nc.cv5 as Sketch palette: not sketchpalette JSON,
 	failed to load badlands-nc.cv5 as sK1 palette: No colors found (0),
 	failed to load badlands-nc.cv5 as CSS colors: looks like a binary file,

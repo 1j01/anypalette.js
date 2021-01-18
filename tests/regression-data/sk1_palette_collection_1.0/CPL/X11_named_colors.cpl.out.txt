@@ -5,7 +5,7 @@ Some errors were encountered when loading:
 	failed to load X11_named_colors.cpl as Paint.NET palette: no colors returned,
 	failed to load X11_named_colors.cpl as GIMP palette: Not a GIMP Palette,
 	failed to load X11_named_colors.cpl as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load X11_named_colors.cpl as Skencil palette: Line 2 doesn't match pattern of red green blue name,
+	failed to load X11_named_colors.cpl as Skencil palette: Not a Skencil palette,
 	failed to load X11_named_colors.cpl as Sketch palette: not sketchpalette JSON,
 	failed to load X11_named_colors.cpl as sK1 palette: No colors found (0),
 	failed to load X11_named_colors.cpl as CSS colors: looks like a binary file,

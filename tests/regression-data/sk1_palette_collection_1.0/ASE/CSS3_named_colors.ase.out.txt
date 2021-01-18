@@ -5,7 +5,7 @@ Some errors were encountered when loading:
 	failed to load CSS3_named_colors.ase as Paint.NET palette: no colors returned,
 	failed to load CSS3_named_colors.ase as GIMP palette: Not a GIMP Palette,
 	failed to load CSS3_named_colors.ase as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load CSS3_named_colors.ase as Skencil palette: no colors returned,
+	failed to load CSS3_named_colors.ase as Skencil palette: Not a Skencil palette,
 	failed to load CSS3_named_colors.ase as Sketch palette: not sketchpalette JSON,
 	failed to load CSS3_named_colors.ase as sK1 palette: No colors found (0),
 	failed to load CSS3_named_colors.ase as CSS colors: looks like a binary file,

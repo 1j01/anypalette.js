@@ -5,7 +5,7 @@ Some errors were encountered when loading:
 	failed to load SVG_named_colors_(sorted).ase as Paint.NET palette: no colors returned,
 	failed to load SVG_named_colors_(sorted).ase as GIMP palette: Not a GIMP Palette,
 	failed to load SVG_named_colors_(sorted).ase as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load SVG_named_colors_(sorted).ase as Skencil palette: Line 2 doesn't match pattern of red green blue name,
+	failed to load SVG_named_colors_(sorted).ase as Skencil palette: Not a Skencil palette,
 	failed to load SVG_named_colors_(sorted).ase as Sketch palette: not sketchpalette JSON,
 	failed to load SVG_named_colors_(sorted).ase as sK1 palette: No colors found (0),
 	failed to load SVG_named_colors_(sorted).ase as CSS colors: looks like a binary file,

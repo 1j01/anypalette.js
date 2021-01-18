@@ -37,6 +37,7 @@ for potential future corrections.
   Use `var [file, ext] = AnyPalette.writePalette(palette, AnyPalette.formats.GIMP_PALETTE)` to save a GPL file.
 - `loadPalette` callback now gets extra parameters for getting info about the format the file was parsed as.
 - Adobe Color Swatches (`.aco`) reading support
+- Adobe Swatch Exchange (`.ase`) reading support
 
 </details>
 

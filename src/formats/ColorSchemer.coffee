@@ -1,7 +1,7 @@
 
 # Load a ColorSchemer palette (.cs)
 
-BinaryReader = require "../BinaryReader"
+jDataView = require "jdataview"
 Palette = require "../Palette"
 
 module.exports = ({data, fileExt})->
@@ -10,16 +10,17 @@ module.exports = ({data, fileExt})->
 		throw new Error("ColorSchemer loader is only enabled when file extension is '.cs' (saw '.#{fileExt}' instead)")
 	
 	palette = new Palette()
-	br = new BinaryReader(data)
+	littleEndian = true
+	view = new jDataView(data, 0, undefined, littleEndian)
 	
-	version = br.readUInt16() # or something
-	color_count = br.readUInt16()
+	version = view.getUint16() # or something
+	color_count = view.getUint16()
 	for i in [0...color_count]
-		br.seek(8 + i * 26)
+		view.seek(8 + i * 26)
 		palette.add
-			red: br.readByte() / 255
-			green: br.readByte() / 255
-			blue: br.readByte() / 255
+			red: view.getUint8() / 255
+			green: view.getUint8() / 255
+			blue: view.getUint8() / 255
 
 	palette
 

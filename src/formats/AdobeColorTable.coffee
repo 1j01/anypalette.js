@@ -12,26 +12,26 @@ If the file is 772 bytes long there are 4 additional bytes remaining.
 https://www.adobe.com/devnet-apps/photoshop/fileformatashtml/#50577411_pgfId-1070626
 ###
 
-BinaryReader = require "../BinaryReader"
+jDataView = require "jdataview"
 Palette = require "../Palette"
 
 module.exports =
 load_adobe_color_table = ({data, fileExt})->
 
 	palette = new Palette()
-	br = new BinaryReader(data)
+	view = new jDataView(data)
 	
 	unless (
-		br.getSize() in [768, 772] or
+		view.byteLength in [768, 772] or
 		fileExt is "act" # because "Fireworks can read ACT files bigger than 768 bytes"
 	)
-		throw new Error "file size must be 768 or 772 bytes (saw #{br.getSize()}), OR file extension must be '.act' (saw '.#{fileExt}')"
+		throw new Error "file size must be 768 or 772 bytes (saw #{view.byteLength}), OR file extension must be '.act' (saw '.#{fileExt}')"
 	
 	for [0...256]
 		palette.add
-			red: br.readUInt8() / 255
-			green: br.readUInt8() / 255
-			blue: br.readUInt8() / 255
+			red: view.getUint8() / 255
+			green: view.getUint8() / 255
+			blue: view.getUint8() / 255
 	
 	palette.numberOfColumns = 16 # configurable in Photoshop, but this is the default view, and for instance Visibone and the default swatches rely on this layout
 

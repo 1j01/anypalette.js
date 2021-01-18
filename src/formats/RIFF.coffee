@@ -3,16 +3,17 @@
 
 # ported from C# code at https://worms2d.info/Palette_file
 
-BinaryReader = require "../BinaryReader"
+jDataView = require "jdataview"
 Palette = require "../Palette"
 
 module.exports = ({data})->
-	br = new BinaryReader(data)
+	littleEndian = true
+	view = new jDataView(data, 0, undefined, littleEndian)
 	
 	# RIFF header
-	riff = br.readString(4) # "RIFF"
-	dataSize = br.readUInt32()
-	type = br.readString(4) # "PAL "
+	riff = view.getString(4) # "RIFF"
+	dataSize = view.getUint32()
+	type = view.getString(4) # "PAL "
 	
 	if riff isnt "RIFF"
 		throw new Error "RIFF header not found; not a RIFF PAL file"
@@ -24,10 +25,10 @@ module.exports = ({data})->
 		"""
 	
 	# Data chunk
-	chunkType = br.readString(4) # "data"
-	chunkSize = br.readUInt32()
-	palVersion = br.readUInt16() # 0x0300
-	palNumEntries = br.readUInt16()
+	chunkType = view.getString(4) # "data"
+	chunkSize = view.getUint32()
+	palVersion = view.getUint16() # 0x0300
+	palNumEntries = view.getUint16()
 	
 	
 	if chunkType isnt "data"
@@ -42,9 +43,9 @@ module.exports = ({data})->
 	i = 0
 	while (i += 1) < palNumEntries - 1
 		palette.add
-			red: br.readByte() / 255
-			green: br.readByte() / 255
-			blue: br.readByte() / 255
-		br.readByte() # "flags", always 0x00
+			red: view.getUint8() / 255
+			green: view.getUint8() / 255
+			blue: view.getUint8() / 255
+		view.getUint8() # "flags", always 0x00
 	
 	palette

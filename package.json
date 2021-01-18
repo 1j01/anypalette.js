@@ -90,6 +90,7 @@
 		"css.escape": "^1.5.1",
 		"glob": "^7.1.6",
 		"gulp": "^4.0.2",
+		"jdataview": "^2.5.0",
 		"live-server": "^1.2.1",
 		"mkdirp": "^1.0.4",
 		"vinyl-source-stream": "^2.0.0"

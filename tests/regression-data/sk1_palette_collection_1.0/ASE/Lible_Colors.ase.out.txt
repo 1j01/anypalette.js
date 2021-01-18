@@ -1,18 +1,27 @@
-Some errors were encountered when loading:
-	failed to load Lible_Colors.ase as Paint Shop Pro palette: Not a JASC-PAL,
-	failed to load Lible_Colors.ase as RIFF PAL: RIFF header not found; not a RIFF PAL file,
-	failed to load Lible_Colors.ase as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.ase' instead),
-	failed to load Lible_Colors.ase as Paint.NET palette: no colors returned,
-	failed to load Lible_Colors.ase as GIMP palette: Not a GIMP Palette,
-	failed to load Lible_Colors.ase as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load Lible_Colors.ase as Skencil palette: Not a Skencil palette,
-	failed to load Lible_Colors.ase as Sketch palette: not sketchpalette JSON,
-	failed to load Lible_Colors.ase as sK1 palette: No colors found (0),
-	failed to load Lible_Colors.ase as CSS colors: looks like a binary file,
-	failed to load Lible_Colors.ase as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
-	failed to load Lible_Colors.ase as Adobe Color Swatch: Not an Adobe Color Swatch file,
-	failed to load Lible_Colors.ase as Adobe Color Table: file size must be 768 or 772 bytes (saw 750), OR file extension must be '.act' (saw '.ase'),
-	failed to load Lible_Colors.ase as Homesite palette: Not a Homesite palette,
-	failed to load Lible_Colors.ase as StarCraft palette: Wrong file size, must be 768 bytes long (not 750),
-	failed to load Lible_Colors.ase as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 750),
-	failed to load Lible_Colors.ase as tabular colors: No colors found (0)
+Loaded As:                      Adobe Swatch Exchange (.ase)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+24  163 3     LibreGreen
+44  238 14    #2CEE0E
+132 246 113   #84F671
+194 246 186   #C2F6BA
+3   105 163   LibreBlue
+14  156 238   #0E9CEE
+73  186 251   #49BAFB
+159 215 246   #9FD7F6
+163 62  3     LibreMaroon
+242 95  10    #F25F0A
+252 155 99    #FC9B63
+248 201 172   #F8C9AC
+140 3   161   LibrePurple
+207 66  228   #CF42E4
+219 118 234   #DB76EA
+242 196 250   #F2C4FA

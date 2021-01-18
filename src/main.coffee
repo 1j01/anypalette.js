@@ -86,11 +86,11 @@ formats =
 		fileExtensions: ["act"]
 		load: require "./formats/AdobeColorTable"
 	}
-	# ADOBE_SWATCH_EXCHANGE_PALETTE: {
-	# 	name: "Adobe Swatch Exchange"
-	# 	fileExtensions: ["ase"]
-	# 	load: require "./formats/AdobeSwatchExchange"
-	# }
+	ADOBE_SWATCH_EXCHANGE_PALETTE: {
+		name: "Adobe Swatch Exchange"
+		fileExtensions: ["ase"]
+		load: (require "./formats/Adobe").load_adobe_swatch_exchange
+	}
 	# ADOBE_COLOR_BOOK_PALETTE: {
 	# 	name: "Adobe Color Book"
 	# 	fileExtensions: ["acb"]

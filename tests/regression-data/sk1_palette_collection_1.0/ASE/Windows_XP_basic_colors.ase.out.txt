@@ -1,18 +1,59 @@
-Some errors were encountered when loading:
-	failed to load Windows_XP_basic_colors.ase as Paint Shop Pro palette: Not a JASC-PAL,
-	failed to load Windows_XP_basic_colors.ase as RIFF PAL: RIFF header not found; not a RIFF PAL file,
-	failed to load Windows_XP_basic_colors.ase as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.ase' instead),
-	failed to load Windows_XP_basic_colors.ase as Paint.NET palette: no colors returned,
-	failed to load Windows_XP_basic_colors.ase as GIMP palette: Not a GIMP Palette,
-	failed to load Windows_XP_basic_colors.ase as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load Windows_XP_basic_colors.ase as Skencil palette: Not a Skencil palette,
-	failed to load Windows_XP_basic_colors.ase as Sketch palette: not sketchpalette JSON,
-	failed to load Windows_XP_basic_colors.ase as sK1 palette: No colors found (0),
-	failed to load Windows_XP_basic_colors.ase as CSS colors: looks like a binary file,
-	failed to load Windows_XP_basic_colors.ase as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
-	failed to load Windows_XP_basic_colors.ase as Adobe Color Swatch: Not an Adobe Color Swatch file,
-	failed to load Windows_XP_basic_colors.ase as Adobe Color Table: file size must be 768 or 772 bytes (saw 2090), OR file extension must be '.act' (saw '.ase'),
-	failed to load Windows_XP_basic_colors.ase as Homesite palette: Not a Homesite palette,
-	failed to load Windows_XP_basic_colors.ase as StarCraft palette: Wrong file size, must be 768 bytes long (not 2090),
-	failed to load Windows_XP_basic_colors.ase as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 2090),
-	failed to load Windows_XP_basic_colors.ase as tabular colors: No colors found (0)
+Loaded As:                      Adobe Swatch Exchange (.ase)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+255 128 128   #FF8080
+255 255 128   #FFFF80
+128 255 128   #80FF80
+0   255 128   #00FF80
+128 255 255   #80FFFF
+0   128 255   #0080FF
+255 128 192   #FF80C0
+255 128 255   #FF80FF
+255 0   0     #FF0000
+255 255 0     #FFFF00
+128 255 0     #80FF00
+0   255 64    #00FF40
+0   255 255   #00FFFF
+0   128 192   #0080C0
+128 128 192   #8080C0
+255 0   255   #FF00FF
+128 64  64    #804040
+255 128 64    #FF8040
+0   255 0     #00FF00
+0   128 128   #008080
+0   64  128   #004080
+128 128 255   #8080FF
+128 0   64    #800040
+255 0   128   #FF0080
+128 0   0     #800000
+255 128 0     #FF8000
+0   128 0     #008000
+0   128 64    #008040
+0   0   255   #0000FF
+0   0   160   #0000A0
+128 0   128   #800080
+128 0   255   #8000FF
+64  0   0     #400000
+128 64  0     #804000
+0   64  0     #004000
+0   64  64    #004040
+0   0   128   #000080
+0   0   64    #000040
+64  0   64    #400040
+64  0   128   #400080
+0   0   0     #000000
+128 128 0     #808000
+128 128 64    #808040
+128 128 128   #808080
+64  128 128   #408080
+192 192 192   #C0C0C0
+64  0   64    #400040
+255 255 255   #FFFFFF

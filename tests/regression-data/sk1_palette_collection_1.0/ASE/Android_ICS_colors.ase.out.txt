@@ -1,18 +1,21 @@
-Some errors were encountered when loading:
-	failed to load Android_ICS_colors.ase as Paint Shop Pro palette: Not a JASC-PAL,
-	failed to load Android_ICS_colors.ase as RIFF PAL: RIFF header not found; not a RIFF PAL file,
-	failed to load Android_ICS_colors.ase as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.ase' instead),
-	failed to load Android_ICS_colors.ase as Paint.NET palette: no colors returned,
-	failed to load Android_ICS_colors.ase as GIMP palette: Not a GIMP Palette,
-	failed to load Android_ICS_colors.ase as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load Android_ICS_colors.ase as Skencil palette: Not a Skencil palette,
-	failed to load Android_ICS_colors.ase as Sketch palette: not sketchpalette JSON,
-	failed to load Android_ICS_colors.ase as sK1 palette: No colors found (0),
-	failed to load Android_ICS_colors.ase as CSS colors: looks like a binary file,
-	failed to load Android_ICS_colors.ase as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
-	failed to load Android_ICS_colors.ase as Adobe Color Swatch: Not an Adobe Color Swatch file,
-	failed to load Android_ICS_colors.ase as Adobe Color Table: file size must be 768 or 772 bytes (saw 464), OR file extension must be '.act' (saw '.ase'),
-	failed to load Android_ICS_colors.ase as Homesite palette: Not a Homesite palette,
-	failed to load Android_ICS_colors.ase as StarCraft palette: Wrong file size, must be 768 bytes long (not 464),
-	failed to load Android_ICS_colors.ase as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 464),
-	failed to load Android_ICS_colors.ase as tabular colors: No colors found (0)
+Loaded As:                      Adobe Swatch Exchange (.ase)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+51  181 229   33B5E5
+170 102 204   AA66CC
+153 204 0     99CC00
+255 187 51    FFBB33
+255 68  68    FF4444
+0   153 204   0099CC
+153 51  204   9933CC
+102 153 0     669900
+255 136 0     FF8800
+204 0   0     CC0000

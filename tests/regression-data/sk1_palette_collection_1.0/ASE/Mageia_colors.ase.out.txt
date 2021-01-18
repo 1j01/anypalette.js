@@ -1,18 +1,68 @@
-Some errors were encountered when loading:
-	failed to load Mageia_colors.ase as Paint Shop Pro palette: Not a JASC-PAL,
-	failed to load Mageia_colors.ase as RIFF PAL: RIFF header not found; not a RIFF PAL file,
-	failed to load Mageia_colors.ase as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.ase' instead),
-	failed to load Mageia_colors.ase as Paint.NET palette: no colors returned,
-	failed to load Mageia_colors.ase as GIMP palette: Not a GIMP Palette,
-	failed to load Mageia_colors.ase as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load Mageia_colors.ase as Skencil palette: Not a Skencil palette,
-	failed to load Mageia_colors.ase as Sketch palette: not sketchpalette JSON,
-	failed to load Mageia_colors.ase as sK1 palette: No colors found (0),
-	failed to load Mageia_colors.ase as CSS colors: looks like a binary file,
-	failed to load Mageia_colors.ase as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
-	failed to load Mageia_colors.ase as Adobe Color Swatch: Not an Adobe Color Swatch file,
-	failed to load Mageia_colors.ase as Adobe Color Table: file size must be 768 or 772 bytes (saw 2922), OR file extension must be '.act' (saw '.ase'),
-	failed to load Mageia_colors.ase as Homesite palette: Not a Homesite palette,
-	failed to load Mageia_colors.ase as StarCraft palette: Wrong file size, must be 768 bytes long (not 2922),
-	failed to load Mageia_colors.ase as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 2922),
-	failed to load Mageia_colors.ase as tabular colors: No colors found (0)
+Loaded As:                      Adobe Swatch Exchange (.ase)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+0   0   0     Black
+183 183 183   Bombay ~
+255 255 255   White
+54  0   94    Midnight blue ~
+76  0   111   Midnight blue ~
+97  12  129   Indigo ~
+119 36  147   Dark magenta ~
+140 56  165   Fuchsia ~
+163 76  184   Medium violet red ~
+185 95  202   Medium purple ~
+208 115 222   Orchid ~
+231 135 241   Violet ~
+0   18  96    Midnight blue ~
+28  33  114   Midnight blue
+54  49  131   Indigo ~
+77  65  149   Daisy bush ~
+100 83  168   Studio ~
+122 100 186   Fuchsia ~
+144 119 205   True v ~
+166 138 224   Cornflower ~
+189 158 244   Deep sky blue ~
+0   42  95    Paris m ~
+0   57  112   Resolution blue ~
+0   74  129   Jacksons purple ~
+9   91  147   Endeavour ~
+50  109 165   Scampi ~
+76  128 184   Curious blue
+101 147 202   Picton blue ~
+124 166 221   Jordy blue ~
+147 187 241   Dark turquoise ~
+16  94  125   Bahama blue ~
+49  112 143   Waikawa grey ~
+73  131 161   Dark cyan ~
+96  150 179   Shakespeare ~
+119 170 197   Polo blue ~
+141 190 216   Moon raker ~
+164 211 235   Sail ~
+187 232 255   Pale turquoise ~
+210 253 255   Light cyan ~
+0   1   39    Stratos ~
+0   1   39    Stratos ~
+0   23  53    Outer space ~
+5   38  69    Violent violet ~
+31  53  85    Cobalt
+52  70  102   Bay of many ~
+72  87  119   Chambray
+92  105 136   Wedgewood ~
+113 124 154   Hippie blue ~
+126 0   1     Dark red ~
+149 0   17    Bright red ~
+174 0   29    Firebrick ~
+198 0   43    Mandy ~
+223 1   58    Crimson ~
+247 47  73    Orange red ~
+255 73  88    Orange red ~
+255 97  105   Tomato
+255 119 122   Coral ~

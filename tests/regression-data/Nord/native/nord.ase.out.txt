@@ -1,18 +1,27 @@
-Some errors were encountered when loading:
-	failed to load nord.ase as Paint Shop Pro palette: Not a JASC-PAL,
-	failed to load nord.ase as RIFF PAL: RIFF header not found; not a RIFF PAL file,
-	failed to load nord.ase as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.ase' instead),
-	failed to load nord.ase as Paint.NET palette: no colors returned,
-	failed to load nord.ase as GIMP palette: Not a GIMP Palette,
-	failed to load nord.ase as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load nord.ase as Skencil palette: Not a Skencil palette,
-	failed to load nord.ase as Sketch palette: not sketchpalette JSON,
-	failed to load nord.ase as sK1 palette: No colors found (0),
-	failed to load nord.ase as CSS colors: looks like a binary file,
-	failed to load nord.ase as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
-	failed to load nord.ase as Adobe Color Swatch: Not an Adobe Color Swatch file,
-	failed to load nord.ase as Adobe Color Table: file size must be 768 or 772 bytes (saw 656), OR file extension must be '.act' (saw '.ase'),
-	failed to load nord.ase as Homesite palette: Not a Homesite palette,
-	failed to load nord.ase as StarCraft palette: Wrong file size, must be 768 bytes long (not 656),
-	failed to load nord.ase as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 656),
-	failed to load nord.ase as tabular colors: No colors found (0)
+Loaded As:                      Adobe Swatch Exchange (.ase)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+46  52  64    nord0
+59  66  82    nord1
+67  76  94    nord2
+76  86  106   nord3
+216 222 233   nord4
+229 233 240   nord5
+236 239 244   nord6
+143 188 187   nord7
+136 192 208   nord8
+129 161 193   nord9
+94  129 172   nord10
+191 97  106   nord11
+208 135 112   nord12
+235 203 139   nord13
+163 190 140   nord14
+180 142 173   nord15

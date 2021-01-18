@@ -1,18 +1,95 @@
-Some errors were encountered when loading:
-	failed to load BEHR Cool Neutrals.ase as Paint Shop Pro palette: Not a JASC-PAL,
-	failed to load BEHR Cool Neutrals.ase as RIFF PAL: RIFF header not found; not a RIFF PAL file,
-	failed to load BEHR Cool Neutrals.ase as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.ase' instead),
-	failed to load BEHR Cool Neutrals.ase as Paint.NET palette: no colors returned,
-	failed to load BEHR Cool Neutrals.ase as GIMP palette: Not a GIMP Palette,
-	failed to load BEHR Cool Neutrals.ase as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load BEHR Cool Neutrals.ase as Skencil palette: Not a Skencil palette,
-	failed to load BEHR Cool Neutrals.ase as Sketch palette: not sketchpalette JSON,
-	failed to load BEHR Cool Neutrals.ase as sK1 palette: No colors found (0),
-	failed to load BEHR Cool Neutrals.ase as CSS colors: looks like a binary file,
-	failed to load BEHR Cool Neutrals.ase as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
-	failed to load BEHR Cool Neutrals.ase as Adobe Color Swatch: Not an Adobe Color Swatch file,
-	failed to load BEHR Cool Neutrals.ase as Adobe Color Table: file size must be 768 or 772 bytes (saw 5702), OR file extension must be '.act' (saw '.ase'),
-	failed to load BEHR Cool Neutrals.ase as Homesite palette: Not a Homesite palette,
-	failed to load BEHR Cool Neutrals.ase as StarCraft palette: Wrong file size, must be 768 bytes long (not 5702),
-	failed to load BEHR Cool Neutrals.ase as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 5702),
-	failed to load BEHR Cool Neutrals.ase as tabular colors: No colors found (0)
+Loaded As:                      Adobe Swatch Exchange (.ase)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+219 220 211   BWC-29 SILVER FEATHER
+200 200 194   MQ2-59* SILVER CITY
+173 170 162   PPU24-10 DOWNTOWN GRAY
+145 143 138   HDC-AC-19 GRANT GRAY
+135 133 126   PPU24-07 BARNWOOD GRAY
+128 124 119   PPU24-21 GREYHOUND
+214 212 202   PPU25-10 SOFT SECRET
+202 201 192   PPU24-12 WHITEWHASH OAK
+195 194 184   PPU25-09 FOGGY LONDON
+191 188 179   MQ6-23* PUMICE
+176 173 160   PPU25-06 WELLS GRAY
+136 133 126   PPU8-22 PIER
+111 111 109   HDC-AC-17A WELDED IRON
+204 202 193   790C-3 DOLPHIN FIN
+181 182 173   PPU25-08 HEIRLOOM SILVER
+168 168 157   PPU25-05 OLD CELADON
+150 151 149   PPU24-19 SHARK FIN
+143 143 139   PPU24-20 LETTER GRAY
+113 112 108   PPU24-05 ANCESTRAL
+108 107 101   PPU18-18 MINED COAL
+189 190 185   PPU24-17 HAILSTORM GRAY
+165 166 161   PPU24-18 GREAT GRAPHITE
+133 136 133   PPU25-17 EURO GRAY
+124 128 123   MQ6-20* COASTAL STORM
+107 109 106   PPU25-03 SHADOWS
+100 103 99    PPU25-02 BLACK LOCUST
+84  85  84    PPU25-01 CARBON COPY
+189 194 185   710E-3 RHINO
+167 171 164   PPU25-15 FLIPPER
+158 164 157   710F-4 SAGE GRAY
+121 127 125   PPU25-18 SHUTTER GRAY
+94  104 105   PPU25-20 LE LUXE
+90  99  101   HDC-AC-25 BLUE METAL
+78  81  82    PPU26-01 SATIN BLACK
+199 203 201   PPU26-17 FAST AS THE WIND
+140 149 149   HDC-NT-27 MILLENNIUM SILVER
+91  144 154   HDC-AC-23A CABANA BLUE
+129 144 148   740F-4 DARK STORM CLOUD
+114 124 126   PPU25-19 OCEAN SWELL
+82  92  97    PPU25-21 CITY RAIN
+74  82  87    PPU25-22 CHIMNEY
+62  71  76    PPU25-23 WINTER WAY
+211 216 216   PPU26-12 SOLEMN SILENCE
+209 212 209   780E-3 STERLING
+190 194 193   PPU26-16 SILVER MINE
+190 194 193   PPU26-18 SILVER MINE
+164 166 164   PPU25-16 CHAIN REACTION
+109 114 115   MQ5-28* DAWN GRAY
+67  72  75    PPU24-23 LITTLE BLACK DRESS
+186 193 195   MQ5-31* DISTANT STAR
+160 166 169   PPU26-19 CHANCE OF RAIN
+156 164 169   MQ5-22* RAINMASTER
+133 138 142   PPU26-21 OVERCAST
+101 109 116   PPU26-22 SUMMER STORM
+89  93  97    PPU18-02 PENCIL POINT
+74  78  84    PPU15-20 POPPY SEED
+221 226 226   MQ3-27* ETCHED GLASS
+217 220 219   PPU26-14 DRIZZLE
+184 188 188   PPU18-05 FRENCH SILVER
+143 147 149   PPU26-05 FLINT GRAY
+110 113 115   PPU18-03 ANTIQUE TIN
+103 106 106   PPU26-02 IMPERIAL GRAY
+63  63  63    Black Black
+209 212 209   PPU26-11 PLATINUM
+185 185 180   PPU18-11 CLASSIC SILVER
+160 160 159   PPU26-06 ELEMENTAL GRAY
+160 160 156   MQ6-22* GATEWAY GRAY
+127 131 132   PPU26-03 LEGENDARY GRAY
+106 109 109   770F-5 DARK ASH
+69  71  73    PPU26-23 BLACK BOUDOIR
+206 203 203   MQ3-28* ROCK CRYSTAL
+196 192 187   PPU18-10 NATURAL GRAY
+176 176 175   780F-4 SPARROW
+172 170 167   PPU18-14 CATHEDRAL GRAY
+162 156 148   PPU18-15 FASHION GRAY
+137 136 135   PPU26-04 FALCON GRAY
+79  81  82    PPU18-01 CRACKED PEPPER
+209 209 206   PPU26-15 HALATION
+204 201 197   PPU26-09 GRAYCLOTH
+177 179 179   PPU26-08 SIVERSTONE
+167 165 163   PPU26-07 SMOKEY WINGS
+154 153 151   HDC-NT-10A DOLPHIN GRAY
+88  88  88    PPU24-22 SHADOW MOUNTAIN
+59  60  59    MQ5-05* LIMOUSINE LEATHER

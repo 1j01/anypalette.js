@@ -1,18 +1,26 @@
-Some errors were encountered when loading:
-	failed to load Windows_10_personalizing_colors.ase as Paint Shop Pro palette: Not a JASC-PAL,
-	failed to load Windows_10_personalizing_colors.ase as RIFF PAL: RIFF header not found; not a RIFF PAL file,
-	failed to load Windows_10_personalizing_colors.ase as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.ase' instead),
-	failed to load Windows_10_personalizing_colors.ase as Paint.NET palette: no colors returned,
-	failed to load Windows_10_personalizing_colors.ase as GIMP palette: Not a GIMP Palette,
-	failed to load Windows_10_personalizing_colors.ase as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load Windows_10_personalizing_colors.ase as Skencil palette: Not a Skencil palette,
-	failed to load Windows_10_personalizing_colors.ase as Sketch palette: not sketchpalette JSON,
-	failed to load Windows_10_personalizing_colors.ase as sK1 palette: No colors found (0),
-	failed to load Windows_10_personalizing_colors.ase as CSS colors: looks like a binary file,
-	failed to load Windows_10_personalizing_colors.ase as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
-	failed to load Windows_10_personalizing_colors.ase as Adobe Color Swatch: Not an Adobe Color Swatch file,
-	failed to load Windows_10_personalizing_colors.ase as Adobe Color Table: file size must be 768 or 772 bytes (saw 720), OR file extension must be '.act' (saw '.ase'),
-	failed to load Windows_10_personalizing_colors.ase as Homesite palette: Not a Homesite palette,
-	failed to load Windows_10_personalizing_colors.ase as StarCraft palette: Wrong file size, must be 768 bytes long (not 720),
-	failed to load Windows_10_personalizing_colors.ase as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 720),
-	failed to load Windows_10_personalizing_colors.ase as tabular colors: No colors found (0)
+Loaded As:                      Adobe Swatch Exchange (.ase)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+171 171 171   #ABABAB
+138 207 255   #8ACFFF
+245 152 214   #F598D6
+243 210 64    #F3D240
+173 216 95    #ADD85F
+120 217 217   #78D9D9
+255 175 81    #FFAF51
+255 111 111   #FF6F6F
+243 89  168   #F359A8
+71  207 116   #47CF74
+196 138 255   #C48AFF
+88  177 252   #58B1FC
+152 152 255   #9898FF
+195 181 168   #C3B5A8
+252 252 252   #FCFCFC

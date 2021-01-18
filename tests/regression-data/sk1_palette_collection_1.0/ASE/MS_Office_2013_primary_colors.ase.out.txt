@@ -1,18 +1,27 @@
-Some errors were encountered when loading:
-	failed to load MS_Office_2013_primary_colors.ase as Paint Shop Pro palette: Not a JASC-PAL,
-	failed to load MS_Office_2013_primary_colors.ase as RIFF PAL: RIFF header not found; not a RIFF PAL file,
-	failed to load MS_Office_2013_primary_colors.ase as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.ase' instead),
-	failed to load MS_Office_2013_primary_colors.ase as Paint.NET palette: no colors returned,
-	failed to load MS_Office_2013_primary_colors.ase as GIMP palette: Not a GIMP Palette,
-	failed to load MS_Office_2013_primary_colors.ase as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load MS_Office_2013_primary_colors.ase as Skencil palette: Not a Skencil palette,
-	failed to load MS_Office_2013_primary_colors.ase as Sketch palette: not sketchpalette JSON,
-	failed to load MS_Office_2013_primary_colors.ase as sK1 palette: No colors found (0),
-	failed to load MS_Office_2013_primary_colors.ase as CSS colors: looks like a binary file,
-	failed to load MS_Office_2013_primary_colors.ase as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
-	failed to load MS_Office_2013_primary_colors.ase as Adobe Color Swatch: Not an Adobe Color Swatch file,
-	failed to load MS_Office_2013_primary_colors.ase as Adobe Color Table: file size must be 768 or 772 bytes (saw 974), OR file extension must be '.act' (saw '.ase'),
-	failed to load MS_Office_2013_primary_colors.ase as Homesite palette: Not a Homesite palette,
-	failed to load MS_Office_2013_primary_colors.ase as StarCraft palette: Wrong file size, must be 768 bytes long (not 974),
-	failed to load MS_Office_2013_primary_colors.ase as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 974),
-	failed to load MS_Office_2013_primary_colors.ase as tabular colors: No colors found (0)
+Loaded As:                      Adobe Swatch Exchange (.ase)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+0   90  158   Outlook Dark
+0   114 198   Outlook Primary
+42  141 212   Outlook Secondary
+205 230 247   Outlook Light
+10  99  50    Excel Dark
+33  115 70    Excel Primary
+67  148 103   Excel Secondary
+211 240 224   Excel Light
+184 59  29    PowerPoint Dark
+210 71  38    PowerPoint Primary
+240 98  62    PowerPoint Secondary
+252 228 220   PowerPoint Light
+25  71  138   Word Dark
+43  87  154   Word Primary
+62  109 181   Word Secondary
+213 234 242   Word Light

@@ -1,18 +1,38 @@
-Some errors were encountered when loading:
-	failed to load Tango_icon_palette.ase as Paint Shop Pro palette: Not a JASC-PAL,
-	failed to load Tango_icon_palette.ase as RIFF PAL: RIFF header not found; not a RIFF PAL file,
-	failed to load Tango_icon_palette.ase as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.ase' instead),
-	failed to load Tango_icon_palette.ase as Paint.NET palette: no colors returned,
-	failed to load Tango_icon_palette.ase as GIMP palette: Not a GIMP Palette,
-	failed to load Tango_icon_palette.ase as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load Tango_icon_palette.ase as Skencil palette: Not a Skencil palette,
-	failed to load Tango_icon_palette.ase as Sketch palette: not sketchpalette JSON,
-	failed to load Tango_icon_palette.ase as sK1 palette: No colors found (0),
-	failed to load Tango_icon_palette.ase as CSS colors: looks like a binary file,
-	failed to load Tango_icon_palette.ase as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
-	failed to load Tango_icon_palette.ase as Adobe Color Swatch: Not an Adobe Color Swatch file,
-	failed to load Tango_icon_palette.ase as Adobe Color Table: file size must be 768 or 772 bytes (saw 1354), OR file extension must be '.act' (saw '.ase'),
-	failed to load Tango_icon_palette.ase as Homesite palette: Not a Homesite palette,
-	failed to load Tango_icon_palette.ase as StarCraft palette: Wrong file size, must be 768 bytes long (not 1354),
-	failed to load Tango_icon_palette.ase as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 1354),
-	failed to load Tango_icon_palette.ase as tabular colors: No colors found (0)
+Loaded As:                      Adobe Swatch Exchange (.ase)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+252 233 79    Butter 1
+237 212 0     Butter 2
+196 160 0     Butter 3
+252 175 62    Orange 1
+245 121 0     Orange 2
+206 92  0     Orange 3
+233 185 110   Chocolate 1
+193 125 17    Chocolate 2
+143 89  2     Chocolate 3
+138 226 52    Chameleon 1
+115 210 22    Chameleon 2
+78  154 6     Chameleon 3
+114 159 207   Sky Blue 1
+52  101 164   Sky Blue 2
+32  74  135   Sky Blue 3
+173 127 168   Plum 1
+117 80  118   Plum 2
+92  53  102   Plum 3
+239 41  41    Scarlet Red 1
+204 0   0     Scarlet Red 2
+164 0   0     Scarlet Red 3
+238 238 236   Aluminium 1
+211 215 207   Aluminium 2
+186 189 182   Aluminium 3
+136 138 133   Aluminium 4
+85  87  83    Aluminium 5
+46  52  54    Aluminium 6

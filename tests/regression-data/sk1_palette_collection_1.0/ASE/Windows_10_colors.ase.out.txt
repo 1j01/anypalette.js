@@ -1,18 +1,60 @@
-Some errors were encountered when loading:
-	failed to load Windows_10_colors.ase as Paint Shop Pro palette: Not a JASC-PAL,
-	failed to load Windows_10_colors.ase as RIFF PAL: RIFF header not found; not a RIFF PAL file,
-	failed to load Windows_10_colors.ase as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.ase' instead),
-	failed to load Windows_10_colors.ase as Paint.NET palette: no colors returned,
-	failed to load Windows_10_colors.ase as GIMP palette: Not a GIMP Palette,
-	failed to load Windows_10_colors.ase as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load Windows_10_colors.ase as Skencil palette: Not a Skencil palette,
-	failed to load Windows_10_colors.ase as Sketch palette: not sketchpalette JSON,
-	failed to load Windows_10_colors.ase as sK1 palette: No colors found (0),
-	failed to load Windows_10_colors.ase as CSS colors: looks like a binary file,
-	failed to load Windows_10_colors.ase as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
-	failed to load Windows_10_colors.ase as Adobe Color Swatch: Not an Adobe Color Swatch file,
-	failed to load Windows_10_colors.ase as Adobe Color Table: file size must be 768 or 772 bytes (saw 2120), OR file extension must be '.act' (saw '.ase'),
-	failed to load Windows_10_colors.ase as Homesite palette: Not a Homesite palette,
-	failed to load Windows_10_colors.ase as StarCraft palette: Wrong file size, must be 768 bytes long (not 2120),
-	failed to load Windows_10_colors.ase as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 2120),
-	failed to load Windows_10_colors.ase as tabular colors: No colors found (0)
+Loaded As:                      Adobe Swatch Exchange (.ase)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+255 185 1     #FFB901
+230 72  86    #E64856
+0   120 215   #0078D7
+0   153 187   #0099BB
+122 116 116   #7A7474
+118 118 118   #767676
+255 139 0     #FF8B00
+232 17  35    #E81123
+0   99  177   #0063B1
+45  124 154   #2D7C9A
+94  90  87    #5E5A57
+75  74  72    #4B4A48
+248 78  42    #F84E2A
+234 0   95    #EA005F
+142 139 216   #8E8BD8
+1   183 196   #01B7C4
+103 118 137   #677689
+106 121 126   #6A797E
+202 80  15    #CA500F
+196 0   82    #C40052
+107 105 214   #6B69D6
+0   177 148   #00B194
+80  92  106   #505C6A
+75  84  89    #4B5459
+218 58  1     #DA3A01
+227 0   141   #E3008D
+135 100 184   #8764B8
+0   178 148   #00B294
+87  124 116   #577C74
+100 124 100   #647C64
+239 105 80    #EF6950
+192 0   119   #C00077
+116 77  168   #744DA8
+1   134 117   #018675
+73  104 96    #496860
+82  93  85    #525D55
+208 52  56    #D03438
+194 56  179   #C238B3
+176 70  194   #B046C2
+3   202 105   #03CA69
+74  130 5     #4A8205
+131 117 68    #837544
+254 67  66    #FE4342
+155 0   138   #9B008A
+135 22  150   #871696
+16  136 62    #10883E
+16  123 14    #107B0E
+126 115 95    #7E735F
+0   97  179   #0061B3

@@ -1,18 +1,31 @@
-Some errors were encountered when loading:
-	failed to load Flat_UI_colors.ase as Paint Shop Pro palette: Not a JASC-PAL,
-	failed to load Flat_UI_colors.ase as RIFF PAL: RIFF header not found; not a RIFF PAL file,
-	failed to load Flat_UI_colors.ase as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.ase' instead),
-	failed to load Flat_UI_colors.ase as Paint.NET palette: no colors returned,
-	failed to load Flat_UI_colors.ase as GIMP palette: Not a GIMP Palette,
-	failed to load Flat_UI_colors.ase as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load Flat_UI_colors.ase as Skencil palette: Not a Skencil palette,
-	failed to load Flat_UI_colors.ase as Sketch palette: not sketchpalette JSON,
-	failed to load Flat_UI_colors.ase as sK1 palette: No colors found (0),
-	failed to load Flat_UI_colors.ase as CSS colors: looks like a binary file,
-	failed to load Flat_UI_colors.ase as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
-	failed to load Flat_UI_colors.ase as Adobe Color Swatch: Not an Adobe Color Swatch file,
-	failed to load Flat_UI_colors.ase as Adobe Color Table: file size must be 768 or 772 bytes (saw 960), OR file extension must be '.act' (saw '.ase'),
-	failed to load Flat_UI_colors.ase as Homesite palette: Not a Homesite palette,
-	failed to load Flat_UI_colors.ase as StarCraft palette: Wrong file size, must be 768 bytes long (not 960),
-	failed to load Flat_UI_colors.ase as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 960),
-	failed to load Flat_UI_colors.ase as tabular colors: No colors found (0)
+Loaded As:                      Adobe Swatch Exchange (.ase)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+26  188 156   TURQUOISE
+46  204 113   EMERALD
+52  152 219   PETER RIVER
+155 89  182   AMETHYST
+52  73  94    WET ASPHALT
+22  160 133   GREEN SEA
+39  174 96    NEPHRITIS
+41  128 185   BELIZE HOLE
+142 68  173   WISTERIA
+44  62  80    MIDNIGHT BLUE
+241 196 15    SUN FLOWER
+230 126 34    CARROT
+231 76  60    ALIZARIN
+236 240 241   CLOUDS
+149 165 166   CONCRETE
+243 156 18    ORANGE
+211 84  0     PUMPKIN
+192 57  43    POMEGRANATE
+185 191 195   SILVER
+126 138 139   ASBESTOS

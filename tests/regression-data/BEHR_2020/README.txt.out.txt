@@ -13,6 +13,7 @@ Some errors were encountered when loading:
 	failed to load README.txt as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
 	failed to load README.txt as Adobe Color Swatch: Not an Adobe Color Swatch file,
 	failed to load README.txt as Adobe Color Table: file size must be 768 or 772 bytes (saw 61), OR file extension must be '.act' (saw '.txt'),
+	failed to load README.txt as Adobe Swatch Exchange: Not an Adobe Swatch Exchange file,
 	failed to load README.txt as Homesite palette: Not a Homesite palette,
 	failed to load README.txt as StarCraft palette: Wrong file size, must be 768 bytes long (not 61),
 	failed to load README.txt as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 61)

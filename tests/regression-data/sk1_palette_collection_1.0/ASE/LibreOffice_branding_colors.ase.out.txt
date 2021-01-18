@@ -1,18 +1,42 @@
-Some errors were encountered when loading:
-	failed to load LibreOffice_branding_colors.ase as Paint Shop Pro palette: Not a JASC-PAL,
-	failed to load LibreOffice_branding_colors.ase as RIFF PAL: RIFF header not found; not a RIFF PAL file,
-	failed to load LibreOffice_branding_colors.ase as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.ase' instead),
-	failed to load LibreOffice_branding_colors.ase as Paint.NET palette: no colors returned,
-	failed to load LibreOffice_branding_colors.ase as GIMP palette: Not a GIMP Palette,
-	failed to load LibreOffice_branding_colors.ase as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load LibreOffice_branding_colors.ase as Skencil palette: Not a Skencil palette,
-	failed to load LibreOffice_branding_colors.ase as Sketch palette: not sketchpalette JSON,
-	failed to load LibreOffice_branding_colors.ase as sK1 palette: No colors found (0),
-	failed to load LibreOffice_branding_colors.ase as CSS colors: looks like a binary file,
-	failed to load LibreOffice_branding_colors.ase as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
-	failed to load LibreOffice_branding_colors.ase as Adobe Color Swatch: Not an Adobe Color Swatch file,
-	failed to load LibreOffice_branding_colors.ase as Adobe Color Table: file size must be 768 or 772 bytes (saw 1454), OR file extension must be '.act' (saw '.ase'),
-	failed to load LibreOffice_branding_colors.ase as Homesite palette: Not a Homesite palette,
-	failed to load LibreOffice_branding_colors.ase as StarCraft palette: Wrong file size, must be 768 bytes long (not 1454),
-	failed to load LibreOffice_branding_colors.ase as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 1454),
-	failed to load LibreOffice_branding_colors.ase as tabular colors: No colors found (0)
+Loaded As:                      Adobe Swatch Exchange (.ase)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+112 167 82    Olive
+16  104 2     Green 0
+24  163 3     Green 1
+67  195 48    Green 2
+146 226 133   Green 3
+204 244 198   Green 4
+2   63  98    Blue 0
+3   105 163   Blue 1
+28  153 224   Blue 2
+99  187 238   Blue 3
+170 220 247   Blue 4
+98  37  2     Orange 0
+163 62  3     Orange 1
+211 97  24    Orange 2
+240 158 111   Orange 3
+249 207 181   Orange 4
+83  2   96    Purple 0
+142 3   163   Purple 1
+194 84  210   Purple 2
+220 133 233   Purple 3
+242 203 248   Purple 4
+135 105 0     Yellow 0
+201 156 0     Yellow 1
+233 185 19    Yellow 2
+245 206 83    Yellow 3
+253 233 169   Yellow 4
+44  238 14    Green Accent
+0   160 252   Blue Accent
+252 92  0     Orange Accent
+227 39  255   Purple Accent
+255 215 76    Yellow Accent

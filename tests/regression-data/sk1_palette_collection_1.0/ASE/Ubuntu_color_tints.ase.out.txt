@@ -1,18 +1,95 @@
-Some errors were encountered when loading:
-	failed to load Ubuntu_color_tints.ase as Paint Shop Pro palette: Not a JASC-PAL,
-	failed to load Ubuntu_color_tints.ase as RIFF PAL: RIFF header not found; not a RIFF PAL file,
-	failed to load Ubuntu_color_tints.ase as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.ase' instead),
-	failed to load Ubuntu_color_tints.ase as Paint.NET palette: no colors returned,
-	failed to load Ubuntu_color_tints.ase as GIMP palette: Not a GIMP Palette,
-	failed to load Ubuntu_color_tints.ase as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load Ubuntu_color_tints.ase as Skencil palette: Not a Skencil palette,
-	failed to load Ubuntu_color_tints.ase as Sketch palette: not sketchpalette JSON,
-	failed to load Ubuntu_color_tints.ase as sK1 palette: No colors found (0),
-	failed to load Ubuntu_color_tints.ase as CSS colors: looks like a binary file,
-	failed to load Ubuntu_color_tints.ase as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
-	failed to load Ubuntu_color_tints.ase as Adobe Color Swatch: Not an Adobe Color Swatch file,
-	failed to load Ubuntu_color_tints.ase as Adobe Color Table: file size must be 768 or 772 bytes (saw 5424), OR file extension must be '.act' (saw '.ase'),
-	failed to load Ubuntu_color_tints.ase as Homesite palette: Not a Homesite palette,
-	failed to load Ubuntu_color_tints.ase as StarCraft palette: Wrong file size, must be 768 bytes long (not 5424),
-	failed to load Ubuntu_color_tints.ase as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 5424),
-	failed to load Ubuntu_color_tints.ase as tabular colors: No colors found (0)
+Loaded As:                      Adobe Swatch Exchange (.ase)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+221 72  20    Ubuntu Orange 100%
+224 90  43    Ubuntu Orange 90%
+227 108 67    Ubuntu Orange 80%
+231 126 90    Ubuntu Orange 70%
+234 145 114   Ubuntu Orange 60%
+238 163 137   Ubuntu Orange 50%
+239 172 149   Ubuntu Orange 45%
+241 181 161   Ubuntu Orange 40%
+243 190 172   Ubuntu Orange 35%
+244 200 184   Ubuntu Orange 30%
+246 209 196   Ubuntu Orange 25%
+248 218 208   Ubuntu Orange 20%
+249 227 219   Ubuntu Orange 15%
+251 236 231   Ubuntu Orange 10%
+119 41  83    Canonical Aubergine 100%
+132 62  100   Canonical Aubergine 90%
+146 83  117   Canonical Aubergine 80%
+159 105 134   Canonical Aubergine 70%
+173 126 151   Canonical Aubergine 60%
+187 148 169   Canonical Aubergine 50%
+193 158 177   Canonical Aubergine 45%
+200 169 186   Canonical Aubergine 40%
+207 180 194   Canonical Aubergine 35%
+214 190 203   Canonical Aubergine 30%
+221 201 212   Canonical Aubergine 25%
+227 212 220   Canonical Aubergine 20%
+234 222 229   Canonical Aubergine 15%
+241 233 237   Canonical Aubergine 10%
+119 33  111   Light Aubergine 100%
+132 55  125   Light Aubergine 90%
+146 77  139   Light Aubergine 80%
+159 99  154   Light Aubergine 70%
+173 121 168   Light Aubergine 60%
+187 144 183   Light Aubergine 50%
+193 155 190   Light Aubergine 45%
+200 166 197   Light Aubergine 40%
+207 177 204   Light Aubergine 35%
+214 188 211   Light Aubergine 30%
+221 199 219   Light Aubergine 25%
+227 210 226   Light Aubergine 20%
+234 221 233   Light Aubergine 15%
+241 232 240   Light Aubergine 10%
+94  39  80    Mid Aubergine 100%
+110 60  97    Mid Aubergine 90%
+126 82  115   Mid Aubergine 80%
+142 103 132   Mid Aubergine 70%
+158 125 150   Mid Aubergine 60%
+174 147 167   Mid Aubergine 50%
+182 157 176   Mid Aubergine 45%
+190 168 185   Mid Aubergine 40%
+198 179 193   Mid Aubergine 35%
+206 190 202   Mid Aubergine 30%
+214 201 211   Mid Aubergine 25%
+222 211 220   Mid Aubergine 20%
+230 222 228   Mid Aubergine 15%
+238 233 237   Mid Aubergine 10%
+44  0   30    Dark Aubergine 100%
+65  25  52    Dark Aubergine 90%
+86  51  75    Dark Aubergine 80%
+107 76  97    Dark Aubergine 70%
+128 102 120   Dark Aubergine 60%
+149 127 142   Dark Aubergine 50%
+160 140 153   Dark Aubergine 45%
+170 153 165   Dark Aubergine 40%
+181 165 176   Dark Aubergine 35%
+191 178 187   Dark Aubergine 30%
+202 191 198   Dark Aubergine 25%
+212 204 210   Dark Aubergine 20%
+223 216 221   Dark Aubergine 15%
+233 229 232   Dark Aubergine 10%
+174 167 159   Warm Grey 100%
+182 175 168   Warm Grey 90%
+190 184 178   Warm Grey 80%
+198 193 187   Warm Grey 70%
+206 202 197   Warm Grey 60%
+214 211 207   Warm Grey 50%
+218 215 211   Warm Grey 45%
+222 219 216   Warm Grey 40%
+226 224 221   Warm Grey 35%
+230 228 226   Warm Grey 30%
+234 233 231   Warm Grey 25%
+238 237 235   Warm Grey 20%
+242 241 240   Warm Grey 15%
+246 246 245   Warm Grey 10%

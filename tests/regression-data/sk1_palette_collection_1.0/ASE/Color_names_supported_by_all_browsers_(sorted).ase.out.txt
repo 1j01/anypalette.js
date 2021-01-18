@@ -1,18 +1,152 @@
-Some errors were encountered when loading:
-	failed to load Color_names_supported_by_all_browsers_(sorted).ase as Paint Shop Pro palette: Not a JASC-PAL,
-	failed to load Color_names_supported_by_all_browsers_(sorted).ase as RIFF PAL: RIFF header not found; not a RIFF PAL file,
-	failed to load Color_names_supported_by_all_browsers_(sorted).ase as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.ase' instead),
-	failed to load Color_names_supported_by_all_browsers_(sorted).ase as Paint.NET palette: no colors returned,
-	failed to load Color_names_supported_by_all_browsers_(sorted).ase as GIMP palette: Not a GIMP Palette,
-	failed to load Color_names_supported_by_all_browsers_(sorted).ase as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load Color_names_supported_by_all_browsers_(sorted).ase as Skencil palette: Not a Skencil palette,
-	failed to load Color_names_supported_by_all_browsers_(sorted).ase as Sketch palette: not sketchpalette JSON,
-	failed to load Color_names_supported_by_all_browsers_(sorted).ase as sK1 palette: No colors found (0),
-	failed to load Color_names_supported_by_all_browsers_(sorted).ase as CSS colors: looks like a binary file,
-	failed to load Color_names_supported_by_all_browsers_(sorted).ase as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
-	failed to load Color_names_supported_by_all_browsers_(sorted).ase as Adobe Color Swatch: Not an Adobe Color Swatch file,
-	failed to load Color_names_supported_by_all_browsers_(sorted).ase as Adobe Color Table: file size must be 768 or 772 bytes (saw 6588), OR file extension must be '.act' (saw '.ase'),
-	failed to load Color_names_supported_by_all_browsers_(sorted).ase as Homesite palette: Not a Homesite palette,
-	failed to load Color_names_supported_by_all_browsers_(sorted).ase as StarCraft palette: Wrong file size, must be 768 bytes long (not 6588),
-	failed to load Color_names_supported_by_all_browsers_(sorted).ase as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 6588),
-	failed to load Color_names_supported_by_all_browsers_(sorted).ase as tabular colors: No colors found (0)
+Loaded As:                      Adobe Swatch Exchange (.ase)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+0   0   0     Black
+0   0   128   Navy
+0   0   139   DarkBlue
+0   0   205   MediumBlue
+0   0   255   Blue
+0   100 0     DarkGreen
+0   128 0     Green
+0   128 128   Teal
+0   139 139   DarkCyan
+0   191 255   DeepSkyBlue
+0   206 209   DarkTurquoise
+0   250 154   MediumSpringGreen
+0   255 0     Lime
+0   255 127   SpringGreen
+0   255 255   Aqua
+0   255 255   Cyan
+25  25  112   MidnightBlue
+30  144 255   DodgerBlue
+32  178 170   LightSeaGreen
+34  139 34    ForestGreen
+46  139 87    SeaGreen
+47  79  79    DarkSlateGray
+50  205 50    LimeGreen
+60  179 113   MediumSeaGreen
+64  224 208   Turquoise
+65  105 225   RoyalBlue
+70  130 180   SteelBlue
+72  61  139   DarkSlateBlue
+72  209 204   MediumTurquoise
+75  0   130   Indigo 
+85  107 47    DarkOliveGreen
+95  158 160   CadetBlue
+100 149 237   CornflowerBlue
+102 51  153   RebeccaPurple
+102 205 170   MediumAquaMarine
+105 105 105   DimGray
+106 90  205   SlateBlue
+107 142 35    OliveDrab
+112 128 144   SlateGray
+119 136 153   LightSlateGray
+123 104 238   MediumSlateBlue
+124 252 0     LawnGreen
+127 255 0     Chartreuse
+127 255 212   Aquamarine
+128 0   0     Maroon
+128 0   128   Purple
+128 128 0     Olive
+128 128 128   Gray
+135 206 235   SkyBlue
+135 206 250   LightSkyBlue
+138 43  226   BlueViolet
+139 0   0     DarkRed
+139 0   139   DarkMagenta
+139 69  19    SaddleBrown
+143 188 143   DarkSeaGreen
+144 238 144   LightGreen
+147 112 219   MediumPurple
+148 0   211   DarkViolet
+152 251 152   PaleGreen
+153 50  204   DarkOrchid
+154 205 50    YellowGreen
+160 82  45    Sienna
+165 42  42    Brown
+169 169 169   DarkGray
+173 216 230   LightBlue
+173 255 47    GreenYellow
+175 238 238   PaleTurquoise
+176 196 222   LightSteelBlue
+176 224 230   PowderBlue
+178 34  34    FireBrick
+184 134 11    DarkGoldenRod
+186 85  211   MediumOrchid
+188 143 143   RosyBrown
+189 183 107   DarkKhaki
+192 192 192   Silver
+199 21  133   MediumVioletRed
+205 92  92    IndianRed 
+205 133 63    Peru
+210 105 30    Chocolate
+210 180 140   Tan
+211 211 211   LightGray
+216 191 216   Thistle
+218 112 214   Orchid
+218 165 32    GoldenRod
+219 112 147   PaleVioletRed
+220 20  60    Crimson
+220 220 220   Gainsboro
+221 160 221   Plum
+222 184 135   BurlyWood
+224 255 255   LightCyan
+230 230 250   Lavender
+233 150 122   DarkSalmon
+238 130 238   Violet
+238 232 170   PaleGoldenRod
+240 128 128   LightCoral
+240 230 140   Khaki
+240 248 255   AliceBlue
+240 255 240   HoneyDew
+240 255 255   Azure
+244 164 96    SandyBrown
+245 222 179   Wheat
+245 245 220   Beige
+245 245 245   WhiteSmoke
+245 255 250   MintCream
+248 248 255   GhostWhite
+250 128 114   Salmon
+250 235 215   AntiqueWhite
+250 240 230   Linen
+250 250 210   LightGoldenRodYellow
+253 245 230   OldLace
+255 0   0     Red
+255 0   255   Fuchsia
+255 0   255   Magenta
+255 20  147   DeepPink
+255 69  0     OrangeRed
+255 99  71    Tomato
+255 105 180   HotPink
+255 127 80    Coral
+255 140 0     DarkOrange
+255 160 122   LightSalmon
+255 165 0     Orange
+255 182 193   LightPink
+255 192 203   Pink
+255 215 0     Gold
+255 218 185   PeachPuff
+255 222 173   NavajoWhite
+255 228 181   Moccasin
+255 228 196   Bisque
+255 228 225   MistyRose
+255 235 205   BlanchedAlmond
+255 239 213   PapayaWhip
+255 240 245   LavenderBlush
+255 245 238   SeaShell
+255 248 220   Cornsilk
+255 250 205   LemonChiffon
+255 250 240   FloralWhite
+255 250 250   Snow
+255 255 0     Yellow
+255 255 224   LightYellow
+255 255 240   Ivory
+255 255 255   White

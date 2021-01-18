@@ -1,4 +1,5 @@
 Some errors were encountered when loading:
+	failed to load Grayscale_palette.ase as Adobe Swatch Exchange: no colors returned,
 	failed to load Grayscale_palette.ase as Paint Shop Pro palette: Not a JASC-PAL,
 	failed to load Grayscale_palette.ase as RIFF PAL: RIFF header not found; not a RIFF PAL file,
 	failed to load Grayscale_palette.ase as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.ase' instead),

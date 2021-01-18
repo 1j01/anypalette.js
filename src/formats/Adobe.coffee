@@ -3,6 +3,7 @@ jDataView = require "jdataview"
 Palette = require "../Palette"
 
 MAX_UINT16 = 2**16 - 1
+MAX_UINT32 = 2**32 - 1
 
 AcoColorSpace = Object.freeze({
 	RGB: 0
@@ -20,6 +21,18 @@ AcoColorSpace = Object.freeze({
 	9: "WIDE_CMYK"
 })
 
+get_utf_16_string = (view, length_including_terminator)->
+	binary_string = view.getString((length_including_terminator - 1) * 2, undefined, "binary")
+	string = ""
+	for i in [0...binary_string.length] by 2
+		string += String.fromCharCode(
+			# assuming big-endian (swap << 8 to i+1 for little-endian)
+			binary_string.charCodeAt(i) << 8 |
+			binary_string.charCodeAt(i+1)
+		)
+	view.getUint16() # should be 0x0000
+	string
+
 module.exports.load_adobe_color_swatch = ({data})->
 	# ACO (Adobe Color Swatch)
 
@@ -35,15 +48,8 @@ module.exports.load_adobe_color_swatch = ({data})->
 		z = view.getUint16() / MAX_UINT16
 		if aco_v2
 			view.getUint16() # should be 0x0000
-			length_plus_1 = view.getUint16()
-			name_binary_string = view.getString((length_plus_1 - 1) * 2, undefined, "binary")
-			name = ""
-			for i in [0...name_binary_string.length] by 2
-				name += String.fromCharCode(
-					name_binary_string.charCodeAt(i) << 8 |
-					name_binary_string.charCodeAt(i+1)
-				)
-			view.getUint16() # should be 0x0000
+			length_including_terminator = view.getUint16()
+			name = get_utf_16_string(view, length_including_terminator)
 		else
 			name = undefined
 	
@@ -112,19 +118,72 @@ module.exports.load_adobe_color_swatch = ({data})->
 	
 	palette
 
-load_adobe_swatch_exchange = ({data})->
+module.exports.load_adobe_swatch_exchange = ({data})->
 	# ASE (Adobe Swatch Exchange)
-	throw new Error "Not actually implemented"
 	
 	palette = new Palette()
 	view = new jDataView(data)
 	
-	for [0...256]
-		palette.add
-			red: view.readByte() / 255
-			green: view.readByte() / 255
-			blue: view.readByte() / 255
-	
+	if view.getString(4) isnt "ASEF"
+		throw new Error "Not an Adobe Swatch Exchange file"
+
+	version = view.getUint32()
+
+	# if version isnt 1 
+	# 	throw new Error "Unknown Adobe Swatch Exchange format version #{version}"
+
+	number_of_blocks = view.getUint32()
+
+	BLOCK_TYPE_GROUP_START = 0xc001
+	BLOCK_TYPE_GROUP_END = 0xc002
+	BLOCK_TYPE_COLOR = 0x0001
+	COLOR_SPACE_CMYK = "CMYK"
+	COLOR_SPACE_RGB = "RGB "
+	COLOR_SPACE_GRAYSCALE = "GRAY"
+	COLOR_MODE_GLOBAL = 0
+	COLOR_MODE_SPOT = 1
+	COLOR_MODE_NORMAL = 2
+
+	within_groups = []
+	for [0...number_of_blocks]
+		block_type = view.getUint16()
+		block_length = view.getUint32()
+		block_end_pos = view.tell() + block_length
+		switch block_type
+			when BLOCK_TYPE_GROUP_START
+				name_length_including_terminator = view.getUint16()
+				name = get_utf_16_string(view, name_length_including_terminator)
+				within_groups.push({name})
+			when BLOCK_TYPE_GROUP_END
+				within_groups.pop()
+			when BLOCK_TYPE_COLOR
+				name_length_including_terminator = view.getUint16()
+				name = get_utf_16_string(view, name_length_including_terminator)
+				color_space = view.getString(4)
+				switch color_space
+					when COLOR_SPACE_CMYK
+						palette.add
+							cyan: view.getFloat32()
+							magenta: view.getFloat32()
+							yellow: view.getFloat32()
+							key: view.getFloat32()
+							name: name
+					when COLOR_SPACE_RGB
+						palette.add
+							red: view.getFloat32()
+							green: view.getFloat32()
+							blue: view.getFloat32()
+							name: name
+					when COLOR_SPACE_GRAYSCALE
+						gray = view.getFloat32()
+						palette.add
+							red: gray
+							green: gray
+							blue: gray
+							name: name
+				color_mode = view.getUint16()
+		view.seek(block_end_pos)
+
 	palette
 
 load_adobe_color_book = ({data})->

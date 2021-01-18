@@ -1,18 +1,57 @@
-Some errors were encountered when loading:
-	failed to load Bluecurve_icon_colors.ase as Paint Shop Pro palette: Not a JASC-PAL,
-	failed to load Bluecurve_icon_colors.ase as RIFF PAL: RIFF header not found; not a RIFF PAL file,
-	failed to load Bluecurve_icon_colors.ase as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.ase' instead),
-	failed to load Bluecurve_icon_colors.ase as Paint.NET palette: no colors returned,
-	failed to load Bluecurve_icon_colors.ase as GIMP palette: Not a GIMP Palette,
-	failed to load Bluecurve_icon_colors.ase as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load Bluecurve_icon_colors.ase as Skencil palette: Not a Skencil palette,
-	failed to load Bluecurve_icon_colors.ase as Sketch palette: not sketchpalette JSON,
-	failed to load Bluecurve_icon_colors.ase as sK1 palette: No colors found (0),
-	failed to load Bluecurve_icon_colors.ase as CSS colors: looks like a binary file,
-	failed to load Bluecurve_icon_colors.ase as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
-	failed to load Bluecurve_icon_colors.ase as Adobe Color Swatch: Not an Adobe Color Swatch file,
-	failed to load Bluecurve_icon_colors.ase as Adobe Color Table: file size must be 768 or 772 bytes (saw 1910), OR file extension must be '.act' (saw '.ase'),
-	failed to load Bluecurve_icon_colors.ase as Homesite palette: Not a Homesite palette,
-	failed to load Bluecurve_icon_colors.ase as StarCraft palette: Wrong file size, must be 768 bytes long (not 1910),
-	failed to load Bluecurve_icon_colors.ase as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 1910),
-	failed to load Bluecurve_icon_colors.ase as tabular colors: No colors found (0)
+Loaded As:                      Adobe Swatch Exchange (.ase)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+221 190 221   DDBEDD
+188 128 189   BC80BD
+158 73  161   9E49A1
+129 23  136   811788
+122 0   130   7A0082
+191 202 226   BFCAE2
+128 156 201   809CC9
+69  115 179   457383
+10  80  161   0A50A1
+3   44  135   032C87
+229 241 244   E5F1F4
+204 236 244   CCECF4
+153 217 232   99D9E8
+103 198 221   65C6DD
+52  179 209   34B3D1
+204 235 185   CCEBB9
+153 212 127   99D47F
+102 187 80    66BB50
+51  160 44    33A02C
+0   153 0     009900
+255 255 191   FFFFBF
+255 255 153   FFFF99
+255 255 102   FFFF66
+255 255 0     FFFF00
+255 233 0     FFE900
+226 190 137   E2BE89
+255 151 102   FF9766
+204 102 53    CC6635
+153 51  0     993300
+107 50  0     6B3200
+254 239 208   FEEFD0
+254 223 179   FEDFB3
+253 191 111   FDBF6F
+255 159 52    FF9F34
+255 127 0     FF7F00
+252 192 167   FCC0A7
+251 128 95    FB805F
+252 65  40    FC4128
+255 0   0     FF0000
+167 0   0     A70000
+255 255 255   FFFFFF
+204 204 204   CCCCCC
+153 153 153   999999
+102 102 102   666666
+51  51  51    333333
+0   0   0     000000

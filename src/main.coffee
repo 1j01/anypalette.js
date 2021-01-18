@@ -160,7 +160,7 @@ load_palette = (o, callback)->
 				throw new Error "no colors returned"
 		catch e
 			msg = "failed to load #{o.fileName} as #{format.name}: #{e.message}"
-			# if matching_ext[format_id]? and not e.message.match(/not a/i)
+			# if matching_ext[format_id]? #and not e.message.match(/not a/i) # meant to avoid "Not a <FORMAT> Palette", overly broad
 			# 	console?.error? msg
 			# else
 			# 	console?.warn? msg

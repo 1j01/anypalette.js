@@ -26,49 +26,26 @@ module.exports.load_adobe_color_swatch = ({data})->
 	palette = new Palette()
 	view = new jDataView(data)
 	
-	# aco1 header information mainly to get color count
-	aco_v1_version = view.getUint16()
-	number_of_colors = view.getUint16()
-	
-	if aco_v1_version isnt 1
-		throw new Error "Not an Adobe Color Swatch file"
+	read_color = (aco_v2)->
 
-	skip_one_header = 4
-
-	# skip aco1 section
-	aco_v2_offset = skip_one_header + number_of_colors * (5 * 2)
-	aco_v2_colors_offset = aco_v2_offset + skip_one_header
-
-	if view.byteLength <= aco_v2_offset
-		throw new Error "Not an Adobe Color Swatch file v2"
-
-	view.seek(aco_v2_offset)
-	aco_v2_version = view.getUint16()
-	aco_v2_number_of_colors = view.getUint16()
-	# view.seek(aco_v2_colors_offset)
-
-	if aco_v2_version isnt 2
-		throw new Error "Not an Adobe Color Swatch file v2"
-	if aco_v2_number_of_colors isnt number_of_colors
-		throw new Error "Number of colors mismatch between ACO v1 and v2 sections"
-	
-	for [0...number_of_colors]
-	
 		color_space = view.getUint16()
 		w = view.getUint16() / MAX_UINT16
 		x = view.getUint16() / MAX_UINT16
 		y = view.getUint16() / MAX_UINT16
 		z = view.getUint16() / MAX_UINT16
-		view.getUint16() # should be 0x0000
-		length_plus_1 = view.getUint16()
-		name_binary_string = view.getString((length_plus_1 - 1) * 2, undefined, "binary")
-		name = ""
-		for i in [0...name_binary_string.length] by 2
-			name += String.fromCharCode(
-				name_binary_string.charCodeAt(i) << 8 |
-				name_binary_string.charCodeAt(i+1)
-			)
-		view.getUint16() # should be 0x0000
+		if aco_v2
+			view.getUint16() # should be 0x0000
+			length_plus_1 = view.getUint16()
+			name_binary_string = view.getString((length_plus_1 - 1) * 2, undefined, "binary")
+			name = ""
+			for i in [0...name_binary_string.length] by 2
+				name += String.fromCharCode(
+					name_binary_string.charCodeAt(i) << 8 |
+					name_binary_string.charCodeAt(i+1)
+				)
+			view.getUint16() # should be 0x0000
+		else
+			name = undefined
 	
 		switch color_space
 			when AcoColorSpace.RGB
@@ -102,6 +79,36 @@ module.exports.load_adobe_color_swatch = ({data})->
 					green: w
 					blue: w
 					name: name
+	
+	aco_v1_version = view.getUint16()
+	number_of_colors = view.getUint16()
+	
+	if aco_v1_version isnt 1
+		throw new Error "Not an Adobe Color Swatch file"
+
+	header_size = 4 # ACO v1 or v2 header, same size
+
+	aco_v2_offset = header_size + number_of_colors * (5 * 2)
+	aco_v2_colors_offset = aco_v2_offset + header_size
+
+	if view.byteLength <= aco_v2_offset
+		# ACO v1 only file
+		for [0...number_of_colors]
+			read_color(false)
+		return palette
+
+	view.seek(aco_v2_offset)
+	aco_v2_version = view.getUint16()
+	aco_v2_number_of_colors = view.getUint16()
+	# view.seek(aco_v2_colors_offset)
+
+	if aco_v2_version isnt 2
+		throw new Error "Not an Adobe Color Swatch file v2"
+	if aco_v2_number_of_colors isnt number_of_colors
+		throw new Error "Number of colors mismatch between ACO v1 and v2 sections"
+	
+	for [0...number_of_colors]
+		read_color(true)
 	
 	palette
 

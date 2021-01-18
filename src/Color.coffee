@@ -53,53 +53,67 @@ class Color
 			@green = (1 - Math.min(1, magenta * (1 - key) + key))
 			@blue = (1 - Math.min(1, yellow * (1 - key) + key))
 		else
-			# UNTESTED UNTESTED UNTESTED UNTESTED UNTESTED UNTESTED
-			if @l? and @a? and @b?
-				# white =
+			# TODO: rename l -> lightness?
+			# a/b -> aChroma/bChroma? aChrominance/bChrominance??
+			if options.l? and options.a? and options.b?
+				white_D50 =
+					x: 96.422
+					y: 100.000
+					z: 82.521
+				# white_D65 =
 				# 	x: 95.047
 				# 	y: 100.000
 				# 	z: 108.883
 				
+				options.a -= 1/2
+				options.b -= 1/2
+				# TODO: Get this actually working, using Information and Math instead of Fiddling Around
+				# It would be nice if I could find some XYZ palettes,
+				# since the LAB handling depends on the XYZ handling.
+				options.l = Math.pow(options.l, 2) # messing around
+				options.l *= 15 # messing around
+				options.a *= 80 # messing around
+				options.b *= 80 # messing around
+
 				xyz =
-					y: (raw.l + 16) / 116
-				xyz.x = raw.a / 500 + xyz.y
-				xyz.z = xyz.y - raw.b / 200
+					y: (options.l + 16) / 116
+				xyz.x = options.a / 500 + xyz.y
+				xyz.z = xyz.y - options.b / 200
 				
-				for _ in "xyz"
-					powed = Math.pow(xyz[_], 3)
-					
+				for c in "xyz"
+					powed = Math.pow(xyz[c], 3)
+
 					if powed > 0.008856
-						xyz[_] = powed
+						xyz[c] = powed
 					else
-						xyz[_] = (xyz[_] - 16 / 116) / 7.787
-					
-					#xyz[_] = _round(xyz[_] * white[_])
-				
-			# UNTESTED UNTESTED UNTESTED UNTESTED
-			if @x? and @y? and @z?
-				xyz =
-					x: raw.x
-					y: raw.y
-					z: raw.z
+						xyz[c] = (xyz[c] - 16 / 116) / 7.787
+					# set {x, y, z} options for fallthrough
+					options[c] = xyz[c] * white_D50[c]
+			# fallthrough
+			if options.x? and options.y? and options.z?
+				{x, y, z} = options
 				
 				rgb =
-					r: xyz.x * 3.2406 + xyz.y * -1.5372 + xyz.z * -0.4986
-					g: xyz.x * -0.9689 + xyz.y * 1.8758 + xyz.z * 0.0415
-					b: xyz.x * 0.0557 + xyz.y * -0.2040 + xyz.z * 1.0570
+					r: x * 3.2406 + y * -1.5372 + z * -0.4986
+					g: x * -0.9689 + y * 1.8758 + z * 0.0415
+					b: x * 0.0557 + y * -0.2040 + z * 1.0570
 				
-				for _ in "rgb"
-					#rgb[_] = _round(rgb[_])
+				# r =  3.2404542*x - 1.5371385*y - 0.4985314*z
+				# g = -0.9692660*x + 1.8760108*y + 0.0415560*z
+				# b =  0.0556434*x - 0.2040259*y + 1.0572252*z
+
+				for c in "rgb"
+					if rgb[c] < 0
+						rgb[c] = 0
 					
-					if rgb[_] < 0
-						rgb[_] = 0
-					
-					if rgb[_] > 0.0031308
-						rgb[_] = 1.055 * Math.pow(rgb[_], (1 / 2.4)) - 0.055
+					if rgb[c] > 0.0031308
+						rgb[c] = 1.055 * Math.pow(rgb[c], (1 / 2.4)) - 0.055
 					else
-						rgb[_] *= 12.92
+						rgb[c] *= 12.92
 					
-					
-					#rgb[_] = Math.round(rgb[_] * 255)
+				@red = rgb.r
+				@green = rgb.g
+				@blue = rgb.b
 			else
 				throw new TypeError "Color constructor must be called with {red,green,blue} or {hue,saturation,value} or {hue,saturation,lightness} or {cyan,magenta,yellow,key} or {x,y,z} or {l,a,b},
 					#{

@@ -39,6 +39,9 @@ module.exports.load_adobe_color_swatch = ({data})->
 	aco_v2_offset = skip_one_header + number_of_colors * (5 * 2)
 	aco_v2_colors_offset = aco_v2_offset + skip_one_header
 
+	if view.byteLength <= aco_v2_offset
+		throw new Error "Not an Adobe Color Swatch file v2"
+
 	view.seek(aco_v2_offset)
 	aco_v2_version = view.getUint16()
 	aco_v2_number_of_colors = view.getUint16()
@@ -49,7 +52,7 @@ module.exports.load_adobe_color_swatch = ({data})->
 	if aco_v2_number_of_colors isnt number_of_colors
 		throw new Error "Number of colors mismatch between ACO v1 and v2 sections"
 	
-	for [0..number_of_colors]
+	for [0...number_of_colors]
 	
 		color_space = view.getUint16()
 		w = view.getUint16() / MAX_UINT16
@@ -58,7 +61,13 @@ module.exports.load_adobe_color_swatch = ({data})->
 		z = view.getUint16() / MAX_UINT16
 		view.getUint16() # should be 0x0000
 		length_plus_1 = view.getUint16()
-		name = view.readUnicodeString(length_plus_1 - 1) # this may need to be made to take a length
+		name_binary_string = view.getString((length_plus_1 - 1) * 2, undefined, "binary")
+		name = ""
+		for i in [0...name_binary_string.length] by 2
+			name += String.fromCharCode(
+				name_binary_string.charCodeAt(i) << 8 |
+				name_binary_string.charCodeAt(i+1)
+			)
 		view.getUint16() # should be 0x0000
 	
 		switch color_space

@@ -1,17 +1,63 @@
-Some errors were encountered when loading:
-	failed to load NES.aco as Paint Shop Pro palette: Not a JASC-PAL,
-	failed to load NES.aco as RIFF PAL: RIFF header not found; not a RIFF PAL file,
-	failed to load NES.aco as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.aco' instead),
-	failed to load NES.aco as Paint.NET palette: no colors returned,
-	failed to load NES.aco as GIMP palette: Not a GIMP Palette,
-	failed to load NES.aco as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load NES.aco as Skencil palette: Not a Skencil palette,
-	failed to load NES.aco as Sketch palette: not sketchpalette JSON,
-	failed to load NES.aco as sK1 palette: No colors found (0),
-	failed to load NES.aco as CSS colors: looks like a binary file,
-	failed to load NES.aco as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
-	failed to load NES.aco as Adobe Color Table: file size must be 768 or 772 bytes (saw 2278), OR file extension must be '.act' (saw '.aco'),
-	failed to load NES.aco as Homesite palette: Not a Homesite palette,
-	failed to load NES.aco as StarCraft palette: Wrong file size, must be 768 bytes long (not 2278),
-	failed to load NES.aco as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 2278),
-	failed to load NES.aco as tabular colors: No colors found (0)
+Loaded As:                      Adobe Color Swatch (.aco)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+124 124 124   Swatch 1
+188 188 188   Swatch 2
+248 248 248   Swatch 3
+0   0   252   Swatch 4
+0   120 248   Swatch 5
+60  188 252   Swatch 6
+164 228 252   Swatch 7
+0   0   188   Swatch 8
+0   88  248   Swatch 9
+104 136 252   Swatch 10
+184 184 248   Swatch 11
+68  40  188   Swatch 12
+104 68  252   Swatch 13
+152 120 248   Swatch 14
+216 184 248   Swatch 15
+148 0   132   Swatch 16
+216 0   204   Swatch 17
+248 120 248   Swatch 18
+248 184 248   Swatch 19
+168 0   32    Swatch 20
+228 0   88    Swatch 21
+248 88  152   Swatch 22
+248 164 192   Swatch 23
+168 16  0     Swatch 24
+248 56  0     Swatch 25
+252 160 68    Swatch 26
+252 224 168   Swatch 27
+136 20  0     Swatch 28
+228 92  16    Swatch 29
+252 160 68    Swatch 30
+252 224 168   Swatch 31
+80  48  0     Swatch 32
+172 124 0     Swatch 33
+248 184 0     Swatch 34
+248 216 120   Swatch 35
+0   120 0     Swatch 36
+0   184 0     Swatch 37
+184 248 24    Swatch 38
+216 248 120   Swatch 39
+0   104 0     Swatch 40
+0   168 0     Swatch 41
+88  216 84    Swatch 42
+184 248 184   Swatch 43
+0   88  0     Swatch 44
+0   168 68    Swatch 45
+88  248 152   Swatch 46
+184 248 216   Swatch 47
+0   64  88    Swatch 48
+0   136 136   Swatch 49
+0   232 216   Swatch 50
+0   252 252   Swatch 51
+0   0   0     Swatch 52

@@ -10,6 +10,7 @@ Some errors were encountered when loading:
 	failed to load BEHR-Reds.skp as Sketch palette: not sketchpalette JSON,
 	failed to load BEHR-Reds.skp as CSS colors: looks like a binary file,
 	failed to load BEHR-Reds.skp as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
+	failed to load BEHR-Reds.skp as Adobe Color Swatch: Not an Adobe Color Swatch file,
 	failed to load BEHR-Reds.skp as Adobe Color Table: file size must be 768 or 772 bytes (saw 83661), OR file extension must be '.act' (saw '.skp'),
 	failed to load BEHR-Reds.skp as Homesite palette: Not a Homesite palette,
 	failed to load BEHR-Reds.skp as StarCraft palette: Wrong file size, must be 768 bytes long (not 83661),

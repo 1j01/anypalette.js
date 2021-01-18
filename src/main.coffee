@@ -76,11 +76,11 @@ formats =
 	# 	fileExtensions: ["colors"]
 	# 	load: require "./formats/theme"
 	# }
-	# ADOBE_COLOR_SWATCH_PALETTE: {
-	# 	name: "Adobe Color Swatch"
-	# 	fileExtensions: ["aco"]
-	# 	load: require "./formats/AdobeColorSwatch"
-	# }
+	ADOBE_COLOR_SWATCH_PALETTE: {
+		name: "Adobe Color Swatch"
+		fileExtensions: ["aco"]
+		load: (require "./formats/Adobe").load_adobe_color_swatch
+	}
 	ADOBE_COLOR_TABLE_PALETTE: {
 		name: "Adobe Color Table"
 		fileExtensions: ["act"]

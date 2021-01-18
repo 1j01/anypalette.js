@@ -4,123 +4,96 @@ Palette = require "../Palette"
 
 MAX_UINT16 = 2**16 - 1
 
-load_adobe_color_swatch = ({data})->
+AcoColorSpace = Object.freeze({
+	RGB: 0
+	HSB: 1
+	CMYK: 2
+	LAB: 7
+	GRAYSCALE: 8
+	WIDE_CMYK: 9
+
+	0: "RGB"
+	1: "HSB"
+	2: "CMYK"
+	7: "LAB"
+	8: "GRAYSCALE"
+	9: "WIDE_CMYK"
+})
+
+module.exports.load_adobe_color_swatch = ({data})->
 	# ACO (Adobe Color Swatch)
-	throw new Error "Not actually implemented, despite over a hundred lines of code"
+	throw new Error "Not implemented: big endian support in BinaryReader (despite apparent support in the code it's based on)"
 	
 	palette = new Palette()
 	br = new BinaryReader(data)
 	
 	# aco1 header information mainly to get color count
-	ver = br.readUInt16()
-	n_colors = br.readUInt16()
+	aco_v1_version = br.readUInt16()
+	number_of_colors = br.readUInt16()
 	
+	if aco_v1_version isnt 1
+		throw new Error "Not an Adobe Color Swatch file"
+
 	skip_one_header = 4
 
 	# skip aco1 section
-	skip_section1 = skip_one_header + n_colors * (5 * 2)
-	# skip aco2 header
-	to_section2 = skip_section1 + skip_one_header
+	aco_v2_offset = skip_one_header + n_colors * (5 * 2)
+	aco_v2_colors_offset = aco_v2_offset + skip_one_header
 
-	# count palette iterations
-	color_count = 0
+	br.seek(aco_v2_offset)
+	aco_v2_version = br.readUInt16()
+	aco_v2_number_of_colors = br.readUInt16()
+	# br.seek(aco_v2_colors_offset)
 
-	# parse section 2 the first time to get color info and color name field length
-	br.seek(to_section2)
+	if aco_v2_version isnt 2
+		throw new Error "Not an Adobe Color Swatch file v2"
+	if aco_v2_number_of_colors isnt number_of_colors
+		throw new Error "Number of colors mismatch between ACO v1 and v2 sections"
 	
-	#LOOPLOOPLOOPLOOPLOOPLOOPLOOPLOOPLOOPLOOPSTART
-	color_count += 1
+	for [0..number_of_colors]
 	
-	color_space = br.readUInt16()
-	w = br.readUInt16() / MAX_UINT16
-	x = br.readUInt16() / MAX_UINT16
-	y = br.readUInt16() / MAX_UINT16
-	z = br.readUInt16() / MAX_UINT16
-	separator = br.readUInt16()
-	lenplus1 = br.readUInt16() # let's not parse any further
+		color_space = br.readUInt16()
+		w = br.readUInt16() / MAX_UINT16
+		x = br.readUInt16() / MAX_UINT16
+		y = br.readUInt16() / MAX_UINT16
+		z = br.readUInt16() / MAX_UINT16
+		br.readUInt16() # should be 0x0000
+		length_plus_1 = br.readUInt16()
+		name = br.readUnicodeString(length_plus_1 - 1) # this may need to be made to take a length
+		br.readUInt16() # should be 0x0000
 	
-	switch color_space
-		when 0
-			palette.add
-				red: w
-				green: x
-				blue: y
-				name: name
-		
-		when 1
-			palette.add
-				hue: w
-				saturation: x
-				value: y
-				name: name
-	
-	# skip to the next color
-	br.seek(lenplus1 * 2)
-	
-	###
-	getColorName = (color, skip)->
-		
-		colorName = ""
-		n = 0
-		
-		br.skip(skip)
-			.loop((end)->
-				n += 1
-				if n is color.lenplus1 - 1
-					end()
-				
-				namepart = br.readUInt16()
-				
-				# hex representation of this part
-				hexPart = namepart.toString(16)
-				# ascii representation of this part
-				asciiPart = hexToAscii(hexPart)
-				# console.log(asciiPart)
-				colorName += asciiPart
-			)
-		
-		colorName
-	###
-	
-	hexToAscii = (hex)->
-		ascii = ""
-		i = 0
-		while i < hex.length
-			ascii += String.fromCharCode(
-				parseInt(hex.substr(i, 2), 16)
-			)
-			i += 2
-		
-		ascii
-	
-	lastNamesLength = 0
-	
-	# iterate over our colorTable and store color names
-	for i in colorTable
-		
-		nTotalColors += 1
-		
-		color = colorTable[i]
-		
-		# skip aco1, aco2 header, and previously iterated palette
-		toNextColorName = to_section2 + ( (color.index) * 14 ) + lastNamesLength
-		
-		# get color name
-		color.name = getColorName(color, toNextColorName)
-		
-		# the length of previous names in bytes
-		lastNamesLength = lastNamesLength + (color.lenplus1 * 2)
-		
-		# calculate color values and write them to the palette
 		switch color_space
-			when 0
-				color.red = w
-				color.green = x
-				color.blue = y
-			when 1
-				color.hue = w
-				color.saturation = x
-				color.value = y
+			when AcoColorSpace.RGB
+				palette.add
+					red: w
+					green: x
+					blue: y
+					name: name
+			when AcoColorSpace.HSB
+				palette.add
+					hue: w
+					saturation: x
+					value: y
+					name: name
+			when AcoColorSpace.CMYK, AcoColorSpace.WIDE_CMYK
+				palette.add
+					cyan: w
+					magenta: x
+					yellow: y
+					key: z
+					name: name
+			when AcoColorSpace.LAB
+				palette.add
+					l: w
+					a: x
+					b: y
+					name: name
+			when AcoColorSpace.GRAYSCALE
+				palette.add
+					red: w
+					green: w
+					blue: w
+					name: name
 	
 	palette
 

@@ -23,6 +23,7 @@ Supported palette formats:
 |-------------------|-----------------------------------|-----------------------------------------------------------------------------------|:-------:|:-------:|
 | .pal              | [RIFF] Palette                    | [MS Paint] for Windows 95 and Windows NT 4.0                                      |   ✅   | Planned |
 | .gpl              | [GIMP][Gimp] Palette              | [Gimp], [Inkscape], [Krita], [KolourPaint], [Scribus], [CinePaint], [MyPaint]     |   ✅   |   ✅    |
+| .aco              | Adobe Color Swatches              | Adobe [Photoshop]                                                                 |   ✅   | Planned |
 | .txt              | [Paint.NET] Palette               | [Paint.NET]                                                                       |   ✅   |   ✅    |
 | .act              | Adobe Color Table                 | Adobe [Photoshop] and [Illustrator]                                               |   ✅   | Planned |
 | .pal, .psppalette | [Paint Shop Pro] Palette          | [Paint Shop Pro][] (Jasc Software / Corel)                                        |   ✅   | Planned |
@@ -47,7 +48,6 @@ UNSUPPORTED palette formats (for now):
 | File Extension    | Name                              | Programs                                                                          |   Read  |  Write  |
 |-------------------|-----------------------------------|-----------------------------------------------------------------------------------|:-------:|:-------:|
 | .gpa              | [Gpick] Palette                   | [Gpick]                                                                           | Planned |         |
-| .aco              | Adobe Color Swatches              | Adobe [Photoshop]                                                                 | Planned | Planned |
 | .ase              | Adobe Swatch Exchange             | Adobe [Photoshop], [InDesign], and [Illustrator]                                  | Planned | Planned |
 | .acbl             | Adobe Color Book Library / Legacy | Adobe [InDesign] and [Illustrator]                                                | Planned | Planned |
 | .soc              | StarOffice Colors                 | [StarOffice], [OpenOffice], [LibreOffice]                                         | Planned | Planned |
@@ -233,7 +233,6 @@ var firstTwoColorsSimilar = AnyPalette.Color.is(palette[0], palette[1], 20);
 
 
 * Load *all the palettes!*
-	* Adobe Color files (`.aco`) used in Photoshop
 	* Adobe Swatch Exchange (`.ase`) used in Photoshop, Illustrator and InDesign
 	* Magica Voxel Palette (`.png`) - see [MagicaVoxelPalettes](https://github.com/mattperrin/MagicaVoxelPalettes) for examples
 	* macOS Color Palette (`.clr`)

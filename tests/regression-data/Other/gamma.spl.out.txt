@@ -1,0 +1,435 @@
+Loaded As:                      Skencil palette (.spl)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+26  26  26    90% Black
+51  51  51    80% Black
+77  77  77    70% Black
+102 102 102   60% Black
+128 128 128   50% Black
+153 153 153   40% Black
+179 179 179   30% Black
+204 204 204   20% Black
+230 230 230   10% Black
+255 255 255   White
+255 0   0     Red
+0   255 0     Green
+0   0   255   Blue
+0   255 255   Cyan
+255 0   255   Magenta
+255 255 0     Yellow
+128 0   0     Dark Red
+0   128 0     Dark Green
+0   0   128   Dark Blue
+0   128 128   Dark Cyan
+128 0   128   Dark Magenta
+128 128 0     Dark Yellow
+6   19  19    Dark Slate Gray
+36  36  36    Dim Gray
+42  56  73    Slate Gray
+48  64  83    Light Slate Gray
+133 133 133   Gray
+168 168 168   Light Grey
+2   2   42    Midnight Blue
+0   0   56    Navy
+32  78  217   Cornflower Blue
+16  11  67    Dark Slate Blue
+37  26  158   Slate Blue
+51  35  219   Medium Slate Blue
+60  42  255   Light Slate Blue
+0   0   158   Medium Blue
+13  36  193   Royal Blue
+0   0   255   Blue
+2   73  255   Dodger Blue
+0   135 255   Deep Sky Blue
+63  160 213   Sky Blue
+63  160 244   Light Sky Blue
+15  58  119   Steel Blue
+113 143 188   Light Steel Blue
+108 177 203   Light Blue
+113 192 203   Powder Blue
+111 219 219   Pale Turquoise
+0   160 165   Dark Turquoise
+16  165 156   Medium Turquoise
+12  192 163   Turquoise
+0   255 255   Cyan
+192 255 255   Light Cyan
+29  89  91    Cadet Blue
+34  158 105   Medium Aquamarine
+55  255 170   Aquamarine
+0   32  0     Dark Green 2
+23  38  6     Dark Olive Green
+71  130 71    Dark Sea Green
+6   67  24    Sea Green
+11  117 43    Medium Sea Green
+3   116 105   Light Sea Green
+82  246 82    Pale Green
+0   255 55    Spring Green
+52  248 0     Lawn Green
+0   255 0     Green
+55  255 0     Chartreuse
+0   244 84    Medium Spring Green
+108 255 6     Green Yellow
+7   158 7     Lime Green
+84  158 7     Yellow Green
+3   67  3     Forest Green
+38  70  3     Olive Drab
+132 123 38    Dark Khaki
+223 203 68    Khaki
+219 207 105   Pale Goldenrod
+244 244 167   Light Goldenrod Yellow
+255 255 192   Light Yellow
+255 255 0     Yellow
+255 175 0     Gold
+219 186 58    Light Goldenrod
+181 98  3     Goldenrod
+125 62  0     Dark Goldenrod
+130 71  71    Rosy Brown
+158 27  27    Indian Red
+67  14  1     Saddle Brown
+91  21  6     Sienna
+158 61  12    Peru
+188 125 63    Burlywood
+234 234 184   Beige
+234 188 117   Wheat
+231 97  30    Sandy Brown
+167 119 68    Tan
+167 36  2     Chocolate
+116 3   3     Firebrick
+98  5   5     Brown
+209 79  50    Dark Salmon
+244 56  43    Salmon
+255 91  50    Light Salmon
+255 98  0     Orange
+255 68  0     Dark Orange
+255 55  20    Coral
+223 56  56    Light Coral
+255 32  15    Tomato
+255 14  0     Orange Red
+255 0   0     Red
+255 36  119   Hot Pink
+255 1   76    Deep Pink
+255 137 154   Pink
+255 122 138   Light Pink
+183 42  76    Pale Violet Red
+113 6   30    Maroon
+148 1   61    Medium Violet Red
+163 3   73    Violet Red
+255 0   255   Magenta
+219 58  219   Violet
+186 91  186   Plum
+181 42  173   Orchid
+127 23  168   Medium Orchid
+83  7   156   Dark Orchid
+77  0   168   Dark Violet
+66  5   195   Blue Violet
+91  3   223   Purple
+76  42  183   Medium Purple
+177 135 177   Thistle
+219 209 209   Snow2
+158 151 151   Snow3
+67  65  65    Snow4
+219 201 188   Seashell2
+158 145 135   Seashell3
+67  62  58    Seashell4
+255 221 183   AntiqueWhite1
+219 190 156   AntiqueWhite2
+158 137 113   AntiqueWhite3
+67  59  49    AntiqueWhite4
+219 171 123   Bisque2
+158 123 89    Bisque3
+67  53  38    Bisque4
+219 154 108   PeachPuff2
+158 111 78    PeachPuff3
+67  48  33    PeachPuff4
+219 161 93    NavajoWhite2
+158 117 67    NavajoWhite3
+67  50  28    NavajoWhite4
+219 209 135   LemonChiffon2
+158 151 98    LemonChiffon3
+67  65  42    LemonChiffon4
+219 207 158   Cornsilk2
+158 149 114   Cornsilk3
+67  64  49    Cornsilk4
+219 219 192   Ivory2
+158 158 138   Ivory3
+67  67  59    Ivory4
+192 219 192   Honeydew2
+138 158 138   Honeydew3
+59  67  59    Honeydew4
+219 192 201   LavenderBlush2
+158 138 145   LavenderBlush3
+67  59  62    LavenderBlush4
+219 171 167   MistyRose2
+158 123 120   MistyRose3
+67  53  51    MistyRose4
+192 219 219   Azure2
+138 158 158   Azure3
+59  67  67    Azure4
+59  41  255   SlateBlue1
+50  35  219   SlateBlue2
+36  25  158   SlateBlue3
+15  11  67    SlateBlue4
+16  47  255   RoyalBlue1
+14  40  219   RoyalBlue2
+10  29  158   RoyalBlue3
+4   12  67    RoyalBlue4
+0   0   219   Blue2
+0   0   67    Blue4
+2   62  219   DodgerBlue2
+1   45  158   DodgerBlue3
+1   19  67    DodgerBlue4
+32  125 255   SteelBlue1
+27  107 219   SteelBlue2
+19  77  158   SteelBlue3
+8   32  67    SteelBlue4
+0   116 219   DeepSkyBlue2
+0   84  158   DeepSkyBlue3
+0   35  67    DeepSkyBlue4
+63  160 255   SkyBlue1
+54  137 219   SkyBlue2
+39  99  158   SkyBlue3
+17  42  67    SkyBlue4
+113 195 255   LightSkyBlue1
+97  168 219   LightSkyBlue2
+69  122 158   LightSkyBlue3
+30  51  67    LightSkyBlue4
+146 195 255   SlateGray1
+126 168 219   SlateGray2
+90  122 158   SlateGray3
+39  51  67    SlateGray4
+153 193 255   LightSteelBlue1
+130 167 219   LightSteelBlue2
+94  120 158   LightSteelBlue3
+40  51  67    LightSteelBlue4
+135 221 255   LightBlue1
+116 190 219   LightBlue2
+84  137 158   LightBlue3
+35  59  67    LightBlue4
+165 219 219   LightCyan2
+119 158 158   LightCyan3
+50  67  67    LightCyan4
+129 255 255   PaleTurquoise1
+110 219 219   PaleTurquoise2
+79  158 158   PaleTurquoise3
+34  67  67    PaleTurquoise4
+82  234 255   CadetBlue1
+70  201 219   CadetBlue2
+50  145 158   CadetBlue3
+22  62  67    CadetBlue4
+0   234 255   Turquoise1
+0   201 219   Turquoise2
+0   145 158   Turquoise3
+0   62  67    Turquoise4
+0   219 219   cyan2
+0   158 158   cyan3
+0   67  67    cyan4
+80  255 255   DarkSlateGray1
+69  219 219   DarkSlateGray2
+50  158 158   DarkSlateGray3
+21  67  67    DarkSlateGray4
+47  219 146   Aquamarine2
+14  67  45    Aquamarine4
+138 255 138   DarkSeaGreen1
+119 219 119   DarkSeaGreen2
+85  158 85    DarkSeaGreen3
+36  67  36    DarkSeaGreen4
+22  255 90    SeaGreen1
+19  219 77    SeaGreen2
+14  158 56    SeaGreen3
+84  255 84    PaleGreen1
+73  219 73    PaleGreen2
+52  158 52    PaleGreen3
+22  67  22    PaleGreen4
+0   219 47    SpringGreen2
+0   158 34    SpringGreen3
+0   67  14    SpringGreen4
+0   219 0     Green2
+0   158 0     Green3
+0   67  0     Green4
+47  219 0     Chartreuse2
+34  158 0     Chartreuse3
+14  67  0     Chartreuse4
+137 255 11    OliveDrab1
+117 219 10    OliveDrab2
+36  67  3     OliveDrab4
+153 255 42    DarkOliveGreen1
+130 219 35    DarkOliveGreen2
+94  158 26    DarkOliveGreen3
+40  67  11    DarkOliveGreen4
+255 236 71    Khaki1
+219 203 61    Khaki2
+158 146 44    Khaki3
+67  62  19    Khaki4
+255 215 67    LightGoldenrod1
+219 184 58    LightGoldenrod2
+158 133 42    LightGoldenrod3
+67  57  18    LightGoldenrod4
+219 219 165   LightYellow2
+158 158 119   LightYellow3
+67  67  50    LightYellow4
+219 219 0     Yellow2
+158 158 0     Yellow3
+67  67  0     Yellow4
+219 151 0     Gold2
+158 108 0     Gold3
+67  46  0     Gold4
+255 138 4     Goldenrod1
+219 119 3     Goldenrod2
+158 85  2     Goldenrod3
+67  36  1     Goldenrod4
+255 126 1     DarkGoldenrod1
+219 108 0     DarkGoldenrod2
+158 78  0     DarkGoldenrod3
+67  33  0     DarkGoldenrod4
+255 138 138   RosyBrown1
+219 119 119   RosyBrown2
+158 85  85    RosyBrown3
+67  36  36    RosyBrown4
+255 37  37    IndianRed1
+219 32  32    IndianRed2
+158 23  23    IndianRed3
+67  10  10    IndianRed4
+255 58  15    Sienna1
+219 50  13    Sienna2
+158 35  9     Sienna3
+67  15  4     Sienna4
+255 168 85    Burlywood1
+219 145 74    Burlywood2
+158 105 53    Burlywood3
+67  44  23    Burlywood4
+255 205 127   Wheat1
+219 177 110   Wheat2
+158 127 79    Wheat3
+67  54  34    Wheat4
+255 98  19    Tan1
+219 84  16    Tan2
+67  26  5     Tan4
+255 55  3     Chocolate1
+219 47  3     Chocolate2
+158 34  2     Chocolate3
+255 6   6     Firebrick1
+219 5   5     Firebrick2
+158 4   4     Firebrick3
+67  2   2     Firebrick4
+255 12  12    Brown1
+219 10  10    Brown2
+158 7   7     Brown3
+67  3   3     Brown4
+255 68  36    Salmon1
+219 58  31    Salmon2
+158 42  22    Salmon3
+67  18  9     Salmon4
+219 78  43    LightSalmon2
+158 57  31    LightSalmon3
+67  24  13    LightSalmon4
+219 84  0     Orange2
+158 61  0     Orange3
+67  26  0     Orange4
+255 55  0     DarkOrange1
+219 47  0     DarkOrange2
+158 34  0     DarkOrange3
+67  14  0     DarkOrange4
+255 43  23    Coral1
+219 37  20    Coral2
+158 26  14    Coral3
+67  11  6     Coral4
+219 27  13    Tomato2
+158 19  9     Tomato3
+67  8   4     Tomato4
+219 12  0     OrangeRed2
+158 9   0     OrangeRed3
+67  4   0     OrangeRed4
+219 0   0     Red2
+158 0   0     Red3
+67  0   0     Red4
+219 1   65    DeepPink2
+158 1   47    DeepPink3
+67  0   20    DeepPink4
+255 40  119   HotPink1
+219 37  101   HotPink2
+158 30  73    HotPink3
+67  10  31    HotPink4
+255 120 145   Pink1
+219 103 125   Pink2
+158 74  89    Pink3
+67  32  39    Pink4
+255 110 126   LightPink1
+219 94  108   LightPink2
+158 68  78    LightPink3
+67  29  33    LightPink4
+255 58  106   PaleVioletRed1
+219 50  90    PaleVioletRed2
+158 35  65    PaleVioletRed3
+67  15  28    PaleVioletRed4
+255 8   117   Maroon1
+219 6   101   Maroon2
+158 5   73    Maroon3
+67  2   31    Maroon4
+255 11  79    VioletRed1
+219 10  68    VioletRed2
+158 7   49    VioletRed3
+67  3   21    VioletRed4
+219 0   219   Magenta2
+158 0   158   Magenta3
+67  0   67    Magenta4
+255 59  244   Orchid1
+219 50  209   Orchid2
+158 36  151   Orchid3
+67  15  65    Orchid4
+255 129 255   Plum1
+219 110 219   Plum2
+158 79  158   Plum3
+67  34  67    Plum4
+192 34  255   MediumOrchid1
+165 29  219   MediumOrchid2
+119 21  158   MediumOrchid3
+50  9   67    MediumOrchid4
+135 11  255   DarkOrchid1
+116 10  219   DarkOrchid2
+84  7   158   DarkOrchid3
+35  3   67    DarkOrchid4
+85  6   255   Purple1
+74  5   219   Purple2
+53  4   158   Purple3
+23  2   67    Purple4
+106 58  255   MediumPurple1
+90  50  219   MediumPurple2
+65  35  158   MediumPurple3
+28  15  67    MediumPurple4
+255 193 255   Thistle1
+219 167 219   Thistle2
+158 120 158   Thistle3
+67  51  67    Thistle4
+255 244 244   Snow
+240 240 255   Ghost White
+234 234 234   White Smoke
+184 184 184   Gainsboro
+255 244 223   Floral White
+251 234 203   Old Lace
+244 223 203   Linen
+244 213 175   Antique White
+255 221 171   Papaya Whip
+255 213 158   Blanched Almond
+255 199 143   Bisque
+255 181 126   Peach Puff
+255 188 108   Navajo White
+255 199 120   Moccasin
+255 240 184   Cornsilk
+255 255 223   Ivory
+255 244 158   Lemon Chiffon
+255 234 219   Seashell
+223 255 223   Honeydew
+234 255 244   Mint Cream
+223 255 255   Azure
+223 240 255   Alice Blue
+203 203 244   Lavender
+255 223 234   Lavender Blush
+255 199 193   Misty Rose

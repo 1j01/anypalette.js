@@ -164,20 +164,20 @@
 						});
 					};
 					var withoutDuplicates = AnyPalette.uniqueColors(palette);
-					show_colors(withoutDuplicates);
 					
 					var n_dupes = palette.length - withoutDuplicates.length;
 					var s = (n_dupes > 1) ? "s" : "";
-					var toggle = false;
-					$toggle_dupes.text("Show Duplicate"+s);
+					
+					var showing_dupes = true;
+					const update_display = ()=> {
+						show_colors(showing_dupes ? palette : withoutDuplicates);
+						$toggle_dupes.text(showing_dupes ? "Hide Duplicate"+s : "Show Duplicate"+s);
+					};
+					update_display();
+	
 					$toggle_dupes.on("click", function(e){
-						if(toggle = !toggle){
-							show_colors(palette);
-							$toggle_dupes.text("Hide Duplicate"+s);
-						}else{
-							show_colors(withoutDuplicates);
-							$toggle_dupes.text("Show Duplicate"+s);
-						}
+						showing_dupes = !showing_dupes;
+						update_display();
 					});
 					$toggle_dupes.on("mousedown", function(e){
 						e.preventDefault();

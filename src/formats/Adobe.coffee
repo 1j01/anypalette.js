@@ -52,14 +52,9 @@ PhotoshopColorSpace = Object.freeze({
 get_utf_16_string = (view, length, including_terminator)->
 	if including_terminator
 		length -= 1
-	binary_string = view.getString(length * 2, undefined, "binary")
 	string = ""
-	for i in [0...binary_string.length] by 2
-		string += String.fromCharCode(
-			# assuming big-endian (swap << 8 to i+1 for little-endian)
-			binary_string.charCodeAt(i) << 8 |
-			binary_string.charCodeAt(i+1)
-		)
+	for [0...length]
+		string += String.fromCharCode(view.getUint16())
 	if including_terminator
 		view.getUint16() # should be 0x0000
 	string

@@ -77,17 +77,45 @@ types:
       type: str
       encoding: ASCII
       doc: Unique key for the color
-    - id: w
+    - id: color_data
+      type:
+        switch-on: _root.color_space
+        cases:
+          'color_space_type::rgb': rgb_color
+          'color_space_type::cmyk': cmyk_color
+          'color_space_type::wide_cmyk': cmyk_color
+          'color_space_type::grayscale': grayscale_color
+          'color_space_type::lab': lab_color
+  rgb_color:
+    seq:
+    - id: red
       type: u1
-    - id: x
+    - id: green
       type: u1
-      if: _root.color_space != color_space_type::grayscale
-    - id: y
+    - id: blue
       type: u1
-      if: _root.color_space != color_space_type::grayscale
-    - id: z
+  cmyk_color:
+    seq:
+    - id: cyan
       type: u1
-      if: _root.color_space == color_space_type::cmyk or _root.color_space == color_space_type::wide_cmyk
+    - id: magenta
+      type: u1
+    - id: yellow
+      type: u1
+    - id: black
+      type: u1
+  grayscale_color:
+    seq:
+    - id: lightness
+      type: u1
+  lab_color:
+    seq:
+    - id: lightness
+      type: u1
+    - id: a
+      type: u1
+    - id: b
+      type: u1
 enums:
   color_space_type:
     0: rgb # Red, Green, Blue

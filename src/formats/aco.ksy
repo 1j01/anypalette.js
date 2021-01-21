@@ -26,7 +26,7 @@ seq:
     type: aco_v1
   - id: aco_v2
     type: aco_v2
-	# TODO: support v1 files
+	# TODO: support v1 files (just no aco_v2 section)
 types:
   aco_v1:
     seq:
@@ -55,14 +55,17 @@ types:
     - id: color_space
       type: u2
       enum: color_space
-    - id: w
-      type: u2
-    - id: x
-      type: u2
-    - id: y
-      type: u2
-    - id: z
-      type: u2
+    - id: color_data
+      size: 8
+      type:
+        switch-on: color_space
+        cases:
+          'color_space::rgb': rgb_color
+          'color_space::hsb': hsb_color
+          'color_space::cmyk': cmyk_color
+          'color_space::wide_cmyk': cmyk_color
+          'color_space::grayscale': grayscale_color
+          'color_space::lab': lab_color
   aco_v2_color:
     seq:
     - id: color
@@ -80,10 +83,63 @@ types:
       size: (name_length - 1) * 2
     - id: terminator
       contents: [0x00, 0x00]
+  rgb_color:
+    seq:
+    - id: red
+      type: u2
+      doc: Ranges from 0 to 65535 (full 16-bit range)
+    - id: green
+      type: u2
+      doc: Ranges from 0 to 65535 (full 16-bit range)
+    - id: blue
+      type: u2
+      doc: Ranges from 0 to 65535 (full 16-bit range)
+  cmyk_color:
+    seq:
+    - id: cyan
+      type: u2
+      doc: Ranges from 0 to 65535 (full 16-bit range)
+    - id: magenta
+      type: u2
+      doc: Ranges from 0 to 65535 (full 16-bit range)
+    - id: yellow
+      type: u2
+      doc: Ranges from 0 to 65535 (full 16-bit range)
+    - id: black
+      type: u2
+      doc: Ranges from 0 to 65535 (full 16-bit range)
+    doc: Values of 0 represent 100% ink.
+  grayscale_color:
+    seq:
+    - id: lightness
+      type: u2
+      doc: Ranges from 0 to 10000
+  lab_color:
+    seq:
+    - id: lightness
+      type: u2
+      doc: Ranges from 0 to 10000
+    - id: a
+      type: s2
+      doc: Ranges from -12800 to 12700
+    - id: b
+      type: s2
+      doc: Ranges from -12800 to 12700
+  hsb_color:
+    seq:
+    - id: hue
+      type: u2
+      doc: Ranges from 0 to 65535 (full 16-bit range)
+    - id: saturation
+      type: u2
+      doc: Ranges from 0 to 65535 (full 16-bit range)
+    - id: brightness
+      type: u2
+      doc: Ranges from 0 to 65535 (full 16-bit range)
 enums:
   color_space:
     0: rgb # Red, Green, Blue
-    1: hsb # Hue, Saturation, Brightness
+    1: hsb # Hue, Saturation, Brightness (equivalent to HSV but not HSL)
     2: cmyk # Cyan, Magenta, Yellow, blacK (Key)
     3: pantone # *1
     4: focoltone # *1

@@ -45,6 +45,17 @@ seq:
     type: color
     repeat: expr
     repeat-expr: color_count
+  - id: spot_process
+    type: str
+    encoding: ASCII
+    # TODO: optional but fixed size
+    # size: 8
+    size-eos: true
+    doc: |
+      Either "spflspot" for spot color books or "spflproc" for process color books.
+      Older files don't have this field; it was added to the format later.
+
+      Spot colors are solid paint mixtures that avoid halftoning patterns from the CMYK printing process.
 types:
   unicode_string:
     seq:
@@ -99,4 +110,4 @@ enums:
     17: gray_float #*
     18: rgb_float #*
     19: opacity_float #*
-    #*: Photoshop 7.0 probably doesn't support these spaces for ACB files.
+    #*: Photoshop probably doesn't support these spaces for ACB files.

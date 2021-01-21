@@ -315,6 +315,8 @@ module.exports.load_adobe_color_book = ({data})->
 			else
 				bad()
 	
+	# There's an optional field defining whether the color book is for spot or process colors.
+	# Would need to check for EOF to read this field.
 	# isSpot = view.getString(8) is "spflspot"
 
 	palette.name = book_title

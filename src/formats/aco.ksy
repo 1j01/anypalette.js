@@ -69,14 +69,14 @@ types:
       type: aco_v1_color
     - id: reserved
       type: u2
-      # contents: [0x00, 0x00]
     - id: name_length
-      doc: Length of color name plus a 2-byte null terminator
+      doc: Length of color name in codepoints, including a null terminator
       type: u2
       valid:
         min: 1
     - id: name
-      doc: UTF-16 encoded color name
+      type: str
+      encoding: UTF-16BE
       size: (name_length - 1) * 2
     - id: terminator
       contents: [0x00, 0x00]

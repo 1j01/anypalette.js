@@ -19,13 +19,13 @@ seq:
   - id: identifier
     type: u2
   - id: title
-    type: string
+    type: unicode_string
   - id: color_name_prefix
-    type: string
+    type: unicode_string
   - id: color_name_suffix
-    type: string
+    type: unicode_string
   - id: description
-    type: string
+    type: unicode_string
   - id: color_count
     type: u2
     valid:
@@ -46,11 +46,13 @@ seq:
     repeat: expr
     repeat-expr: color_count
 types:
-  string:
+  unicode_string:
     seq:
       - id: length
         type: u4
       - id: data
+        type: str
+        encoding: UTF-16BE
         size: length * 2
     doc: |
       UTF-16 encoded string.
@@ -58,9 +60,11 @@ types:
   color:
     seq:
     - id: name
-      type: string
+      type: unicode_string
     - id: code
       size: 6
+      type: str
+      encoding: ASCII
       doc: Unique key for the color
     - id: w
       type: u1

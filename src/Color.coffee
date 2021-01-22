@@ -48,7 +48,7 @@ class Color
 			[@red, @green, @blue] = hsl2rgb(@hue, @saturation, @lightness)
 		else if cyan? and magenta? and yellow? and key?
 			# Cyan Magenta Yellow blacK
-			# UNTESTED
+			throw new Error "CMYK color space is not currently supported."
 			@red = (1 - Math.min(1, cyan * (1 - key) + key))
 			@green = (1 - Math.min(1, magenta * (1 - key) + key))
 			@blue = (1 - Math.min(1, yellow * (1 - key) + key))
@@ -56,6 +56,7 @@ class Color
 			# TODO: rename l -> lightness?
 			# a/b -> aChroma/bChroma? aChrominance/bChrominance??
 			if options.l? and options.a? and options.b?
+				throw new Error "L*a*b* color space is not currently supported."
 				white_D50 =
 					x: 96.422
 					y: 100.000
@@ -91,6 +92,7 @@ class Color
 					options[c] = xyz[c] * white_D50[c]
 			# fallthrough
 			if options.x? and options.y? and options.z?
+				throw new Error "XYZ color space is not currently supported."
 				{x, y, z} = options
 				
 				rgb =

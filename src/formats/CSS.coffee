@@ -157,7 +157,7 @@ module.exports = ({data})->
 	
 	most_colors
 
-module.exports.write = (palette)->
+module.exports.write_css = (palette)->
 	"""
 	:root {
 		#{
@@ -167,3 +167,23 @@ module.exports.write = (palette)->
 		}
 	}
 	"""
+
+module.exports.write_styl = (palette)->
+	palette.map((color, index)->
+		"#{if color.name then css_escape(color.name.replace(/\s/g, "-")) else "color-#{index+1}"} = #{color};"
+	).join("\n")
+
+module.exports.write_less = (palette)->
+	palette.map((color, index)->
+		"@#{if color.name then css_escape(color.name.replace(/\s/g, "-")) else "color-#{index+1}"}: #{color};"
+	).join("\n")
+
+module.exports.write_scss = (palette)->
+	palette.map((color, index)->
+		"$#{if color.name then css_escape(color.name.replace(/\s/g, "-")) else "color-#{index+1}"}: #{color};"
+	).join("\n")
+
+module.exports.write_sass = (palette)->
+	palette.map((color, index)->
+		"$#{if color.name then css_escape(color.name.replace(/\s/g, "-")) else "color-#{index+1}"}: #{color}"
+	).join("\n")

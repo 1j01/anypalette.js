@@ -64,7 +64,31 @@ formats =
 		name: "CSS colors"
 		fileExtensions: ["css", "scss", "sass", "less", "styl", "html", "htm", "svg", "js", "ts", "xml", "txt"]
 		load: require "./formats/CSS"
-		write: (require "./formats/CSS").write
+	}
+	CSS_VARIABLES: {
+		name: "CSS variables"
+		fileExtensions: ["css"]
+		write: (require "./formats/CSS").write_css
+	}
+	SCSS_VARIABLES: {
+		name: "SCSS variables"
+		fileExtensions: ["scss"]
+		write: (require "./formats/CSS").write_scss
+	}
+	SASS_VARIABLES: {
+		name: "SASS variables"
+		fileExtensions: ["sass"]
+		write: (require "./formats/CSS").write_sass
+	}
+	LESS_VARIABLES: {
+		name: "LESS variables"
+		fileExtensions: ["less"]
+		write: (require "./formats/CSS").write_less
+	}
+	STYLUS_VARIABLES: {
+		name: "Stylus variables"
+		fileExtensions: ["styl"]
+		write: (require "./formats/CSS").write_styl
 	}
 	WINDOWS_THEME_COLORS: {
 		name: "Windows desktop theme"

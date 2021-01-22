@@ -92,23 +92,19 @@ module.exports = ({data, fileName})->
 			palette.add(color_options)
 			return
 	
-	try_parse_line = (line)->
-		attributes = {}
+	attributes = {}
 
-		while ((match = attribute_regexp.exec(line)) != null)
-			key = match[1].toLowerCase().replace(/color[-_]?/, "")
-			value = match[2]
-			# "if there's a repeat attribute, it's probably a new color, right?"
-			# (There would need to be some nuance with start/ends of the list, e.g. a palette-name=Foo, color-name=foo, color-rgb=blah, vs palette-name=Foo, color-rgb=blah, color-name=foo)
-			if attributes[key]
-				add_color(attributes)
-				attributes = {}
-			attributes[key] = value
+	while ((match = attribute_regexp.exec(data)) != null)
+		key = match[1].toLowerCase().replace(/color[-_]?/, "")
+		value = match[2]
+		# "if there's a repeat attribute, it's probably a new color, right?"
+		# (There would need to be some nuance with start/ends of the list, e.g. a palette-name=Foo, color-name=foo, color-rgb=blah, vs palette-name=Foo, color-rgb=blah, color-name=foo)
+		if attributes[key]
+			add_color(attributes)
+			attributes = {}
+		attributes[key] = value
 
-		add_color(attributes)
-
-	for line in lines
-		try_parse_line line
+	add_color(attributes)
 	
 	n = palette.length
 	if n < 4

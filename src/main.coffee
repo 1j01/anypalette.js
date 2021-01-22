@@ -151,6 +151,11 @@ formats =
 	# 	fileExtensions: ["pal", "cpl"]
 	# 	load: require "./formats/CorelDRAW"
 	# }
+	ATTRIBUTES: {
+		name: "colors from attributes"
+		fileExtensions: ["xml", "json", "txt"]
+		load: require "./formats/attributes"
+	}
 	TABULAR: {
 		name: "tabular colors"
 		fileExtensions: ["csv", "tsv", "txt"]

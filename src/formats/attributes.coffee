@@ -76,10 +76,6 @@ module.exports = ({data, fileName})->
 						color_options[option_name] = attributes[attribute_name]
 						break
 			
-			for option_name in color_space
-				if not color_options[option_name]?
-					continue # skip to next color space
-
 			if not color_space.every((option_name)-> color_options[option_name]?)
 				continue # skip to next color space
 

@@ -33,32 +33,74 @@ attribute_regexp = ///
 	[=:]?
 	\s*
 	"?
-	\s*
 	(\d+(?:\.\d+)?)
 ///ig
+
+attribute_mappings =
+	red: ["red", "r"]
+	green: ["green", "g"]
+	blue: ["blue", "b"]
+	alpha: ["alpha", "opacity", "a", "o"]
+	hue: ["hue", "h"]
+	saturation: ["saturation", "sat", "s"]
+	value: ["brightness", "value", "br", "b"]
+	lightness: ["lightness", "l"]
+	a: ["a"]
+	b: ["b"]
+	cyan: ["cyan", "c"]
+	magenta: ["magenta", "mag", "m"]
+	yellow: ["yellow", "c"]
+	key: ["black", "key", "k", "bl"]
+	name: ["name", "designation", "title", "identifier", "ident", "id"]
+
+color_spaces = [
+	# Note: VisiBone2_mamcp.txt has RGB and HSV attributes but the HSV are all 0
+	["red", "green", "blue"]
+	["hue", "saturation", "value"]
+	["hue", "saturation", "lightness"]
+	# ["cyan", "magenta", "yellow", "key"]
+	# ["l", "a", "b"]
+]
 
 module.exports = ({data, fileName})->
 	lines = data.split(/[\n\r]+/m)
 	palette = new Palette()
 	add_color = (attributes)->
 		console.log fileName, "attributes", attributes
-		if (
-			(attributes.r? or attributes.red?) and
-			(attributes.g? or attributes.green?) and
-			(attributes.b? or attributes.blue?)
-		)
-			palette.add
-				red: (if attributes.red? then attributes.red else attributes.r) / 255
-				green: (if attributes.green? then attributes.green else attributes.g) / 255
-				blue: (if attributes.blue? then attributes.blue else attributes.b) / 255
-				alpha: if attributes.alpha? then attributes.alpha / 255 else if attributes.a then attributes.a / 255
+		for color_space in color_spaces
+			color_options = {}
+			
+			for option_name in color_space
+				for attribute_name in attribute_mappings[option_name]
+					if attributes[attribute_name]
+						color_options[option_name] = attributes[attribute_name]
+			
+			for option_name in ["alpha", "name"]
+				for attribute_name in attribute_mappings[option_name]
+					if attributes[attribute_name]
+						color_options[option_name] = attributes[attribute_name]
+			
+			for k, v of color_options
+				if k isnt "name"
+					color_options[k] = Number(v)
+
+			if (
+				(attributes.r? or attributes.red?) and
+				(attributes.g? or attributes.green?) and
+				(attributes.b? or attributes.blue?)
+			)
+				palette.add
+					red: (if attributes.red? then attributes.red else attributes.r) / 255
+					green: (if attributes.green? then attributes.green else attributes.g) / 255
+					blue: (if attributes.blue? then attributes.blue else attributes.b) / 255
+					alpha: if attributes.alpha? then attributes.alpha / 255 else if attributes.a then attributes.a / 255
 	
 	try_parse_line = (line)->
 		attributes = {}
 
 		while ((match = attribute_regexp.exec(line)) != null)
-			key = match[1].toLowerCase()
-			value = Number(match[2])
+			key = match[1].toLowerCase().replace(/color[-_]?/, "")
+			value = match[2]
 			# "if there's a repeat attribute, it's probably a new color, right?"
 			# (There would need to be some nuance with start/ends of the list, e.g. a palette-name=Foo, color-name=foo, color-rgb=blah, vs palette-name=Foo, color-rgb=blah, color-name=foo)
 			if attributes[key]
@@ -85,5 +127,9 @@ module.exports = ({data, fileName})->
 			color.red *= 255
 			color.green *= 255
 			color.blue *= 255
+	if palette.every((color)-> not color.alpha? or color.alpha <= 1/255)
+		palette.forEach (color)->
+			if color.alpha?
+				color.alpha *= 255
 
 	palette

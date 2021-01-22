@@ -28,6 +28,16 @@ class Color
 			if options[component_name] < 0 or options[component_name] > 1
 				throw new TypeError("Color component option #{component_name} outside range of [0,1]: #{options[component_name]}")
 
+		reject_args = ->
+			throw new TypeError "Color constructor must be called with {red,green,blue} or {hue,saturation,value} or {hue,saturation,lightness} or {cyan,magenta,yellow,key} or {x,y,z} or {l,a,b},
+				#{
+					try
+						"got #{JSON.stringify(options)}"
+					catch
+						"got something that couldn't be displayed with JSON.stringify for this error message"
+				}
+			"
+
 		if @red? and @green? and @blue?
 			# Red Green Blue
 			# (no conversions needed here)
@@ -42,13 +52,13 @@ class Color
 				# Hue Saturation Lightness
 				# (no conversions needed here)
 			else if options.brightness?
-				throw new TypeError "{hue, saturation, brightness} not supported. Use either {hue, saturation, lightness} or {hue, saturation, value} for cylindrical a color space."
+				throw new TypeError "{hue, saturation, brightness} not supported. Use {hue, saturation, value} instead for an equivalent color space"
 			else
-				throw new TypeError "Hue, saturation, and.. what? (either lightness (l) or value (value) expected)"
+				reject_args()
 			[@red, @green, @blue] = hsl2rgb(@hue, @saturation, @lightness)
 		else if cyan? and magenta? and yellow? and key?
 			# Cyan Magenta Yellow blacK
-			throw new Error "CMYK color space is not currently supported."
+			throw new Error "CMYK color space is not currently supported"
 			@red = (1 - Math.min(1, cyan * (1 - key) + key))
 			@green = (1 - Math.min(1, magenta * (1 - key) + key))
 			@blue = (1 - Math.min(1, yellow * (1 - key) + key))
@@ -56,7 +66,7 @@ class Color
 			# TODO: rename l -> lightness?
 			# a/b -> aChroma/bChroma? aChrominance/bChrominance??
 			if options.l? and options.a? and options.b?
-				throw new Error "L*a*b* color space is not currently supported."
+				throw new Error "L*a*b* color space is not currently supported"
 				white_D50 =
 					x: 96.422
 					y: 100.000
@@ -92,7 +102,7 @@ class Color
 					options[c] = xyz[c] * white_D50[c]
 			# fallthrough
 			if options.x? and options.y? and options.z?
-				throw new Error "XYZ color space is not currently supported."
+				throw new Error "XYZ color space is not currently supported"
 				{x, y, z} = options
 				
 				rgb =
@@ -117,14 +127,7 @@ class Color
 				@green = rgb.g
 				@blue = rgb.b
 			else
-				throw new TypeError "Color constructor must be called with {red,green,blue} or {hue,saturation,value} or {hue,saturation,lightness} or {cyan,magenta,yellow,key} or {x,y,z} or {l,a,b},
-					#{
-						try
-							"got #{JSON.stringify(options)}"
-						catch
-							"got something that couldn't be displayed with JSON.stringify for this error message"
-					}
-				"
+				reject_args()
 		
 	
 	toString: ->

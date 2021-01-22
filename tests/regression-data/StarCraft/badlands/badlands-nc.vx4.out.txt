@@ -1,4 +1,4 @@
-Loaded As:                      tabular colors (.csv, .tsv, .txt)
+Loaded As:                      colors from attributes (.xml, .json, .txt)
 
 matchedFileExtension:           false
 geometrySpecifiedByFile:        undefined
@@ -9,13 +9,7 @@ GIMP Palette
 Name: Saved Colors
 Columns: 8
 #
-4   6   8     rgb(4, 6, 8)
-2   4   6     rgb(2, 4, 6)
-2   4   6     rgb(2, 4, 6)
-0   6   8     rgb(0, 6, 8)
-1   1   1     rgb(1, 1, 1)
-5   7   7     rgb(5, 7, 7)
-6   9   9     rgb(6, 9, 9)
-0   2   4     rgb(0, 2, 4)
-0   6   8     rgb(0, 6, 8)
-0   6   8     rgb(0, 6, 8)
+0   0   0     rgb(0, 0, 0)
+1   1   1     rgba(1, 1, 1, 0.00392156862745098)
+3   2   3     rgba(3, 2, 3, 0.00784313725490196)
+9   9   9     rgba(9, 9, 9, 0.03529411764705882)

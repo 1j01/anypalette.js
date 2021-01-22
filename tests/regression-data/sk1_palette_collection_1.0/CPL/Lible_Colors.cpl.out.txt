@@ -17,4 +17,5 @@ Some errors were encountered when loading:
 	failed to load Lible_Colors.cpl as Adobe Color Table: file size must be 768 or 772 bytes (saw 517), OR file extension must be '.act' (saw '.cpl'),
 	failed to load Lible_Colors.cpl as StarCraft palette: Wrong file size, must be 768 bytes long (not 517),
 	failed to load Lible_Colors.cpl as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 517),
+	failed to load Lible_Colors.cpl as colors from attributes: No colors found (0),
 	failed to load Lible_Colors.cpl as tabular colors: No colors found (0)

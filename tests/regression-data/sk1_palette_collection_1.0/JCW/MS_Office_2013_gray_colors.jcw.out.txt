@@ -17,4 +17,5 @@ Some errors were encountered when loading:
 	failed to load MS_Office_2013_gray_colors.jcw as Adobe Color Table: file size must be 768 or 772 bytes (saw 240), OR file extension must be '.act' (saw '.jcw'),
 	failed to load MS_Office_2013_gray_colors.jcw as StarCraft palette: Wrong file size, must be 768 bytes long (not 240),
 	failed to load MS_Office_2013_gray_colors.jcw as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 240),
+	failed to load MS_Office_2013_gray_colors.jcw as colors from attributes: No colors found (0),
 	failed to load MS_Office_2013_gray_colors.jcw as tabular colors: No colors found (0)

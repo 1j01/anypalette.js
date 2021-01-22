@@ -1,5 +1,6 @@
 Some errors were encountered when loading:
 	failed to load Grayscale_palette(CorelDRAW).xml as CSS colors: No colors found (0),
+	failed to load Grayscale_palette(CorelDRAW).xml as colors from attributes: No colors found (0),
 	failed to load Grayscale_palette(CorelDRAW).xml as Paint Shop Pro palette: Not a JASC-PAL,
 	failed to load Grayscale_palette(CorelDRAW).xml as RIFF PAL: RIFF header not found; not a RIFF PAL file,
 	failed to load Grayscale_palette(CorelDRAW).xml as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.xml' instead),

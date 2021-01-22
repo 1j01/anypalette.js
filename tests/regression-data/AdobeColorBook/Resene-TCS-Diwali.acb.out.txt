@@ -1,20 +1,25 @@
-Some errors were encountered when loading:
-	failed to load Resene-TCS-Diwali.acb as Adobe Color Book: Not an Adobe Color Book,
-	failed to load Resene-TCS-Diwali.acb as Paint Shop Pro palette: Not a JASC-PAL,
-	failed to load Resene-TCS-Diwali.acb as RIFF PAL: RIFF header not found; not a RIFF PAL file,
-	failed to load Resene-TCS-Diwali.acb as ColorSchemer palette: ColorSchemer loader is only enabled when file extension is '.cs' (saw '.acb' instead),
-	failed to load Resene-TCS-Diwali.acb as Paint.NET palette: no colors returned,
-	failed to load Resene-TCS-Diwali.acb as GIMP palette: Not a GIMP Palette,
-	failed to load Resene-TCS-Diwali.acb as KolourPaint palette: Not a KDE RGB Palette,
-	failed to load Resene-TCS-Diwali.acb as Skencil palette: Not a Skencil palette,
-	failed to load Resene-TCS-Diwali.acb as Sketch palette: not sketchpalette JSON,
-	failed to load Resene-TCS-Diwali.acb as sK1 palette: No colors found (0),
-	failed to load Resene-TCS-Diwali.acb as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
-	failed to load Resene-TCS-Diwali.acb as Adobe Swatch Exchange: Not an Adobe Swatch Exchange file,
-	failed to load Resene-TCS-Diwali.acb as CSS colors: No colors found (0),
-	failed to load Resene-TCS-Diwali.acb as Homesite palette: Not a Homesite palette,
-	failed to load Resene-TCS-Diwali.acb as Adobe Color Swatch: Not an Adobe Color Swatch file,
-	failed to load Resene-TCS-Diwali.acb as Adobe Color Table: file size must be 768 or 772 bytes (saw 2101), OR file extension must be '.act' (saw '.acb'),
-	failed to load Resene-TCS-Diwali.acb as StarCraft palette: Wrong file size, must be 768 bytes long (not 2101),
-	failed to load Resene-TCS-Diwali.acb as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 2101),
-	failed to load Resene-TCS-Diwali.acb as tabular colors: No colors found (0)
+Loaded As:                      colors from attributes (.xml, .json, .txt)
+
+matchedFileExtension:           false
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+255 255 255   rgb(255, 255, 255)
+208 94  52    rgb(208, 94, 52)
+121 77  96    rgb(121, 77, 96)
+37  153 178   rgb(37, 153, 178)
+205 82  108   rgb(205, 82, 108)
+220 217 205   rgb(220, 217, 205)
+149 46  49    rgb(149, 46, 49)
+33  38  58    rgb(33, 38, 58)
+117 68  43    rgb(117, 68, 43)
+241 204 43    rgb(241, 204, 43)
+146 119 72    rgb(146, 119, 72)
+255 255 255   rgb(255, 255, 255)
+122 172 33    rgb(122, 172, 33)
+62  99  52    rgb(62, 99, 52)

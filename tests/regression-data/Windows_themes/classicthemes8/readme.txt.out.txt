@@ -1,6 +1,7 @@
 Some errors were encountered when loading:
 	failed to load readme.txt as Paint.NET palette: no colors returned,
 	failed to load readme.txt as CSS colors: No colors found (0),
+	failed to load readme.txt as colors from attributes: No colors found (0),
 	failed to load readme.txt as tabular colors: No colors found (0),
 	failed to load readme.txt as Paint Shop Pro palette: Not a JASC-PAL,
 	failed to load readme.txt as RIFF PAL: RIFF header not found; not a RIFF PAL file,

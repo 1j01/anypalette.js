@@ -20,10 +20,12 @@ attribute_regexp = ///
 		|m(?:ag(?:enta)?)?
 		|bl(?:ack)?
 		|k(?:ey)?
-		|name
-		|title
-		|id(?:ent(?:ifier)?)?
-		|designation
+		|(?:color[-_]?)?(?:
+			name
+			|title
+			|id(?:ent(?:ifier)?)?
+			|designation
+		)
 	)
 	(?:[-_]?(?:v|val|value|component))?
 	[">]?
@@ -38,14 +40,8 @@ attribute_regexp = ///
 module.exports = ({data})->
 	lines = data.split(/[\n\r]+/m)
 	palette = new Palette()
-	try_parse_line = (line)->
-		attributes = {}
-
-		while ((match = attribute_regexp.exec(line)) != null)
-			attributes[match[1]] = Number(match[2])
-
+	add_color = (attributes)->
 		console.log "attributes", attributes
-
 		if (
 			(attributes.r? or attributes.red?) and
 			(attributes.g? or attributes.green?) and
@@ -57,6 +53,19 @@ module.exports = ({data})->
 				blue: (if attributes.blue? then attributes.blue else attributes.b) / 255
 				alpha: (if attributes.alpha? then attributes.alpha else attributes.a) / 255
 	
+	try_parse_line = (line)->
+		attributes = {}
+
+		while ((match = attribute_regexp.exec(line)) != null)
+			key = match[1].toLowerCase()
+			value = Number(match[2])
+			if attributes[key]
+				add_color(attributes)
+				attributes = {}
+			attributes[key] = value
+
+		add_color(attributes)
+
 	for line in lines
 		try_parse_line line
 	

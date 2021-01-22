@@ -26,7 +26,7 @@ seq:
     type: aco_v1
   - id: aco_v2
     type: aco_v2
-	# TODO: support v1 files (just no aco_v2 section)
+  # TODO: support v1 files (just no aco_v2 section)
 types:
   aco_v1:
     seq:

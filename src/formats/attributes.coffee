@@ -37,11 +37,11 @@ attribute_regexp = ///
 	(\d+(?:\.\d+)?)
 ///ig
 
-module.exports = ({data})->
+module.exports = ({data, fileName})->
 	lines = data.split(/[\n\r]+/m)
 	palette = new Palette()
 	add_color = (attributes)->
-		console.log "attributes", attributes
+		console.log fileName, "attributes", attributes
 		if (
 			(attributes.r? or attributes.red?) and
 			(attributes.g? or attributes.green?) and
@@ -51,7 +51,7 @@ module.exports = ({data})->
 				red: (if attributes.red? then attributes.red else attributes.r) / 255
 				green: (if attributes.green? then attributes.green else attributes.g) / 255
 				blue: (if attributes.blue? then attributes.blue else attributes.b) / 255
-				alpha: (if attributes.alpha? then attributes.alpha else attributes.a) / 255
+				alpha: if attributes.alpha? then attributes.alpha / 255 else if attributes.a then attributes.a / 255
 	
 	try_parse_line = (line)->
 		attributes = {}
@@ -59,6 +59,8 @@ module.exports = ({data})->
 		while ((match = attribute_regexp.exec(line)) != null)
 			key = match[1].toLowerCase()
 			value = Number(match[2])
+			# "if there's a repeat attribute, it's probably a new color, right?"
+			# (There would need to be some nuance with start/ends of the list, e.g. a palette-name=Foo, color-name=foo, color-rgb=blah, vs palette-name=Foo, color-rgb=blah, color-name=foo)
 			if attributes[key]
 				add_color(attributes)
 				attributes = {}

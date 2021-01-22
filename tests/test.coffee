@@ -78,7 +78,7 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.*", (err, file_p
 											console.error "Reparsing failed - #{err}"
 											process.exit(1)
 											return
-										if reparsed_as_format isnt format
+										if reparsed_as_format isnt format and format.load
 											console.log("Reparsed as format:", reparsed_as_format)
 											console.log("Original format:", format)
 											console.error "Reparsed with a different format (#{reparsed_as_format.name} rather than #{format.name})"

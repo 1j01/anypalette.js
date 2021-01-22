@@ -74,6 +74,7 @@ module.exports = ({data, fileName})->
 				for attribute_name in attribute_mappings[option_name]
 					if attributes[attribute_name]?
 						color_options[option_name] = attributes[attribute_name]
+						break
 			
 			for option_name in color_space
 				if not color_options[option_name]?
@@ -86,6 +87,7 @@ module.exports = ({data, fileName})->
 				for attribute_name in attribute_mappings[option_name]
 					if attributes[attribute_name]
 						color_options[option_name] = attributes[attribute_name]
+						break
 			
 			for k, v of color_options
 				if k isnt "name"

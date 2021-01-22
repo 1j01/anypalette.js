@@ -69,12 +69,19 @@ module.exports = ({data, fileName})->
 		console.log fileName, "attributes", attributes
 		for color_space in color_spaces
 			color_options = {}
-			
+
 			for option_name in color_space
 				for attribute_name in attribute_mappings[option_name]
-					if attributes[attribute_name]
+					if attributes[attribute_name]?
 						color_options[option_name] = attributes[attribute_name]
 			
+			for option_name in color_space
+				if not color_options[option_name]?
+					continue # skip to next color space
+
+			if not color_space.every((option_name)-> color_options[option_name]?)
+				continue # skip to next color space
+
 			for option_name in ["alpha", "name"]
 				for attribute_name in attribute_mappings[option_name]
 					if attributes[attribute_name]
@@ -82,18 +89,10 @@ module.exports = ({data, fileName})->
 			
 			for k, v of color_options
 				if k isnt "name"
-					color_options[k] = Number(v)
+					color_options[k] = Number(v) / 255
 
-			if (
-				(attributes.r? or attributes.red?) and
-				(attributes.g? or attributes.green?) and
-				(attributes.b? or attributes.blue?)
-			)
-				palette.add
-					red: (if attributes.red? then attributes.red else attributes.r) / 255
-					green: (if attributes.green? then attributes.green else attributes.g) / 255
-					blue: (if attributes.blue? then attributes.blue else attributes.b) / 255
-					alpha: if attributes.alpha? then attributes.alpha / 255 else if attributes.a then attributes.a / 255
+			palette.add(color_options)
+			return
 	
 	try_parse_line = (line)->
 		attributes = {}

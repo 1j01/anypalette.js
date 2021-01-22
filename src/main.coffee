@@ -9,6 +9,9 @@ class LoadingErrors extends Error
 			for error in @errors
 				"\n\t" + error.message
 
+# Formats are sorted by file extension if available,
+# but it's not always available, and some formats use the same extensions.
+# More generic formats should go at the bottom.
 formats =
 	PAINT_SHOP_PRO_PALETTE: {
 		name: "Paint Shop Pro palette"
@@ -60,11 +63,26 @@ formats =
 		load: require "./formats/SKP"
 		write: (require "./formats/SKP").write
 	}
-	CSS_COLORS: {
-		name: "CSS colors"
-		fileExtensions: ["css", "scss", "sass", "less", "styl", "html", "htm", "svg", "js", "ts", "xml", "txt"]
-		load: require "./formats/CSS"
+	WINDOWS_THEME_COLORS: {
+		name: "Windows desktop theme"
+		fileExtensions: ["theme", "themepack"]
+		load: require "./formats/theme"
 	}
+	ADOBE_SWATCH_EXCHANGE_PALETTE: {
+		name: "Adobe Swatch Exchange"
+		fileExtensions: ["ase"]
+		load: (require "./formats/Adobe").load_adobe_swatch_exchange
+	}
+	ADOBE_COLOR_BOOK_PALETTE: {
+		name: "Adobe Color Book"
+		fileExtensions: ["acb"]
+		load: (require "./formats/Adobe").load_adobe_color_book
+	}
+	# KDE_THEME_COLORS: {
+	# 	name: "KDE desktop theme"
+	# 	fileExtensions: ["colors"]
+	# 	load: require "./formats/theme"
+	# }
 	CSS_VARIABLES: {
 		name: "CSS variables"
 		fileExtensions: ["css"]
@@ -90,16 +108,16 @@ formats =
 		fileExtensions: ["styl"]
 		write: (require "./formats/CSS").write_styl
 	}
-	WINDOWS_THEME_COLORS: {
-		name: "Windows desktop theme"
-		fileExtensions: ["theme", "themepack"]
-		load: require "./formats/theme"
+	CSS_COLORS: {
+		name: "CSS colors"
+		fileExtensions: ["css", "scss", "sass", "less", "styl", "html", "htm", "svg", "js", "ts", "xml", "txt"]
+		load: require "./formats/CSS"
 	}
-	# KDE_THEME_COLORS: {
-	# 	name: "KDE desktop theme"
-	# 	fileExtensions: ["colors"]
-	# 	load: require "./formats/theme"
-	# }
+	HOMESITE_PALETTE: {
+		name: "Homesite palette"
+		fileExtensions: ["hpl"]
+		load: require "./formats/Homesite"
+	}
 	ADOBE_COLOR_SWATCH_PALETTE: {
 		name: "Adobe Color Swatch"
 		fileExtensions: ["aco"]
@@ -109,21 +127,6 @@ formats =
 		name: "Adobe Color Table"
 		fileExtensions: ["act"]
 		load: require "./formats/AdobeColorTable"
-	}
-	ADOBE_SWATCH_EXCHANGE_PALETTE: {
-		name: "Adobe Swatch Exchange"
-		fileExtensions: ["ase"]
-		load: (require "./formats/Adobe").load_adobe_swatch_exchange
-	}
-	ADOBE_COLOR_BOOK_PALETTE: {
-		name: "Adobe Color Book"
-		fileExtensions: ["acb"]
-		load: (require "./formats/Adobe").load_adobe_color_book
-	}
-	HOMESITE_PALETTE: {
-		name: "Homesite palette"
-		fileExtensions: ["hpl"]
-		load: require "./formats/Homesite"
 	}
 	STARCRAFT_PALETTE: {
 		name: "StarCraft palette"

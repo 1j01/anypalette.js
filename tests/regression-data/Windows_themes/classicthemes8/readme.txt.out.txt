@@ -14,6 +14,7 @@ Some errors were encountered when loading:
 	failed to load readme.txt as Adobe Color Swatch: Not an Adobe Color Swatch file,
 	failed to load readme.txt as Adobe Color Table: file size must be 768 or 772 bytes (saw 195), OR file extension must be '.act' (saw '.txt'),
 	failed to load readme.txt as Adobe Swatch Exchange: Not an Adobe Swatch Exchange file,
+	failed to load readme.txt as Adobe Color Book: Not an Adobe Color Book,
 	failed to load readme.txt as Homesite palette: Not a Homesite palette,
 	failed to load readme.txt as StarCraft palette: Wrong file size, must be 768 bytes long (not 195),
 	failed to load readme.txt as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 195)

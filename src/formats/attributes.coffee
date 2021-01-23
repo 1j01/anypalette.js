@@ -29,12 +29,18 @@ attribute_regexp = ///
 		)
 	)
 	(?:[-_]?(?:v|val|value|component))?
-	[">]?
-	\s*
-	[=:]?
-	\s*
-	"?
+	(?:
+		"?
+		\s*
+		[=:\s]
+		\s*
+		"?
+		|
+		>
+	)
 	(\d+(?:\.\d+)?)
+	# ([^<>"]+)
+	# (\d+(?:\.\d+)?|[^<>"]+)
 ///ig
 
 attribute_mappings =
@@ -67,7 +73,8 @@ module.exports = ({data, fileName})->
 	lines = data.split(/[\n\r]+/m)
 	palette = new Palette()
 	add_color = (attributes)->
-		console.log fileName, "attributes", attributes
+		if fileName.match (/Diwali.acb/)
+			console.log fileName, "attributes", attributes
 		for color_space in color_spaces
 			color_options = {}
 
@@ -77,7 +84,7 @@ module.exports = ({data, fileName})->
 						color_options[option_name] = attributes[attribute_name]
 						break
 			
-			if not color_space.every((option_name)-> color_options[option_name]?)
+			if not color_space.every((option_name)-> color_options[option_name]? and isFinite(Number(color_options[option_name])))
 				continue # skip to next color space
 
 			for option_name in ["alpha", "name"]

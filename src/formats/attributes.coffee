@@ -3,8 +3,9 @@
 
 Palette = require "../Palette"
 
+# TODO: in the case of name, allow string
 attribute_regexp = ///
-	(
+	\b(
 		r(?:ed)?
 		|g(?:reen)?
 		|b(?:lue)?

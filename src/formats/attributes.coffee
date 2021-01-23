@@ -38,8 +38,8 @@ attribute_regexp = ///
 		|
 		>
 	)
-	(\d+(?:\.\d+)?)
-	# ([^<>"]+)
+	# (\d+(?:\.\d+)?)
+	([^<>"]+)
 	# (\d+(?:\.\d+)?|[^<>"]+)
 ///ig
 
@@ -73,8 +73,8 @@ module.exports = ({data, fileName})->
 	lines = data.split(/[\n\r]+/m)
 	palette = new Palette()
 	add_color = (attributes)->
-		if fileName.match (/Diwali.acb/)
-			console.log fileName, "attributes", attributes
+		# if fileName.match (/Diwali.acb/)
+		# 	console.log fileName, "attributes", attributes
 		for color_space in color_spaces
 			color_options = {}
 

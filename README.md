@@ -2,10 +2,17 @@
 # AnyPalette.js
 
 There are a LOT of different types of palette files.
+Like, way too many.
+But we can solve this.
 
-ONE LIBRARY SHALL RULE THEM ALL
+```
+One library to rule them all,
+   one library to find them,
+One library to load them all
+   and in the browser bind them. 
+```
 
-[Let's load some palettes](https://1j01.github.io/anypalette.js/demo)
+[Check out the demo!](https://1j01.github.io/anypalette.js/demo)
 
 
 ## Features
@@ -23,13 +30,13 @@ Supported palette formats:
 |-------------------|-----------------------------------|-----------------------------------------------------------------------------------|:-------:|:-------:|
 | .pal              | [RIFF] Palette                    | [MS Paint] for Windows 95 and Windows NT 4.0                                      |   ✅   | Planned |
 | .gpl              | [GIMP][Gimp] Palette              | [Gimp], [Inkscape], [Krita], [KolourPaint], [Scribus], [CinePaint], [MyPaint]     |   ✅   |   ✅    |
-| .aco              | Adobe Color Swatches              | Adobe [Photoshop]                                                                 |   ✅   | Planned |
+| .aco              | Adobe Color Swatch                | Adobe [Photoshop]                                                                 |   ✅   | Planned |
 | .ase              | Adobe Swatch Exchange             | Adobe [Photoshop], [InDesign], and [Illustrator]                                  |   ✅   | Planned |
 | .txt              | [Paint.NET] Palette               | [Paint.NET]                                                                       |   ✅   |   ✅    |
-| .act              | Adobe Color Table                 | Adobe [Photoshop] and [Illustrator]                                               |   ✅   | Planned |
-| .pal, .psppalette | [Paint Shop Pro] Palette          | [Paint Shop Pro][] (Jasc Software / Corel)                                        |   ✅   | Planned |
+| .act              | Adobe Color Table                 | Adobe [Photoshop] and [Illustrator]                                               |   ✅\* | Planned |
+| .pal, .psppalette | [Paint Shop Pro] Palette          | [Paint Shop Pro] (Jasc Software / Corel)                                          |   ✅   | Planned |
 | .hpl              | [Homesite] Palette                | Allaire [Homesite] / Macromedia [ColdFusion]                                      |   ✅   |         |
-| .cs               | ColorSchemer                      | ColorSchemer Studio                                                               |   ✅*  | Planned |
+| .cs               | ColorSchemer                      | ColorSchemer Studio                                                               |   ✅\* | Planned |
 | .pal              | [Starcraft] Palette               | [Starcraft]                                                                       |   ✅   |         |
 | .wpe              | [Starcraft] Terrain Palette       | [Starcraft]                                                                       |   ✅   |         |
 | .sketchpalette    | [Sketch] Palette                  | [Sketch]                                                                          |   ✅   |   ✅    |
@@ -42,7 +49,8 @@ Supported palette formats:
 | .html, .svg, .js  | any text files with CSS colors    | Web browsers / web pages                                                          |   ✅   |         |
 
 \*The ColorSchemer file parser is only enabled when the file extension is known to be `.cs`,
-provided by passing a `File` object, or `options.fileName`, or `options.fileExt`, or `options.filePath`
+provided by passing a `File` object, or `options.fileName`, or `options.fileExt`, or `options.filePath`.
+The Adobe Color Table loader is only enabled when the file extension is known to be `.act` OR the file is exactly 768 or 772 bytes long.
 
 UNSUPPORTED palette formats (for now):
 
@@ -96,13 +104,15 @@ MIT-licensed, see [LICENSE](LICENSE)
 
 ## Install
 
-For Node.js / Webpack / Parcel / Rollup / Browserify:
-```
+For Node.js / Webpack / Parcel / Rollup / Browserify, install with:
+```sh
 npm i anypalette --save
+# or
+yarn add anypalette
 ```
 
 Then access the library with:
-```javascript
+```js
 const AnyPalette = require("anypalette");
 ```
 
@@ -127,13 +137,14 @@ Properties and methods not documented here may break without notice.
 Knowing the file extension means AnyPalette.js can often pick the correct palette loader right away, which can improve the load speed, and also a few loaders are only enabled if their specific file extension matches because they can't determine if the file is actually in that format or not (for raw data formats without headers).
 
 - `options.file` - the palette file to load, as a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File)
-- `options.data` - the palette file data to load, as a binary string or [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) or [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) (but **not** any other `TypedArray` or `DataView`). In the case of a binary string, Unicode names for colors do not work, so an `ArrayBuffer` is preferred.
+- `options.data` - the palette file data to load, as a binary string or [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) or Node.js [`Buffer`](https://nodejs.org/api/buffer.html#buffer_class_buffer) or [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) (but **not** any other `TypedArray` or `DataView`). In the case of a binary string, Unicode names for colors do not work, so an `ArrayBuffer` is preferred.
 - `options.filePath` - a path to a palette file, for Node.js usage
 - `options.fileName` (optional) - the file name, if you have it, including the file extension - can be obtained from `options.file` or `options.filePath`
 - `options.fileExt` (optional) - the file extension, if you have it, *excluding* the dot, e.g. `"pal"` - can be obtained from `options.fileName` or `options.file` or `options.filePath`
 - `callback(error, palette, formatUsed, matchedFileExtension)` (required) - called when palette loading is finished, either with an error (in the first argument) or with the remaining arguments in the case of success:
 	- `palette`: a [`Palette`](#class-palette-extends-array)
-
+	- `formatUsed`: a [`Format`](#class-format) object representing the file format, or more generic loader, that was used to parse the palette
+	- `matchedFileExtension`: whether the format matched one of the file extensions its known for (Boolean)
 
 Note: the callback is asynchronous to allow for file loading, but all the palette parsing is currently synchronous.
 
@@ -147,7 +158,7 @@ Shortcut to load from a file path in Node.js - equivalent to passing `{filePath:
 
 ### `AnyPalette.writePalette(palette, format)`
 
-Returns string content of a file, in a given format.
+Returns string content of a file, in a given [format](#class-format).
 
 To save a palette as a GPL file, sending a download in a browser:
 
@@ -163,6 +174,7 @@ document.body.appendChild(a);
 a.click(); // Note: this must happen during a user gesture to work
 document.body.removeChild(a);
 ```
+
 #### `AnyPalette.uniqueColors(palette)`
 
 Some palette formats are commonly made variable size by just leaving unused slots a certain color
@@ -204,7 +216,7 @@ Inkscape, for example, ignores the number of columns specified in a palette.
 `Color` has a `toString` method that returns a CSS color, which means you can
 pass a Color object directly to an element's style or a canvas's context.
 
-```javascript
+```js
 var color = palette[0];
 div.style.background = color;
 ctx.fillStyle = color;
@@ -214,7 +226,7 @@ See [*Using JavaScript's 'toString' Method*](http://adripofjavascript.com/blog/d
 
 In some cases you may need to call `toString()` explicitly to get a string, for example:
 
-```javascript
+```js
 var shortenedColorStrings = palette.map((color)=> color.toString().replace(/\s/g, ""));
 ```
 
@@ -227,8 +239,40 @@ Also for some palette formats, such as `.gpl` files, a `Color` may have a `name`
 Determines whether two colors are equal in value, or nearly equal.
 ```js
 var firstTwoColorsExactlyEqual = AnyPalette.Color.is(palette[0], palette[1], 0);
-var firstTwoColorsNearlyEqual = AnyPalette.Color.is(palette[0], palette[1], 0.001);
+var firstTwoColorsBasicallyEqual = AnyPalette.Color.is(palette[0], palette[1], 0.001);
 var firstTwoColorsSimilar = AnyPalette.Color.is(palette[0], palette[1], 20);
+```
+Note: If you want to find perceptually similar colors, it's better to use CIELAB color space instead of RGB.
+This function compares in RGB space and is really only meant for finding duplicates.
+
+### class `Format`
+
+This class represents a loader and/or writer.
+
+- `name`: A friendly name for the format, e.g. `"Paint Shop Pro palette"`
+- `fileExtensions`: An array of associated file extensions, without the dot, e.g. `["pal", "psppalette"]`
+- `fileExtensionsPretty`: A textual representation of the file extensions, including the dots, e.g. `".pal, .psppalette"`
+- `readFromText`: This exists on text-based readers. Don't use it directly, use `AnyPalette.loadPalette`
+- `read`: This exists on binary readers. Don't use it directly, use `AnyPalette.loadPalette`
+- `write`: This exists on writers. Don't use it directly, use `AnyPalette.writePalette`
+
+### `AnyPalette.formats`
+
+This is an object that contains [`Format`](#class-format) objects.
+
+To get an array of formats:
+```js
+const formats = Object.values(AnyPalette.formats);
+```
+
+To get just writers:
+```js
+const writeFormats = Object.values(AnyPalette.formats).filter((format)=> format.write);
+```
+
+To get just readers:
+```js
+const readFormats = Object.values(AnyPalette.formats).filter((format)=> format.read || format.readFromText);
 ```
 
 ## Todo
@@ -254,10 +298,6 @@ var firstTwoColorsSimilar = AnyPalette.Color.is(palette[0], palette[1], 20);
 * Guess palette geometries
 
 
-* Load from a Buffer in Node.js, maybe even a Stream (altho streaming would mostly involve collecting it into a buffer),
-and from an ArrayBuffer in the browser
-
-
 ## Contributing
 
 <!-- See CONTRIBUTING.md -->
@@ -278,13 +318,13 @@ and from an ArrayBuffer in the browser
 it'll rebuild the library when changes to the source files are detected, and it'll auto-reload the page
 
 Run `npm test` to update a `regression-data` folder, and then view any changes with git.  
-If the changes are good/positive, that's good! Commit the changes along with the source code.  
+If the changes are good/positive, great! Commit the changes along with the source code, or in a separate "Accept" commit.  
 If the changes are bad/negative, try to fix the regression.  
-If all the files are deleted, not just changed, make sure to run `git submodule update --init`  
 `*.out.2.*` files are for files that are saved differently when loading a saved file. Ideally we want none of these.
+(If all the files are deleted, not just changed, make sure to run `git submodule update --init`)  
 
-Don't commit `build/anypalette.js` until cutting a release
-(to reduce noise and avoid conflicts when reverting and such).
+Don't commit `build/anypalette.js` until cutting a release.
+This is to reduce noise and avoid needless conflicts when reverting or rebasing.
 
 Update [CHANGELOG.md](CHANGELOG.md)'s [Unreleased] section with any notable changes,
 following the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format.

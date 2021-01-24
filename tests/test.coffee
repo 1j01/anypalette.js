@@ -35,7 +35,14 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.*", (err, file_p
 		for file_path in file_paths
 			do (file_path)->
 				relative_path = path.relative(palettes_folder, file_path)
-				AnyPalette.loadPalette file_path, (err, palette, formatUsed, matchedFileExtension)->
+				options = file_path
+				# To test loading from a Node.js Buffer:
+				# data = fs.readFileSync(file_path)
+				# options = {fileName: require("path").basename(file_path), data}
+				# To test loading from a binary string:
+				# data = fs.readFileSync(file_path, "binary")
+				# options = {fileName: require("path").basename(file_path), data}
+				AnyPalette.loadPalette options, (err, palette, formatUsed, matchedFileExtension)->
 					result =
 						if err
 							err.message

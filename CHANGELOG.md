@@ -9,7 +9,7 @@ Refer to the [latest version of the changelog](https://github.com/1j01/anypalett
 for potential future corrections.
 (The changelog can't be retroactively updated within an npm release, so if for instance a breaking change was accidentally omitted, it wouldn't be in the changelog in the release, but it could be added later to the changelog on GitHub.)
 
-[Unreleased]: https://github.com/1j01/anypalette.js/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/1j01/anypalette.js/compare/v0.5.2...HEAD
 ## [Unreleased]
 <details>
 	<summary>
@@ -28,16 +28,25 @@ for potential future corrections.
 - (undocumented) `palette.loader`, `matchedLoaderFileExtensions`
 
 ### Added
+- **Support for saving files!**
+  Use `var fileContent = AnyPalette.writePalette(palette, AnyPalette.formats.GIMP_PALETTE)` to save a GPL file.
 - `AnyPalette.uniqueColors(palette)`: Use this to get a version of a palette with only unique colors.
   Note: `numberOfColumns` on the returned palette is undefined, because the geometry doesn't necessarily apply if some colors are removed.
   `name` is however copied over.
 - `Color` objects now have `red`, `green`, `blue` properties. The range is `[0,1]`, not `[0,255]`, and they are available even if the input format is HSL or another colorspace.
 - Alpha support (translucent colors). `color.alpha` exists only if alpha is defined for a color. This is used for choosing between string representations.
-- **Support for saving files!**
-  Use `var [file, ext] = AnyPalette.writePalette(palette, AnyPalette.formats.GIMP_PALETTE)` to save a GPL file.
 - `loadPalette` callback now gets extra parameters for getting info about the format the file was parsed as.
-- Adobe Color Swatches (`.aco`) reading support
+- You can now pass an `ArrayBuffer` or Node.js `Buffer` as input to `AnyPalette.loadPalette({data}, callback)`. This is preferred over binary strings for Unicode support (and general modernness).
+- `palette.name` and `palette.description` (for some palette formats)
+- Adobe Color Swatch (`.aco`) reading support
 - Adobe Swatch Exchange (`.ase`) reading support
+- sK1 Palette (`.skp`) read and write support
+
+### Fixed
+- Unicode (UTF-8) is now supported in text-based formats (for color names etc.), **except** when passing in a binary string.
+
+### Deprecated
+- Binary string support. Use `ArrayBuffer` or another input type instead.
 
 </details>
 

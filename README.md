@@ -124,7 +124,7 @@ Properties and methods not documented here may break without notice.
 
 ### `AnyPalette.loadPalette(options, callback)`
 
-Knowing the file extension means AnyPalette.js can often pick the correct palette loader right away, which can improve the load speed, and also some loaders won't load except via their specific file extension because they can't determine if the file is actually in that format or not (for raw data formats without headers).
+Knowing the file extension means AnyPalette.js can often pick the correct palette loader right away, which can improve the load speed, and also a few loaders are only enabled if their specific file extension matches because they can't determine if the file is actually in that format or not (for raw data formats without headers).
 
 - `options.file` - the palette file to load, as a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File)
 - `options.data` - the palette file data to load, as a binary string (**not** an ArrayBuffer/TypedArray/DataView)

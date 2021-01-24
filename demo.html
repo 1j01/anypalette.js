@@ -352,25 +352,28 @@
 					palette_view.status("Waiting...");
 					setTimeout(function(){
 						palette_view.status("Loading file...");
-						$.ajax({
-							url: url,
-							beforeSend: function(xhr){
-								// make binary data work (for binary string result)
-								xhr.overrideMimeType('text/plain; charset=x-user-defined');
+						fetch(url)
+						.then((response)=> {
+							if (!response.ok) {
+								palette_view.error(`Failed to load file! HTTP ${response.status} ${response.statusText}`);
+								return;
 							}
-						})
-							.done(function(data){
+							response.arrayBuffer()
+							.then((arrayBuffer)=> {
 								palette_view.status("Loading palette from file...");
-								AnyPalette.loadPalette({
-									data: data,
-									fileName: fname
-								}, function(err, palette, formatUsed, matchedFileExtension){
-									palette_view.update(err, palette, formatUsed, matchedFileExtension);
+								requestAnimationFrame(()=> { // just give time for the loading message to change
+									AnyPalette.loadPalette({
+										data: arrayBuffer,
+										fileName: fname
+									}, function(err, palette, formatUsed, matchedFileExtension){
+										palette_view.status("");
+										palette_view.update(err, palette, formatUsed, matchedFileExtension);
+									});
 								});
-							})
-							.fail(function(){
-								palette_view.error("Failed to load file!");
 							});
+						}, (error)=> {
+							palette_view.error(`Failed to load file! ${error}`);
+						});
 					}, i * 100); //stagger loading
 				});
 			});

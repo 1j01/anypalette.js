@@ -16,72 +16,72 @@ formats =
 	PAINT_SHOP_PRO_PALETTE: {
 		name: "Paint Shop Pro palette"
 		fileExtensions: ["pal", "psppalette"]
-		load: require "./formats/PaintShopPro"
+		read: require "./formats/PaintShopPro"
 	}
 	RIFF_PALETTE: {
 		name: "RIFF PAL"
 		fileExtensions: ["pal"]
-		load: require "./formats/RIFF"
+		read: require "./formats/RIFF"
 	}
 	COLORSCHEMER_PALETTE: {
 		name: "ColorSchemer palette"
 		fileExtensions: ["cs"]
-		load: require "./formats/ColorSchemer"
+		read: require "./formats/ColorSchemer"
 	}
 	PAINTDOTNET_PALETTE: {
 		name: "Paint.NET palette"
 		fileExtensions: ["txt"]
-		load: require "./formats/Paint.NET"
+		read: require "./formats/Paint.NET"
 		write: (require "./formats/Paint.NET").write
 	}
 	GIMP_PALETTE: {
 		name: "GIMP palette"
 		fileExtensions: ["gpl", "gimp", "colors"]
-		load: require "./formats/GIMP"
+		read: require "./formats/GIMP"
 		write: (require "./formats/GIMP").write
 	}
 	KDE_RGB_PALETTE: {
 		name: "KolourPaint palette"
 		fileExtensions: ["colors"]
-		load: require "./formats/KolourPaint"
+		read: require "./formats/KolourPaint"
 		write: (require "./formats/KolourPaint").write
 	}
 	SKENCIL_PALETTE: {
 		name: "Skencil palette"
 		fileExtensions: ["spl"]
-		load: require "./formats/SPL"
+		read: require "./formats/SPL"
 	}
 	SKETCH_JSON_PALETTE: {
 		name: "Sketch palette"
 		fileExtensions: ["sketchpalette"]
-		load: require "./formats/sketchpalette"
+		read: require "./formats/sketchpalette"
 		write: (require "./formats/sketchpalette").write
 	}
 	SK1_PALETTE: {
 		name: "sK1 palette"
 		fileExtensions: ["skp"]
-		load: require "./formats/SKP"
+		read: require "./formats/SKP"
 		write: (require "./formats/SKP").write
 	}
 	WINDOWS_THEME_COLORS: {
 		name: "Windows desktop theme"
 		fileExtensions: ["theme", "themepack"]
-		load: require "./formats/theme"
+		read: require "./formats/theme"
 	}
 	ADOBE_SWATCH_EXCHANGE_PALETTE: {
 		name: "Adobe Swatch Exchange"
 		fileExtensions: ["ase"]
-		load: (require "./formats/Adobe").load_adobe_swatch_exchange
+		read: (require "./formats/Adobe").read_adobe_swatch_exchange
 	}
 	ADOBE_COLOR_BOOK_PALETTE: {
 		name: "Adobe Color Book"
 		fileExtensions: ["acb"]
-		load: (require "./formats/Adobe").load_adobe_color_book
+		read: (require "./formats/Adobe").read_adobe_color_book
 	}
 	# KDE_THEME_COLORS: {
 	# 	name: "KDE desktop theme"
 	# 	fileExtensions: ["colors"]
-	# 	load: require "./formats/theme"
+	# 	read: require "./formats/theme"
 	# }
 	CSS_VARIABLES: {
 		name: "CSS variables"
@@ -111,57 +111,57 @@ formats =
 	CSS_COLORS: {
 		name: "CSS colors"
 		fileExtensions: ["css", "scss", "sass", "less", "styl", "html", "htm", "svg", "js", "ts", "xml", "txt"]
-		load: require "./formats/CSS"
+		read: require "./formats/CSS"
 	}
 	HOMESITE_PALETTE: {
 		name: "Homesite palette"
 		fileExtensions: ["hpl"]
-		load: require "./formats/Homesite"
+		read: require "./formats/Homesite"
 	}
 	ADOBE_COLOR_SWATCH_PALETTE: {
 		name: "Adobe Color Swatch"
 		fileExtensions: ["aco"]
-		load: (require "./formats/Adobe").load_adobe_color_swatch
+		read: (require "./formats/Adobe").read_adobe_color_swatch
 	}
 	ADOBE_COLOR_TABLE_PALETTE: {
 		name: "Adobe Color Table"
 		fileExtensions: ["act"]
-		load: require "./formats/AdobeColorTable"
+		read: require "./formats/AdobeColorTable"
 	}
 	STARCRAFT_PALETTE: {
 		name: "StarCraft palette"
 		fileExtensions: ["pal"]
-		load: require "./formats/StarCraft"
+		read: require "./formats/StarCraft"
 	}
 	STARCRAFT_PADDED: {
 		name: "StarCraft terrain palette"
 		fileExtensions: ["wpe"]
-		load: require "./formats/StarCraftPadded"
+		read: require "./formats/StarCraftPadded"
 	}
 
 	# AUTOCAD_COLOR_BOOK_PALETTE: {
 	# 	name: "AutoCAD Color Book"
 	# 	fileExtensions: ["acb"]
-	# 	load: require "./formats/AutoCADColorBook"
+	# 	read: require "./formats/AutoCADColorBook"
 	# }
 
 	# CORELDRAW_PALETTE: {
 	# 	# (same as Paint Shop Pro palette?)
 	# 	name: "CorelDRAW palette"
 	# 	fileExtensions: ["pal", "cpl"]
-	# 	load: require "./formats/CorelDRAW"
+	# 	read: require "./formats/CorelDRAW"
 	# }
 	TABULAR: {
 		name: "tabular colors"
 		fileExtensions: ["csv", "tsv", "txt"]
-		load: require "./formats/tabular"
+		read: require "./formats/tabular"
 	}
 
 for format_id in Object.keys(formats)
 	format = formats[format_id]
 	format.fileExtensionsPretty = ".#{format.fileExtensions.join(", .")}"
 
-load_palette = (o, callback)->
+read_palette = (o, callback)->
 	
 	# find formats that use this file extension
 	matching_ext = {}
@@ -178,14 +178,15 @@ load_palette = (o, callback)->
 	errors = []
 	for format_id in format_ids
 		format = formats[format_id]
-		if not format.load
+		if not format.read
 			continue # skip this format
 		try
-			palette = format.load(o)
+			palette = format.read(o)
 			if palette.length is 0
 				palette = null
 				throw new Error "no colors returned"
 		catch e
+			# TODO: should this be "failed to read"?
 			msg = "failed to load #{o.fileName} as #{format.name}: #{e.message}"
 			# if matching_ext[format_id]? #and not e.message.match(/not a/i) # meant to avoid "Not a <FORMAT> Palette", overly broad
 			# 	console?.error? msg
@@ -238,7 +239,7 @@ AnyPalette.loadPalette = (o, callback)->
 	o = normalize_options o
 	
 	if o.data
-		load_palette(o, callback)
+		read_palette(o, callback)
 	else if o.file
 		if not (o.file instanceof File)
 			throw new TypeError "options.file was passed but it is not a File"
@@ -247,7 +248,7 @@ AnyPalette.loadPalette = (o, callback)->
 			callback(fr.error)
 		fr.onload = ->
 			o.data = fr.result
-			load_palette(o, callback)
+			read_palette(o, callback)
 		fr.readAsBinaryString o.file
 	else if o.filePath?
 		fs = require "fs"
@@ -256,7 +257,7 @@ AnyPalette.loadPalette = (o, callback)->
 				callback(error)
 			else
 				o.data = data.toString("binary")
-				load_palette(o, callback)
+				read_palette(o, callback)
 	else
 		throw new TypeError "either options.data or options.file or options.filePath must be passed"
 

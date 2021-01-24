@@ -59,7 +59,7 @@ get_utf_16_string = (view, length, including_terminator)->
 		view.getUint16() # should be 0x0000
 	string
 
-module.exports.load_adobe_color_swatch = ({data})->
+module.exports.read_adobe_color_swatch = ({data})->
 	# ACO (Adobe Color Swatch)
 
 	palette = new Palette()
@@ -144,7 +144,7 @@ module.exports.load_adobe_color_swatch = ({data})->
 	
 	palette
 
-module.exports.load_adobe_swatch_exchange = ({data})->
+module.exports.read_adobe_swatch_exchange = ({data})->
 	# ASE (Adobe Swatch Exchange)
 	
 	palette = new Palette()
@@ -212,7 +212,7 @@ module.exports.load_adobe_swatch_exchange = ({data})->
 
 	palette
 
-module.exports.load_adobe_color_book = ({data})->
+module.exports.read_adobe_color_book = ({data})->
 	# ACB (Adobe Color Book)
 
 	# References:

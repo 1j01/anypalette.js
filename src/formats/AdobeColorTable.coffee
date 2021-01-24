@@ -16,7 +16,7 @@ jDataView = require "jdataview"
 Palette = require "../Palette"
 
 module.exports =
-load_adobe_color_table = ({data, fileExt})->
+read_adobe_color_table = ({data, fileExt})->
 
 	palette = new Palette()
 	view = new jDataView(data)

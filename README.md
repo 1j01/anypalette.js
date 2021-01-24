@@ -49,9 +49,11 @@ UNSUPPORTED palette formats (for now):
 | File Extension    | Name                              | Programs                                                                          |   Read  |  Write  |
 |-------------------|-----------------------------------|-----------------------------------------------------------------------------------|:-------:|:-------:|
 | .gpa              | [Gpick] Palette                   | [Gpick]                                                                           | Planned |         |
-| .acbl             | Adobe Color Book Library / Legacy | Adobe [InDesign] and [Illustrator]                                                | Planned | Planned |
+| .acb              | Adobe Color Book                  | Adobe [InDesign] and [Illustrator]                                                | ✅\*\*  | Planned |
+| .acbl             | Adobe Color Book Library / Legacy | Adobe [InDesign] and [Illustrator] (?)                                            | Planned | Planned |
 | .soc              | StarOffice Colors                 | [StarOffice], [OpenOffice], [LibreOffice]                                         | Planned | Planned |
 
+\*\*None of the color spaces are supported (CMYK, CIELAB, CIEXYZ). The code is mostly all there! But I think probably *ICC profiles* are needed for correct-looking colors.
 
 [RIFF]: https://en.wikipedia.org/wiki/Resource_Interchange_File_Format
 [MS Paint]: https://en.wikipedia.org/wiki/Microsoft_Paint

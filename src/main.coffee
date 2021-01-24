@@ -16,7 +16,7 @@ formats =
 	PAINT_SHOP_PRO_PALETTE: {
 		name: "Paint Shop Pro palette"
 		fileExtensions: ["pal", "psppalette"]
-		read: require "./formats/PaintShopPro"
+		readFromText: require "./formats/PaintShopPro"
 	}
 	RIFF_PALETTE: {
 		name: "RIFF PAL"
@@ -31,42 +31,42 @@ formats =
 	PAINTDOTNET_PALETTE: {
 		name: "Paint.NET palette"
 		fileExtensions: ["txt"]
-		read: require "./formats/Paint.NET"
+		readFromText: require "./formats/Paint.NET"
 		write: (require "./formats/Paint.NET").write
 	}
 	GIMP_PALETTE: {
 		name: "GIMP palette"
 		fileExtensions: ["gpl", "gimp", "colors"]
-		read: require "./formats/GIMP"
+		readFromText: require "./formats/GIMP"
 		write: (require "./formats/GIMP").write
 	}
 	KDE_RGB_PALETTE: {
 		name: "KolourPaint palette"
 		fileExtensions: ["colors"]
-		read: require "./formats/KolourPaint"
+		readFromText: require "./formats/KolourPaint"
 		write: (require "./formats/KolourPaint").write
 	}
 	SKENCIL_PALETTE: {
 		name: "Skencil palette"
 		fileExtensions: ["spl"]
-		read: require "./formats/SPL"
+		readFromText: require "./formats/SPL"
 	}
 	SKETCH_JSON_PALETTE: {
 		name: "Sketch palette"
 		fileExtensions: ["sketchpalette"]
-		read: require "./formats/sketchpalette"
+		readFromText: require "./formats/sketchpalette"
 		write: (require "./formats/sketchpalette").write
 	}
 	SK1_PALETTE: {
 		name: "sK1 palette"
 		fileExtensions: ["skp"]
-		read: require "./formats/SKP"
+		readFromText: require "./formats/SKP"
 		write: (require "./formats/SKP").write
 	}
 	WINDOWS_THEME_COLORS: {
 		name: "Windows desktop theme"
 		fileExtensions: ["theme", "themepack"]
-		read: require "./formats/theme"
+		readFromText: require "./formats/theme"
 	}
 	ADOBE_SWATCH_EXCHANGE_PALETTE: {
 		name: "Adobe Swatch Exchange"
@@ -111,12 +111,12 @@ formats =
 	CSS_COLORS: {
 		name: "CSS colors"
 		fileExtensions: ["css", "scss", "sass", "less", "styl", "html", "htm", "svg", "js", "ts", "xml", "txt"]
-		read: require "./formats/CSS"
+		readFromText: require "./formats/CSS"
 	}
 	HOMESITE_PALETTE: {
 		name: "Homesite palette"
 		fileExtensions: ["hpl"]
-		read: require "./formats/Homesite"
+		readFromText: require "./formats/Homesite"
 	}
 	ADOBE_COLOR_SWATCH_PALETTE: {
 		name: "Adobe Color Swatch"
@@ -142,19 +142,19 @@ formats =
 	# AUTOCAD_COLOR_BOOK_PALETTE: {
 	# 	name: "AutoCAD Color Book"
 	# 	fileExtensions: ["acb"]
-	# 	read: require "./formats/AutoCADColorBook"
+	# 	readFromText?: require "./formats/AutoCADColorBook"
 	# }
 
 	# CORELDRAW_PALETTE: {
 	# 	# (same as Paint Shop Pro palette?)
 	# 	name: "CorelDRAW palette"
 	# 	fileExtensions: ["pal", "cpl"]
-	# 	read: require "./formats/CorelDRAW"
+	# 	readFromText?: require "./formats/CorelDRAW"
 	# }
 	TABULAR: {
 		name: "tabular colors"
 		fileExtensions: ["csv", "tsv", "txt"]
-		read: require "./formats/tabular"
+		readFromText: require "./formats/tabular"
 	}
 
 for format_id in Object.keys(formats)
@@ -163,6 +163,12 @@ for format_id in Object.keys(formats)
 
 read_palette = (o, callback)->
 	
+	o.fileContentString = 
+		if typeof o.data is "string"
+			o.data
+		else
+			new TextDecoder().decode(o.data)
+
 	# find formats that use this file extension
 	matching_ext = {}
 	for format_id in Object.keys(formats)
@@ -178,10 +184,13 @@ read_palette = (o, callback)->
 	errors = []
 	for format_id in format_ids
 		format = formats[format_id]
-		if not format.read
+		unless format.read or format.readFromText
 			continue # skip this format
 		try
-			palette = format.read(o)
+			if format.readFromText
+				palette = format.readFromText(o)
+			else
+				palette = format.read(o)
 			if palette.length is 0
 				palette = null
 				throw new Error "no colors returned"
@@ -249,14 +258,14 @@ AnyPalette.loadPalette = (o, callback)->
 		fr.onload = ->
 			o.data = fr.result
 			read_palette(o, callback)
-		fr.readAsBinaryString o.file
+		fr.readAsArrayBuffer o.file
 	else if o.filePath?
 		fs = require "fs"
 		fs.readFile o.filePath, (error, data)->
 			if error
 				callback(error)
 			else
-				o.data = data.toString("binary")
+				o.data = data
 				read_palette(o, callback)
 	else
 		throw new TypeError "either options.data or options.file or options.filePath must be passed"

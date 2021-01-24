@@ -4,8 +4,8 @@
 
 Palette = require "../Palette"
 
-module.exports = ({data})->
-	lines = data.split(/[\n\r]+/m)
+module.exports = ({fileContentString})->
+	lines = fileContentString.split(/[\n\r]+/m)
 	
 	if lines[0] isnt "##Sketch RGBPalette 0"
 		throw new Error("Not a Skencil palette")

@@ -3,8 +3,8 @@
 
 Palette = require "../Palette"
 
-parse_gimp_or_kde_rgb_palette = (data, format_name)->
-	lines = data.split(/[\n\r]+/m)
+parse_gimp_or_kde_rgb_palette = (fileContentString, format_name)->
+	lines = fileContentString.split(/[\n\r]+/m)
 	if lines[0] isnt format_name
 		throw new Error "Not a #{format_name}"
 	
@@ -57,8 +57,8 @@ parse_gimp_or_kde_rgb_palette = (data, format_name)->
 		
 	palette
 
-module.exports = ({data})->
-	parse_gimp_or_kde_rgb_palette(data, "GIMP Palette")
+module.exports = ({fileContentString})->
+	parse_gimp_or_kde_rgb_palette(fileContentString, "GIMP Palette")
 
 write_gimp_or_kde_rgb_palette = (palette, format_name)->
 	"""

@@ -7,10 +7,10 @@ Palette = require "../Palette"
 # TODO: detect names via structures like CSS variables, JSON object keys/values, comments
 # TODO: use all colors regardless of format, within a detected structure, or maybe always
 
-module.exports = ({data})->
+module.exports = ({fileContentString})->
 	
 	n_control_characters = 0
-	for char in data
+	for char in fileContentString
 		if char in [
 			"\x00", "\x01", "\x02", "\x03", "\x04", "\x05", "\x06", "\x07", "\x08"
 			"\x0B", "\x0C"
@@ -31,7 +31,7 @@ module.exports = ({data})->
 	
 	hex = (x)-> parseInt(x, 16)
 	
-	data.replace ///
+	fileContentString.replace ///
 		\# # hashtag # #/
 		(
 			[0-9A-F]{3} # three hex-digits (#A0C)
@@ -57,7 +57,7 @@ module.exports = ({data})->
 				blue: hex($1[2] + $1[2]) / 255
 				alpha: if $1.length is 4 then hex($1[3] + $1[3]) / 255
 	
-	data.replace ///
+	fileContentString.replace ///
 		rgb\(
 			\s*
 			([0-9]*\.?[0-9]+) # red
@@ -76,7 +76,7 @@ module.exports = ({data})->
 			green: Number(g_val) / (if g_unit is "%" then 100 else 255)
 			blue: Number(b_val) / (if b_unit is "%" then 100 else 255)
 	
-	data.replace ///
+	fileContentString.replace ///
 		rgba?\(
 			\s*
 			([0-9]*\.?[0-9]+) # red
@@ -99,7 +99,7 @@ module.exports = ({data})->
 			blue: Number(b_val) / (if b_unit is "%" then 100 else 255)
 			alpha: Number(a_val) / (if a_unit is "%" then 100 else 1)
 	
-	data.replace ///
+	fileContentString.replace ///
 		hsl\(
 			\s*
 			([0-9]*\.?[0-9]+) # hue
@@ -118,7 +118,7 @@ module.exports = ({data})->
 			saturation: Number(s_val) / (if s_unit is "%" then 100 else 1)
 			lightness: Number(l_val) / (if l_unit is "%" then 100 else 1)
 	
-	data.replace ///
+	fileContentString.replace ///
 		hsla?\(
 			\s*
 			([0-9]*\.?[0-9]+) # hue

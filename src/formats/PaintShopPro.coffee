@@ -3,8 +3,8 @@
 
 Palette = require "../Palette"
 
-module.exports = ({data})->
-	lines = data.split(/[\n\r]+/m)
+module.exports = ({fileContentString})->
+	lines = fileContentString.split(/[\n\r]+/m)
 	if lines[0] isnt "JASC-PAL"
 		throw new Error "Not a JASC-PAL"
 	if lines[1] isnt "0100"

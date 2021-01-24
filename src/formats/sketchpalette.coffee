@@ -9,10 +9,10 @@ Palette = require "../Palette"
 
 version = 1.4
 
-module.exports = ({data})->
-	if not data.match(/^\s*{/)
+module.exports = ({fileContentString})->
+	if not fileContentString.match(/^\s*{/)
 		throw new Error "not sketchpalette JSON"
-	paletteContents = JSON.parse(data)
+	paletteContents = JSON.parse(fileContentString)
 
 	compatibleVersion = paletteContents.compatibleVersion
 

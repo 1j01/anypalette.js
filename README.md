@@ -127,7 +127,7 @@ Properties and methods not documented here may break without notice.
 Knowing the file extension means AnyPalette.js can often pick the correct palette loader right away, which can improve the load speed, and also a few loaders are only enabled if their specific file extension matches because they can't determine if the file is actually in that format or not (for raw data formats without headers).
 
 - `options.file` - the palette file to load, as a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File)
-- `options.data` - the palette file data to load, as a binary string (**not** an ArrayBuffer/TypedArray/DataView)
+- `options.data` - the palette file data to load, as a binary string or [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) or [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) (but **not** any other `TypedArray` or `DataView`). In the case of a binary string, Unicode names for colors do not work, so an `ArrayBuffer` is preferred.
 - `options.filePath` - a path to a palette file, for Node.js usage
 - `options.fileName` (optional) - the file name, if you have it, including the file extension - can be obtained from `options.file` or `options.filePath`
 - `options.fileExt` (optional) - the file extension, if you have it, *excluding* the dot, e.g. `"pal"` - can be obtained from `options.fileName` or `options.file` or `options.filePath`

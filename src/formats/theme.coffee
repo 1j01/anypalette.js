@@ -2,13 +2,13 @@
 
 Palette = require "../Palette"
 
-parseINIString = (data)->
+parseINIString = (fileContentString)->
 	regex = 
 		section: /^\s*\[\s*([^\]]*)\s*\]\s*$/
 		param: /^\s*([^=]+?)\s*=\s*(.*?)\s*$/
 		comment: /^\s*;.*$/
 	value = {}
-	lines = data.split(/[\r\n]+/)
+	lines = fileContentString.split(/[\r\n]+/)
 	section = null
 	lines.forEach (line)->
 		if regex.comment.test(line)
@@ -54,5 +54,5 @@ parseThemeFileString = (themeIni)->
 	palette.name = theme["Theme"]?.DisplayName # or theme["General"]?.Name for KDE .colors
 	palette
 
-module.exports = ({data})->
-	parseThemeFileString data
+module.exports = ({fileContentString})->
+	parseThemeFileString fileContentString

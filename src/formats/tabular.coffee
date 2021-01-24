@@ -3,8 +3,8 @@
 
 Palette = require "../Palette"
 
-module.exports = ({data})->
-	lines = data.split(/[\n\r]+/m)
+module.exports = ({fileContentString})->
+	lines = fileContentString.split(/[\n\r]+/m)
 	palettes = [
 		csv_palette = new Palette()
 		ssv_palette = new Palette()

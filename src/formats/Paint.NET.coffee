@@ -3,13 +3,13 @@
 
 Palette = require "../Palette"
 
-module.exports = ({data})->
+module.exports = ({fileContentString})->
 	
 	palette = new Palette()
 	
 	hex = (x)-> parseInt(x, 16)
 	
-	for line in data.split(/[\n\r]+/m)
+	for line in fileContentString.split(/[\n\r]+/m)
 		m = line.match(/^([0-9A-F]{2})([0-9A-F]{2})([0-9A-F]{2})([0-9A-F]{2})$/i)
 		if m then palette.add
 			alpha: hex(m[1]) / 255

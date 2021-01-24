@@ -9,8 +9,8 @@
 Palette = require "../Palette"
 {parse_css_hex_color} = require "../helpers"
 
-module.exports = ({data})->
-	lines = data.split(/[\n\r]+/m)
+module.exports = ({fileContentString})->
+	lines = fileContentString.split(/[\n\r]+/m)
 
 	palette = new Palette
 

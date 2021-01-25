@@ -21,3 +21,12 @@ module.exports = ({data})->
 	
 	palette.numberOfColumns = 16
 	palette
+
+module.exports.write = (palette)->
+	view = new jDataView(256*4)
+	for i in [0...256]
+		view.writeUint8(if palette[i] then Math.round(palette[i].red * 255) else 0)
+		view.writeUint8(if palette[i] then Math.round(palette[i].green * 255) else 0)
+		view.writeUint8(if palette[i] then Math.round(palette[i].blue * 255) else 0)
+		view.writeUint8(0) # padding
+	return view.buffer

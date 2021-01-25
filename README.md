@@ -37,8 +37,8 @@ Supported palette formats:
 | .pal, .psppalette | [Paint Shop Pro] Palette          | [Paint Shop Pro] (Jasc Software / Corel)                                          |   ✅   |   ✅    |
 | .hpl              | [Homesite] Palette                | Allaire [Homesite] / Macromedia [ColdFusion]                                      |   ✅   |         |
 | .cs               | ColorSchemer                      | ColorSchemer Studio                                                               |   ✅\* | Planned |
-| .pal              | [Starcraft] Palette               | [Starcraft]                                                                       |   ✅   |         |
-| .wpe              | [Starcraft] Terrain Palette       | [Starcraft]                                                                       |   ✅   |         |
+| .pal              | [Starcraft] Palette               | [Starcraft]                                                                       |   ✅   |   ✅    |
+| .wpe              | [Starcraft] Terrain Palette       | [Starcraft]                                                                       |   ✅   |   ✅    |
 | .sketchpalette    | [Sketch] Palette                  | [Sketch]                                                                          |   ✅   |   ✅    |
 | .spl              | [Skencil] Palette                 | [Skencil] (formerly called Sketch)                                                |   ✅   |   ✅    |
 | .colors           | KolourPaint Color Collection      | [KolourPaint]                                                                     |   ✅   |   ✅    |

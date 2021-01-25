@@ -81,7 +81,7 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.*", (err, file_p
 									fs.writeFileSync output_file_path, result, "utf8"
 									console.log "Wrote", format_id, output_file_path
 
-									AnyPalette.loadPalette {data: result}, (err, reparsed_palette, reparsed_as_format, matched_file_extension)->
+									AnyPalette.loadPalette {data: result, filePath: output_file_path}, (err, reparsed_palette, reparsed_as_format, matched_file_extension)->
 										if err
 											console.error "Reparsing failed - #{err}"
 											process.exit(1)

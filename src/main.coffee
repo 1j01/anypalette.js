@@ -136,11 +136,13 @@ formats =
 		name: "StarCraft palette"
 		fileExtensions: ["pal"]
 		read: require "./formats/StarCraft"
+		write: (require "./formats/StarCraft").write
 	}
 	STARCRAFT_PADDED: {
 		name: "StarCraft terrain palette"
 		fileExtensions: ["wpe"]
 		read: require "./formats/StarCraftPadded"
+		write: (require "./formats/StarCraftPadded").write
 	}
 
 	# AUTOCAD_COLOR_BOOK_PALETTE: {

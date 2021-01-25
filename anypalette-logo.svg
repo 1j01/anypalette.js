@@ -30,9 +30,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="221.0689"
-     inkscape:cy="278.51871"
+     inkscape:zoom="1.4"
+     inkscape:cx="222.6451"
+     inkscape:cy="299.68225"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -45,7 +45,8 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:snap-object-midpoints="true"
-     inkscape:snap-center="true">
+     inkscape:snap-center="true"
+     inkscape:snap-global="true">
     <inkscape:grid
        type="xygrid"
        id="grid1427"
@@ -54,6 +55,10 @@
        position="256,256"
        orientation="0,-1"
        id="guide1484" />
+    <sodipodi:guide
+       position="256,256"
+       orientation="1,0"
+       id="guide2688" />
   </sodipodi:namedview>
   <metadata
      id="metadata860">
@@ -156,5 +161,16 @@
        inkscape:transform-center-y="-27.597594"
        width="100%"
        height="100%" />
+    <circle
+       style="fill:#3a2264;stroke:#000000;stroke-width:13.79412316;stroke-opacity:1.0;stop-color:#000000"
+       id="path2680"
+       cx="256"
+       cy="256"
+       r="32" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#c8a9fa;fill-opacity:1;stroke:none;stroke-width:49.9997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       d="m 259.03218,231.87533 c 3.74132,3.29164 -20.02453,21.1184 -17.67929,35.0742 0.5904,2.00594 0.93313,2.89164 -1.19554,2.8969 -3.74684,-0.91856 -6.86366,-9.80651 -7.30182,-14.55128 -1.37476,-14.88699 16.79503,-26.21269 26.17665,-23.41982 z"
+       id="path2684"
+       sodipodi:nodetypes="cccsc" />
   </g>
 </svg>

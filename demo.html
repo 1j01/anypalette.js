@@ -198,8 +198,15 @@
 						}
 						const formats = Object.values(AnyPalette.formats).filter((format)=> format.write);
 						const $fan = $("<div class='fan'>");
+						$fan.css({
+							position: "relative",
+							width: 0,
+							height: 0,
+							overflow: "visible",
+							display: "inline-block",
+						});
 						$save.after($fan);
-						formats.forEach((format)=> {
+						formats.forEach((format, format_index)=> {
 							const $option = $("<button class='fan-option'>");
 							$option.text(`${format.name} (.${format.fileExtensions[0]})`);
 							$option.on("click", () => {
@@ -214,6 +221,17 @@
 								document.body.removeChild(a);
 							});
 							$fan.append($option);
+							$option.css({
+								backgroundColor: `hsl(${format_index/formats.length}turn, 70%, 70%)`,
+								color: "black",
+								position: "absolute",
+								left: 0,
+								top: 0,
+								transformOrigin: "-50px -50px",
+								// transformOrigin: "-50px 50%",
+								transform: `rotate(${format_index/formats.length/5}turn)`,
+								whiteSpace: "nowrap",
+							});
 						});
 					});
 				};

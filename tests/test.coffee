@@ -14,6 +14,7 @@ writer_test_file_path_regexp = ///
 	|palettes/sk1_palette_collection_1.0/SKP/Color_names_supported_by_all_browsers.skp # named colors, number precision, multiline description
 	|KDE40.colors # no columns, no palette name, named colors
 	|Nord.gpl # palette name, palette columns, named colors
+	|emoji-average-colors.gpl # Unicode color names, many colors
 ///
 
 glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.*", (err, file_paths)->
@@ -90,7 +91,12 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.*", (err, file_p
 											console.log("Original format:", format)
 											console.error "Reparsed with a different format (#{reparsed_as_format.name} rather than #{format.name})"
 											process.exit(1)
-										if palette.every((color, index)-> AnyPalette.Color.is(reparsed_palette[index], color))
+										if reparsed_palette.length isnt palette.length and reparsed_palette.length isnt 256
+											console.log("Reparsed:", [reparsed_palette...].map((color)-> color.toString()))
+											console.log("Original:", [palette...].map((color)-> color.toString()))
+											console.error "Reparsing failed - differing numbers of colors!"
+											process.exit(1)
+										if reparsed_palette.every((color, index)-> AnyPalette.Color.is(reparsed_palette[index], color))
 											console.log "Reparsing successful - it's a match!"
 										else
 											console.log("Reparsed:", [reparsed_palette...].map((color)-> color.toString()))

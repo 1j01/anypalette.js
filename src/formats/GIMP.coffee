@@ -4,15 +4,15 @@
 Palette = require "../Palette"
 
 parse_gimp_or_kde_rgb_palette = (fileContentString, format_name)->
-	lines = fileContentString.split(/[\n\r]+/m)
+	lines = fileContentString.split(/\r?\n/)
 	if lines[0] isnt format_name
 		throw new Error "Not a #{format_name}"
 	
 	palette = new Palette()
-	i = 0
-	# starts at i = 1 because the increment happens at the start of the loop
-	while (i += 1) < lines.length
-		line = lines[i]
+	line_index = 0
+	# on the first iteration, line_index = 1 because the increment happens at the start of the loop
+	while (line_index += 1) < lines.length
+		line = lines[line_index]
 		
 		if line[0] is "#" or line is "" then continue
 		# TODO: handle non-start-of-line comments? where's the spec?
@@ -47,7 +47,7 @@ parse_gimp_or_kde_rgb_palette = (fileContentString, format_name)->
 			$ # "and that should be the end of the line"
 		///)
 		if not r_g_b_name
-			throw new Error "Line #{i} doesn't match pattern of red green blue name" # TODO: better message?
+			throw new Error "Line #{line_index + 1} doesn't match pattern of red green blue name" # TODO: better message?
 		
 		palette.add
 			red: Number(r_g_b_name[1]) / 255

@@ -9,7 +9,7 @@ module.exports = ({fileContentString})->
 	
 	hex = (x)-> parseInt(x, 16)
 	
-	for line in fileContentString.split(/[\n\r]+/m)
+	for line in fileContentString.split(/\r?\n/)
 		m = line.match(/^([0-9A-F]{2})([0-9A-F]{2})([0-9A-F]{2})([0-9A-F]{2})$/i)
 		if m then palette.add
 			alpha: hex(m[1]) / 255

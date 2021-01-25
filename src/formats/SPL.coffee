@@ -35,7 +35,7 @@ module.exports = ({fileContentString})->
 			$ # "and that should be the end of the line"
 		///)
 		if not r_g_b_name
-			throw new Error "Line #{line_index} doesn't match pattern of red green blue name" # TODO: better message?
+			throw new Error "Line #{line_index + 1} doesn't match pattern of red green blue name" # TODO: better message?
 		
 		palette.add
 			red: Number(r_g_b_name[1])

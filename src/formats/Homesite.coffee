@@ -3,7 +3,7 @@
 Palette = require "../Palette"
 
 module.exports = ({fileContentString})->
-	lines = fileContentString.split(/[\n\r]+/m)
+	lines = fileContentString.split(/\r?\n/)
 	if lines[0] isnt "Palette"
 		throw new Error "Not a Homesite palette"
 	if not lines[1].match /Version [34]\.0/
@@ -11,7 +11,7 @@ module.exports = ({fileContentString})->
 	
 	palette = new Palette()
 	
-	for line, i in lines
+	for line in lines
 		match = line.match(/(\d+)\s+(\d+)\s+(\d+)/)
 		if match
 			palette.add

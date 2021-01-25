@@ -191,25 +191,29 @@
 					}
 
 					$save.text("Save As...");
-					$save.one("click", () => {
-						let format_index = -1;
-						let format;
+					$save.on("click", () => {
+						if ($save.parent().find(".fan").length) {
+							$save.parent().find(".fan").remove();
+							return;
+						}
 						const formats = Object.values(AnyPalette.formats).filter((format)=> format.write);
-						let iid = setInterval(()=> {
-							format_index = ++format_index % formats.length;
-							$save.text(formats[format_index].name);
-						}, 500);
-						$save.on("click", () => {
-							var format = formats[format_index];
-							var file_content = AnyPalette.writePalette(palette, format);
-							var file = new File([file_content], `${palette_name.replace(/.*\//, "")}.${format.fileExtensions[0]}`);
-							var url = URL.createObjectURL(file);
-							var a = document.createElement("a");
-							a.href = url;
-							a.download = file.name;
-							document.body.appendChild(a);
-							a.click();
-							document.body.removeChild(a);
+						const $fan = $("<div class='fan'>");
+						$save.after($fan);
+						formats.forEach((format)=> {
+							const $option = $("<button class='fan-option'>");
+							$option.text(`${format.name} (.${format.fileExtensions[0]})`);
+							$option.on("click", () => {
+								var file_content = AnyPalette.writePalette(palette, format);
+								var file = new File([file_content], `${palette_name.replace(/.*\//, "")}.${format.fileExtensions[0]}`);
+								var url = URL.createObjectURL(file);
+								var a = document.createElement("a");
+								a.href = url;
+								a.download = file.name;
+								document.body.appendChild(a);
+								a.click();
+								document.body.removeChild(a);
+							});
+							$fan.append($option);
 						});
 					});
 				};

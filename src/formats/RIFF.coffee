@@ -55,7 +55,7 @@ module.exports.write = (palette)->
 		2 + # for the color count (Uint16)
 		4 * palette.length # for the colors (4x Uint8)
 
-	document_size = # size of the "file body" or in this case the total size of the data chunk, since there are no JUNK chunks or anything
+	data_chunk_total_size =
 		4 + # for "data"
 		4 + # for the chunk size (Uint32)
 		data_chunk_body_size # for the data chunk body
@@ -64,13 +64,13 @@ module.exports.write = (palette)->
 		4 + # for "RIFF"
 		4 + # for the document size (Uint32)
 		4 + # for "PAL "
-		document_size # for the document
+		data_chunk_total_size # for the data chunk
 	
 	littleEndian = true
 	file_view = new jDataView(file_size, 0, undefined, littleEndian)
 
 	file_view.writeString("RIFF")
-	file_view.writeUint32(document_size)
+	file_view.writeUint32(data_chunk_total_size + 4)
 	file_view.writeString("PAL ")
 
 	file_view.writeString("data")

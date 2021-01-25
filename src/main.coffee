@@ -72,6 +72,7 @@ formats =
 		name: "Adobe Swatch Exchange"
 		fileExtensions: ["ase"]
 		read: (require "./formats/Adobe").read_adobe_swatch_exchange
+		write: (require "./formats/Adobe").write_adobe_swatch_exchange
 	}
 	ADOBE_COLOR_BOOK_PALETTE: {
 		name: "Adobe Color Book"

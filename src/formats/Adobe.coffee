@@ -212,6 +212,70 @@ module.exports.read_adobe_swatch_exchange = ({data})->
 
 	palette
 
+module.exports.write_adobe_swatch_exchange = (palette)->
+	# ASE (Adobe Swatch Exchange)
+	
+	# TODO: DRY
+	BLOCK_TYPE_GROUP_START = 0xc001
+	BLOCK_TYPE_GROUP_END = 0xc002
+	BLOCK_TYPE_COLOR = 0x0001
+	COLOR_SPACE_CMYK = "CMYK"
+	COLOR_SPACE_RGB = "RGB "
+	COLOR_SPACE_GRAYSCALE = "GRAY"
+	COLOR_MODE_GLOBAL = 0
+	COLOR_MODE_SPOT = 1
+	COLOR_MODE_NORMAL = 2
+
+	blocks = []
+	size_of_all_blocks = 0
+	for color in palette
+		name = color.name ? color.toString()
+
+		block_type = BLOCK_TYPE_COLOR
+		body_size =
+			2 + # name length +  +  + 
+			(name.length + 1) * 2 + # name (zero codepoint terminated and 2 bytes per codepoint)
+			4 + # color space ID
+			(3 * 4) + # color components (3 float32 values)
+			2 # color type
+		block_size =
+			2 + # block type
+			4 + # body size
+			body_size # body
+		block_view = jDataView(block_size)
+		block_view.writeUint16(block_type)
+		block_view.writeUint32(body_size)
+		block_view.writeUint16(name.length + 1)
+		block_view.writeUint16(char.charCodeAt(0)) for char in name
+		block_view.writeUint16(0) # terminator
+		block_view.writeString(COLOR_SPACE_RGB)
+		block_view.writeFloat32(color.red)
+		block_view.writeFloat32(color.green)
+		block_view.writeFloat32(color.blue)
+		block_view.writeUint16(COLOR_MODE_GLOBAL) # TODO: which to use?
+		blocks.push(new Uint8Array(block_view.buffer))
+		size_of_all_blocks += block_size
+
+	file_size =
+		4 + # magic number ("ASEF")
+		4 + # version number
+		4 + # number of blocks
+		size_of_all_blocks
+
+	view = new jDataView(file_size)
+	
+	view.writeString("ASEF")
+
+	version = 1
+	view.writeUint32(version)
+
+	view.writeUint32(blocks.length)
+
+	for block in blocks
+		view.writeBytes(block)
+
+	view.buffer
+
 module.exports.read_adobe_color_book = ({data})->
 	# ACB (Adobe Color Book)
 

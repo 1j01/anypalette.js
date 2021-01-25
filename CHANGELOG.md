@@ -44,6 +44,8 @@ for potential future corrections.
 
 ### Fixed
 - Unicode (UTF-8) is now supported in text-based formats (for color names etc.), **except** when passing in a binary string.
+- Dropping of last two colors when reading RIFF `.pal` palette
+- Dropping of first color when reading Skencil `.spl` palette
 
 ### Deprecated
 - Binary string support. Use `ArrayBuffer` or another input type instead.

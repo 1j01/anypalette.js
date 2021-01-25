@@ -1,5 +1,5 @@
 
-# AnyPalette.js
+# <img src="anypalette-logo.png" height="32" alt=""> AnyPalette.js
 
 There are a LOT of different types of palette files.
 Like, way too many.

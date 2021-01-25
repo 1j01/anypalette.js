@@ -120,6 +120,7 @@ formats =
 		name: "Homesite palette"
 		fileExtensions: ["hpl"]
 		readFromText: require "./formats/Homesite"
+		write: (require "./formats/Homesite").write
 	}
 	ADOBE_COLOR_SWATCH_PALETTE: {
 		name: "Adobe Color Swatch"

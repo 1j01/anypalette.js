@@ -11,9 +11,7 @@ module.exports = ({fileContentString})->
 		throw new Error("Not a Skencil palette")
 
 	palette = new Palette()
-	i = 1
-	while (i += 1) < lines.length
-		line = lines[i]
+	for line, line_index in lines
 		
 		if line[0] is "#" or line is "" then continue
 		# TODO: handle non-start-of-line comments? where's the spec?
@@ -37,7 +35,7 @@ module.exports = ({fileContentString})->
 			$ # "and that should be the end of the line"
 		///)
 		if not r_g_b_name
-			throw new Error "Line #{i} doesn't match pattern of red green blue name" # TODO: better message?
+			throw new Error "Line #{line_index} doesn't match pattern of red green blue name" # TODO: better message?
 		
 		palette.add
 			red: Number(r_g_b_name[1])
@@ -51,6 +49,6 @@ module.exports.write = (palette)->
 	"""
 	##Sketch RGBPalette 0
 	#{palette.map((color)-> 
-		"#{color.red.toFixed(6)} #{color.green.toFixed(6)} #{color.blue.toFixed(6)} #{color.name or color}"
+		"#{color.red.toFixed(6)} #{color.green.toFixed(6)} #{color.blue.toFixed(6)} #{color.name ? color}"
 	).join("\n")}
 	"""

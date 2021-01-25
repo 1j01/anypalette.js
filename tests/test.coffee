@@ -75,7 +75,8 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.*", (err, file_p
 							do (format_id)->
 								format = AnyPalette.formats[format_id]
 								if format.write
-									output_file_path = path.join(__dirname, "regression-data", "writing", "#{path.basename(file_path)}.out.#{format.fileExtensions[0]}")
+									file_extension = if format_id is "STARCRAFT_PALETTE" then "sc.pal" else format.fileExtensions[0] # avoid collision with RIFF .pal output
+									output_file_path = path.join(__dirname, "regression-data", "writing", "#{path.basename(file_path)}.out.#{file_extension}")
 									mkdirp.sync	path.dirname(output_file_path)
 									result = AnyPalette.writePalette(palette, format)
 									fs.writeFileSync output_file_path, result, "utf8"

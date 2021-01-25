@@ -36,3 +36,12 @@ read_adobe_color_table = ({data, fileExt})->
 	palette.numberOfColumns = 16 # configurable in Photoshop, but this is the default view, and for instance Visibone and the default swatches rely on this layout
 
 	palette
+
+module.exports.write =
+write_adobe_color_table = (palette)->
+	view = new jDataView(256*3)
+	for i in [0...256]
+		view.writeUint8(if palette[i] then Math.round(palette[i].red * 255) else 0)
+		view.writeUint8(if palette[i] then Math.round(palette[i].green * 255) else 0)
+		view.writeUint8(if palette[i] then Math.round(palette[i].blue * 255) else 0)
+	return view.buffer

@@ -33,7 +33,7 @@ Supported palette formats:
 | .aco              | Adobe Color Swatch                | Adobe [Photoshop]                                                                 |   ✅   | Planned |
 | .ase              | Adobe Swatch Exchange             | Adobe [Photoshop], [InDesign], and [Illustrator]                                  |   ✅   | Planned |
 | .txt              | [Paint.NET] Palette               | [Paint.NET]                                                                       |   ✅   |   ✅    |
-| .act              | Adobe Color Table                 | Adobe [Photoshop] and [Illustrator]                                               |   ✅\* | Planned |
+| .act              | Adobe Color Table                 | Adobe [Photoshop] and [Illustrator]                                               |   ✅\* |   ✅    |
 | .pal, .psppalette | [Paint Shop Pro] Palette          | [Paint Shop Pro] (Jasc Software / Corel)                                          |   ✅   | Planned |
 | .hpl              | [Homesite] Palette                | Allaire [Homesite] / Macromedia [ColdFusion]                                      |   ✅   |         |
 | .cs               | ColorSchemer                      | ColorSchemer Studio                                                               |   ✅\* | Planned |
@@ -158,7 +158,7 @@ Shortcut to load from a file path in Node.js - equivalent to passing `{filePath:
 
 ### `AnyPalette.writePalette(palette, format)`
 
-Returns string content of a file, in a given [format](#class-format).
+Returns string (for text-based formats) or `ArrayBuffer` (for binary formats) of the content of a file, in the given [format](#class-format).
 
 To save a palette as a GPL file, sending a download in a browser:
 

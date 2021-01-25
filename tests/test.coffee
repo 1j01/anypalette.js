@@ -98,7 +98,8 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.*", (err, file_p
 											console.error "Reparsing failed - colors don't match!"
 											process.exit(1)
 										result2 = AnyPalette.writePalette(reparsed_palette, format)
-										if result2 isnt result
+										# results may be ArrayBuffer or string
+										if result2.toString() isnt result.toString()
 											console.error "Saved palette serialized differently when reading back and saving again"
 											console.log "Original save:", output_file_path
 											output_2_file_path = output_file_path.replace(/\.out/, ".out.2")

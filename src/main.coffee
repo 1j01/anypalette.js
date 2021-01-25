@@ -127,6 +127,7 @@ formats =
 		name: "Adobe Color Table"
 		fileExtensions: ["act"]
 		read: require "./formats/AdobeColorTable"
+		write: (require "./formats/AdobeColorTable").write
 	}
 	STARCRAFT_PALETTE: {
 		name: "StarCraft palette"
@@ -272,9 +273,7 @@ AnyPalette.loadPalette = (o, callback)->
 
 AnyPalette.writePalette = (palette, format)->
 	format ?= AnyPalette.formats.GIMP_PALETTE
-
-	palette_content_string = format.write(palette)
-	return palette_content_string
+	return format.write(palette)
 	# file = new File([palette_content_string], (palette.name ? "Saved Colors") + ".#{format.fileExtensions[0]}")
 	# return [file, format.fileExtensions[0]]
 

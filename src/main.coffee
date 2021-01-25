@@ -23,6 +23,7 @@ formats =
 		name: "RIFF PAL"
 		fileExtensions: ["pal"]
 		read: require "./formats/RIFF"
+		write: (require "./formats/RIFF").write
 	}
 	COLORSCHEMER_PALETTE: {
 		name: "ColorSchemer palette"

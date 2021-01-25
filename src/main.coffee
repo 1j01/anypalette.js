@@ -52,6 +52,7 @@ formats =
 		name: "Skencil palette"
 		fileExtensions: ["spl"]
 		readFromText: require "./formats/SPL"
+		write: (require "./formats/SPL").write
 	}
 	SKETCH_JSON_PALETTE: {
 		name: "Sketch palette"

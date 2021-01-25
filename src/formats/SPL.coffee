@@ -46,3 +46,11 @@ module.exports = ({fileContentString})->
 			name: r_g_b_name[4]
 		
 	palette
+
+module.exports.write = (palette)->
+	"""
+	##Sketch RGBPalette 0
+	#{palette.map((color)-> 
+		"#{color.red.toFixed(6)} #{color.green.toFixed(6)} #{color.blue.toFixed(6)} #{color.name or color}"
+	).join("\n")}
+	"""

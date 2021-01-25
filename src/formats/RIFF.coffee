@@ -28,8 +28,7 @@ module.exports = ({data})->
 	chunkType = view.getString(4) # "data"
 	chunkSize = view.getUint32()
 	palVersion = view.getUint16() # 0x0300
-	palNumEntries = view.getUint16()
-	
+	colorCount = view.getUint16()
 	
 	if chunkType isnt "data"
 		throw new Error "Data chunk not found (...'#{chunkType}'?)"
@@ -40,8 +39,7 @@ module.exports = ({data})->
 	# Colors
 	
 	palette = new Palette()
-	i = 0
-	while (i += 1) < palNumEntries - 1
+	for [0...colorCount]
 		palette.add
 			red: view.getUint8() / 255
 			green: view.getUint8() / 255

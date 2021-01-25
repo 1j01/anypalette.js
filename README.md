@@ -34,7 +34,7 @@ Supported palette formats:
 | .ase              | Adobe Swatch Exchange             | Adobe [Photoshop], [InDesign], and [Illustrator]                                  |   ✅   |   ✅    |
 | .txt              | [Paint.NET] Palette               | [Paint.NET]                                                                       |   ✅   |   ✅    |
 | .act              | Adobe Color Table                 | Adobe [Photoshop] and [Illustrator]                                               |   ✅\* |   ✅    |
-| .pal, .psppalette | [Paint Shop Pro] Palette          | [Paint Shop Pro] (Jasc Software / Corel)                                          |   ✅   | Planned |
+| .pal, .psppalette | [Paint Shop Pro] Palette          | [Paint Shop Pro] (Jasc Software / Corel)                                          |   ✅   |   ✅    |
 | .hpl              | [Homesite] Palette                | Allaire [Homesite] / Macromedia [ColdFusion]                                      |   ✅   |         |
 | .cs               | ColorSchemer                      | ColorSchemer Studio                                                               |   ✅\* | Planned |
 | .pal              | [Starcraft] Palette               | [Starcraft]                                                                       |   ✅   |         |

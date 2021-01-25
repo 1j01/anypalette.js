@@ -15,8 +15,9 @@ class LoadingErrors extends Error
 formats =
 	PAINT_SHOP_PRO_PALETTE: {
 		name: "Paint Shop Pro palette"
-		fileExtensions: ["pal", "psppalette"]
+		fileExtensions: ["psppalette", "pal"]
 		readFromText: require "./formats/PaintShopPro"
+		write: (require "./formats/PaintShopPro").write
 	}
 	RIFF_PALETTE: {
 		name: "RIFF PAL"

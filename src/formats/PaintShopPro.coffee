@@ -24,3 +24,13 @@ module.exports = ({fileContentString})->
 				blue: Number(rgb[2]) / 255
 	
 	palette
+
+module.exports.write = (palette)->
+	"""
+	JASC-PAL
+	0100
+	#{palette.length}
+	#{palette.map((color)-> 
+		"#{Math.round(color.red * 255)} #{Math.round(color.green * 255)} #{Math.round(color.blue * 255)}"
+	).join("\n")}
+	"""

@@ -1,4 +1,4 @@
-Loaded As:                      Paint Shop Pro palette (.pal, .psppalette)
+Loaded As:                      Paint Shop Pro palette (.psppalette, .pal)
 
 matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined

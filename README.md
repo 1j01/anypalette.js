@@ -28,7 +28,7 @@ Supported palette formats:
 
 | File Extension    | Name                              | Programs                                                                          |   Read  |  Write  |
 |-------------------|-----------------------------------|-----------------------------------------------------------------------------------|:-------:|:-------:|
-| .pal              | [RIFF] Palette                    | [MS Paint] for Windows 95 and Windows NT 4.0                                      |   ✅   | Planned |
+| .pal              | [RIFF] Palette                    | [MS Paint] for Windows 95 and Windows NT 4.0                                      |   ✅   |   ✅    |
 | .gpl              | [GIMP][Gimp] Palette              | [Gimp], [Inkscape], [Krita], [KolourPaint], [Scribus], [CinePaint], [MyPaint]     |   ✅   |   ✅    |
 | .aco              | Adobe Color Swatch                | Adobe [Photoshop]                                                                 |   ✅   |   ✅    |
 | .ase              | Adobe Swatch Exchange             | Adobe [Photoshop], [InDesign], and [Illustrator]                                  |   ✅   |   ✅    |
@@ -36,7 +36,7 @@ Supported palette formats:
 | .act              | Adobe Color Table                 | Adobe [Photoshop] and [Illustrator]                                               |   ✅\* |   ✅    |
 | .pal, .psppalette | [Paint Shop Pro] Palette          | [Paint Shop Pro] (Jasc Software / Corel)                                          |   ✅   |   ✅    |
 | .hpl              | [Homesite] Palette                | Allaire [Homesite] / Macromedia [ColdFusion]                                      |   ✅   |         |
-| .cs               | ColorSchemer                      | ColorSchemer Studio                                                               |   ✅\* | Planned |
+| .cs               | ColorSchemer                      | ColorSchemer Studio                                                               |   ✅\* |         |
 | .pal              | [Starcraft] Palette               | [Starcraft]                                                                       |   ✅   |   ✅    |
 | .wpe              | [Starcraft] Terrain Palette       | [Starcraft]                                                                       |   ✅   |   ✅    |
 | .sketchpalette    | [Sketch] Palette                  | [Sketch]                                                                          |   ✅   |   ✅    |
@@ -56,10 +56,10 @@ UNSUPPORTED palette formats (for now):
 
 | File Extension    | Name                              | Programs                                                                          |   Read  |  Write  |
 |-------------------|-----------------------------------|-----------------------------------------------------------------------------------|:-------:|:-------:|
-| .gpa              | [Gpick] Palette                   | [Gpick]                                                                           | Planned |         |
-| .acb              | Adobe Color Book                  | Adobe [InDesign] and [Illustrator]                                                | ✅\*\*  | Planned |
-| .acbl             | Adobe Color Book Library / Legacy | Adobe [InDesign] and [Illustrator] (?)                                            | Planned | Planned |
-| .soc              | StarOffice Colors                 | [StarOffice], [OpenOffice], [LibreOffice]                                         | Planned | Planned |
+| .gpa              | [Gpick] Palette                   | [Gpick]                                                                           |         |         |
+| .acb              | Adobe Color Book                  | Adobe [InDesign] and [Illustrator]                                                | ✅\*\*  |         |
+| .acbl             | Adobe Color Book Library / Legacy | Adobe [InDesign] and [Illustrator] (?)                                            |         |         |
+| .soc              | StarOffice Colors                 | [StarOffice], [OpenOffice], [LibreOffice]                                         |         |         |
 
 \*\*None of the color spaces are supported (CMYK, CIELAB, CIEXYZ). The code is mostly all there! But I think probably *ICC profiles* are needed for correct-looking colors.
 

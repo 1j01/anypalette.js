@@ -1,5 +1,5 @@
 
-# Detect CSS colors (except named colors), and write .css files
+# Detect CSS colors (except named colors), and write .css/.less/.scss/.sass/.styl files
 
 css_escape = require "css.escape"
 Palette = require "../Palette"

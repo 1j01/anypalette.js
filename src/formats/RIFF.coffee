@@ -1,5 +1,5 @@
 
-# Load a Resource Interchange File Format Palette file (.pal)
+# Read/write Resource Interchange File Format (RIFF) palette file (.pal)
 
 # ported from C# code at https://worms2d.info/Palette_file
 
@@ -49,23 +49,22 @@ module.exports = ({data})->
 	palette
 
 module.exports.write = (palette)->
-	chunks = []
 
 	data_chunk_body_size =
-		2 + # for the version
-		2 + # for the color count
-		4 * palette.length # for the colors
+		2 + # for the version number (Uint16)
+		2 + # for the color count (Uint16)
+		4 * palette.length # for the colors (4x Uint8)
 
 	document_size = # size of the "file body" or in this case the total size of the data chunk, since there are no JUNK chunks or anything
 		4 + # for "data"
-		4 + # for chunk size
-		data_chunk_body_size
+		4 + # for the chunk size (Uint32)
+		data_chunk_body_size # for the data chunk body
 
 	file_size =
 		4 + # for "RIFF"
-		4 + # for document size
+		4 + # for the document size (Uint32)
 		4 + # for "PAL "
-		document_size
+		document_size # for the document
 	
 	littleEndian = true
 	file_view = new jDataView(file_size, 0, undefined, littleEndian)
@@ -73,6 +72,7 @@ module.exports.write = (palette)->
 	file_view.writeString("RIFF")
 	file_view.writeUint32(document_size)
 	file_view.writeString("PAL ")
+
 	file_view.writeString("data")
 	file_view.writeUint32(data_chunk_body_size)
 	file_view.writeUint16(0x0300) # version number

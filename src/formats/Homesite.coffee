@@ -1,4 +1,4 @@
-# Load an Allaire Homesite / Macromedia ColdFusion palette (.hpl)
+# Read/write Allaire Homesite / Macromedia ColdFusion palette (.hpl)
 
 Palette = require "../Palette"
 

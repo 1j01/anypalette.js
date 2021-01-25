@@ -1,4 +1,4 @@
-# Load sK1 palettes (.skp)
+# Read/write sK1 palettes (.skp)
 #
 # These files are actually sort of python source code,
 # but let's just try to parse them as if it's a declarative language.

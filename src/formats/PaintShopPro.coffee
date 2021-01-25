@@ -1,5 +1,5 @@
 
-# Load a JASC PAL file (Paint Shop Pro palette file) (.pal)
+# Read/write JASC PAL file (Paint Shop Pro palette file) (.pal)
 
 Palette = require "../Palette"
 

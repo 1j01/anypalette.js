@@ -1,5 +1,5 @@
 
-# Load a StarCraft padded raw palette (.wpe)
+# Read/write StarCraft padded raw palette (.wpe)
 
 jDataView = require "jdataview"
 Palette = require "../Palette"

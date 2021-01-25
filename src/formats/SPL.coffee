@@ -1,5 +1,5 @@
 
-# Load a Skencil palette (.spl) ("Sketch RGBPalette")
+# Read/write Skencil palette (.spl) ("Sketch RGBPalette")
 # Skencil was formerly called Sketch, but this is not related to the .sketchpalette format.
 
 Palette = require "../Palette"

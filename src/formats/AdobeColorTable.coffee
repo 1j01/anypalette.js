@@ -1,4 +1,4 @@
-# Load an Adobe Color Table file (.act)
+# Read/write Adobe Color Table file (.act)
 
 ###
 "There is no version number written in the file.

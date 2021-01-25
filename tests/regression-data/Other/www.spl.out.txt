@@ -9,6 +9,7 @@ GIMP Palette
 Name: Saved Colors
 Columns: 8
 #
+0   0   0     #000000
 0   0   51    #000033
 0   0   102   #000066
 0   0   153   #000099

@@ -9,6 +9,7 @@ GIMP Palette
 Name: Saved Colors
 Columns: 8
 #
+0   0   0     Black
 26  26  26    90% Black
 51  51  51    80% Black
 77  77  77    70% Black

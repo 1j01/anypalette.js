@@ -123,6 +123,7 @@ formats =
 		name: "Adobe Color Swatch"
 		fileExtensions: ["aco"]
 		read: (require "./formats/Adobe").read_adobe_color_swatch
+		write: (require "./formats/Adobe").write_adobe_color_swatch
 	}
 	ADOBE_COLOR_TABLE_PALETTE: {
 		name: "Adobe Color Table"

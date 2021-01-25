@@ -144,6 +144,68 @@ module.exports.read_adobe_color_swatch = ({data})->
 	
 	palette
 
+module.exports.write_adobe_color_swatch = (palette)->
+	# ACO (Adobe Color Swatch)
+
+	write_color = (color, aco_v2)->
+		name = color.name ? color.toString()
+
+		color_space = PhotoshopColorSpace.RGB
+		components = [color.red, color.green, color.blue, 0] # always 4 long
+		size =
+			2 + # color space
+			components.length * 2 # components
+
+		if aco_v2
+			size +=
+				2 + # padding/reserved
+				2 + # name length
+				(name.length + 1) * 2 # name + terminator
+		
+		color_view = new jDataView(size)
+
+		color_view.writeUint16(color_space)
+		color_view.writeUint16(component * MAX_UINT16) for component in components
+		if aco_v2
+			color_view.writeUint16(0) # padding/reserved
+			color_view.writeUint16(name.length + 1)
+			color_view.writeUint16(char.charCodeAt(0)) for char in name
+			color_view.writeUint16(0) # terminator
+		
+		return color_view.buffer
+	
+	aco_v1_colors = (write_color(color, false) for color in palette)
+	aco_v2_colors = (write_color(color, true) for color in palette)
+
+	file_size =
+		# aco v1
+		2 + # version number
+		2 + # number of colors
+		aco_v1_colors.reduce(((size_sum, array_buffer)-> size_sum + array_buffer.byteLength), 0) +
+		# # aco v2
+		2 + # version number
+		2 + # number of colors
+		aco_v2_colors.reduce(((size_sum, array_buffer)-> size_sum + array_buffer.byteLength), 0)
+
+	file_view = new jDataView(file_size)
+
+	# aco v1
+	file_view.writeUint16(1) # version number for aco v1 section
+	file_view.writeUint16(palette.length) # number of colors
+
+	for array_buffer in aco_v1_colors
+		file_view.writeBytes(new Uint8Array(array_buffer))
+
+	# aco v2
+	file_view.writeUint16(2) # version number for aco v2 section
+	file_view.writeUint16(palette.length) # number of colors
+
+	for array_buffer in aco_v2_colors
+		file_view.writeBytes(new Uint8Array(array_buffer))
+
+	file_view.buffer
+
+
 module.exports.read_adobe_swatch_exchange = ({data})->
 	# ASE (Adobe Swatch Exchange)
 	
@@ -253,7 +315,7 @@ module.exports.write_adobe_swatch_exchange = (palette)->
 		block_view.writeFloat32(color.green)
 		block_view.writeFloat32(color.blue)
 		block_view.writeUint16(COLOR_MODE_GLOBAL) # TODO: which to use?
-		blocks.push(new Uint8Array(block_view.buffer))
+		blocks.push(block_view.buffer)
 		size_of_all_blocks += block_size
 
 	file_size =
@@ -272,7 +334,7 @@ module.exports.write_adobe_swatch_exchange = (palette)->
 	view.writeUint32(blocks.length)
 
 	for block in blocks
-		view.writeBytes(block)
+		view.writeBytes(new Uint8Array(block))
 
 	view.buffer
 

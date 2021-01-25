@@ -38,7 +38,7 @@ for potential future corrections.
 - `loadPalette` callback now gets extra parameters for getting info about the format the file was parsed as.
 - You can now pass an `ArrayBuffer` or Node.js `Buffer` as input to `AnyPalette.loadPalette({data}, callback)`. This is preferred over binary strings for Unicode support (and general modernness).
 - `palette.name` and `palette.description` (for some palette formats)
-- Adobe Color Swatch (`.aco`) reading support
+- Adobe Color Swatch (`.aco`) read and write support
 - Adobe Swatch Exchange (`.ase`) read and write support
 - sK1 Palette (`.skp`) read and write support
 

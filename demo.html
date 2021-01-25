@@ -426,7 +426,7 @@
 					const files = await Promise.all(items.map((item)=> new Promise((resolve, reject)=> {
 						item.file(resolve, reject);
 					})));
-					addPaletteViewsFromFiles(files);
+					addPaletteViewsFromFiles(files.length ? files : [...dt.files]);
 				} else if(dt.files){
 					addPaletteViewsFromFiles([...dt.files]);
 				}
@@ -439,7 +439,10 @@
 				let queue = [];
 				// Unfortunately dataTransferItemList is not iterable i.e. no forEach
 				for (let i = 0; i < dataTransferItemList.length; i++) {
-					queue.push(dataTransferItemList[i].webkitGetAsEntry());
+					const entry = dataTransferItemList[i].webkitGetAsEntry();
+					if (entry) {
+						queue.push(entry);
+					}
 				}
 				while (queue.length > 0) {
 					let entry = queue.shift();

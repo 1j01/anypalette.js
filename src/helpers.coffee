@@ -14,7 +14,7 @@ module.exports.parse_css_hex_color = (hex_color)->
 			[0-9A-F]{8} # with alpha, eight hex-digits (#AA00CCFF)
 		)
 		(?![0-9A-F]) # (and no more!)
-	///gim)
+	///im)
 
 	[$0, $1] = match
 

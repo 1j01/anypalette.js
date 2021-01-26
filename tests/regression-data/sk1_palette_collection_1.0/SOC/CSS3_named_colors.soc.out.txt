@@ -1,6 +1,6 @@
-Loaded As:                      CSS colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
+Loaded As:                      StarOffice Colors (.soc)
 
-matchedFileExtension:           false
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 
@@ -9,19 +9,19 @@ GIMP Palette
 Name: Saved Colors
 Columns: 8
 #
-0   0   0     rgb(0, 0, 0)
-192 192 192   rgb(192, 192, 192)
-128 128 128   rgb(128, 128, 128)
-255 255 255   rgb(255, 255, 255)
-128 0   0     rgb(128, 0, 0)
-255 0   0     rgb(255, 0, 0)
-128 0   128   rgb(128, 0, 128)
-255 0   255   rgb(255, 0, 255)
-0   128 0     rgb(0, 128, 0)
-0   255 0     rgb(0, 255, 0)
-128 128 0     rgb(128, 128, 0)
-255 255 0     rgb(255, 255, 0)
-0   0   128   rgb(0, 0, 128)
-0   0   255   rgb(0, 0, 255)
-0   128 128   rgb(0, 128, 128)
-0   255 255   rgb(0, 255, 255)
+0   0   0     black
+192 192 192   silver
+128 128 128   gray
+255 255 255   white
+128 0   0     maroon
+255 0   0     red
+128 0   128   purple
+255 0   255   fuchsia
+0   128 0     green
+0   255 0     lime
+128 128 0     olive
+255 255 0     yellow
+0   0   128   navy
+0   0   255   blue
+0   128 128   teal
+0   255 255   aqua

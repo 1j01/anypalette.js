@@ -11,6 +11,7 @@ Some errors were encountered when loading:
 	failed to load Resene-TCS-Diwali.acb as sK1 palette: No colors found (0),
 	failed to load Resene-TCS-Diwali.acb as Windows desktop theme: Invalid theme file, no [Control Panel\Colors] section,
 	failed to load Resene-TCS-Diwali.acb as Adobe Swatch Exchange: Not an Adobe Swatch Exchange file,
+	failed to load Resene-TCS-Diwali.acb as StarOffice Colors: no colors returned,
 	failed to load Resene-TCS-Diwali.acb as CSS colors: No colors found (0),
 	failed to load Resene-TCS-Diwali.acb as Homesite palette: Not a Homesite palette,
 	failed to load Resene-TCS-Diwali.acb as Adobe Color Swatch: Not an Adobe Color Swatch file,

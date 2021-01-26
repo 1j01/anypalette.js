@@ -82,6 +82,12 @@ formats =
 		fileExtensions: ["acb"]
 		read: (require "./formats/Adobe").read_adobe_color_book
 	}
+	STAROFFICE_PALETTE: {
+		name: "StarOffice Colors"
+		fileExtensions: ["soc"]
+		readFromText: (require "./formats/StarOffice").read_staroffice_soc
+		write: (require "./formats/StarOffice").write_staroffice_soc
+	}
 	# KDE_THEME_COLORS: {
 	# 	name: "KDE desktop theme"
 	# 	fileExtensions: ["colors"]
@@ -206,6 +212,7 @@ read_palette = (o, callback)->
 		catch e
 			# TODO: should this be "failed to read"?
 			msg = "failed to load #{o.fileName} as #{format.name}: #{e.message}"
+			# msg = "failed to load #{o.fileName} as #{format.name}: #{if format_id.match(/staroffice/i) then e.stack else e.message}"
 			# if matching_ext[format_id]? #and not e.message.match(/not a/i) # meant to avoid "Not a <FORMAT> Palette", overly broad
 			# 	console?.error? msg
 			# else

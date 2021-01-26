@@ -1,6 +1,6 @@
-Loaded As:                      CSS colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
+Loaded As:                      StarOffice Colors (.soc)
 
-matchedFileExtension:           false
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 
@@ -9,19 +9,19 @@ GIMP Palette
 Name: Saved Colors
 Columns: 8
 #
-0   90  158   rgb(0, 90, 158)
-0   114 198   rgb(0, 114, 198)
-42  141 212   rgb(42, 141, 212)
-205 230 247   rgb(205, 230, 247)
-10  99  50    rgb(10, 99, 50)
-33  115 70    rgb(33, 115, 70)
-67  148 103   rgb(67, 148, 103)
-211 240 224   rgb(211, 240, 224)
-184 59  29    rgb(184, 59, 29)
-210 71  38    rgb(210, 71, 38)
-240 98  62    rgb(240, 98, 62)
-252 228 220   rgb(252, 228, 220)
-25  71  138   rgb(25, 71, 138)
-43  87  154   rgb(43, 87, 154)
-62  109 181   rgb(62, 109, 181)
-213 234 242   rgb(213, 234, 242)
+0   90  158   Outlook Dark
+0   114 198   Outlook Primary
+42  141 212   Outlook Secondary
+205 230 247   Outlook Light
+10  99  50    Excel Dark
+33  115 70    Excel Primary
+67  148 103   Excel Secondary
+211 240 224   Excel Light
+184 59  29    PowerPoint Dark
+210 71  38    PowerPoint Primary
+240 98  62    PowerPoint Secondary
+252 228 220   PowerPoint Light
+25  71  138   Word Dark
+43  87  154   Word Primary
+62  109 181   Word Secondary
+213 234 242   Word Light

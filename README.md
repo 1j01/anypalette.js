@@ -41,6 +41,7 @@ Supported palette formats:
 | .wpe              | [Starcraft] Terrain Palette       | [Starcraft]                                                                       |   ✅   |   ✅    |
 | .sketchpalette    | [Sketch] Palette                  | [Sketch]                                                                          |   ✅   |   ✅    |
 | .spl              | [Skencil] Palette                 | [Skencil] (formerly called Sketch)                                                |   ✅   |   ✅    |
+| .soc              | StarOffice Colors                 | [StarOffice], [OpenOffice], [LibreOffice]                                         |   ✅   |   ✅    |
 | .colors           | KolourPaint Color Collection      | [KolourPaint]                                                                     |   ✅   |   ✅    |
 | .colors           | Plasma Desktop Color Scheme       | [KDE] Plasma Desktop                                                              |   ✅   |         |
 | .theme            | Windows Theme                     | [Windows] Desktop                                                                 |   ✅   |         |
@@ -59,7 +60,6 @@ UNSUPPORTED palette formats (for now):
 | .gpa              | [Gpick] Palette                   | [Gpick]                                                                           |         |         |
 | .acb              | Adobe Color Book                  | Adobe [InDesign] and [Illustrator]                                                | ✅\*\*  |         |
 | .acbl             | Adobe Color Book Library / Legacy | Adobe [InDesign] and [Illustrator] (?)                                            |         |         |
-| .soc              | StarOffice Colors                 | [StarOffice], [OpenOffice], [LibreOffice]                                         |         |         |
 
 \*\*None of the color spaces are supported (CMYK, CIELAB, CIEXYZ). The code is mostly all there! But I think probably *ICC profiles* are needed for correct-looking colors.
 
@@ -292,7 +292,6 @@ const readFormats = Object.values(AnyPalette.formats).filter((format)=> format.r
 			* QuarkXPress Color Library (`.qcl`)
 			* Scribus (`.xml`)
 			* sK1 (`.skpx` / `.skp`)
-			* StarOffice / OpenOffice.org / LibreOffice (`.soc`)
 
 
 * Guess palette geometries

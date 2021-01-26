@@ -1,6 +1,6 @@
-Loaded As:                      CSS colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
+Loaded As:                      StarOffice Colors (.soc)
 
-matchedFileExtension:           false
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 
@@ -9,12 +9,12 @@ GIMP Palette
 Name: Saved Colors
 Columns: 8
 #
-221 72  20    rgb(221, 72, 20)
-119 41  83    rgb(119, 41, 83)
-255 255 255   rgb(255, 255, 255)
-0   0   0     rgb(0, 0, 0)
-119 33  111   rgb(119, 33, 111)
-94  39  80    rgb(94, 39, 80)
-44  0   30    rgb(44, 0, 30)
-174 167 159   rgb(174, 167, 159)
-51  51  51    rgb(51, 51, 51)
+221 72  20    Ubuntu orange
+119 41  83    Canonical aubergine
+255 255 255   White
+0   0   0     Black
+119 33  111   Light aubergine
+94  39  80    Mid aubergine
+44  0   30    Dark aubergine
+174 167 159   Warm grey
+51  51  51    Cool grey

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<office:color-table xmlns:office="http://openoffice.org/2000/office" xmlns:draw="http://openoffice.org/2000/drawing">
+	<draw:color draw:name="Black" draw:color="#000000"/>
+	<draw:color draw:name="Almost black" draw:color="#303030"/>
+	<draw:color draw:name="Very dark gray" draw:color="#585858"/>
+	<draw:color draw:name="Dark gray" draw:color="#808080"/>
+	<draw:color draw:name="Mid gray" draw:color="#a0a0a0"/>
+	<draw:color draw:name="Light gray" draw:color="#c3c3c3"/>
+	<draw:color draw:name="Very light gray" draw:color="#dcdcdc"/>
+	<draw:color draw:name="White" draw:color="#ffffff"/>
+	<draw:color draw:name="Very dark red" draw:color="#400000"/>
+	<draw:color draw:name="Dark red" draw:color="#800000"/>
+	<draw:color draw:name="Mid red" draw:color="#c00000"/>
+	<draw:color draw:name="Red" draw:color="#ff0000"/>
+	<draw:color draw:name="Light red" draw:color="#ffc0c0"/>
+	<draw:color draw:name="Very dark green" draw:color="#004000"/>
+	<draw:color draw:name="Dark green" draw:color="#008000"/>
+	<draw:color draw:name="Mid green" draw:color="#00c000"/>
+	<draw:color draw:name="Green" draw:color="#00ff00"/>
+	<draw:color draw:name="Light green" draw:color="#c0ffc0"/>
+	<draw:color draw:name="Dark blue" draw:color="#000080"/>
+	<draw:color draw:name="Mid blue" draw:color="#0000c0"/>
+	<draw:color draw:name="Blue" draw:color="#0000ff"/>
+	<draw:color draw:name="Light blue" draw:color="#c0c0ff"/>
+	<draw:color draw:name="Very dark yellow" draw:color="#404000"/>
+	<draw:color draw:name="Dark yellow" draw:color="#808000"/>
+	<draw:color draw:name="Mid yellow" draw:color="#c0c000"/>
+	<draw:color draw:name="Yellow" draw:color="#ffff00"/>
+	<draw:color draw:name="Light yellow" draw:color="#ffffc0"/>
+	<draw:color draw:name="Very dark cyan" draw:color="#004040"/>
+	<draw:color draw:name="Dark cyan" draw:color="#008080"/>
+	<draw:color draw:name="Mid cyan" draw:color="#00c0c0"/>
+	<draw:color draw:name="Cyan" draw:color="#00ffff"/>
+	<draw:color draw:name="Light cyan" draw:color="#c0ffff"/>
+	<draw:color draw:name="Dark magenta" draw:color="#800080"/>
+	<draw:color draw:name="Mid magenta" draw:color="#c000c0"/>
+	<draw:color draw:name="Magenta" draw:color="#ff00ff"/>
+	<draw:color draw:name="Light magenta" draw:color="#ffc0ff"/>
+	<draw:color draw:name="Dark orange" draw:color="#c05800"/>
+	<draw:color draw:name="Orange" draw:color="#ff8000"/>
+	<draw:color draw:name="Light orange" draw:color="#ffa858"/>
+	<draw:color draw:name="Very light orange" draw:color="#ffdca8"/>
+</office:color-table>

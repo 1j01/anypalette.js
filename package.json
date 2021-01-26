@@ -100,6 +100,7 @@
 		"jdataview": "^2.5.0",
 		"live-server": "^1.2.1",
 		"mkdirp": "^1.0.4",
-		"vinyl-source-stream": "^2.0.0"
+		"vinyl-source-stream": "^2.0.0",
+		"xml-js": "^1.6.11"
 	}
 }

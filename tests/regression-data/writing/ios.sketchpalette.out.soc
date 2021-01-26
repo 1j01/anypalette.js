@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<office:color-table xmlns:office="http://openoffice.org/2000/office" xmlns:draw="http://openoffice.org/2000/drawing">
+	<draw:color draw:name="rgba(89.99999999999999, 200, 250, 1)" draw:color="#5ac8fa"/>
+	<draw:color draw:name="rgba(255, 204, 0, 1)" draw:color="#ffcc00"/>
+	<draw:color draw:name="rgba(255, 149, 0, 1)" draw:color="#ff9500"/>
+	<draw:color draw:name="rgba(255, 44.99999999999999, 85, 1)" draw:color="#ff2d55"/>
+	<draw:color draw:name="rgba(0, 121.99999999999999, 255, 1)" draw:color="#007aff"/>
+	<draw:color draw:name="rgba(76, 217, 100, 1)" draw:color="#4cd964"/>
+	<draw:color draw:name="rgba(255, 59, 48, 1)" draw:color="#ff3b30"/>
+	<draw:color draw:name="rgba(142, 142, 147, 1)" draw:color="#8e8e93"/>
+	<draw:color draw:name="rgba(239, 239, 243.99999999999997, 1)" draw:color="#efeff4"/>
+	<draw:color draw:name="rgba(0, 0, 0, 1)" draw:color="#000000"/>
+</office:color-table>

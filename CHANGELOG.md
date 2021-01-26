@@ -41,6 +41,7 @@ for potential future corrections.
 - Adobe Color Swatch (`.aco`) read and write support
 - Adobe Swatch Exchange (`.ase`) read and write support
 - sK1 Palette (`.skp`) read and write support
+- StarOffice/OpenOffice/LibreOffice palettes (`.soc`) read and write support
 
 ### Fixed
 - Unicode (UTF-8) is now supported in text-based formats (for color names etc.), **except** when passing in a binary string.

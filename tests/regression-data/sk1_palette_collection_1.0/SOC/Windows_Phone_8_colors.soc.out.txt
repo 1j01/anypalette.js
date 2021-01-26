@@ -1,6 +1,6 @@
-Loaded As:                      CSS colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
+Loaded As:                      StarOffice Colors (.soc)
 
-matchedFileExtension:           false
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 
@@ -9,23 +9,23 @@ GIMP Palette
 Name: Saved Colors
 Columns: 8
 #
-164 196 0     rgb(164, 196, 0)
-96  169 23    rgb(96, 169, 23)
-0   138 0     rgb(0, 138, 0)
-0   171 169   rgb(0, 171, 169)
-27  161 226   rgb(27, 161, 226)
-0   80  239   rgb(0, 80, 239)
-106 0   255   rgb(106, 0, 255)
-170 0   255   rgb(170, 0, 255)
-244 114 208   rgb(244, 114, 208)
-216 0   115   rgb(216, 0, 115)
-162 0   37    rgb(162, 0, 37)
-229 20  0     rgb(229, 20, 0)
-250 104 0     rgb(250, 104, 0)
-240 163 10    rgb(240, 163, 10)
-227 200 0     rgb(227, 200, 0)
-130 90  44    rgb(130, 90, 44)
-109 135 100   rgb(109, 135, 100)
-100 118 135   rgb(100, 118, 135)
-118 96  138   rgb(118, 96, 138)
-160 82  45    rgb(160, 82, 45)
+164 196 0     Lime
+96  169 23    Green
+0   138 0     Emerald
+0   171 169   Teal
+27  161 226   Cyan
+0   80  239   Cobalt
+106 0   255   Indigo
+170 0   255   Violet
+244 114 208   Pink
+216 0   115   Magenta
+162 0   37    Crimson
+229 20  0     Red
+250 104 0     Orange
+240 163 10    Amber
+227 200 0     Yellow
+130 90  44    Brown
+109 135 100   Olive
+100 118 135   Steel
+118 96  138   Mauve
+160 82  45    Sienna

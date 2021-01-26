@@ -1,6 +1,6 @@
-Loaded As:                      CSS colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
+Loaded As:                      StarOffice Colors (.soc)
 
-matchedFileExtension:           false
+matchedFileExtension:           true
 geometrySpecifiedByFile:        undefined
 numberOfColumns:                undefined
 
@@ -9,17 +9,17 @@ GIMP Palette
 Name: Saved Colors
 Columns: 8
 #
-252 174 27    rgb(252, 174, 27)
-227 80  1     rgb(227, 80, 1)
-255 255 102   rgb(255, 255, 102)
-178 178 71    rgb(178, 178, 71)
-148 208 6     rgb(148, 208, 6)
-34  120 8     rgb(34, 120, 8)
-212 196 255   rgb(212, 196, 255)
-76  68  102   rgb(76, 68, 102)
-80  130 255   rgb(80, 130, 255)
-0   0   116   rgb(0, 0, 116)
-186 189 183   rgb(186, 189, 183)
-46  52  54    rgb(46, 52, 54)
-255 77  77    rgb(255, 77, 77)
-140 0   0     rgb(140, 0, 0)
+252 174 27    Light Orange
+227 80  1     Dark Orange
+255 255 102   Light Butter
+178 178 71    Dark Butter
+148 208 6     Light Lemon
+34  120 8     Dark Lemon
+212 196 255   Light Plum
+76  68  102   Dark Plum
+80  130 255   Light Sky
+0   0   116   Dark Sky
+186 189 183   Light Dust
+46  52  54    Dark Dust
+255 77  77    Light Blood
+140 0   0     Dark Blood

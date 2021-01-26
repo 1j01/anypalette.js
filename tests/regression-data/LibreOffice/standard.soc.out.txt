@@ -1,0 +1,131 @@
+Loaded As:                      StarOffice Colors (.soc)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+0   0   0     Black
+17  17  17    Dark Gray 4
+28  28  28    Dark Gray 3
+51  51  51    Dark Gray 2
+102 102 102   Dark Gray 1
+128 128 128   Gray
+153 153 153   Light Gray 1
+178 178 178   Light Gray 2
+204 204 204   Light Gray 3
+221 221 221   Light Gray 4
+238 238 238   Light Gray 5
+255 255 255   White
+255 255 0     Yellow
+255 191 0     Gold
+255 128 0     Orange
+255 64  0     Brick
+255 0   0     Red
+191 0   65    Magenta
+128 0   128   Purple
+85  48  141   Indigo
+42  96  153   Blue
+21  132 102   Teal
+0   169 51    Green
+129 212 26    Lime
+255 255 215   Light Yellow 4
+255 245 206   Light Gold 4
+255 219 182   Light Orange 4
+255 216 206   Light Brick 4
+255 215 215   Light Red 4
+247 209 213   Light Magenta 4
+224 194 205   Light Purple 4
+222 220 230   Light Indigo 4
+222 230 239   Light Blue 4
+222 231 229   Light Teal 4
+221 232 203   Light Green 4
+246 249 212   Light Lime 4
+255 255 166   Light Yellow 3
+255 233 148   Light Gold 3
+255 182 108   Light Orange 3
+255 170 149   Light Brick 3
+255 166 166   Light Red 3
+236 155 164   Light Magenta 3
+191 129 158   Light Purple 3
+183 179 202   Light Indigo 3
+180 199 220   Light Blue 3
+179 202 199   Light Teal 3
+175 208 149   Light Green 3
+232 242 161   Light Lime 3
+255 255 109   Light Yellow 2
+255 222 89    Light Gold 2
+255 151 47    Light Orange 2
+255 123 89    Light Brick 2
+255 109 109   Light Red 2
+225 97  115   Light Magenta 2
+161 70  126   Light Purple 2
+142 134 174   Light Indigo 2
+114 159 207   Light Blue 2
+129 172 166   Light Teal 2
+119 188 101   Light Green 2
+212 234 107   Light Lime 2
+255 255 56    Light Yellow 1
+255 212 40    Light Gold 1
+255 134 13    Light Orange 1
+255 84  41    Light Brick 1
+255 56  56    Light Red 1
+214 46  78    Light Magenta 1
+141 29  117   Light Purple 1
+107 94  155   Light Indigo 1
+89  131 176   Light Blue 1
+80  147 138   Light Teal 1
+63  175 70    Light Green 1
+187 227 61    Light Lime 1
+230 233 5     Dark Yellow 1
+232 162 2     Dark Gold 1
+234 117 0     Dark Orange 1
+237 76  5     Dark Brick 1
+241 13  12    Dark Red 1
+167 7   75    Dark Magenta 1
+120 3   115   Dark Purple 1
+91  39  125   Dark Indigo 1
+52  101 164   Dark Blue 1
+22  130 83    Dark Teal 1
+6   154 46    Dark Green 1
+94  185 30    Dark Lime 1
+172 178 12    Dark Yellow 2
+180 120 4     Dark Gold 2
+184 92  0     Dark Orange 2
+190 72  10    Dark Brick 2
+201 33  30    Dark Red 2
+134 17  65    Dark Magenta 2
+101 9   83    Dark Purple 2
+85  33  91    Dark Indigo 2
+53  82  105   Dark Blue 2
+30  106 57    Dark Teal 2
+18  118 34    Dark Green 2
+70  138 26    Dark Lime 2
+112 110 12    Dark Yellow 3
+120 75  4     Dark Gold 3
+123 61  0     Dark Orange 3
+129 55  9     Dark Brick 3
+141 40  30    Dark Red 3
+97  23  41    Dark Magenta 3
+78  16  45    Dark Purple 3
+72  29  50    Dark Indigo 3
+56  61  60    Dark Blue 3
+40  71  31    Dark Teal 3
+34  75  18    Dark Green 3
+57  85  17    Dark Lime 3
+68  50  5     Dark Yellow 4
+71  39  2     Dark Gold 4
+73  35  0     Dark Orange 4
+75  34  4     Dark Brick 4
+80  32  12    Dark Red 4
+65  25  13    Dark Magenta 4
+59  22  14    Dark Purple 4
+58  26  15    Dark Indigo 4
+54  36  19    Dark Blue 4
+48  39  9     Dark Teal 4
+46  39  6     Dark Green 4
+52  42  6     Dark Lime 4

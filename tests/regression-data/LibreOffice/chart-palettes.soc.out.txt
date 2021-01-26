@@ -1,0 +1,23 @@
+Loaded As:                      StarOffice Colors (.soc)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+0   69  134   Chart 1
+255 66  14    Chart 2
+255 211 32    Chart 3
+87  157 28    Chart 4
+126 0   33    Chart 5
+131 202 255   Chart 6
+49  64  4     Chart 7
+174 207 0     Chart 8
+75  31  111   Chart 9
+255 149 14    Chart 10
+197 0   11    Chart 11
+0   132 209   Chart 12

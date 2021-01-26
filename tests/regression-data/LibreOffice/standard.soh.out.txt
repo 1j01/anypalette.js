@@ -1,0 +1,21 @@
+Loaded As:                      CSS colors (.css, .scss, .sass, .less, .styl, .html, .htm, .svg, .js, .ts, .xml, .txt)
+
+matchedFileExtension:           false
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+0   0   0     rgb(0, 0, 0)
+0   0   0     rgb(0, 0, 0)
+0   0   0     rgb(0, 0, 0)
+0   0   0     rgb(0, 0, 0)
+128 0   0     rgb(128, 0, 0)
+128 0   0     rgb(128, 0, 0)
+0   0   128   rgb(0, 0, 128)
+0   0   128   rgb(0, 0, 128)
+0   0   255   rgb(0, 0, 255)
+0   0   0     rgb(0, 0, 0)

@@ -11,7 +11,7 @@ module.exports.read_staroffice_soc = ({fileContentString})->
 	parsed = convert.xml2js fileContentString, compact: false
 	unless parsed.elements?.length
 		throw new Error("No XML elements found")
-	for element in parsed.elements when element.name is "office:color-table" and element.elements
+	for element in parsed.elements when element.name?.match(/:color-table$/) and element.elements
 		for child in element.elements when child.name is "draw:color" and child.attributes["draw:color"]?.match(/#/)
 			# TODO: probably can be any CSS color
 			color_options = parse_css_hex_color(child.attributes["draw:color"])

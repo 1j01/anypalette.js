@@ -228,7 +228,7 @@ read_palette = (o, callback)->
 			# console?.info? "loaded #{o.fileName} as #{format.name}"
 			palette.confidence = if matching_ext[format_id]? then 0.9 else 0.01
 			
-			callback(null, palette, format, matching_ext[format_id]?)
+			callback(null, palette, format, matching_ext[format_id]?, __errors_before_success: errors)
 			return
 	
 	callback(new LoadingErrors(errors))

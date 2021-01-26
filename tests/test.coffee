@@ -43,7 +43,7 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.*", (err, file_p
 				# To test loading from a binary string:
 				# data = fs.readFileSync(file_path, "binary")
 				# options = {fileName: require("path").basename(file_path), data}
-				AnyPalette.loadPalette options, (err, palette, formatUsed, matchedFileExtension)->
+				AnyPalette.loadPalette options, (err, palette, formatUsed, matchedFileExtension, {__errors_before_success}={})->
 					result =
 						if err
 							err.message
@@ -66,6 +66,16 @@ glob "#{__dirname.replace(/\\/g, "/")}/regression-data/**/*.out.*", (err, file_p
 					mkdirp.sync	path.dirname(output_file_path)
 					fs.writeFileSync output_file_path, result, "utf8"
 					console.log "Wrote", (if err then "failed" else "parsed"), output_file_path
+
+					if file_path.match(/\.soc/) and not matchedFileExtension
+						console.error ".soc files (see file in above line) must parse with the appropriate loader#{if formatUsed then " (parsed as '#{formatUsed.name}' instead)" else " - got error: #{err}"}"
+						console.error "Errors before it 'successfully' parsed:\n#{
+							for error in __errors_before_success
+								"\n\t" + "#{error.stack}".replace(/\n/g, "\n\t")
+						}"
+			# msg = "failed to load #{o.fileName} as #{format.name}: #{if format_id.match(/staroffice/i) then e.stack else e.message}"
+
+						process.exit(1)
 
 					# test writers
 					if not palette

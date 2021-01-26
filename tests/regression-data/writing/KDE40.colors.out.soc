@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<office:color-table xmlns:office="http://openoffice.org/2000/office" xmlns:draw="http://openoffice.org/2000/drawing">
+<ooo:color-table xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg" xmlns:ooo="http://openoffice.org/2004/office">
 	<draw:color draw:name="Black" draw:color="#000000"/>
 	<draw:color draw:name="Almost black" draw:color="#303030"/>
 	<draw:color draw:name="Very dark gray" draw:color="#585858"/>
@@ -40,4 +40,4 @@
 	<draw:color draw:name="Orange" draw:color="#ff8000"/>
 	<draw:color draw:name="Light orange" draw:color="#ffa858"/>
 	<draw:color draw:name="Very light orange" draw:color="#ffdca8"/>
-</office:color-table>
+</ooo:color-table>

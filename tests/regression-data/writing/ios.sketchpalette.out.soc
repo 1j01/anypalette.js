@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<office:color-table xmlns:office="http://openoffice.org/2000/office" xmlns:draw="http://openoffice.org/2000/drawing">
+<ooo:color-table xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg" xmlns:ooo="http://openoffice.org/2004/office">
 	<draw:color draw:name="rgba(89.99999999999999, 200, 250, 1)" draw:color="#5ac8fa"/>
 	<draw:color draw:name="rgba(255, 204, 0, 1)" draw:color="#ffcc00"/>
 	<draw:color draw:name="rgba(255, 149, 0, 1)" draw:color="#ff9500"/>
@@ -10,4 +10,4 @@
 	<draw:color draw:name="rgba(142, 142, 147, 1)" draw:color="#8e8e93"/>
 	<draw:color draw:name="rgba(239, 239, 243.99999999999997, 1)" draw:color="#efeff4"/>
 	<draw:color draw:name="rgba(0, 0, 0, 1)" draw:color="#000000"/>
-</office:color-table>
+</ooo:color-table>

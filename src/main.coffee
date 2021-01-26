@@ -85,8 +85,8 @@ formats =
 	STAROFFICE_PALETTE: {
 		name: "StarOffice Colors"
 		fileExtensions: ["soc"]
-		readFromText: (require "./formats/StarOffice").read_staroffice_soc
-		write: (require "./formats/StarOffice").write_staroffice_soc
+		readFromText: (require "./formats/StarOffice").read_soc
+		write: (require "./formats/StarOffice").write_libreoffice_soc
 	}
 	# KDE_THEME_COLORS: {
 	# 	name: "KDE desktop theme"

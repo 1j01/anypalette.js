@@ -44,6 +44,12 @@
 		"act",
 		"acb",
 		"adobe",
+		"photoshop",
+		"kolourpaint",
+		"mtpaint",
+		"kde",
+		"theme",
+		"themepack",
 		"css-colors",
 		"binary",
 		"reader",
@@ -72,6 +78,7 @@
 		"file-formats"
 	],
 	"license": "MIT",
+	"homepage": "https://1j01.github.io/anypalette.js/",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/1j01/anypalette.js.git"
@@ -99,6 +106,7 @@
 		"glob": "^7.1.6",
 		"gulp": "^4.0.2",
 		"jdataview": "^2.5.0",
+		"licensify": "^3.1.3",
 		"live-server": "^1.2.1",
 		"mkdirp": "^1.0.4",
 		"vinyl-source-stream": "^2.0.0",

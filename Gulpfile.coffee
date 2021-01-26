@@ -4,6 +4,7 @@ child_process = require 'child_process'
 gulp = require 'gulp'
 
 browserify = require 'browserify'
+licensify = require 'licensify'
 # vinyl-source-stream is the glue you need to properly connect Browserify to Gulp
 source = require 'vinyl-source-stream'
 
@@ -30,6 +31,9 @@ gulp.task 'build', ->
 	# Compile the .coffee files
 	.transform('coffeeify')
 	
+	# Add license header to output
+	.plugin(licensify)
+
 	# From Browserify
 	.bundle()
 	.on('error', (err)->

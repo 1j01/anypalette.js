@@ -90,7 +90,12 @@
 	<body>
 		<h1><a href="https://github.com/1j01/anypalette.js"><img src="anypalette-logo.png" style="height:1.3em; vertical-align: middle;" alt="">AnyPalette.js</a>: Let's load some palettes</h1>
 		<script src="lib/jquery-3.5.1.js"></script>
-		<script src="build/anypalette.js"></script>
+		<script src="build/anypalette-dev.js"></script>
+		<script>
+			if (!window.AnyPalette) {
+				document.write(`<script src="build/anypalette-x.x.x.js"><\/script>`);
+			}
+		</script>
 		<script>
 			function PaletteView(palette_name, url){
 				

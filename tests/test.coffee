@@ -2,7 +2,7 @@ fs = require 'fs'
 path = require 'path'
 glob = require 'glob'
 mkdirp = require 'mkdirp'
-AnyPalette = require '../build/anypalette.js'
+AnyPalette = require '../build/anypalette-dev.js'
 
 # TODO: maybe return a non-zero exit code if there are changes between the output and what's in git
 # i.e. a git status "#{__dirname}/regression-data" with changes listed... other than FOLDER-README.md ideally

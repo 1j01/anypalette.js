@@ -116,10 +116,10 @@ Then access the library with:
 const AnyPalette = require("anypalette");
 ```
 
-**Alternatively**, download [`build/anypalette.js`](build/anypalette.js) and include it as a script:
+**Alternatively**, download [`build/anypalette-x-x-x.js`](build/anypalette-x-x-x.js) and include it as a script:
 
 ```html
-<script src="anypalette.js"></script>
+<script src="anypalette-x-x-x.js"></script>
 ```
 
 This will create a global `AnyPalette`
@@ -317,13 +317,10 @@ const readFormats = Object.values(AnyPalette.formats).filter((format)=> format.r
 it'll rebuild the library when changes to the source files are detected, and it'll auto-reload the page
 
 Run `npm test` to update a `regression-data` folder, and then view any changes with git.  
-If the changes are good/positive, great! Commit the changes along with the source code, or in a separate "Accept" commit.  
-If the changes are bad/negative, try to fix the regression.  
-`*.out.2.*` files are for files that are saved differently when loading a saved file. Ideally we want none of these.
-(If all the files are deleted, not just changed, make sure to run `git submodule update --init`)  
-
-Don't commit `build/anypalette.js` until cutting a release.
-This is to reduce noise and avoid needless conflicts when reverting or rebasing.
+- If the changes are good/positive, great! Commit the changes along with the source code, or in a separate "Accept" commit.
+- If the changes are bad/negative, try to fix the regression.
+- `*.out.2.*` files are for files that are saved differently when loading a saved file. Ideally we want none of these.
+- If many files are deleted, check the console output. There are some test cases where it will exit early.
 
 Update [CHANGELOG.md](CHANGELOG.md)'s [Unreleased] section with any notable changes,
 following the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format.
@@ -335,13 +332,15 @@ When pulling changes (e.g. syncing a fork) you may need to `npm install` again t
 
 The process is currently something like this:
 
-In [CHANGELOG.md](CHANGELOG.md), replace the [Unreleased] section with the next version number
-(TODO: use [update-changelog](https://github.com/ukatama/update-changelog) (altho it doesn't support links to commit ranges; [this does, but it's for a different ecosystem](https://github.com/pajapro/fastlane-plugin-changelog)), and update the build within `npm version`)
+- In [CHANGELOG.md](CHANGELOG.md), replace the [Unreleased] section with the next version.
+- Make sure all the numbers are right. There's five version numbers and a date to update.
+
+(TODO: use [update-changelog](https://github.com/ukatama/update-changelog) (altho it doesn't support links to commit ranges... [this does, but it's for a different ecosystem](https://github.com/pajapro/fastlane-plugin-changelog)))
 
 	npm run build
 	npm test
 	git diff tests/ # there shouldn't be changes to the test data at this point, that should ideally happen in earlier commits
 	git add -A && git commit -m "Update for release"
-	npm version minor # or major or patch
+	npm version minor # or major or patch or a specific version number
 	git push --follow-tags # better than --tags!
 	npm publish

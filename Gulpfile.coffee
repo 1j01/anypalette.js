@@ -1,5 +1,6 @@
 
 fs = require 'fs'
+path = require 'path'
 child_process = require 'child_process'
 gulp = require 'gulp'
 
@@ -9,7 +10,11 @@ licensify = require 'licensify'
 source = require 'vinyl-source-stream'
 
 production = false
-production_script_name = "anypalette-#{process.env.npm_package_version}.js"
+# version = process.env.npm_package_version # new version even during `preversion`
+version = require("./package.json").version # old version during `preversion`, new version during `version`
+# console.log 'process.env.npm_package_version', process.env.npm_package_version
+# console.log 'require("./package.json").version', require("./package.json").version
+production_script_name = "anypalette-#{version}.js"
 dev_script_name = "anypalette-dev.js"
 
 gulp.task 'build', ->
@@ -87,8 +92,24 @@ gulp.task 'git-add-for-npm-version', (callback)->
 		console.log "---------------------------------"
 		callback(err)
 
+# Run before building a new production version
+gulp.task 'npm-preversion', (callback)->
+	old_build_file = path.join("build", production_script_name)
+	console.log "Removing old build file '#{old_build_file}'"
+	fs.unlink old_build_file, (err)->
+		if err and err.code is "ENOENT"
+			return callback() # file didn't actually exist
+		else if err
+			return callback(err)
+		child_process.exec "git add #{old_build_file}", (err, stdout, stderr)->
+			console.log "---------------------------------"
+			console.log "git stderr:", stderr
+			console.log "git stdout:", stdout
+			console.log "---------------------------------"
+			callback(err)
+
 # Run when building a new production version
-gulp.task 'production-version', gulp.series([
+gulp.task 'npm-version', gulp.series([
 	'set-production-flag'
 	'monkey-patch-script-version'
 	'build'

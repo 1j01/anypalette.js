@@ -194,6 +194,13 @@ Stores a list of [`Color`](#class-color)s, and some metadata.
 Because `Palette` is a subclass of `Array`, you can use `forEach`, `map`, `join` and other methods,
 or access the colors via indexing e.g. `palette[0]` and loop over them using `palette.length`
 
+**Note**: I think this was a bad design decision because `map` unintuitively returns an instance of the subclass (`Palette`), and `Palette` is only intended to hold `Color`s.
+I plan to change it to simply use a `colors` field.  
+I wanted to be able to type `for color in palette`, but alas, CoffeeScript is not English, and this is largely a failing of the programming language/system.
+In a strongly typed, non-object-oriented language, this wouldn't be a problem. And we *could* genuinely have a programming system that lets us program in English, mixing in symbolic and graphical representations at will.
+When I say graphical representations I don't mean just images embedded in source code, like some desktop automation software uses (screenshots used for targeting clicks), I mean drawing brush strokes onto a character in a game while it's running, and using geometry to think about physics problems. Think [LearnableProgramming](http://worrydream.com/LearnableProgramming/), [Drawing Dynamic Visualizations](https://vimeo.com/66085662).  
+(I could make it an array-*like* object, but that might introduce other confusions. I don't know, jQuery does it. And a bunch of browser-native objects are array-like instead of proper arrays.)
+
 #### `palette.numberOfColumns`
 
 `palette.numberOfColumns` may contain a number of columns for the palette to fit into (with the number of rows being implicit).  

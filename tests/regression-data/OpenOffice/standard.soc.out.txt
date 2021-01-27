@@ -1,0 +1,176 @@
+Loaded As:                      StarOffice Colors (.soc)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+255 255 255   White
+238 238 238   Gray 1
+221 221 221   Gray 2
+204 204 204   Gray 3
+178 178 178   Gray 4
+153 153 153   Gray 5
+128 128 128   Gray 6
+102 102 102   Gray 7
+51  51  51    Gray 8
+28  28  28    Gray 9
+17  17  17    Gray 10
+0   0   0     Black
+255 255 153   Yellow
+255 102 0     Orange
+255 51  51    Red
+255 0   204   Pink
+255 51  255   Magenta
+153 0   255   Purple
+102 102 255   Blue
+0   204 255   Sky blue
+102 255 255   Cyan
+51  255 153   Turquoise
+153 255 102   Green
+204 255 0     Yellow green
+255 255 102   Yellow 1
+255 204 0     Orange 1
+255 153 153   Red 1
+255 102 204   Pink 1
+255 153 255   Magenta 1
+204 102 255   Purple 1
+153 153 255   Blue 1
+102 204 255   Sky blue 1
+153 255 255   Cyan 1
+102 255 153   Turquoise 1
+153 255 153   Green 1
+204 255 102   Yellow green 1
+255 255 0     Yellow 2
+255 153 0     Orange 2
+255 102 102   Red 2
+255 51  153   Pink 2
+255 102 255   Magenta 2
+153 51  255   Purple 2
+51  51  255   Blue 2
+51  153 255   Sky blue 2
+0   255 255   Cyan 2
+0   255 102   Turquoise 2
+102 255 102   Green 2
+153 255 51    Yellow green 2
+204 153 0     Yellow 3
+255 51  0     Orange 3
+255 0   0     Red 3
+255 0   102   Pink 3
+255 0   255   Magenta 3
+102 0   255   Purple 3
+0   0   255   Blue 3
+0   102 255   Sky blue 3
+0   204 204   Cyan 3
+0   204 51    Turquoise 3
+0   204 0     Green 3
+102 255 0     Yellow green 3
+153 102 0     Yellow 4
+204 51  0     Orange 4
+204 0   0     Red 4
+204 0   102   Pink 4
+204 0   204   Magenta 4
+102 0   204   Purple 4
+0   0   204   Blue 4
+0   102 204   Sky blue 4
+0   153 153   Cyan 4
+0   153 51    Turquoise 4
+0   153 0     Green 4
+102 204 0     Yellow green 4
+102 51  0     Yellow 5
+128 25  0     Orange 5
+153 0   0     Red 5
+153 0   102   Pink 5
+153 0   153   Magenta 5
+51  0   153   Purple 5
+0   0   153   Blue 5
+0   102 153   Sky blue 5
+0   102 102   Cyan 5
+0   120 38    Turquoise 5
+0   102 0     Green 5
+102 153 0     Yellow green 5
+51  51  0     Yellow 6
+70  25  0     Orange 6
+51  0   0     Red 6
+51  0   51    Pink 6
+102 0   102   Magenta 6
+0   0   51    Purple 6
+0   0   102   Blue 6
+0   0   128   Sky blue 6
+0   51  51    Cyan 6
+0   51  26    Turquoise 6
+0   51  0     Green 6
+25  51  0     Yellow green 6
+102 102 51    Yellow 7
+102 25  0     Orange 7
+102 51  51    Red 7
+102 0   51    Pink 7
+102 51  102   Magenta 7
+51  0   102   Purple 7
+51  51  102   Blue 7
+0   51  102   Sky blue 7
+51  102 102   Cyan 7
+0   102 51    Turquoise 7
+51  102 51    Green 7
+51  102 0     Yellow green 7
+153 153 102   Yellow 8
+153 102 51    Orange 8
+153 102 102   Red 8
+153 51  102   Pink 8
+153 102 153   Magenta 8
+102 51  153   Purple 8
+102 102 153   Blue 8
+51  102 153   Sky blue 8
+102 153 153   Cyan 8
+51  153 102   Turquoise 8
+102 153 102   Green 8
+102 153 51    Yellow green 8
+204 204 153   Yellow 9
+204 153 102   Orange 9
+204 153 153   Red 9
+204 102 153   Pink 9
+204 153 204   Magenta 9
+153 102 204   Purple 9
+153 153 204   Blue 9
+102 153 204   Sky blue 9
+153 204 204   Cyan 9
+102 204 153   Turquoise 9
+153 204 153   Green 9
+153 204 102   Yellow green 9
+255 255 204   Yellow 10
+255 204 153   Orange 10
+255 204 204   Red 10
+255 153 204   Pink 10
+255 204 255   Magenta 10
+204 153 255   Purple 10
+204 204 255   Blue 10
+153 204 255   Sky blue 10
+204 255 255   Cyan 10
+153 255 204   Turquoise 10
+204 255 204   Green 10
+204 255 153   Yellow green 10
+230 230 255   Blue gray
+207 231 245   Blue classic
+153 153 255   Violet
+153 51  102   Bordeaux
+255 255 204   Pale yellow
+204 255 255   Pale green
+102 0   102   Dark violet
+255 128 128   Salmon
+0   102 204   Sea blue
+0   69  134   Chart 1
+255 66  14    Chart 2
+255 211 32    Chart 3
+87  157 28    Chart 4
+126 0   33    Chart 5
+131 202 255   Chart 6
+49  64  4     Chart 7
+174 207 0     Chart 8
+75  31  111   Chart 9
+255 149 14    Chart 10
+197 0   11    Chart 11
+0   132 209   Chart 12

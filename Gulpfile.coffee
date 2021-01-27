@@ -60,21 +60,24 @@ gulp.task 'set-production-flag', (callback)->
 	callback()
 
 # Monkey-patch new script name
+files_to_patch = [
+	"demo.html"
+	"README.md"
+	"package.json"
+]
 gulp.task 'monkey-patch-script-version', (callback)->
 	replace_script_name = (string)->
 		string.replace(
 			/build\/anypalette-v?[x\d.]+\.js/g,
 			"build/#{production_script_name}"
 		)
-	# NOTE: MUST update git add below
-	fs.writeFileSync("demo.html", replace_script_name(fs.readFileSync("demo.html", "utf8")), "utf8")
-	fs.writeFileSync("README.md", replace_script_name(fs.readFileSync("README.md", "utf8")), "utf8")
-	fs.writeFileSync("package.json", replace_script_name(fs.readFileSync("package.json", "utf8")), "utf8")
+	for file in files_to_patch
+		fs.writeFileSync(file, replace_script_name(fs.readFileSync(file, "utf8")), "utf8")
 	callback()
 
 # Add files to git for they'll be accepted by npm version
 gulp.task 'git-add-for-npm-version', (callback)->
-	child_process.exec "git add demo.html README.md package.json build", (err, stdout, stderr)->
+	child_process.exec "git add #{files_to_patch.join(" ")} build", (err, stdout, stderr)->
 		console.log "git stderr:", stderr
 		console.log "git stdout:", stdout
 		console.log "---------------------------------"

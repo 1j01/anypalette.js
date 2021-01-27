@@ -68,16 +68,18 @@ files_to_patch = [
 gulp.task 'monkey-patch-script-version', (callback)->
 	replace_script_name = (string)->
 		string.replace(
-			/build\/anypalette-v?[x\d.]+\.js/g,
-			"build/#{production_script_name}"
+			/anypalette-v?[x\d.]+\.js/g,
+			production_script_name
 		)
 	for file in files_to_patch
 		fs.writeFileSync(file, replace_script_name(fs.readFileSync(file, "utf8")), "utf8")
+		console.log "Patched '#{file}' to point to new version #{production_script_name}"
 	callback()
 
 # Add files to git for they'll be accepted by npm version
 gulp.task 'git-add-for-npm-version', (callback)->
 	child_process.exec "git add #{files_to_patch.join(" ")} build", (err, stdout, stderr)->
+		console.log "---------------------------------"
 		console.log "git stderr:", stderr
 		console.log "git stdout:", stdout
 		console.log "---------------------------------"

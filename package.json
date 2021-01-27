@@ -86,9 +86,9 @@
 	"bugs": {
 		"url": "https://github.com/1j01/anypalette.js/issues"
 	},
-	"main": "build/anypalette-x-x-x.js",
+	"main": "build/anypalette-x.x.x.js",
 	"files": [
-		"build/anypalette-x-x-x.js"
+		"build/anypalette-x.x.x.js"
 	],
 	"scripts": {
 		"start": "concurrently --kill-others --names live-server,watch \"live-server\" \"gulp --require coffeescript/register\"",

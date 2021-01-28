@@ -17,7 +17,8 @@ for potential future corrections.
 		Click to see more.
 	</summary>
 
-Nothing here yet.
+### Added
+- Including a dot in the `fileExt` option is now allowed (either `".gpl"` or `"gpl"` is fine.)
 
 </details>
 

@@ -116,10 +116,10 @@ Then access the library with:
 const AnyPalette = require("anypalette");
 ```
 
-**Alternatively**, download [`build/anypalette-x.x.x.js`](build/anypalette-x.x.x.js) and include it as a script:
+**Alternatively**, download [`build/anypalette-0.6.0.js`](build/anypalette-0.6.0.js) and include it as a script:
 
 ```html
-<script src="anypalette-x.x.x.js"></script>
+<script src="anypalette-0.6.0.js"></script>
 ```
 
 This will create a global `AnyPalette`
@@ -134,31 +134,34 @@ Properties and methods not documented here may break without notice.
 
 ### `AnyPalette.loadPalette(options, callback)`
 
+Load a palette from a palette file.
+You can pass in the file data in a few different ways.
+
 Knowing the file extension means AnyPalette.js can often pick the correct palette loader right away, which can improve the load speed, and also a few loaders are only enabled if their specific file extension matches because they can't determine if the file is actually in that format or not (for raw data formats without headers).
 
 - `options.file` - the palette file to load, as a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File)
 - `options.data` - the palette file data to load, as a binary string or [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) or Node.js [`Buffer`](https://nodejs.org/api/buffer.html#buffer_class_buffer) or [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) (but **not** any other `TypedArray` or `DataView`). In the case of a binary string, Unicode names for colors do not work, so an `ArrayBuffer` is preferred.
 - `options.filePath` - a path to a palette file, for Node.js usage
-- `options.fileName` (optional) - the file name, if you have it, including the file extension - can be obtained from `options.file` or `options.filePath`
-- `options.fileExt` (optional) - the file extension, if you have it, *excluding* the dot, e.g. `"pal"` - can be obtained from `options.fileName` or `options.file` or `options.filePath`
+- `options.fileName` (optional) - the file name, if you have it, including the file extension - can be obtained automatically from `options.file` or `options.filePath`
+- `options.fileExt` (optional) - the file extension, if you have it, *excluding* the dot, e.g. `"pal"` - can be obtained automatically from `options.fileName` or `options.file` or `options.filePath`
 - `callback(error, palette, formatUsed, matchedFileExtension)` (required) - called when palette loading is finished, either with an error (in the first argument) or with the remaining arguments in the case of success:
 	- `palette`: a [`Palette`](#class-palette-extends-array)
 	- `formatUsed`: a [`Format`](#class-format) object representing the file format, or more generic loader, that was used to parse the palette
 	- `matchedFileExtension`: whether the format matched one of the file extensions its known for (Boolean)
 
-Note: the callback is asynchronous to allow for file loading, but all the palette parsing is currently synchronous.
+> **Note**: The callback is actually executed synchronously if you pass data directly. It's in an asynchronous style to allow for file loading, but all the palette parsing is currently synchronous. TODO: `setImmediate` at least.
 
 ### `AnyPalette.loadPalette(file, callback)`
 
-Shortcut to load from a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) - equivalent to passing `{file: file}` for `options`.
+Shortcut to load from a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object, equivalent to passing `{file: file}` for `options`.
 
 ### `AnyPalette.loadPalette(filePath, callback)`
 
-Shortcut to load from a file path in Node.js - equivalent to passing `{filePath: filePath}` for `options`.
+Shortcut to load from a file path in Node.js,  equivalent to passing `{filePath: filePath}` for `options`.
 
 ### `AnyPalette.writePalette(palette, format)`
 
-Returns string (for text-based formats) or `ArrayBuffer` (for binary formats) of the content of a file, in the given [format](#class-format).
+Returns string (for text-based formats) or `ArrayBuffer` (for binary formats) of the content of a file, in the given [`Format`](#class-format).
 
 To save a palette as a GPL file, sending a download in a browser:
 
@@ -174,6 +177,8 @@ document.body.appendChild(a);
 a.click(); // Note: this must happen during a user gesture to work
 document.body.removeChild(a);
 ```
+
+If you don't know what format to export as, use `GIMP_PALETTE` (`.gpl`), as it's supported by a wide range of software.
 
 #### `AnyPalette.uniqueColors(palette)`
 
@@ -194,12 +199,9 @@ Stores a list of [`Color`](#class-color)s, and some metadata.
 Because `Palette` is a subclass of `Array`, you can use `forEach`, `map`, `join` and other methods,
 or access the colors via indexing e.g. `palette[0]` and loop over them using `palette.length`
 
-**Note**: I think this was a bad design decision because `map` unintuitively returns an instance of the subclass (`Palette`), and `Palette` is only intended to hold `Color`s.
+> **Note**: I think this was a bad design decision because `map` unintuitively returns an instance of the subclass `Palette`, and `Palette` is only intended to hold `Color`s.
 I plan to change it to simply use a `colors` field.  
-I wanted to be able to type `for color in palette`, but alas, CoffeeScript is not English, and this is largely a failing of the programming language/system.
-In a strongly typed, non-object-oriented language, this wouldn't be a problem. And we *could* genuinely have a programming system that lets us program in English, mixing in symbolic and graphical representations at will.
-When I say graphical representations I don't mean just images embedded in source code, like some desktop automation software uses (screenshots used for targeting clicks), I mean drawing brush strokes onto a character in a game while it's running, and using geometry to think about physics problems. Think [LearnableProgramming](http://worrydream.com/LearnableProgramming/), [Drawing Dynamic Visualizations](https://vimeo.com/66085662).  
-(I could make it an array-*like* object, but that might introduce other confusions. I don't know, jQuery does it. And a bunch of browser-native objects are array-like instead of proper arrays.)
+I could make it an array-*like* object, but that might introduce other confusions. I don't know, jQuery does it. And a bunch of browser-native objects are array-like instead of proper arrays. Maybe that's the way to go.
 
 #### `palette.numberOfColumns`
 
@@ -209,11 +211,13 @@ Inkscape, for example, ignores the number of columns specified in a palette.
 
 #### `palette.name`
 
-`palette.name` may contain a name for the palette (as a string), or `undefined`.
+`palette.name` may contain a name for the palette (as a string), or else `undefined`.
+
+This is **not** populated with the filename, it's only available for palette formats that allow defining a name *within* the file.
 
 #### `palette.description`
 
-`palette.description` may contain a description for the palette (as a string), or `undefined`.
+`palette.description` may contain a description for the palette (as a string), or else `undefined`.
 
 ### class `Color`
 
@@ -234,12 +238,17 @@ See [*Using JavaScript's 'toString' Method*](http://adripofjavascript.com/blog/d
 In some cases you may need to call `toString()` explicitly to get a string, for example:
 
 ```js
-var shortenedColorStrings = palette.map((color)=> color.toString().replace(/\s/g, ""));
+var shortenedColorString = color.toString().replace(/\s/g, "");
 ```
 
 `Color` objects also have `red`, `green`, `blue` properties, and **depending on how they were loaded**, might have `hue`, `saturation`, `lightness`, and/or `alpha`.
 
-Also for some palette formats, such as `.gpl` files, a `Color` may have a `name` (it's either a string or `undefined`)
+
+#### `color.name`
+
+`color.name` may contain a name for the color (as a string), or else `undefined`.
+
+Not all palette formats support named colors.
 
 ### `Color.is(colorA, colorB, epsilon=0.0001)`
 
@@ -249,7 +258,7 @@ var firstTwoColorsExactlyEqual = AnyPalette.Color.is(palette[0], palette[1], 0);
 var firstTwoColorsBasicallyEqual = AnyPalette.Color.is(palette[0], palette[1], 0.001);
 var firstTwoColorsSimilar = AnyPalette.Color.is(palette[0], palette[1], 20);
 ```
-Note: If you want to find perceptually similar colors, it's better to use CIELAB color space instead of RGB.
+> **Note**: If you want to find perceptually similar colors, it's better to use CIELAB color space instead of RGB.
 This function compares in RGB space and is really only meant for finding duplicates.
 
 ### class `Format`
@@ -259,13 +268,13 @@ This class represents a loader and/or writer.
 - `name`: A friendly name for the format, e.g. `"Paint Shop Pro palette"`
 - `fileExtensions`: An array of associated file extensions, without the dot, e.g. `["pal", "psppalette"]`
 - `fileExtensionsPretty`: A textual representation of the file extensions, including the dots, e.g. `".pal, .psppalette"`
-- `readFromText`: This exists on text-based readers. Don't use it directly, use `AnyPalette.loadPalette`
-- `read`: This exists on binary readers. Don't use it directly, use `AnyPalette.loadPalette`
-- `write`: This exists on writers. Don't use it directly, use `AnyPalette.writePalette`
+- `readFromText`: This exists on text-based readers. Don't use it directly, use `AnyPalette.loadPalette` instead.
+- `read`: This exists on binary readers. Don't use it directly, use `AnyPalette.loadPalette` instead.
+- `write`: This exists on writers. Don't use it directly, use `AnyPalette.writePalette` instead.
 
 ### `AnyPalette.formats`
 
-This is an object that contains [`Format`](#class-format) objects.
+This is an object that contains [`Format`](#class-format) objects, keyed by format IDs.
 
 To get an array of formats:
 ```js
@@ -301,12 +310,12 @@ const readFormats = Object.values(AnyPalette.formats).filter((format)=> format.r
 			* sK1 (`.skpx` / `.skp`)
 
 
-* Guess palette geometries
+* Guess palette geometries?
+
+* More stuff (I have an external TODO list)
 
 
 ## Contributing
-
-<!-- See CONTRIBUTING.md -->
 
 ### Development Setup
 

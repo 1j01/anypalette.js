@@ -9,7 +9,7 @@ Refer to the [latest version of the changelog](https://github.com/1j01/anypalett
 for potential future corrections.
 (The changelog can't be retroactively updated within an npm release, so if for instance a breaking change was accidentally omitted, it wouldn't be in the changelog in the release, but it could be added later to the changelog on GitHub.)
 
-[Unreleased]: https://github.com/1j01/anypalette.js/compare/v0.5.2...HEAD
+[Unreleased]: https://github.com/1j01/anypalette.js/compare/v0.6.0...HEAD
 ## [Unreleased]
 <details>
 	<summary>
@@ -17,7 +17,12 @@ for potential future corrections.
 		Click to see more.
 	</summary>
 
+Nothing here yet.
 
+</details>
+
+[0.6.0]: https://github.com/1j01/anypalette.js/compare/v0.5.2...v0.6.0
+## [0.6.0] - 2021-01-27
 ### Changed
 - Duplicate colors are included by default now. To get unique colors only, use `AnyPalette.uniqueColors(palette)`
 - `color.is(colorB)` is now `Color.is(colorA, colorB)` and does a comparison based on component values instead of the string representation.
@@ -29,15 +34,15 @@ for potential future corrections.
 
 ### Added
 - **Support for saving files!**
-  Use `var fileContent = AnyPalette.writePalette(palette, AnyPalette.formats.GIMP_PALETTE)` to save a GPL file.
+  Use `var fileContent = AnyPalette.writePalette(palette, AnyPalette.formats.GIMP_PALETTE)` to save a GPL file. Many formats are supported.
 - `AnyPalette.uniqueColors(palette)`: Use this to get a version of a palette with only unique colors.
   Note: `numberOfColumns` on the returned palette is undefined, because the geometry doesn't necessarily apply if some colors are removed.
   `name` is however copied over.
 - `Color` objects now have `red`, `green`, `blue` properties. The range is `[0,1]`, not `[0,255]`, and they are available even if the input format is HSL or another colorspace.
 - Alpha support (translucent colors). `color.alpha` exists only if alpha is defined for a color. This is used for choosing between string representations.
 - `loadPalette` callback now gets extra parameters for getting info about the format the file was parsed as.
-- You can now pass an `ArrayBuffer` or Node.js `Buffer` as input to `AnyPalette.loadPalette({data}, callback)`. This is preferred over binary strings for Unicode support (and general modernness).
-- `palette.name` and `palette.description` (for some palette formats)
+- You can now pass an `ArrayBuffer` or Node.js `Buffer` as input to `AnyPalette.loadPalette({data}, callback)`. This is preferred over binary strings because it supports Unicode (UTF-8) encoded string names (and it's generally more modern).
+- `palette.name` and `palette.description` are now available, for some palette formats.
 - Adobe Color Swatch (`.aco`) read and write support
 - Adobe Swatch Exchange (`.ase`) read and write support
 - sK1 Palette (`.skp`) read and write support
@@ -50,8 +55,6 @@ for potential future corrections.
 
 ### Deprecated
 - Binary string support. Use `ArrayBuffer` or another input type instead.
-
-</details>
 
 [0.5.2]: https://github.com/1j01/anypalette.js/compare/v0.5.1...v0.5.2
 ## [0.5.2] - 2021-01-15

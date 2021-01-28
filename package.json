@@ -1,6 +1,6 @@
 {
 	"name": "anypalette",
-	"version": "0.5.2",
+	"version": "0.6.0",
 	"author": "Isaiah Odhner <isaiahodhner@gmail.com>",
 	"description": "Read and write many color palette formats",
 	"keywords": [
@@ -86,9 +86,9 @@
 	"bugs": {
 		"url": "https://github.com/1j01/anypalette.js/issues"
 	},
-	"main": "build/anypalette-x.x.x.js",
+	"main": "build/anypalette-0.6.0.js",
 	"files": [
-		"build/anypalette-x.x.x.js"
+		"build/anypalette-0.6.0.js"
 	],
 	"scripts": {
 		"start": "concurrently --kill-others --names live-server,watch \"live-server\" \"gulp --require coffeescript/register\"",

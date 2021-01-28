@@ -1,10 +1,7 @@
 
 Color = require "./Color"
 
-component_names = [
-	"r", "g", "b", "h", "s", "l", "v", "x", "y", "z", "a", "b", "c", "m", "y", "k",
-	"red", "green", "blue", "hue", "saturation", "lightness", "value", "cyan", "magenta", "yellow", "key", "alpha"
-]
+component_names = ["red", "green", "blue", "hue", "saturation", "lightness", "value", "cyan", "magenta", "yellow", "key", "alpha", "x", "y", "z", "l", "a", "b"]
 
 module.exports =
 class Palette extends Array
@@ -29,6 +26,7 @@ class Palette extends Array
 	###
 	guess_dimensions: ->
 		# TODO: get this working properly and enable
+		# probably as a static method AnyPalette.guessDimensions?
 
 		len = @length
 		candidate_dimensions = []

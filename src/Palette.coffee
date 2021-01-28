@@ -1,8 +1,6 @@
 
 Color = require "./Color"
 
-component_names = ["red", "green", "blue", "hue", "saturation", "lightness", "value", "cyan", "magenta", "yellow", "key", "alpha", "x", "y", "z", "l", "a", "b"]
-
 module.exports =
 class Palette extends Array
 	
@@ -14,12 +12,6 @@ class Palette extends Array
 		@geometrySpecifiedByFile = undefined
 	
 	add: (o)->
-		for component_name in component_names when o[component_name]?
-			if (not isFinite(o[component_name])) or (typeof o[component_name] isnt "number")
-				throw new TypeError("palette.add() component option #{component_name} is not a finite number: #{JSON.stringify(o[component_name])}")
-			if o[component_name] < 0 or o[component_name] > 1
-				throw new TypeError("palette.add() component option #{component_name} outside range of [0,1]: #{o[component_name]}")
-
 		new_color = if o instanceof Color then o else new Color(o)
 		@push new_color
 	

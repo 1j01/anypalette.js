@@ -18,4 +18,4 @@ Some errors were encountered when loading:
 	failed to load standard.soe as Adobe Color Table: file size must be 768 or 772 bytes (saw 6534), OR file extension must be '.act' (saw '.soe'),
 	failed to load standard.soe as StarCraft palette: Wrong file size, must be 768 bytes long (not 6534),
 	failed to load standard.soe as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 6534),
-	failed to load standard.soe as tabular colors: palette.add() component option blue outside range of [0,1]: 5.180392156862745
+	failed to load standard.soe as tabular colors: Color component option blue outside range of [0,1]: 5.180392156862745

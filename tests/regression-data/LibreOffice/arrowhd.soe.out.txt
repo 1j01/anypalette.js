@@ -18,4 +18,4 @@ Some errors were encountered when loading:
 	failed to load arrowhd.soe as Adobe Color Table: file size must be 768 or 772 bytes (saw 4308), OR file extension must be '.act' (saw '.soe'),
 	failed to load arrowhd.soe as StarCraft palette: Wrong file size, must be 768 bytes long (not 4308),
 	failed to load arrowhd.soe as StarCraft terrain palette: Wrong file size, must be 1024 bytes long (not 4308),
-	failed to load arrowhd.soe as tabular colors: palette.add() component option blue outside range of [0,1]: 8.36078431372549
+	failed to load arrowhd.soe as tabular colors: Color component option blue outside range of [0,1]: 8.36078431372549

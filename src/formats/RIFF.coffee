@@ -6,7 +6,7 @@
 jDataView = require "jdataview"
 Palette = require "../Palette"
 
-module.exports = ({data})->
+module.exports.read_riff_palette = ({data})->
 	littleEndian = true
 	view = new jDataView(data, 0, undefined, littleEndian)
 	
@@ -48,7 +48,7 @@ module.exports = ({data})->
 	
 	palette
 
-module.exports.write = (palette)->
+module.exports.write_riff_palette = (palette)->
 
 	data_chunk_body_size =
 		2 + # for the version number (Uint16)

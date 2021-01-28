@@ -3,7 +3,7 @@
 
 Palette = require "../Palette"
 
-module.exports = ({fileContentString})->
+module.exports.read_paintdotnet_palette = ({fileContentString})->
 	
 	palette = new Palette()
 	
@@ -19,7 +19,7 @@ module.exports = ({fileContentString})->
 	
 	palette
 
-module.exports.write = (palette)->
+module.exports.write_paintdotnet_palette = (palette)->
 	component_to_hex = (component)->
 		hex = Math.round(component * 255).toString(16)
 		if hex.length is 1 then "0#{hex}" else hex

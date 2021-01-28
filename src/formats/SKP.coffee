@@ -9,7 +9,7 @@
 Palette = require "../Palette"
 {parse_css_hex_color} = require "../helpers"
 
-module.exports = ({fileContentString})->
+module.exports.read_sk1_skp = ({fileContentString})->
 	lines = fileContentString.split(/[\n\r]+/m)
 
 	palette = new Palette
@@ -199,7 +199,7 @@ module.exports = ({fileContentString})->
 	
 	palette
 
-module.exports.write = (palette)->
+module.exports.write_sk1_skp = (palette)->
 	serialize_str = (str)-> "'#{str.replace(/[\r\n]+/g, " ").replace(/'/g, "\\'")}'"
 	str = "##sK1 palette\n"
 	str += "palette()\n"

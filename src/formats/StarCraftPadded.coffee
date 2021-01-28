@@ -4,7 +4,7 @@
 jDataView = require "jdataview"
 Palette = require "../Palette"
 
-module.exports = ({data})->
+module.exports.read_starcraft_wpe = ({data})->
 	
 	palette = new Palette()
 	view = new jDataView(data)
@@ -22,7 +22,7 @@ module.exports = ({data})->
 	palette.numberOfColumns = 16
 	palette
 
-module.exports.write = (palette)->
+module.exports.write_starcraft_wpe = (palette)->
 	view = new jDataView(256*4)
 	for i in [0...256]
 		view.writeUint8(if palette[i] then Math.round(palette[i].red * 255) else 0)

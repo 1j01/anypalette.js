@@ -4,7 +4,7 @@
 
 Palette = require "../Palette"
 
-module.exports = ({fileContentString})->
+module.exports.read_skencil_palette = ({fileContentString})->
 	lines = fileContentString.split(/[\n\r]+/m)
 	
 	if lines[0] isnt "##Sketch RGBPalette 0"
@@ -45,7 +45,7 @@ module.exports = ({fileContentString})->
 		
 	palette
 
-module.exports.write = (palette)->
+module.exports.write_skencil_palette = (palette)->
 	"""
 	##Sketch RGBPalette 0
 	#{palette.map((color)-> 

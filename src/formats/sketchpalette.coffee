@@ -9,7 +9,7 @@ Palette = require "../Palette"
 
 version = 1.4
 
-module.exports = ({fileContentString})->
+module.exports.read_sketchpalette = ({fileContentString})->
 	if not fileContentString.match(/^\s*{/)
 		throw new Error "not sketchpalette JSON"
 	paletteContents = JSON.parse(fileContentString)
@@ -84,7 +84,7 @@ module.exports = ({fileContentString})->
 
 	palette
 
-module.exports.write = (palette)->
+module.exports.write_sketchpalette = (palette)->
 	JSON.stringify({
 		"compatibleVersion": "1.4",
 		"pluginVersion": "1.4",

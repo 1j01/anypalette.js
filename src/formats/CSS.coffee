@@ -7,7 +7,7 @@ Palette = require "../Palette"
 # TODO: detect names via structures like CSS variables, JSON object keys/values, comments
 # TODO: use all colors regardless of format, within a detected structure, or maybe always
 
-module.exports = ({fileContentString})->
+module.exports.read_css_colors = ({fileContentString})->
 	
 	n_control_characters = 0
 	for char in fileContentString

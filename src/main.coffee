@@ -16,160 +16,160 @@ formats =
 	PAINT_SHOP_PRO_PALETTE: {
 		name: "Paint Shop Pro palette"
 		fileExtensions: ["psppalette", "pal"]
-		readFromText: require "./formats/PaintShopPro"
-		write: (require "./formats/PaintShopPro").write
+		readFromText: require("./formats/PaintShopPro").read_paint_shop_pro_palette
+		write: require("./formats/PaintShopPro").write_paint_shop_pro_palette
 	}
 	RIFF_PALETTE: {
 		name: "RIFF PAL"
 		fileExtensions: ["pal"]
-		read: require "./formats/RIFF"
-		write: (require "./formats/RIFF").write
+		read: require("./formats/RIFF").read_riff_palette
+		write: require("./formats/RIFF").write_riff_palette
 	}
 	COLORSCHEMER_PALETTE: {
 		name: "ColorSchemer palette"
 		fileExtensions: ["cs"]
-		read: require "./formats/ColorSchemer"
+		read: require("./formats/ColorSchemer").read_colorschemer_palette
 	}
 	PAINTDOTNET_PALETTE: {
 		name: "Paint.NET palette"
 		fileExtensions: ["txt"]
-		readFromText: require "./formats/Paint.NET"
-		write: (require "./formats/Paint.NET").write
+		readFromText: require("./formats/Paint.NET").read_paintdotnet_palette
+		write: require("./formats/Paint.NET").write_paintdotnet_palette
 	}
 	GIMP_PALETTE: {
 		name: "GIMP palette"
 		fileExtensions: ["gpl", "gimp", "colors"]
-		readFromText: require "./formats/GIMP"
-		write: (require "./formats/GIMP").write
+		readFromText: require("./formats/GIMP").read_gpl
+		write: require("./formats/GIMP").write_gpl
 	}
 	KDE_RGB_PALETTE: {
 		name: "KolourPaint palette"
 		fileExtensions: ["colors"]
-		readFromText: require "./formats/KolourPaint"
-		write: (require "./formats/KolourPaint").write
+		readFromText: require("./formats/KolourPaint").read_kolourpaint_palette
+		write: require("./formats/KolourPaint").write_kolourpaint_palette
 	}
 	SKENCIL_PALETTE: {
 		name: "Skencil palette"
 		fileExtensions: ["spl"]
-		readFromText: require "./formats/SPL"
-		write: (require "./formats/SPL").write
+		readFromText: require("./formats/SPL").read_skencil_palette
+		write: require("./formats/SPL").write_skencil_palette
 	}
 	SKETCH_JSON_PALETTE: {
 		name: "Sketch palette"
 		fileExtensions: ["sketchpalette"]
-		readFromText: require "./formats/sketchpalette"
-		write: (require "./formats/sketchpalette").write
+		readFromText: require("./formats/sketchpalette").read_sketchpalette
+		write: require("./formats/sketchpalette").write_sketchpalette
 	}
 	SK1_PALETTE: {
 		name: "sK1 palette"
 		fileExtensions: ["skp"]
-		readFromText: require "./formats/SKP"
-		write: (require "./formats/SKP").write
+		readFromText: require("./formats/SKP").read_sk1_skp
+		write: require("./formats/SKP").write_sk1_skp
 	}
 	WINDOWS_THEME_COLORS: {
 		name: "Windows desktop theme"
 		fileExtensions: ["theme", "themepack"]
-		readFromText: require "./formats/theme"
+		readFromText: require("./formats/theme").read_windows_theme
 	}
 	ADOBE_SWATCH_EXCHANGE_PALETTE: {
 		name: "Adobe Swatch Exchange"
 		fileExtensions: ["ase"]
-		read: (require "./formats/Adobe").read_adobe_swatch_exchange
-		write: (require "./formats/Adobe").write_adobe_swatch_exchange
+		read: require("./formats/Adobe").read_adobe_swatch_exchange
+		write: require("./formats/Adobe").write_adobe_swatch_exchange
 	}
 	ADOBE_COLOR_BOOK_PALETTE: {
 		name: "Adobe Color Book"
 		fileExtensions: ["acb"]
-		read: (require "./formats/Adobe").read_adobe_color_book
+		read: require("./formats/Adobe").read_adobe_color_book
 	}
 	STAROFFICE_PALETTE: {
 		name: "StarOffice Colors"
 		fileExtensions: ["soc"]
-		readFromText: (require "./formats/StarOffice").read_soc
-		write: (require "./formats/StarOffice").write_libreoffice_soc
+		readFromText: require("./formats/StarOffice").read_soc
+		write: require("./formats/StarOffice").write_libreoffice_soc
 	}
 	# KDE_THEME_COLORS: {
 	# 	name: "KDE desktop theme"
 	# 	fileExtensions: ["colors"]
-	# 	read: require "./formats/theme"
+	# 	read: require("./formats/theme").read_kde_theme
 	# }
 	CSS_VARIABLES: {
 		name: "CSS variables"
 		fileExtensions: ["css"]
-		write: (require "./formats/CSS").write_css
+		write: require("./formats/CSS").write_css
 	}
 	SCSS_VARIABLES: {
 		name: "SCSS variables"
 		fileExtensions: ["scss"]
-		write: (require "./formats/CSS").write_scss
+		write: require("./formats/CSS").write_scss
 	}
 	SASS_VARIABLES: {
 		name: "SASS variables"
 		fileExtensions: ["sass"]
-		write: (require "./formats/CSS").write_sass
+		write: require("./formats/CSS").write_sass
 	}
 	LESS_VARIABLES: {
 		name: "LESS variables"
 		fileExtensions: ["less"]
-		write: (require "./formats/CSS").write_less
+		write: require("./formats/CSS").write_less
 	}
 	STYLUS_VARIABLES: {
 		name: "Stylus variables"
 		fileExtensions: ["styl"]
-		write: (require "./formats/CSS").write_styl
+		write: require("./formats/CSS").write_styl
 	}
 	CSS_COLORS: {
 		name: "CSS colors"
 		fileExtensions: ["css", "scss", "sass", "less", "styl", "html", "htm", "svg", "js", "ts", "xml", "txt"]
-		readFromText: require "./formats/CSS"
+		readFromText: require("./formats/CSS").read_css_colors
 	}
 	HOMESITE_PALETTE: {
 		name: "Homesite palette"
 		fileExtensions: ["hpl"]
-		readFromText: require "./formats/Homesite"
-		write: (require "./formats/Homesite").write
+		readFromText: require("./formats/Homesite").read_hpl
+		write: require("./formats/Homesite").write_hpl
 	}
 	ADOBE_COLOR_SWATCH_PALETTE: {
 		name: "Adobe Color Swatch"
 		fileExtensions: ["aco"]
-		read: (require "./formats/Adobe").read_adobe_color_swatch
-		write: (require "./formats/Adobe").write_adobe_color_swatch
+		read: require("./formats/Adobe").read_adobe_color_swatch
+		write: require("./formats/Adobe").write_adobe_color_swatch
 	}
 	ADOBE_COLOR_TABLE_PALETTE: {
 		name: "Adobe Color Table"
 		fileExtensions: ["act"]
-		read: require "./formats/AdobeColorTable"
-		write: (require "./formats/AdobeColorTable").write
+		read: require("./formats/AdobeColorTable").read_adobe_color_table
+		write: require("./formats/AdobeColorTable").write_adobe_color_table
 	}
 	STARCRAFT_PALETTE: {
 		name: "StarCraft palette"
 		fileExtensions: ["pal"]
-		read: require "./formats/StarCraft"
-		write: (require "./formats/StarCraft").write
+		read: require("./formats/StarCraft").read_starcraft_pal
+		write: require("./formats/StarCraft").write_starcraft_pal
 	}
 	STARCRAFT_PADDED: {
 		name: "StarCraft terrain palette"
 		fileExtensions: ["wpe"]
-		read: require "./formats/StarCraftPadded"
-		write: (require "./formats/StarCraftPadded").write
+		read: require("./formats/StarCraftPadded").read_starcraft_wpe
+		write: require("./formats/StarCraftPadded").write_starcraft_wpe
 	}
 
 	# AUTOCAD_COLOR_BOOK_PALETTE: {
 	# 	name: "AutoCAD Color Book"
 	# 	fileExtensions: ["acb"]
-	# 	readFromText?: require "./formats/AutoCADColorBook"
+	# 	readFromText?: require("./formats/AutoCADColorBook").read_autocad_acb
 	# }
 
 	# CORELDRAW_PALETTE: {
 	# 	# (same as Paint Shop Pro palette?)
 	# 	name: "CorelDRAW palette"
 	# 	fileExtensions: ["pal", "cpl"]
-	# 	readFromText?: require "./formats/CorelDRAW"
+	# 	readFromText?: require("./formats/CorelDRAW").read_coreldraw_palette
 	# }
 	TABULAR: {
 		name: "tabular colors"
 		fileExtensions: ["csv", "tsv", "txt"]
-		readFromText: require "./formats/tabular"
+		readFromText: require("./formats/tabular").read_tabular_colors
 	}
 
 for format_id in Object.keys(formats)
@@ -276,7 +276,7 @@ AnyPalette.loadPalette = (o, callback)->
 			read_palette(o, callback)
 		fr.readAsArrayBuffer o.file
 	else if o.filePath?
-		fs = require "fs"
+		fs = require("fs")
 		fs.readFile o.filePath, (error, data)->
 			if error
 				callback(error)

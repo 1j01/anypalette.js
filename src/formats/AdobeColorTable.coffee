@@ -15,8 +15,7 @@ https://www.adobe.com/devnet-apps/photoshop/fileformatashtml/#50577411_pgfId-107
 jDataView = require "jdataview"
 Palette = require "../Palette"
 
-module.exports =
-read_adobe_color_table = ({data, fileExt})->
+module.exports.read_adobe_color_table = ({data, fileExt})->
 
 	palette = new Palette()
 	view = new jDataView(data)
@@ -37,8 +36,7 @@ read_adobe_color_table = ({data, fileExt})->
 
 	palette
 
-module.exports.write =
-write_adobe_color_table = (palette)->
+module.exports.write_adobe_color_table = (palette)->
 	view = new jDataView(256*3)
 	for i in [0...256]
 		view.writeUint8(if palette[i] then Math.round(palette[i].red * 255) else 0)

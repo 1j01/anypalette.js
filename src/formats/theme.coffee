@@ -54,5 +54,5 @@ parseThemeFileString = (themeIni)->
 	palette.name = theme["Theme"]?.DisplayName # or theme["General"]?.Name for KDE .colors
 	palette
 
-module.exports = ({fileContentString})->
+module.exports.read_windows_theme = ({fileContentString})->
 	parseThemeFileString fileContentString

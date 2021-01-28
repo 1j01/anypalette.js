@@ -3,7 +3,7 @@
 
 Palette = require "../Palette"
 
-module.exports = ({fileContentString})->
+module.exports.read_tabular_colors = ({fileContentString})->
 	lines = fileContentString.split(/[\n\r]+/m)
 	palettes = [
 		csv_palette = new Palette()

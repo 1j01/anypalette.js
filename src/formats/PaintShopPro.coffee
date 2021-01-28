@@ -3,7 +3,7 @@
 
 Palette = require "../Palette"
 
-module.exports = ({fileContentString})->
+module.exports.read_paint_shop_pro_palette = ({fileContentString})->
 	lines = fileContentString.split(/[\n\r]+/m)
 	if lines[0] isnt "JASC-PAL"
 		throw new Error "Not a JASC-PAL"
@@ -25,7 +25,7 @@ module.exports = ({fileContentString})->
 	
 	palette
 
-module.exports.write = (palette)->
+module.exports.write_paint_shop_pro_palette = (palette)->
 	"""
 	JASC-PAL
 	0100

@@ -1,10 +1,10 @@
 
-# Load a ColorSchemer palette (.cs)
+# Read a ColorSchemer palette (.cs)
 
 jDataView = require "jdataview"
 Palette = require "../Palette"
 
-module.exports = ({data, fileExt})->
+module.exports.read_colorschemer_palette = ({data, fileExt})->
 
 	if fileExt isnt "cs"
 		throw new Error("ColorSchemer loader is only enabled when file extension is '.cs' (saw '.#{fileExt}' instead)")

@@ -57,7 +57,7 @@ parse_gimp_or_kde_rgb_palette = (fileContentString, format_name)->
 		
 	palette
 
-module.exports = ({fileContentString})->
+module.exports.read_gpl = ({fileContentString})->
 	parse_gimp_or_kde_rgb_palette(fileContentString, "GIMP Palette")
 
 write_gimp_or_kde_rgb_palette = (palette, format_name)->
@@ -72,7 +72,7 @@ write_gimp_or_kde_rgb_palette = (palette, format_name)->
 	).join("\n")}
 	"""
 
-module.exports.write = (palette)->
+module.exports.write_gpl = (palette)->
 	write_gimp_or_kde_rgb_palette(palette, "GIMP Palette")
 
 module.exports.extension = "gpl"

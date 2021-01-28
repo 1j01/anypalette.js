@@ -2,7 +2,7 @@
 
 Palette = require "../Palette"
 
-module.exports = ({fileContentString})->
+module.exports.read_hpl = ({fileContentString})->
 	lines = fileContentString.split(/\r?\n/)
 	if lines[0] isnt "Palette"
 		throw new Error "Not a Homesite palette"
@@ -21,7 +21,7 @@ module.exports = ({fileContentString})->
 	
 	palette
 
-module.exports.write = (palette)->
+module.exports.write_hpl = (palette)->
 	"""
 	Palette
 	Version 4.0

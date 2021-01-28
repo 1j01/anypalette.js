@@ -13,7 +13,7 @@ module.exports = ({data, fileExt})->
 	littleEndian = true
 	view = new jDataView(data, 0, undefined, littleEndian)
 	
-	version = view.getUint16() # or something
+	view.getUint16() # probably a version number
 	color_count = view.getUint16()
 	for i in [0...color_count]
 		view.seek(8 + i * 26)

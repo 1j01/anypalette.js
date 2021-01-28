@@ -12,7 +12,7 @@ module.exports = ({data})->
 	
 	# RIFF header
 	riff = view.getString(4) # "RIFF"
-	dataSize = view.getUint32()
+	view.getUint32() # size
 	type = view.getString(4) # "PAL "
 	
 	if riff isnt "RIFF"
@@ -26,7 +26,7 @@ module.exports = ({data})->
 	
 	# Data chunk
 	chunkType = view.getString(4) # "data"
-	chunkSize = view.getUint32()
+	view.getUint32() # chunk size
 	palVersion = view.getUint16() # 0x0300
 	colorCount = view.getUint16()
 	

@@ -3,7 +3,6 @@ jDataView = require "jdataview"
 Palette = require "../Palette"
 
 MAX_UINT16 = 2**16 - 1
-MAX_UINT32 = 2**32 - 1
 
 PhotoshopColorSpace = Object.freeze({
 	RGB: 0
@@ -121,7 +120,7 @@ module.exports.read_adobe_color_swatch = ({data})->
 	header_size = 4 # ACO v1 or v2 header, same size
 
 	aco_v2_offset = header_size + number_of_colors * (5 * 2)
-	aco_v2_colors_offset = aco_v2_offset + header_size
+	# aco_v2_colors_offset = aco_v2_offset + header_size
 
 	if view.byteLength <= aco_v2_offset
 		# ACO v1 only file
@@ -215,13 +214,14 @@ module.exports.read_adobe_swatch_exchange = ({data})->
 	if view.getString(4) isnt "ASEF"
 		throw new Error "Not an Adobe Swatch Exchange file"
 
-	version = view.getUint32()
+	view.getUint32() # version
 
 	# if version isnt 1 
 	# 	throw new Error "Unknown Adobe Swatch Exchange format version #{version}"
 
 	number_of_blocks = view.getUint32()
 
+	# TODO: DRY
 	BLOCK_TYPE_GROUP_START = 0xc001
 	BLOCK_TYPE_GROUP_END = 0xc002
 	BLOCK_TYPE_COLOR = 0x0001
@@ -269,7 +269,7 @@ module.exports.read_adobe_swatch_exchange = ({data})->
 							green: gray
 							blue: gray
 							name: name
-				color_mode = view.getUint16()
+				view.getUint16() # color mode (global/spot/normal)
 		view.seek(block_end_pos)
 
 	palette
@@ -327,10 +327,7 @@ module.exports.write_adobe_swatch_exchange = (palette)->
 	view = new jDataView(file_size)
 	
 	view.writeString("ASEF")
-
-	version = 1
-	view.writeUint32(version)
-
+	view.writeUint32(1) # version
 	view.writeUint32(blocks.length)
 
 	for block in blocks
@@ -368,15 +365,15 @@ module.exports.read_adobe_color_book = ({data})->
 		value = value.replace '^C', '©'
 		value
 
-	book_id = view.getUint16()
+	view.getUint16() # book ID, unique within official color books
 	book_title = extract_value get_utf_16_string(view, view.getUint32(), false)
 	color_name_prefix = extract_value get_utf_16_string(view, view.getUint32(), false)
 	color_name_suffix = extract_value get_utf_16_string(view, view.getUint32(), false)
 	book_description = extract_value get_utf_16_string(view, view.getUint32())
 	
 	color_count = view.getUint16()
-	page_size = view.getUint16()
-	page_selector_offset = view.getUint16()
+	view.getUint16() # page size
+	view.getUint16() # page selector offset
 	color_space = view.getUint16()
 	
 	for [0...color_count]

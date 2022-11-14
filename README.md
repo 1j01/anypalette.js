@@ -116,10 +116,10 @@ Then access the library with:
 const AnyPalette = require("anypalette");
 ```
 
-**Alternatively**, download [`build/anypalette-0.6.0.js`](build/anypalette-0.6.0.js) and include it as a script:
+**Alternatively**, download [`build/anypalette-0.7.0.js`](build/anypalette-0.7.0.js) and include it as a script:
 
 ```html
-<script src="anypalette-0.6.0.js"></script>
+<script src="anypalette-0.7.0.js"></script>
 ```
 
 This will create a global `AnyPalette`

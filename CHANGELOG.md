@@ -9,7 +9,7 @@ Refer to the [latest version of the changelog](https://github.com/1j01/anypalett
 for potential future corrections.
 (The changelog can't be retroactively updated within an npm release, so if for instance a breaking change was accidentally omitted, it wouldn't be in the changelog in the release, but it could be added later to the changelog on GitHub.)
 
-[Unreleased]: https://github.com/1j01/anypalette.js/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/1j01/anypalette.js/compare/v0.7.0...HEAD
 ## [Unreleased]
 <details>
 	<summary>
@@ -17,13 +17,16 @@ for potential future corrections.
 		Click to see more.
 	</summary>
 
+</details>
+
+[0.7.0]: https://github.com/1j01/anypalette.js/compare/v0.6.0...v0.7.0
+## [0.7.0] - 2022-11-14
+
 ### Changed
 - The tabular format parser (which handles CSV, TSV, and sometimes miscellaneous INI, XML etc.) can now return names (`color.name`), in some cases. The name is taken from the line of text defining a given color after removing the (assumed RGB) color values, but only if the color values are at the start or end of the line. This may include some extra information that is not strictly color names.
 
 ### Added
 - Including a dot in the `fileExt` option is now allowed (either `".gpl"` or `"gpl"` is fine.)
-
-</details>
 
 [0.6.0]: https://github.com/1j01/anypalette.js/compare/v0.5.2...v0.6.0
 ## [0.6.0] - 2021-01-27

@@ -40,6 +40,14 @@ module.exports.read_tabular_colors = ({fileContentString})->
 				blue: Number(match[3]) / 255
 				name: name
 	for line in lines
+		# Consider "#005599, 0 85 153": this shouldn't be parsed as [5599, 0, 85],
+		# which is what would happen if this was done with a single regexp allowing either
+		# commas or whitespace. Even with a global modifier, it wouldn't return overlapping
+		# results, and so would miss "0 85 153" (without doing something special to get
+		# overlapping results, such as resetting lastIndex)
+		# For that matter, though, "#255, 34, 85, 85" shouldn't be parsed as [255, 34, 85]
+		# even though it's in range for RGB byte values if considered as decimal.
+		# Note: it's weird to allow mixed format between different rows, but may be generally fine
 		try_parse_line line, csv_palette, /([0-9]*\.?[0-9]+),\s*([0-9]*\.?[0-9]+),\s*([0-9]*\.?[0-9]+)/
 		try_parse_line line, ssv_palette, /([0-9]*\.?[0-9]+)\s+([0-9]*\.?[0-9]+)\s+([0-9]*\.?[0-9]+)/
 	

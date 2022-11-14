@@ -9,7 +9,7 @@ GIMP Palette
 Name: Saved Colors
 Columns: 8
 #
-1   255 255   rgb(1, 255, 255)
-2   170 123   rgb(2, 170, 123)
-3   170 123   rgb(3, 170, 123)
+255 255 0     Active Title	1
+170 123 0     Background	2
+170 123 0     Highlight	3
 4   255 255   rgb(4, 255, 255)

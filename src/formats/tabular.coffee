@@ -39,6 +39,9 @@ module.exports.read_tabular_colors = ({fileContentString})->
 				green: Number(match[2]) / 255
 				blue: Number(match[3]) / 255
 				name: name
+		
+		return match?
+	
 	for line in lines
 		# Consider "#005599, 0 85 153": this shouldn't be parsed as [5599, 0, 85],
 		# which is what would happen if this was done with a single regexp allowing either
@@ -49,8 +52,11 @@ module.exports.read_tabular_colors = ({fileContentString})->
 		# even though it's in range for RGB byte values if considered as decimal.
 		# Hence the negative lookbehinds to avoid matching part of a hexidecimal number.
 		# Note: it's weird to allow mixed format between different rows, but may be generally fine
-		try_parse_line line, csv_palette, /(?<![#x][0-9a-fA-F]*)([0-9]*\.?[0-9]+),\s*([0-9]*\.?[0-9]+),\s*([0-9]*\.?[0-9]+)/
-		try_parse_line line, ssv_palette, /(?<![#x][0-9a-fA-F]*)([0-9]*\.?[0-9]+)\s+([0-9]*\.?[0-9]+)\s+([0-9]*\.?[0-9]+)/
+		# Also: parsing twice would be problematic, and [ ] vs \s+ are not mutually exclusive, hence the `or` chain.
+		try_parse_line(line, csv_palette, /(?<![#x][0-9a-fA-F]*)([0-9]*\.?[0-9]+),\s*([0-9]*\.?[0-9]+),\s*([0-9]*\.?[0-9]+)/) or
+		try_parse_line(line, csv_palette, /(?<![#x][0-9a-fA-F]*)([0-9]*\.?[0-9]+);\s*([0-9]*\.?[0-9]+);\s*([0-9]*\.?[0-9]+)/) or
+		try_parse_line(line, ssv_palette, /(?<![#x][0-9a-fA-F]*)([0-9]*\.?[0-9]+)[ ]([0-9]*\.?[0-9]+)[ ]([0-9]*\.?[0-9]+)/) or
+		try_parse_line(line, ssv_palette, /(?<![#x][0-9a-fA-F]*)([0-9]*\.?[0-9]+)\s+([0-9]*\.?[0-9]+)\s+([0-9]*\.?[0-9]+)/)
 	
 	most_colors = []
 	for palette in palettes

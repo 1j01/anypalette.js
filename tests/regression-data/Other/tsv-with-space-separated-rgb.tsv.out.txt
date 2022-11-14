@@ -1,0 +1,15 @@
+Loaded As:                      tabular colors (.csv, .tsv, .txt)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+1   255 255   rgb(1, 255, 255)
+2   170 123   rgb(2, 170, 123)
+3   170 123   rgb(3, 170, 123)
+4   255 255   rgb(4, 255, 255)

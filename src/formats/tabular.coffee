@@ -47,9 +47,10 @@ module.exports.read_tabular_colors = ({fileContentString})->
 		# overlapping results, such as resetting lastIndex)
 		# For that matter, though, "#255, 34, 85, 85" shouldn't be parsed as [255, 34, 85]
 		# even though it's in range for RGB byte values if considered as decimal.
+		# Hence the negative lookbehinds to avoid matching part of a hexidecimal number.
 		# Note: it's weird to allow mixed format between different rows, but may be generally fine
-		try_parse_line line, csv_palette, /([0-9]*\.?[0-9]+),\s*([0-9]*\.?[0-9]+),\s*([0-9]*\.?[0-9]+)/
-		try_parse_line line, ssv_palette, /([0-9]*\.?[0-9]+)\s+([0-9]*\.?[0-9]+)\s+([0-9]*\.?[0-9]+)/
+		try_parse_line line, csv_palette, /(?<![#x][0-9a-fA-F]*)([0-9]*\.?[0-9]+),\s*([0-9]*\.?[0-9]+),\s*([0-9]*\.?[0-9]+)/
+		try_parse_line line, ssv_palette, /(?<![#x][0-9a-fA-F]*)([0-9]*\.?[0-9]+)\s+([0-9]*\.?[0-9]+)\s+([0-9]*\.?[0-9]+)/
 	
 	most_colors = []
 	for palette in palettes

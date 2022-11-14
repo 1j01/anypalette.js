@@ -42,7 +42,7 @@ for potential future corrections.
 - `AnyPalette.uniqueColors(palette)`: Use this to get a version of a palette with only unique colors.
   Note: `numberOfColumns` on the returned palette is undefined, because the geometry doesn't necessarily apply if some colors are removed.
   `name` is however copied over.
-- `Color` objects now have `red`, `green`, `blue` properties. The range is `[0,1]`, not `[0,255]`, and they are available even if the input format is HSL or another colorspace.
+- `Color` objects now have `red`, `green`, `blue` properties. The range is `[0,1]`, not `[0,255]`, and they are available even if the input format is HSL or another color space.
 - Alpha support (translucent colors). `color.alpha` exists only if alpha is defined for a color. This is used for choosing between string representations.
 - `loadPalette` callback now gets extra parameters for getting info about the format the file was parsed as.
 - You can now pass an `ArrayBuffer` or Node.js `Buffer` as input to `AnyPalette.loadPalette({data}, callback)`. This is preferred over binary strings because it supports Unicode (UTF-8) encoded string names (and it's generally more modern).

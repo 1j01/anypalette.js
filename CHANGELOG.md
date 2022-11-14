@@ -17,6 +17,9 @@ for potential future corrections.
 		Click to see more.
 	</summary>
 
+### Changed
+- The tabular format parser (which handles CSV, TSV, and sometimes miscellaneous INI, XML etc.) can now return names (`color.name`), in some cases. The name is taken from the line of text defining a given color after removing the (assumed RGB) color values, but only if the color values are at the start or end of the line. This may include some extra information that is not strictly color names.
+
 ### Added
 - Including a dot in the `fileExt` option is now allowed (either `".gpl"` or `"gpl"` is fine.)
 

@@ -9,75 +9,75 @@ GIMP Palette
 Name: Saved Colors
 Columns: 8
 #
-112 111 110   rgb(112, 111, 110)
-112 111 110   rgb(112, 111, 110)
-49  51  56    rgb(49, 51, 56)
-37  56  103   rgb(37, 56, 103)
-92  114 168   rgb(92, 114, 168)
-92  114 168   rgb(92, 114, 168)
-255 128 224   rgb(255, 128, 224)
-153 153 153   rgb(153, 153, 153)
-66  133 244   rgb(66, 133, 244)
-191 3   3     rgb(191, 3, 3)
-176 128 0     rgb(176, 128, 0)
-234 234 234   rgb(234, 234, 234)
-0   110 40    rgb(0, 110, 40)
-224 64  251   rgb(224, 64, 251)
-54  57  62    rgb(54, 57, 62)
-33  35  41    rgb(33, 35, 41)
-92  114 168   rgb(92, 114, 168)
-92  114 168   rgb(92, 114, 168)
-82  148 226   rgb(82, 148, 226)
-67  86  133   rgb(67, 86, 133)
-92  114 168   rgb(92, 114, 168)
-92  114 168   rgb(92, 114, 168)
-255 128 224   rgb(255, 128, 224)
-142 203 233   rgb(142, 203, 233)
-66  133 244   rgb(66, 133, 244)
-156 14  14    rgb(156, 14, 14)
-255 221 0     rgb(255, 221, 0)
-255 255 255   rgb(255, 255, 255)
-128 255 128   rgb(128, 255, 128)
-224 64  251   rgb(224, 64, 251)
-54  57  62    rgb(54, 57, 62)
-33  35  41    rgb(33, 35, 41)
-92  114 168   rgb(92, 114, 168)
-92  114 168   rgb(92, 114, 168)
-255 128 224   rgb(255, 128, 224)
-153 153 153   rgb(153, 153, 153)
-66  133 244   rgb(66, 133, 244)
-191 3   3     rgb(191, 3, 3)
-176 128 0     rgb(176, 128, 0)
-221 221 221   rgb(221, 221, 221)
-0   110 40    rgb(0, 110, 40)
-224 64  251   rgb(224, 64, 251)
-54  56  62    rgb(54, 56, 62)
-21  25  35    rgb(21, 25, 35)
-92  114 168   rgb(92, 114, 168)
-92  114 168   rgb(92, 114, 168)
-255 128 224   rgb(255, 128, 224)
-153 153 153   rgb(153, 153, 153)
-66  133 244   rgb(66, 133, 244)
-191 3   3     rgb(191, 3, 3)
-176 128 0     rgb(176, 128, 0)
-234 234 234   rgb(234, 234, 234)
-0   110 40    rgb(0, 110, 40)
-224 64  251   rgb(224, 64, 251)
-54  56  62    rgb(54, 56, 62)
-26  30  40    rgb(26, 30, 40)
-92  114 168   rgb(92, 114, 168)
-92  114 168   rgb(92, 114, 168)
-255 128 224   rgb(255, 128, 224)
-153 153 153   rgb(153, 153, 153)
-66  133 244   rgb(66, 133, 244)
-191 3   3     rgb(191, 3, 3)
-176 128 0     rgb(176, 128, 0)
-234 234 234   rgb(234, 234, 234)
-0   110 40    rgb(0, 110, 40)
-224 64  251   rgb(224, 64, 251)
-54  56  62    rgb(54, 56, 62)
-59  62  68    rgb(59, 62, 68)
-221 221 221   rgb(221, 221, 221)
-62  65  71    rgb(62, 65, 71)
-67  71  77    rgb(67, 71, 77)
-120 120 120   rgb(120, 120, 120)
+112 111 110   Color
+112 111 110   Color
+49  51  56    BackgroundAlternate
+37  56  103   BackgroundNormal
+92  114 168   DecorationFocus
+92  114 168   DecorationHover
+255 128 224   ForegroundActive
+153 153 153   ForegroundInactive
+66  133 244   ForegroundLink
+191 3   3     ForegroundNegative
+176 128 0     ForegroundNeutral
+234 234 234   ForegroundNormal
+0   110 40    ForegroundPositive
+224 64  251   ForegroundVisited
+54  57  62    BackgroundAlternate
+33  35  41    BackgroundNormal
+92  114 168   DecorationFocus
+92  114 168   DecorationHover
+82  148 226   BackgroundAlternate
+67  86  133   BackgroundNormal
+92  114 168   DecorationFocus
+92  114 168   DecorationHover
+255 128 224   ForegroundActive
+142 203 233   ForegroundInactive
+66  133 244   ForegroundLink
+156 14  14    ForegroundNegative
+255 221 0     ForegroundNeutral
+255 255 255   ForegroundNormal
+128 255 128   ForegroundPositive
+224 64  251   ForegroundVisited
+54  57  62    BackgroundAlternate
+33  35  41    BackgroundNormal
+92  114 168   DecorationFocus
+92  114 168   DecorationHover
+255 128 224   ForegroundActive
+153 153 153   ForegroundInactive
+66  133 244   ForegroundLink
+191 3   3     ForegroundNegative
+176 128 0     ForegroundNeutral
+221 221 221   ForegroundNormal
+0   110 40    ForegroundPositive
+224 64  251   ForegroundVisited
+54  56  62    BackgroundAlternate
+21  25  35    BackgroundNormal
+92  114 168   DecorationFocus
+92  114 168   DecorationHover
+255 128 224   ForegroundActive
+153 153 153   ForegroundInactive
+66  133 244   ForegroundLink
+191 3   3     ForegroundNegative
+176 128 0     ForegroundNeutral
+234 234 234   ForegroundNormal
+0   110 40    ForegroundPositive
+224 64  251   ForegroundVisited
+54  56  62    BackgroundAlternate
+26  30  40    BackgroundNormal
+92  114 168   DecorationFocus
+92  114 168   DecorationHover
+255 128 224   ForegroundActive
+153 153 153   ForegroundInactive
+66  133 244   ForegroundLink
+191 3   3     ForegroundNegative
+176 128 0     ForegroundNeutral
+234 234 234   ForegroundNormal
+0   110 40    ForegroundPositive
+224 64  251   ForegroundVisited
+54  56  62    activeBackground
+59  62  68    activeBlend
+221 221 221   activeForeground
+62  65  71    inactiveBackground
+67  71  77    inactiveBlend
+120 120 120   inactiveForeground

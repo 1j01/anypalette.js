@@ -9,81 +9,81 @@ GIMP Palette
 Name: Saved Colors
 Columns: 8
 #
-112 111 110   rgb(112, 111, 110)
-112 111 110   rgb(112, 111, 110)
-0   30  44    rgb(0, 30, 44)
-0   22  33    rgb(0, 22, 33)
-161 180 186   rgb(161, 180, 186)
-0   120 171   rgb(0, 120, 171)
-203 227 234   rgb(203, 227, 234)
-182 203 209   rgb(182, 203, 209)
-0   95  136   rgb(0, 95, 136)
-255 85  127   rgb(255, 85, 127)
-255 170 127   rgb(255, 170, 127)
-161 180 186   rgb(161, 180, 186)
-161 180 186   rgb(161, 180, 186)
-161 180 186   rgb(161, 180, 186)
-0   30  44    rgb(0, 30, 44)
-0   30  44    rgb(0, 30, 44)
-0   87  124   rgb(0, 87, 124)
-0   69  99    rgb(0, 69, 99)
-180 201 207   rgb(180, 201, 207)
-170 170 0     rgb(170, 170, 0)
-161 180 186   rgb(161, 180, 186)
-203 227 234   rgb(203, 227, 234)
-161 180 186   rgb(161, 180, 186)
-161 180 186   rgb(161, 180, 186)
-0   30  44    rgb(0, 30, 44)
-0   113 161   rgb(0, 113, 161)
-161 180 186   rgb(161, 180, 186)
-0   120 171   rgb(0, 120, 171)
-200 224 231   rgb(200, 224, 231)
-179 200 206   rgb(179, 200, 206)
-0   95  136   rgb(0, 95, 136)
-255 85  127   rgb(255, 85, 127)
-255 170 127   rgb(255, 170, 127)
-0   2   4     rgb(0, 2, 4)
-161 180 186   rgb(161, 180, 186)
-219 219 255   rgb(219, 219, 255)
-0   30  44    rgb(0, 30, 44)
-0   23  34    rgb(0, 23, 34)
-161 180 186   rgb(161, 180, 186)
-0   120 171   rgb(0, 120, 171)
-161 180 186   rgb(161, 180, 186)
-180 201 206   rgb(180, 201, 206)
-0   95  136   rgb(0, 95, 136)
-255 85  127   rgb(255, 85, 127)
-255 170 127   rgb(255, 170, 127)
-161 180 186   rgb(161, 180, 186)
-161 180 186   rgb(161, 180, 186)
-203 227 234   rgb(203, 227, 234)
-0   30  44    rgb(0, 30, 44)
-0   22  33    rgb(0, 22, 33)
-161 180 186   rgb(161, 180, 186)
-0   120 171   rgb(0, 120, 171)
-203 227 234   rgb(203, 227, 234)
-161 180 186   rgb(161, 180, 186)
-0   95  136   rgb(0, 95, 136)
-255 85  127   rgb(255, 85, 127)
-255 170 127   rgb(255, 170, 127)
-161 180 186   rgb(161, 180, 186)
-161 180 186   rgb(161, 180, 186)
-161 180 186   rgb(161, 180, 186)
-0   30  44    rgb(0, 30, 44)
-0   22  33    rgb(0, 22, 33)
-161 180 186   rgb(161, 180, 186)
-0   120 171   rgb(0, 120, 171)
-203 227 234   rgb(203, 227, 234)
-203 227 234   rgb(203, 227, 234)
-0   95  136   rgb(0, 95, 136)
-255 85  127   rgb(255, 85, 127)
-255 170 127   rgb(255, 170, 127)
-161 180 186   rgb(161, 180, 186)
-161 180 186   rgb(161, 180, 186)
-203 227 234   rgb(203, 227, 234)
-0   22  33    rgb(0, 22, 33)
-0   30  44    rgb(0, 30, 44)
-161 180 186   rgb(161, 180, 186)
-0   22  33    rgb(0, 22, 33)
-0   22  33    rgb(0, 22, 33)
-161 180 186   rgb(161, 180, 186)
+112 111 110   Color
+112 111 110   Color
+0   30  44    BackgroundAlternate
+0   22  33    BackgroundNormal
+161 180 186   DecorationFocus
+0   120 171   DecorationHover
+203 227 234   ForegroundActive
+182 203 209   ForegroundInactive
+0   95  136   ForegroundLink
+255 85  127   ForegroundNegative
+255 170 127   ForegroundNeutral
+161 180 186   ForegroundNormal
+161 180 186   ForegroundPositive
+161 180 186   ForegroundVisited
+0   30  44    BackgroundAlternate
+0   30  44    BackgroundNormal
+0   87  124   DecorationFocus
+0   69  99    DecorationHover
+180 201 207   ForegroundInactive
+170 170 0     ForegroundLink
+161 180 186   ForegroundNeutral
+203 227 234   ForegroundNormal
+161 180 186   ForegroundPositive
+161 180 186   ForegroundVisited
+0   30  44    BackgroundAlternate
+0   113 161   BackgroundNormal
+161 180 186   DecorationFocus
+0   120 171   DecorationHover
+200 224 231   ForegroundActive
+179 200 206   ForegroundInactive
+0   95  136   ForegroundLink
+255 85  127   ForegroundNegative
+255 170 127   ForegroundNeutral
+0   2   4     ForegroundNormal
+161 180 186   ForegroundPositive
+219 219 255   ForegroundVisited
+0   30  44    BackgroundAlternate
+0   23  34    BackgroundNormal
+161 180 186   DecorationFocus
+0   120 171   DecorationHover
+161 180 186   ForegroundActive
+180 201 206   ForegroundInactive
+0   95  136   ForegroundLink
+255 85  127   ForegroundNegative
+255 170 127   ForegroundNeutral
+161 180 186   ForegroundNormal
+161 180 186   ForegroundPositive
+203 227 234   ForegroundVisited
+0   30  44    BackgroundAlternate
+0   22  33    BackgroundNormal
+161 180 186   DecorationFocus
+0   120 171   DecorationHover
+203 227 234   ForegroundActive
+161 180 186   ForegroundInactive
+0   95  136   ForegroundLink
+255 85  127   ForegroundNegative
+255 170 127   ForegroundNeutral
+161 180 186   ForegroundNormal
+161 180 186   ForegroundPositive
+161 180 186   ForegroundVisited
+0   30  44    BackgroundAlternate
+0   22  33    BackgroundNormal
+161 180 186   DecorationFocus
+0   120 171   DecorationHover
+203 227 234   ForegroundActive
+203 227 234   ForegroundInactive
+0   95  136   ForegroundLink
+255 85  127   ForegroundNegative
+255 170 127   ForegroundNeutral
+161 180 186   ForegroundNormal
+161 180 186   ForegroundPositive
+203 227 234   ForegroundVisited
+0   22  33    activeBackground
+0   30  44    activeBlend
+161 180 186   activeForeground
+0   22  33    inactiveBackground
+0   22  33    inactiveBlend
+161 180 186   inactiveForeground

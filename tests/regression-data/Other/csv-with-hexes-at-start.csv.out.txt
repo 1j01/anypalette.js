@@ -1,0 +1,17 @@
+Loaded As:                      tabular colors (.csv, .tsv, .txt)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+0   255 255   rgb(0, 255, 255)
+170 123 0     "#AA7B00 "
+170 123 0     #AA7B00
+0   255 255   rgb(0, 255, 255)
+0   0   0     rgb(0, 0, 0)
+255 34  85    rgb(255, 34, 85)

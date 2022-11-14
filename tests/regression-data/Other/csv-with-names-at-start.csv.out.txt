@@ -1,0 +1,16 @@
+Loaded As:                      tabular colors (.csv, .tsv, .txt)
+
+matchedFileExtension:           true
+geometrySpecifiedByFile:        undefined
+numberOfColumns:                undefined
+
+Colors (in GPL format):
+GIMP Palette
+Name: Saved Colors
+Columns: 8
+#
+255 255 0     Active Title
+170 123 0     Background
+170 123 0     Highlight
+255 255 0     Highlight Text
+0   0   0     Title Text
